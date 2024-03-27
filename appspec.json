@@ -2,24 +2,11 @@
   "version": "1.2",
   "settings": [
     {
-      "id": "sdk",
-      "name": "The name of the MoveApps SDK",
-      "description": "Showcase requesting a string input from the users of your app.",
-      "defaultValue": "MoveApps SDK",
+      "id": "clustercode",
+      "name": "Cluster Code",
+      "description": "Code to append to cluster IDs.",
+      "defaultValue": "",
       "type": "STRING"
-    },
-    {
-      "id": "year",
-      "name": "The year",
-      "description": "Insert description for the year setting setting",
-      "defaultValue": 2022,
-      "type": "INTEGER"
-    },
-    {
-      "id": "auxiliary-file-a",
-      "name": "Personalization",
-      "description": "You can personalize the app by providing a file",
-      "type": "USER_FILE"
     }
   ],
   "dependencies": {
@@ -28,50 +15,105 @@
         "name": "lubridate"
       },
       {
+        "name": "dplyr"
+      },
+      {
+        "name": "magrittr"
+      },
+      {
         "name": "move2"
+      },
+      {
+        "name": "tidyr"
+      },
+      {
+        "name": "Gmedian"
+      },
+      {
+        "name": "sf"
+      },
+      {
+        "name": "stringr"
+      },
+      {
+        "name": "units"
+      },
+      {
+        "name": "pbapply"
       }
     ]
   },
-  "providedAppFiles": [
-    {
-      "settingId": "auxiliary-file-a",
-      "from": "data/auxiliary/user-files/provided-app-files/auxiliary-file-a/sample.txt"
-    }
-  ],
   "license": {
     "key": "MIT"
   },
   "language": "eng",
   "keywords": [
-    "example",
-    "template"
+    "clusters",
+    "clustering", 
+    "vultures",
+    "feeding"
   ],
   "people": [
     {
-      "firstName": "Charles",
-      "middleInitials": null,
-      "lastName": "Darwin",
-      "email": "creator@example.com",
+      "firstName": "Callum",
+      "middleInitials": "J.",
+      "lastName": "Clarke",
+      "email": "cjosephclarke@outlook.com",
       "roles": [
         "author",
         "creator"
       ],
       "orcid": null,
-      "affiliation": null,
+      "affiliation": "University of St Andrews",
+      "affiliationRor": "https://ror.org/02wn5qz54"
+    },
+    {
+      "firstName": "Lindesay",
+      "middleInitials": "",
+      "lastName": "Scott-Hayward",
+      "email": "lass@st-andrews.ac.uk",
+      "roles": [
+        "author",
+        "creator"
+      ],
+      "orcid": "0000-0003-3402-533X",
+      "affiliation": "University of St Andrews",
+      "affiliationRor": "https://ror.org/02wn5qz54"
+    },
+    {
+      "firstName": "Monique",
+      "middleInitials": "",
+      "lastName": "MacKenzie",
+      "email": "monique.mackenzie@st-andrews.ac.uk",
+      "roles": [
+        "author",
+        "creator"
+      ],
+      "orcid": "0000-0002-8505-6585",
+      "affiliation": "University of St Andrews",
+      "affiliationRor": "https://ror.org/02wn5qz54"
+    },
+    {
+      "firstName": "Bruno",
+      "middleInitials": "",
+      "lastName": "Caneco",
+      "email": "bruno@dmpstats.co.uk",
+      "roles": [
+        "author",
+        "creator"
+      ],
+      "orcid": null,
+      "affiliation": "DMP Stats",
       "affiliationRor": null
     }
   ],
   "funding": [
     {
-      "name": "funder name",
-      "comment": "grant for App"
+      "name": "University of St Andrews",
+      "comment": null
     }
   ],
-  "references": [
-    {
-      "type": "IsDescribedBy",
-      "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
-      "url": "https://anylink.xyz"
-    }
-  ]
+  "documentation": {
+    "url": "https://github.com/callumjclarke/Avian_Cluster_Detection/README.md"
+  }
 }
