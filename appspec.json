@@ -1,27 +1,47 @@
 {
-  "version": "1.2",
   "settings": [
     {
-      "id": "clustercode",
-      "name": "Cluster Code",
-      "description": "Code to append to cluster IDs.",
-      "defaultValue": "",
+      "id": "cluster_id_col",
+      "name": "Cluster ID Column",
+      "description": "Specify the name of the column in the input data indicating the cluster IDs of location points.",
+      "defaultValue": "clust_id",
       "type": "STRING"
+    },
+     {
+      "id": "behav_col",
+      "name": "Behaviour Category Column",
+      "description": "Specify the name of the column in the input data indicating the behavioural categories of location points. Setting this to `NULL` will skip the derivation of behavioural-related cluster metrics",
+      "defaultValue": "behav",
+      "type": "STRING"
+    },
+    {
+      "id": "cluster_tbl_type",
+      "name": "Cluster Metrics Aggregation Level",
+      "description": "Choose the content of the output dataset",
+      "defaultValue": "track-and-whole",
+      "type": "RADIOBUTTONS",
+      "options": [
+        {
+          "value": "track-and-whole",
+          "displayText": "Both track-per-cluster and whole-cluster metrics"
+        },
+        {
+          "value": "whole-only",
+          "displayText": "Whole-cluster metrics only"
+        }
+        ]
     }
   ],
   "dependencies": {
     "R": [
       {
+        "name": "move2"
+      },
+      {
         "name": "lubridate"
       },
       {
         "name": "dplyr"
-      },
-      {
-        "name": "magrittr"
-      },
-      {
-        "name": "move2"
       },
       {
         "name": "tidyr"
@@ -33,13 +53,16 @@
         "name": "sf"
       },
       {
-        "name": "stringr"
-      },
-      {
         "name": "units"
       },
       {
-        "name": "pbapply"
+        "name": "cli"
+      },
+      {
+        "name": "purrr"
+      },
+      {
+        "name": "rlang"
       }
     ]
   },
@@ -49,9 +72,9 @@
   "language": "eng",
   "keywords": [
     "clusters",
-    "clustering", 
-    "vultures",
-    "feeding"
+    "metrics",
+    "avian",
+    "vultures"
   ],
   "people": [
     {
@@ -111,9 +134,13 @@
     {
       "name": "University of St Andrews",
       "comment": null
+    },
+    {
+      "name": "North Carolina Zoo, US",
+      "comment": null
     }
   ],
   "documentation": {
-    "url": "https://github.com/callumjclarke/Avian_Cluster_Detection/README.md"
+    "url": "https://github.com/dmpstats/Generate_Avian_Cluster_Metrics"
   }
 }
