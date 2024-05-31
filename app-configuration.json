@@ -1,3 +1,5 @@
 {
-    "clustercode": ""
+  "cluster_id_col": "clust_id",
+  "behav_col": "behav",
+  "cluster_tbl_type": "track-and-whole"
 }

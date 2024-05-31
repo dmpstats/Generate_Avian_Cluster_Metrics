@@ -1,27 +1,521 @@
 library('move2')
 library('lubridate')
-
-
-library('move2')
-library('lubridate')
 library('dplyr')
-library('magrittr')
 library('tidyr')
 library('Gmedian')
 library('sf')
-library('stringr')
 library('units')
-library('pbapply')
+library("cli")
+library("purrr")
+library("rlang")
 
-# Shortened 'not in':
+
+# Wee helpers
 `%!in%` <- Negate(`%in%`)
+not_null <- Negate(is.null)
 
+rFunction = function(data, 
+                     cluster_id_col = "clust_id", 
+                     behav_col = "behav",
+                     cluster_tbl_type = c("track-and-whole", "whole-only")) {
+  
+
+  #' -----------------------------------------------------------------
+  ## 1. Input validation -----
+  
+  # `cluster_id_col`
+  check_col_ids(
+    id_col = cluster_id_col, 
+    app_par_name = "Cluster ID Column", 
+    dt_names = colnames(data),
+    suggest_msg = paste0(
+      "Use clustering Apps such as {.href [Avian Cluster Detection](https://www.moveapps.org/apps/browser/81f41b8f-0403-4e9f-bc48-5a064e1060a2)} ",
+      "earlier in the workflow to generate the required column."),
+    proceed_msg = paste0(
+      "Cluster metrics will be calculated on location events grouped by column ",
+      "`", cluster_id_col, "`"
+    )
+  )
+  
+
+  # `behav_col`
+  if(not_null(behav_col)){
+    
+    check_col_ids(
+      id_col = behav_col, 
+      app_par_name = "Behaviour Category Column", 
+      dt_names = colnames(data),
+      suggest_msg = paste0(
+        "Use behavioural classification Apps such as {.href [Behavioural Classification ",
+        "for Vultures](https://www.moveapps.org/apps/browser/44bb2ffa-7d40-4fad-bff5-1269995ba1a2)} ",
+        "earlier in the workflow to generate the required column."),
+      proceed_msg = paste0(
+        "Behaviour-related cluster metrics will be calculated based on column `",
+        behav_col, "`"
+      )
+    )
+    
+    if(!is.character(data[[behav_col]])){
+      cli::cli_abort("Column {.arg behav_col} must be of type {.cls character}", 
+                     class = "invalid-behav-col-class")
+    }
+  }else{
+    logger.info(paste0(
+      "`behav_col` specified to `NULL`, therefore skipping derivation of ",
+      "behavioural-based cluster metrics."))
+  }
+    
+  
+  #' Type of output ------
+  cluster_tbl_type <- rlang::arg_match(cluster_tbl_type)
+  
+  
+  #' Input data columns ----------
+  
+  # 'timestamp_local', i.e. dependency on 'Add local time' app
+  if("timestamp_local" %!in% colnames(data)){
+    logger.fatal("Input data must contain column 'timestamp_local'.")
+    
+    cli::cli_abort(c(
+      "Input data must contain column {.code timestamp_local}.",
+      "i" = paste0(
+        "Deploy the App {.href [Add Local and Solar Time](https://www.moveapps.org/apps/browser/43272925-cd24-466f-bcb9-844a09f1806b)} ",
+        "ealier in the Workflow to add local time to the input data."
+      )
+    ),
+    class = "missing-input-col"
+    )
+  }
+  
+
+
+  if("nightpoint" %!in% names(data)){
+    miss_suntime_cols <- setdiff(c("sunset_timestamp", "sunrise_timestamp"), colnames(data))
+    
+    if(length(miss_suntime_cols) > 0){
+      logger.fatal(cli::cli_text("Input data must contain column{?s} {.code {miss_suntime_cols}}."))
+      cli::cli_abort(c(
+        "Input data must contain column{?s} {.code {miss_suntime_cols}}.",
+        "i" = paste0(
+          "Ensure the App {.href [Add Local and Solar Time](https://www.moveapps.org/apps/browser/43272925-cd24-466f-bcb9-844a09f1806b)} ",
+          "is deployed earlier in the Workflow to make {qty(miss_suntime_cols)} {?this/these} column{?s} available."
+        )
+      ),
+      class = "missing-input-col"
+      )
+    }
+  }
+  
+  
+  logger.info("Inputs checked - all good to proceed")
+  
+  logger.info(paste0(
+    "Summary of data for cluster metrics calculation:\n",
+    "         |- ", nrow(data), " location points\n",
+    "         |- ", mt_n_tracks(data), " tracks\n",
+    "         |- ", length(unique(data[[cluster_id_col]])), " clusters"
+  ))
+  
+
+  #' -------------------------------------------------------------
+  ## 2. Pre-processing  ------
+  
+  # Get timestamp and track ID columns
+  tm_id_col <- mt_time_column(data)
+  trk_id_col <- mt_track_id_column(data)
+  
+  # ensuring data is ordered by time within track ID
+  data <- data |> arrange(.data[[trk_id_col]], .data[[tm_id_col]])
+  
+  # Ensuring key variables are calculated
+  data <- data %>%
+    mutate(
+      hour_local = lubridate::hour(timestamp_local),
+      date_local = lubridate::date(timestamp_local),
+      timediff_hrs = mt_time_lags(., units = "hours")
+    )
+  
+  # if absent, generate nightpoint based solely on sunset and sunrise times
+  if("nightpoint" %!in% names(data)){
+    logger.warn(paste0(
+      "`nighpoint` column is not contained in the input data. Deriving nightpoints ",
+      "based on sunset and sunrise timestamps (no leeway)."
+    ))
+    
+    data <- data |> 
+      mutate(
+        nightpoint = ifelse(
+          between(lubridate::with_tz(timestamp, lubridate::tz(sunrise_timestamp)), # with_tz() ensures TZs consistency
+          sunrise_timestamp, 
+          sunset_timestamp),
+        0, 1))
+  }
+  
+  
+  # get names behaviour categories that are present in clusters
+  if(not_null(behav_col)){
+    behav_ctgs <- data |> 
+      dplyr::filter(!is.na(.data[[cluster_id_col]])) |> 
+      count(.data[[behav_col]]) |> 
+      pull(.data[[behav_col]]) |> 
+      as.character()  
+    
+    # extract name of feeding category
+    feed_ctg <- grep("[f|F]eeding", behav_ctgs, value = TRUE)
+  }else{
+    feed_ctg <- NULL
+    behav_ctgs <- NULL
+  }
+  
+
+  #' -------------------------------------------------------------
+  ## 3. Derive track-level summaries within clusters  -------
+  
+  logger.info("Generating track-level summaries within each cluster")
+  
+  ### 3.1 Basic summaries within each cluster ----
+  track_cluster_tbl <- data |> 
+    dplyr::filter(!is.na(.data[[cluster_id_col]])) %>%
+    dplyr::group_by(.data[[cluster_id_col]], .data[[trk_id_col]]) |> 
+    dplyr::summarise(
+      # combine cluster points into multipoint
+      all_points = st_combine(geometry),
+      # size-related
+      n_pts = n(),
+      n_pts_night = sum(nightpoint == 1),
+      n_pts_day = sum(nightpoint == 0),
+      # Time-related
+      first_dttm_local = min(timestamp_local),
+      last_dttm_local = max(timestamp_local),
+      duration_hrs = as.numeric(last_dttm_local - first_dttm_local, units = "hours"),
+      n_days_span = (ceiling_date(last_dttm_local, unit = "days") - floor_date(first_dttm_local, unit = "days")) %>% as.integer(),
+      n_days_unique = length(unique(date_local)),
+      n_days_empty = as.numeric(n_days_span - n_days_unique),
+      prop_days_empty = n_days_empty / n_days_span,
+      # Behaviour-related
+      if(not_null(behav_col)) count_ctgs(.data[[behav_col]], behav_ctgs),
+      med_feed_hour_local = if(not_null(feed_ctg)) median(hour_local[.data[[behav_col]] == feed_ctg], na.rm = TRUE),
+      #med_daytime_hour_lcl = median(hour_local[hour_local > 5 & hour_local < 17], na.rm = TRUE),
+      med_daytime_hour_local = median(hour_local[nightpoint == 0], na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    # Calculate track-level geometric medians in each cluster
+    dplyr::mutate(median_point = calcGMedianSF(.), .after = all_points) 
+  
+  
+  
+  
+  #' Add second geometry column for cluster-level centroids. These are
+  #' per-cluster, not per-bird.
+  #'
+  #' !IMPORTANT!: centroids computed as the geometric median of the
+  #' track-level medians within each cluster
+  wholeclusts <- track_cluster_tbl |> 
+    summarise(
+      clust_track_meds = st_combine(median_point),
+      .by = all_of(cluster_id_col)
+    ) %>%
+    mutate(clust_centroid = calcGMedianSF(.)) |> 
+    sf::st_set_geometry("clust_centroid") |> 
+    select(-clust_track_meds) |> 
+    as_tibble()
+  
+  track_cluster_tbl <- track_cluster_tbl %>% left_join(wholeclusts, by = cluster_id_col)
+  
+  
+  
+  ### 3.2 Sub-table with Accelerometer summaries, if ACC is available -----
+  
+  if ("var_acc_x" %in% colnames(data)) {
+  
+    logger.info("   [a] Accelerometer columns identified. Calculating ACC summaries")
+    
+    track_cluster_tbl_acc <- data |> 
+      # drop geometry for efficiency, by avoiding default parsing to multipoints by `summarise.sf()`
+      sf::st_drop_geometry() |> 
+      filter(!is.na(.data[[cluster_id_col]])) |> 
+      group_by(.data[[cluster_id_col]], .data[[trk_id_col]]) |> 
+      summarise(
+        across(starts_with("var_acc_"), \(x) median(x, na.rm = TRUE), .names = "med_{.col}"),
+        across(starts_with("var_acc_"), \(x) sd(x, na.rm = TRUE), .names = "sd_{.col}"),
+        .groups = "drop"
+      )
+    
+  } else {
+    logger.info("   |i No accelerometer data identified. Skipping ACC summaries")
+    track_cluster_tbl_acc <- NULL
+  }
+  
+  
+  
+  ### 3.3 Time-at-Carcass Calculations     -------------------------------------
+  logger.info("   [b] Deriving Time-at-Carcass metrics")
+  
+  #' generate columns `meanvisit_duration` `meanvisit_daytime_duration`
+  #' 
+  carctime <- timeAtCarcTab_(
+    dt = data, 
+    clust_col = cluster_id_col, 
+    trck_col = trk_id_col)
+  
+  
+  ### 3.4 Revisitation Calculations  -------------------------------------------
+  logger.info("   [c] Cyphering Revisitation metrics")
+  
+  #' generate columns  `mean_n_visits` and `mean_n_daytime_visits`
+  #' 
+  revisits <- revisitTab_(
+    trk_clust_dt = track_cluster_tbl, 
+    dt = data,
+    clust_col = cluster_id_col, 
+    trck_col = trk_id_col, 
+    tm_col = "timestamp_local")
+  
+  
+  ### 3.5 Night-Distance Calculations ------------------------------------------
+  logger.info("   [d] Cooking Night-distance metrics")
+  
+  #' generate columns `mean_night_dist`; `night_prop_250m` and `night_prop_1km`
+  #'
+  nightdists <- nightTab_(
+    dt = data, 
+    trk_clust_dt = track_cluster_tbl,
+    clust_col = cluster_id_col,
+    trck_col = trk_id_col)
+  
+  
+  ### 3.6. Arrival-Distance Calculations ---------------------------------------
+  logger.info("   [e] Hammering Arrival-Distance metrics")
+  
+  #' generate column `mean_arrival_dist` 
+  #' 
+  arrivaldists <- arrivalTab_(
+    dt = data, 
+    trk_clust_dt = track_cluster_tbl,
+    clust_col = cluster_id_col,
+    trck_col = trk_id_col,
+    tm_col = "timestamp_local")
+  
+  
+  ### 3.7 Stack outputs into final clustertable ---------------------------------
+  logger.info("   [f] Merging [a-e] metrics into primary track-level cluster table")
+  
+  track_cluster_tbl <- track_cluster_tbl |> 
+    left_join(carctime, by = c(cluster_id_col, trk_id_col)) |> 
+    left_join(revisits, by = c(cluster_id_col, trk_id_col)) |> 
+    left_join(nightdists, by = c(cluster_id_col, trk_id_col)) |> 
+    left_join(arrivaldists, by = c(cluster_id_col, trk_id_col)) |> 
+    st_set_geometry("median_point") #|> 
+    #select(-clust_centroid)
+  
+  
+  if (not_null(track_cluster_tbl_acc)) {
+    track_cluster_tbl <- track_cluster_tbl %>% 
+      left_join(track_cluster_tbl_acc, by = c(cluster_id_col, trk_id_col))
+  }
+  
+  
+
+  
+  #' --------------------------------------------------------------------------
+  ## 4. Generate whole cluster attributes     ---------
+  
+  logger.info("Generating whole-cluster summaries")
+  
+  ### 4.1 Nearest-track Calculations --------------------------------------------
+  logger.info("   [i] Summoning Nearest-Tracks metrics - this may run slowly!")
+  
+  nearbirds <- nearBirdsTab_(
+    dt = data, 
+    trk_clust_dt = track_cluster_tbl,
+    clust_col = cluster_id_col,
+    trck_col = trk_id_col,
+    tm_col = "timestamp_local")
+  
+  
+  ### 4.2 Aggregate over tracks ---------------------------------------
+
+  logger.info("   [ii] Summarizing and aggregating over track-level cluster metrics")
+  
+  # basic whole-cluster metrics
+  cluster_tbl <- data |> 
+    dplyr::filter(!is.na(.data[[cluster_id_col]])) %>%
+    dplyr::group_by(.data[[cluster_id_col]]) |> 
+    dplyr::summarise(
+      # combine cluster points into multipoint
+      clust_points = st_combine(geometry),
+      
+      # Time-related
+      spawn_dttm_lcl = min(timestamp_local),
+      cease_dttm_lcl = max(timestamp_local),
+      
+      # track membership
+      member_tracks_n = length(unique(.data[[trk_id_col]])),
+      member_tracks_ids = list(unique(.data[[trk_id_col]])),
+      
+      # lifespan metrics
+      duration_days = as.numeric(cease_dttm_lcl - spawn_dttm_lcl, units = "days"),
+      span_days = (ceiling_date(cease_dttm_lcl, unit = "days") - floor_date(spawn_dttm_lcl, unit = "days")) %>% as.integer(),
+      n_days_active = length(unique(date_local)),
+      n_days_inactive = span_days - n_days_active,
+      prop_days_inactive = n_days_inactive/span_days,
+
+      .groups = "drop"
+    ) |>
+    st_set_geometry("clust_points") %>%
+    # Calculate cluster centroids based on geometric medians
+    dplyr::mutate(centroid = calcGMedianSF(.), .after = cease_dttm_lcl) %>%
+    st_set_geometry("centroid") %>%
+    dplyr::select(-clust_points)
+    
+  
+  
+  # Attributes calculated from track-level cluster metrics 
+  cluster_track_based <- track_cluster_tbl %>%
+    group_by(.data[[cluster_id_col]]) %>%
+    summarise(
+      # location points frequency by behaviour
+      n_points = sum(n_pts, na.rm = TRUE),
+      across(any_of(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "n_{.col}"),
+      
+      avg_feed_hour_local = if(not_null(feed_ctg)) mean(med_feed_hour_local, na.rm = TRUE),
+      avg_daytime_hour_local = mean(med_daytime_hour_local, na.rm = TRUE),
+
+      avg_visit_duration = mean(meanvisit_duration, na.rm = TRUE),
+      avg_daytime_visit_duration = mean(meanvisit_daytime_duration, na.rm = TRUE),
+      avg_n_visits = mean(mean_n_visits, na.rm = TRUE),
+      avg_n_daytime_visits = mean(mean_n_daytime_visits, na.rm = TRUE),
+
+      # Distance calculations
+      avg_nightime_dist = mean(mean_night_dist, na.rm = TRUE),
+      avg_nightime_prop_250m = mean(night_prop_250m, na.rm = TRUE),
+      avg_nightime_prop_1km = mean(night_prop_1km, na.rm = TRUE),
+      avg_arrival_dists = mean(mean_arrival_dist, na.rm = TRUE),
+
+      .groups = "drop"
+    ) |> 
+    st_drop_geometry()
+  
+  
+  ### 4.3 Merge derived whole-clusters metrics  -----------------------------
+  cluster_tbl <- cluster_tbl |>
+    left_join(cluster_track_based, by = cluster_id_col) |> 
+    left_join(nearbirds, by = cluster_id_col) |>
+    #' drop move2 and sf classes for parsing as track data of the App's output, below
+    as_tibble()
+
+
+  ## 5. Finalise Outputs ---------------------------------------------------------
+  
+  #' Output either a move2_loc with both track-per-cluster and whole-cluster metrics
+  #' OR whole-cluster-only metrics. 
+  #' The chosen type of outputted cluster table is stored as an attribute of the output
+  if(cluster_tbl_type == "track-and-whole"){
+    
+    logger.info(paste0(
+      "Option 'track-and-whole' selected, so output to contain both track-per-cluster ",
+      "and whole-cluster metrics."
+    ))
+    
+    #' Output is a move2_loc object holding track-per-cluster metrics as the event
+    #' dataset and whole-clusters metrics as the track data. Track ID is the
+    #' cluster ID and the time column is the first timepoint of each track at a
+    #' given cluster
+    cluster_data <- mt_as_move2(
+      track_cluster_tbl |> select(-clust_centroid), 
+      time_column = "first_dttm_local", 
+      track_id_column = cluster_id_col
+    ) |> 
+      mt_set_track_data(cluster_tbl)  
+    
+    attr(cluster_data, "cluster_tbl_type") <- "track-and-whole"
+    
+  } else {
+    
+    logger.info("Option 'whole-only' selected, so output to contain only whole-cluster metrics")
+    
+    #' Output is a move2_loc object with whole-cluster metrics as the event
+    #' table. The track table is a placeholder with no further data
+    cluster_data <- mt_as_move2(
+      cluster_tbl, 
+      time_column = "spawn_dttm_lcl",
+      track_id_column = cluster_id_col
+    )
+    
+    attr(cluster_data, "cluster_tbl_type") <- "whole-only"
+  }
+  
+  
+  logger.info(paste0("Size of the generated cluster table: ", object.size(cluster_data) %>% format(units = "Mb")))
+  
+  logger.info("Right, that's the cluster metrics calculation done!")
+  
+  return(cluster_data)
+  
+}
+
+
+
+# Helper Functions ====================================================================
+
+check_col_ids <- function(id_col, app_par_name, dt_names, suggest_msg, proceed_msg){
+
+  call_id_col <- caller_arg(id_col)
+  
+  if(is.null(id_col)){
+    logger.fatal(paste0("`", caller_arg(id_col), "` is missing."))
+    cli::cli_abort(c(
+      "Parameter '{app_par_name}' ({.arg {call_id_col}}) must be a string, not `NULL`.",
+      "i" = "Please provide a valid column name for this parameter."
+    ),
+    call = rlang::caller_env(),
+    class = "invalid-id-col")
+    
+  } else if(!is.character(id_col) || length(id_col) > 1){
+    logger.fatal(paste0("`", call_id_col, "` must be a string."))
+    cli::cli_abort(
+      "Parameter '{app_par_name}' ({.arg {call_id_col}}) must be a string.",
+      call = rlang::caller_env(),
+      class = "invalid-id-col"
+    )
+    
+  } else if (id_col %!in% dt_names) {
+    logger.fatal(paste0(
+      "Input data does not have column '", id_col,"'. Please provide a ",
+      "valid column name with cluster ID annotations."
+    ))
+    cli::cli_abort(c(
+      "Specified column name {.arg {id_col}} must be present in the input data.",
+      "!" = "Please provide a valid column name for parameter '{app_par_name}' ({.arg {call_id_col}}).",
+      "i" = suggest_msg
+    ),
+    call = rlang::caller_env(),
+    class = "invalid-id-col")
+  }else{
+    logger.info(proceed_msg)
+  }
+    
+}
+
+
+
+#' //////////////////////////////////////////////////////////////////////////////
+#' Little helper to count frequencies of column elements which is compatible with use
+#' inside `summarise()`
+count_ctgs <- function(col, ctgs){
+  purrr::map(ctgs, ~tibble({{.x}} := sum(col == .x))) |> purrr::list_cbind()
+}
+
+
+#' //////////////////////////////////////////////////////////////////////////////
 # Function to calculate geometric medians:
 calcGMedianSF <- function(data) {
   
   if (st_geometry_type(data[1,]) == "POINT") {
+    
     med <- data %>% 
       st_coordinates()
+    
     med <- Gmedian::Weiszfeld(st_coordinates(data))$median %>% as.data.frame() %>%
       rename(x = V1, y = V2) %>%
       st_as_sf(coords = c("x", "y"), crs = st_crs(data)) %>%
@@ -30,17 +524,25 @@ calcGMedianSF <- function(data) {
   
   
   if (st_geometry_type(data[1,]) == "MULTIPOINT") {
+    
     med <- data %>% 
       st_coordinates() %>%
       as.data.frame() %>%
       group_by(L1) %>%
-      group_map(
-        ~ Gmedian::Weiszfeld(.)$median 
-      ) %>%
-      do.call(rbind, .) %>%
-      as.data.frame() %>%
-      st_as_sf(coords = colnames(.), crs = st_crs(data)) %>%
-      st_geometry()
+      group_map( ~st_point(Gmedian::Weiszfeld(.)$median) ) |> 
+      st_as_sfc(crs = st_crs(data))
+    
+    # med <- data %>% 
+    #   st_coordinates() %>%
+    #   as.data.frame() %>%
+    #   group_by(L1) %>%
+    #   group_map(
+    #     ~ Gmedian::Weiszfeld(.)$median 
+    #   ) %>%
+    #   do.call(rbind, .) %>%
+    #   as.data.frame() %>%
+    #   st_as_sf(coords = colnames(.), crs = st_crs(data)) %>%
+    #   st_geometry()
   }
   
   return(med)
@@ -48,517 +550,417 @@ calcGMedianSF <- function(data) {
 }
 
 
-# Main Function: ------------------------
-
-
-rFunction = function(data, clustercode = "") {
+#' //////////////////////////////////////////////////////////////////////////////
+#' Function to calculate daily average visit time spend by a track/animal in a given
+#' cluster, which is assumed as a proxy of time at carcass
+#' 
+timeAtCarcTab_ <- function(dt, clust_col, trck_col) {
   
-  # Input checks ----------------------------------------
-  if ("xy.clust" %!in% colnames(data)) {
-    logger.fatal("Input data does not have column 'xy.clust'. Please use 'Avian Cluster Detection' MoveApp prior to this in the workflow.")
+  if(!all(dt$nightpoint %in% c(0,1))){
+    cli::cli_abort(
+      "Column {.code nightpoint} in input data must only contain numeric values 0 and/or 1.", 
+      call = NULL)
   }
   
-  #' ----------------------------------------------------
-  # 8. Generate final clustertable ----------------------
-  # This will contain output cluster information
-  
-  tablestarttime <- Sys.time()
-  clustertable <- data %>%
-    filter(!is.na(xy.clust)) %>%
-    mutate(ID = mt_track_id(.), 
-           timestamp = mt_time(.),
-           timediff_hrs = mt_time_lags(.) %>% 
-             units::set_units("minutes") %>% 
-             units::drop_units()/60,) %>%
-    #as.data.frame() %>%
-    group_by(xy.clust, ID) %>%
+  carctime <- dt %>%
+    filter(!is.na(.data[[clust_col]])) %>%
+    # drop locally unnecessary geometry, for efficiency
+    st_drop_geometry() |> 
+    group_by(.data[[clust_col]], .data[[trck_col]], date_local) %>%
+    # Remove end-of-day points to exclude overnight time from daily average calculation
+    filter(row_number() != n()) %>%
     summarise(
-      geometry = st_combine(geometry),
-      all_cluster_points = geometry,
-      
-      # Time calculations:
-      firstdatetime = min(timestamp),
-      lastdatetime = max(timestamp),
-      days = length(unique(lubridate::date(timestamp))),
-      totalduration = (ceiling_date(lastdatetime, unit = "days") - floor_date(firstdatetime, unit = "days")) %>% as.integer(),
-      daysempty = as.numeric(totalduration - days),
-      daysemptyprop = daysempty / totalduration,
-      no_nightpoints = all(nightpoint == 0),
-      
-      # Behavioural data:
-      Total = n(),
-      SFeeding = sum(behav == "SFeeding"),
-      SRoosting = sum(behav == "SRoosting"),
-      SResting = sum(behav == "SResting"),
-      MedianHourFeed = median(hour[behav == "SFeeding"], na.rm = T),
-      MedianHourDay = median(hour[hour > 5 & hour < 17], na.rm = T),
-      
-      # Accelerometer calculations
-      # med_var_x = case_when(
-      #   "var_acc_x" %in% colnames(data) ~ median(var_acc_x, na.rm = T),
-      #   TRUE ~ NA
-      # ),
-      # med_var_y = case_when(
-      #   "var_acc_y" %in% colnames(data) ~ median(var_acc_y, na.rm = T),
-      #   TRUE ~ NA
-      # ),
-      # med_var_z = case_when(
-      #   "var_acc_z" %in% colnames(data) ~ median(var_acc_z, na.rm = T),
-      #   TRUE ~ NA
-      # ),
-      # sd_var_x = case_when(
-      #   "var_acc_x" %in% colnames(data) ~ sd(var_acc_x, na.rm = T),
-      #   TRUE ~ NA
-      # ),
-      # sd_var_y = case_when(
-      #   "var_acc_y" %in% colnames(data) ~ sd(var_acc_y, na.rm = T),
-      #   TRUE ~ NA
-      # ),
-      # sd_var_z = case_when(
-      #   "var_acc_z" %in% colnames(data) ~ sd(var_acc_z, na.rm = T),
-      #   TRUE ~ NA
-      # )
-      
-      .groups = "keep"
+      time_spent = sum(timediff_hrs, na.rm = TRUE),
+      time_spent_daytime = sum(timediff_hrs[nightpoint == 0], na.rm = TRUE),
+      .groups = "drop_last"
     ) %>%
-    st_as_sf(crs = st_crs(data))
-  
-  
-  clustertable %<>% mt_as_move2(time_column = "firstdatetime", track_id_column = "xy.clust") # switch to move2 for ease
-  
-  # Generate distance data:
-  logger.trace(paste0("Generating distance data for all clusters. This may run slowly"))
-  
-  
-  ## CLUSTERTABLE DATA PREP ---------------------------------------------------
-  
-  
-  # Reformat data for clustertable calculations
-  
-  # Update geometry column to be geometric medians 
-  # These are per-bird, not per-cluster
-  clustertable %<>% st_set_geometry(
-    calcGMedianSF(.) %>%
-      st_geometry()
-  )
-  
-  # Add second geometry column for cluster-wide centroids
-  # These are per-cluster, not per-bird
-  wholeclusts <- clustertable %>%
-    group_by(xy.clust) %>%
     summarise(
-      geometry = st_combine(geometry),
+      meanvisit_duration = mean(time_spent, na.rm = TRUE),
+      meanvisit_daytime_duration = mean(time_spent_daytime, na.rm = TRUE),
       .groups = "keep"
-    ) %>%
-    st_set_geometry(
-      calcGMedianSF(.) %>%
-        st_geometry() 
-    ) %>%
-    rename(wholeclust_geometry = geometry) %>%
-    as.data.frame()
-  clustertable %<>% left_join(wholeclusts, by = "xy.clust")
+    ) 
   
-  # Create matrix data for filtering speed
-  mat.data <- data %>%
-    mutate(ID = mt_track_id(.),
-           timestamp = mt_time(.)) %>%
-    as.data.frame() %>%
-    dplyr::select(any_of(c("ID",
-                           "geometry",
-                           "timestamp",
-                           "hour",
-                           "dist_m",
-                           "behav",
-                           "sunrise_timestamp",
-                           "sunset_timestamp",
-                           "timediff_hrs",
-                           "xy.clust",
-                           "nightpoint"))) %>%
-    st_as_sf(crs = st_crs(data))
-  
-  
-  ## FURTHER CLUSTERTABLE ATTRIBUTES -------------------------------------------
-  
-  ### a. Calculate accelerometer data if ACC is available
-  if ("var_acc_x" %in% colnames(data)) {
-    
-    logger.trace("   Accelerometer columns identified. Calculating ACC summaries")
-    
-    clustertable_acc <- data %>%
-      filter(!is.na(xy.clust)) %>%
-      mutate(ID = mt_track_id(.), 
-             timestamp = mt_time(.),
-             timediff_hrs = mt_time_lags(.) %>% 
-               units::set_units("minutes") %>% 
-               units::drop_units()/60,) %>%
-      #as.data.frame() %>%
-      group_by(xy.clust, ID) %>%
-      summarise(
-        # Accelerometer calculations
-        med_var_x = median(var_acc_x, na.rm = T),
-        med_var_y = median(var_acc_y, na.rm = T),
-        med_var_z = median(var_acc_z, na.rm = T),
-        
-        sd_var_x = sd(var_acc_x, na.rm = T),
-        sd_var_y = sd(var_acc_y, na.rm = T),
-        sd_var_z = sd(var_acc_z, na.rm = T),
-        
-        .groups = "keep"
-      )
-  } else {
-    logger.trace("   No accelerometer data identified. Skipping ACC summaries")
-  }
-  
-  ### b. Time-at-Carcass Calculations -----------------------------------------
-  logger.trace("   Generating [a. Time-at-Carcass data]")
-  
-  timeAtCarcTab <- function(clustdat) {
-    
-    carctime <- clustdat %>%
-      filter(!is.na(xy.clust)) %>%
-      as.data.frame() %>%
-      group_by(xy.clust, ID, date(timestamp)) %>%
-      # Remove all final points to prevent overnight locations messing things up:
-      filter(row_number() != n()) %>%
-      summarise(count = n(),
-                time_spent = sum(timediff_hrs),
-                time_spent_day = sum(timediff_hrs * !nightpoint),
-                .groups = "keep"
-      ) %>%
-      
-      group_by(xy.clust, ID) %>%
-      summarise(
-        meanvisit_time = mean(time_spent, na.rm = T),
-        meanvisit_time_day = mean(time_spent_day, na.rm = T),
-        .groups = "keep") 
-    return(carctime)
-  }
-  carctime <- timeAtCarcTab(mat.data)
-  
-  
-  ### c. Revisitation Calculations --------------------------------------------
-  logger.trace("   Generating [b. Revisitation data]")
-  
-  
-  revisitTab <- function(clustdat, clustertable) {
-    
-    revisit_calc <- function(row) {
-      
-      clust <- row$xy.clust
-      bird <- row$ID
-      firstdate <- as_datetime(row$firstdatetime) 
-      lastdate <- as_datetime(row$lastdatetime)
-      
-      nearpoints <- clustdat %>% 
-        filter(
-          between(timestamp, firstdate, lastdate),
-          ID == bird
-        ) %>%
-        mutate(incluster = ifelse(xy.clust == clust & !is.na(xy.clust), 1, 0),
-               indaycluster = ifelse(incluster == 1 & nightpoint == 0, 1, 0)
-        ) %>%
-        group_by(date(timestamp)) %>%
-        summarise(
-          visits = sum(rle(incluster)$values),
-          dayvisits = sum(rle(indaycluster)$values),
-          dayvisits = pmin(dayvisits, visits), # fix case where dayvisits > visits
-          .groups = "keep" 
-        ) %>%
-        ungroup() %>%
-        summarise(
-          meanvisits = mean(visits, na.rm = T),
-          meandayvisits = mean(dayvisits, na.rm = T),
-          .groups = "keep" 
-        )
-      
-      return(c(
-        nearpoints$meanvisits,
-        nearpoints$meandayvisits
-      ))
-    }
-    
-    revdat <- pbapply(clustertable, 1, revisit_calc) %>% 
-      t() %>%
-      as.data.frame() %>%
-      rename(meanvisits = V1, meanvisits_daytime = V2)
-    outclusts <- cbind(clustertable, revdat) %>%
-      as.data.frame() %>%
-      dplyr::select(c("xy.clust", "ID", "meanvisits", "meanvisits_daytime"))
-    return(outclusts)
-  }
-  
-  revisits <- revisitTab(mat.data, clustertable) 
-  
-  
-  
-  ### d. Night-Distance Calculations ------------------------------------------
-  
-  
-  
-  logger.trace("   Generating [c. Night-distance data]")
-  
-  nightTab <- function(clustdat, clustertable) {
-    
-    # ALTERNATIVE METHOD TEST
-    # Firstly, filter to all night locations
-    nightpts <- clustdat %>% 
-      dplyr::select(-xy.clust) %>%
-      as.data.frame() %>%
-      filter(nightpoint == 1) %>%
-      mutate(date = case_when(
-        # Fix night locations being 'split' by midnight:
-        # If before midnight, associate it with that same date
-        hour(timestamp) > 12 ~ date(timestamp),
-        # But if in the morning, associate it with the night before
-        hour(timestamp) < 12 ~ date(timestamp) - days(1)
-      ))
-    
-    # Generate second table:
-    # clust-bird-date, one entry for each clust visited by a bird on each date
-    clustdays <- clustdat %>%
-      as.data.frame() %>%
-      filter(!is.na(xy.clust)) %>%
-      group_by(xy.clust, ID, date(timestamp)) %>%
-      summarise() %>%
-      rename(date = `date(timestamp)`) %>%
-      
-      # Bind clust centroid data:
-      left_join(
-        clustertable %>%
-          as.data.frame() %>%
-          dplyr::select(c("xy.clust", "wholeclust_geometry")) %>%
-          .[!duplicated(.),] %>%
-          st_as_sf(crs = st_crs(data)),
-        by = "xy.clust", relationship = "many-to-many")  %>%
-      .[!duplicated(.),] 
-    
-    # The following table contains all night locations 
-    # and has matched them to a cluster visited by a bird on that same day.
-    # Where more than 1 cluster is visited by a bird within a day, the
-    # night location has been duplicated (once for each cluster) so that it can be grouped more than once.
-    night_table <- left_join(nightpts, clustdays, by = c("ID", "date"), relationship = "many-to-many") %>% 
-      filter(!is.na(xy.clust)) 
-    
-    # Now we introduce a distance column:
-    dists <- pbapply::pbmapply(st_distance, night_table$geometry, night_table$wholeclust_geometry)
-    nightdists <- cbind(night_table, dists)
-    
-    # Testing a new variable: proportion of nearby night points 
-    # This is the proportion of night points on the same day as this cluster 
-    # within 250m
-    nearnights <- nightdists %>%
-      group_by(xy.clust, ID) %>%
-      summarise(near_night_prop = sum(dists < 250) / n())
-    
-    
-    # Group by clust-ID-date and summarise, taking median first
-    nightdists_by_day <- nightdists %>%
-      group_by(ID, date, xy.clust) %>%
-      summarise(nightdist = median(dists, na.rm = T), .groups = "keep")
-    
-    # Finally, take mean per bird across several days
-    nightdists_bird_clust <- nightdists_by_day %>%
-      group_by(xy.clust, ID) %>%
-      summarise(nightdist_med = mean(nightdist, na.rm = T), .groups = "keep") %>%
-      left_join(nearnights, by = c("xy.clust", "ID"))
-    
-    return(nightdists_bird_clust)
-    
-  }
-  
-  nightdists <- nightTab(mat.data, clustertable)
-  
-  
-  
-  ### e. Arrival-Distance Calculations ---------------------------------------
-  logger.trace("   Generating [d. Arrival-Distance data]")
-  
-  arrivalTab <- function(clustdat, clustertable) {
-    
-    clustarrivals <- clustdat %>%
-      st_drop_geometry() %>%
-      as.data.frame() %>%
-      group_by(xy.clust, ID) %>%
-      summarise(day_of_arrival = min(date(timestamp)), .groups = "keep") %>%
-      rename(birdID = ID) %>%
-      left_join(
-        clustertable %>%
-          as.data.frame() %>%
-          dplyr::select(c("xy.clust", "wholeclust_geometry")) %>%
-          .[!duplicated(.),] %>%
-          st_as_sf(crs = st_crs(data)),
-        by = "xy.clust", relationship = "many-to-many") %>%
-      .[!duplicated(.),] %>%
-      st_set_geometry(.$wholeclust_geometry) %>%
-      dplyr::select(-wholeclust_geometry)
-    
-    genClustDists <- function(row) {
-      
-      clust <- row$xy.clust
-      bird <- row$birdID
-      arrivaldate <- row$day_of_arrival %>% as_date()
-      clustgeometry <- row$wholeclust_geometry %>%
-        st_sfc(crs = st_crs(clustdat))
-      
-      arrivaldist <- clustdat %>%
-        filter(between(
-          timestamp,
-          arrivaldate - hours(12), 
-          arrivaldate + hours(12)
-        ),
-        nightpoint == 1,
-        ID == bird) %>%
-        mutate(
-          dist = st_distance(geometry, clustgeometry)
-        ) %>%
-        .$dist %>%
-        mean(na.rm = T)
-      
-      return(arrivaldist)
-    }
-    arrivaldat <- pbapply::pbapply(clustarrivals, 1, genClustDists)
-    
-    outdat <- clustarrivals %>%
-      ungroup() %>%
-      mutate(arrivaldists = arrivaldat) %>%
-      st_drop_geometry() %>%
-      rename(ID = birdID) %>%
-      dplyr::select(-c("day_of_arrival"))
-    
-    return(outdat)
-  }
-  arrivaldists <- arrivalTab(mat.data, clustertable)
-  
-  
-  ### f. Nearest-Tag Calculations --------------------------------------------
-  logger.trace("   Generating [d. Nearest-Tag data]")
-  
-  nearBirdsTab <- function(clustdat, clustertable) {
-    
-    # List all clusters
-    topclusters <- clustertable %>% 
-      ungroup() %>%
-      st_set_geometry(.$wholeclust_geometry) %>%
-      group_by(xy.clust) %>%
-      summarise(
-        birds = paste(unique(ID), collapse = ", "),
-        firstdatetime = min(firstdatetime, na.rm = T),
-        lastdatetime = max(lastdatetime, na.rm = T),
-        nbirds = length(unique(ID)),
-        .groups = "keep" 
-      )
-    
-    distvals <- function(row) {
-      
-      clustID <- row$xy.clust
-      firstdatetime <- row$firstdatetime %>% as_datetime()
-      lastdatetime <- row$lastdatetime %>% as_datetime()
-      clustgeometry <- row$geometry %>%
-        st_sfc(crs = st_crs(clustdat))
-      
-      nearpoints <- clustdat %>%
-        filter(between(timestamp, firstdatetime - days(14), lastdatetime)) 
-      
-      activetags <- nearpoints %>%
-        filter(between(timestamp, firstdatetime, lastdatetime)) %>%
-        .$ID %>%
-        unique()
-      
-      nearpoints2 <- nearpoints %>% 
-        mutate(
-          dist = st_distance(geometry, clustgeometry)
-        ) %>% 
-        filter(ID %in% activetags,
-               ID %!in% row$birds
-        )
-      
-      mindist_m <- min(nearpoints2$dist, na.rm = T) %>%
-        units::set_units("metres") %>%
-        units::drop_units()
-      within_25k <- length(unique(nearpoints2$ID[nearpoints2$dist < units::set_units(25, "kilometres")]))
-      within_50k <- length(unique(nearpoints2$ID[nearpoints2$dist < units::set_units(50, "kilometres")]))
-      
-      return(c(mindist_m, within_25k, within_50k))
-    }
-    
-    birddat <- pbapply::pbapply(topclusters, 1, distvals) %>%
-      t() %>%
-      as.data.frame() %>%
-      rename(
-        mindist_m = V1,
-        within_25k = V2, 
-        within_50k = V3
-      )
-    
-    topclusters_final <- cbind(topclusters, birddat) %>%
-      as.data.frame() %>%
-      dplyr::select(c("xy.clust", "birds", "mindist_m", "within_25k", "within_50k"))
-    return(topclusters_final)
-  }
-  nearbirds <- nearBirdsTab(mat.data, clustertable)
-  
-  ### g. Stack outputs into final clustertable ---------------------------------
-  logger.trace("   Merging [a-f] into primary clustertable")
-  
-  clustertable %<>%
-    left_join(carctime, by = c("xy.clust", "ID")) %>%
-    left_join(revisits, by = c("xy.clust", "ID")) %>%
-    left_join(nightdists, by = c("xy.clust", "ID")) %>%
-    left_join(arrivaldists, by = c("xy.clust", "ID")) %>%
-    left_join(nearbirds, by = "xy.clust") %>%
-    mt_as_move2(time_column = "firstdatetime", track_id_column = "xy.clust")
-  
-  if ("var_acc_x" %in% colnames(data)) {
-    clustertable %<>% 
-      left_join(st_drop_geometry(clustertable_acc) %>% 
-                  dplyr::select(c("xy.clust", "med_var_x", "med_var_y", "med_var_z", "sd_var_x", "sd_var_y", "sd_var_z")), 
-                by = c("xy.clust", "ID"))
-  }
-  
-  
-  ## 9. Finalise Outputs ---------------------------------------------------------
-  
-  # Finally, remove 1-location clusters from tagdata and clustertable
-  rem <- clustertable$xy.clust[clustertable$Total == 1]
-  data %<>% mutate(
-    xy.clust = case_when(
-      xy.clust %in% rem ~ NA,
-      TRUE ~ xy.clust
-    )
-  ) %>%
-    dplyr::select(-c("ID", "X", "Y"))
-  clustertable %<>% filter(xy.clust %!in% rem)
-  
-  
-  # Looping complete - log time and release outputs
-  #tableendtime <- Sys.time()
-  #logger.trace(paste0("Clustertable generation completed. Time taken: ", 
-  #                    difftime(tableendtime, tablestarttime, units = "mins"), " mins."))
-  
-  clustertable %<>% as.data.frame() %>% st_as_sf() # temporarily convert to DF to add clustercodes (Move object creates errors)
-  logger.trace(paste0("Clustertable is size ", object.size(clustertable) %>% format(units = "Mb")))
-  
-  # Fix to remove overwritten clusters from clustertable:
-  logger.trace(paste0("Removing clusters that have since been overwritten in the tagdata: ", 
-                      toString(
-                        clustertable$xy.clust[which(clustertable$xy.clust %!in% data$xy.clust)]
-                      )))
-  
-  # Add clustercode:
-  clustertable %<>% mutate(xy.clust = ifelse(!is.na(xy.clust), paste0(clustercode, xy.clust), NA)) %>%
-    mt_as_move2(time_column = "firstdatetime", track_id_column = "xy.clust")  %>%
-    mt_as_track_attribute(c("birds", "mindist_m", "within_25k", "within_50k")) %>%
-    st_set_geometry(.$wholeclust_geometry) %>% # change geometry to be whole-cluster centroid (the same location will be shared by several rows)
-    dplyr::select(-"wholeclust_geometry")
-  data %<>% mutate(xy.clust = ifelse(!is.na(xy.clust), paste0(clustercode, xy.clust), NA))
-  
-  
-  # Add clustertable as an attribute of the main dataset
-  attr(data, "cluster_tbl") <- clustertable
-  
-  # Release outputs
-  saveRDS(clustertable, file = appArtifactPath("clustertable.rds")) 
-  return(data)
-  
-  
+  return(carctime)
 }
+
+
+
+#' //////////////////////////////////////////////////////////////////////////////
+#' Helpers to calculate daily average number of visits by a track/animal in a 
+#' given cluster
+
+#' -------------------------------------------- 
+#' Upper-level: run calculations iteratively for each track-in-cluster combination
+#' --------------------------------------------
+#' @param dt a `move2_loc` object
+#' @param trk_clust_dt a data.frame with track-level cluster data
+#' @param clust_col;trck_col;tm_col  a character string specifying the column
+#'   name in `dt` providing, respectively, the cluster ID assigned to location
+#'   points, the track ID of location points and the timestamp of location
+#'   points
+revisitTab_ <- function(trk_clust_dt, dt, clust_col, trck_col, tm_col) {
+  
+  # drop geometry, for efficiency
+  dt <- dt |> 
+    st_drop_geometry()
+  
+  #' compute avg daily visits for each track in a given cluster (i.e. by row of
+  #' clustertable) - here performed using `pmap()` and low-level helper `revisit_calc_`
+  trk_clust_dt |>
+    st_drop_geometry() |> 
+    mutate(
+      mn_visits = purrr::pmap(
+        .l = list(
+          clust = .data[[clust_col]], trck = .data[[trck_col]], 
+          start = first_dttm_local, end = last_dttm_local
+        ),
+        .f = \(clust, trck, start, end){
+          revisit_calc_(
+            clust = clust, trck = trck, start = start, end = end, 
+            dt = dt, clust_col = clust_col, trck_col = trck_col, tm_col = tm_col
+          )
+        }, 
+        .progress = TRUE
+      )
+    ) |> 
+    select(all_of(c(clust_col, trck_col)), mn_visits) |> 
+    tidyr::unnest(mn_visits)
+}
+
+#' -----------------------------------
+#' Lower-level: computing avg nr. visits/day of a given track to a given cluster
+#' -----------------------------------
+revisit_calc_ <- function(clust, trck, start, end, dt, clust_col, trck_col, tm_col){
+  
+  # filter for current track within cluster's time span
+  dt <- dt |> 
+    filter(between(.data[[tm_col]], start, end), .data[[trck_col]] == trck)
+  
+  # check data is ordered
+  if(is.unsorted(dt[[tm_col]])) stop("data must be ordered by time.")
+  
+  dt |> 
+    # Identify visits of track to current cluster, and those occurring at daytime
+    mutate(
+      #' `if_else` offers better handling of NAs in clust ID col via `missing` arg
+      #' 0s denote track locations events not grouped into current cluster.
+      #' Given data is ordered by time, 0s indicate instances where track
+      #' "left" the cluster
+      incluster = dplyr::if_else(.data[[clust_col]] == clust, 1, 0, missing = 0),
+      indaycluster = dplyr::if_else(incluster == 1 & nightpoint == 0, 1, 0)
+    ) |>
+    #' Nr. of visits and nr. of daytime visits per day of current track to current cluster
+    group_by(date_local) %>%
+    summarise(
+      visits = sum(rle(incluster)$values),
+      dayvisits = sum(rle(indaycluster)$values),
+      dayvisits = pmin(dayvisits, visits), # fix case where dayvisits > visits
+      .groups = "drop" 
+    ) %>%
+    #' Daily averages
+    summarise(
+      mean_n_visits = mean(visits, na.rm = T),
+      mean_n_daytime_visits = mean(dayvisits, na.rm = T),
+      .groups = "drop" 
+    )
+}
+
+
+
+#' //////////////////////////////////////////////////////////////////////////////
+#' Function to bind the following columns:
+#'  - `mean_night_dist`, average daily distance from night points to
+#'  centroids of visited clusters
+#'  
+#'  - `night_prop_250m` and `night_prop_1km`, the per-day proportion of night 
+#'  points within, respectively, 250m and 1km of a visited cluster
+#'  
+nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
+  
+  if(st_crs(dt) != st_crs(trk_clust_dt)){
+    cli::cli_abort("{.arg dt} and {.arg trk_clust_dt} must have the same CRS projection")
+  }
+  
+  # convert to tibble for cleaner processing, as move2 functionality not required here
+  dt <- dplyr::as_tibble(dt)
+  
+  # Firstly, filter to all night locations
+  nightpts <- dt %>% 
+    dplyr::select(-all_of(clust_col)) %>%
+    filter(nightpoint == 1) %>%
+    mutate(nightime_ymd = case_when(
+      # Fix night locations being 'split' by midnight:
+      # If before midnight, associate it with that same date
+      hour_local > 12 ~ date_local,
+      # But if in the morning, associate it with the night before
+      hour_local < 12 ~ date_local - days(1)
+    ))
+  
+  # Generate second table:
+  # clust-bird-date, one entry for each clust visited by a bird on each date
+  clustdays <- dt %>%
+    filter(!is.na(.data[[clust_col]])) %>%
+    dplyr::distinct(.data[[clust_col]], .data[[trck_col]], date_local) %>%
+    #' merge cluster centroids
+    left_join(
+      distinct(trk_clust_dt, .data[[clust_col]], clust_centroid), 
+      by = clust_col
+    ) |> 
+    distinct()
+  
+  
+  # The following table contains all night locations 
+  # and has matched them to a cluster visited by a bird on that same day.
+  # Where more than 1 cluster is visited by a bird within a day, the
+  # night location has been duplicated (once for each cluster) so that it can be
+  # grouped more than once.
+  night_table <- left_join(
+    nightpts, 
+    clustdays, 
+    by = c(trck_col, "nightime_ymd" = "date_local"), relationship = "many-to-many") %>%
+    filter(!is.na(.data[[clust_col]])) 
+  
+  #' distance between each night point and the centroid of a cluster visited in that day
+  night_table <- night_table %>%
+    mutate(night_dist = st_distance(geometry, clust_centroid, by_element = TRUE))
+  
+  # Testing a new variable: proportion of nearby night points 
+  # This is the proportion of night points on the same day as this cluster 
+  # within 250m and 1km
+  nearnights <- night_table %>%
+    group_by(.data[[clust_col]], .data[[trck_col]]) %>%
+    summarise(
+      night_prop_250m = sum(night_dist < units::set_units(250, "m")) / n(), 
+      night_prop_1km = sum(night_dist < units::set_units(1000, "m")) / n(),
+      .groups = "drop"
+    )
+  
+  
+  #' Calculate the per-day median distance of each track's night points to the
+  #' centroid of a visited cluster
+  nightdists_by_day <- night_table %>%
+    group_by(.data[[clust_col]], .data[[trck_col]], nightime_ymd) %>%
+    summarise(
+      med_night_dist = median(night_dist, na.rm = TRUE), 
+      .groups = "drop"
+    )
+  
+  
+  # Finally, take mean distance per track across days
+  nightdists_track_clust <- nightdists_by_day %>%
+    group_by(.data[[clust_col]], .data[[trck_col]]) %>%
+    summarise(
+      mean_night_dist = mean(med_night_dist, na.rm = TRUE), 
+      .groups = "drop"
+      ) %>%
+    left_join(nearnights, by = c(clust_col, trck_col))
+  
+  
+  return(nightdists_track_clust)
+}
+
+
+
+
+#' //////////////////////////////////////////////////////////////////////////////
+#' Compute the average distance between tracks' night-points and centroids of
+#' associated clusters on the date of arrival at the cluster (i.e. first overnight)
+#' 
+#' @param dt a `move2_loc` object
+#' @param trk_clust_dt a data.frame with track-level cluster data
+#' @param clust_col;trck_col;tm_col  a character string specifying the column
+#'   name in `dt` providing, respectively, the cluster ID assigned to location
+#'   points, the track ID of location points and the timestamp of location
+#'   points
+#' 
+#' @return a data.frame containing the key column `mean_arrival_dist` for
+#'   track-level cluster entries
+#' 
+arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
+  
+  if(st_crs(dt) != st_crs(trk_clust_dt)){
+    cli::cli_abort("{.arg dt} and {.arg trk_clust_dt} must have the same CRS projection.")
+  }
+  
+  # timezone required for accurate slicing of locations data below
+  tmzn <- tz(dt[[tm_col]])
+  
+  # Compute date of arrival (i.e. day of first visit) of tracks to clusters
+  clustarrivals <- dt %>%
+    sf::st_drop_geometry() %>%
+    dplyr::group_by(.data[[clust_col]], .data[[trck_col]]) %>%
+    dplyr::summarise(day_of_arrival = as_datetime(min(date_local), tz = tmzn), .groups = "drop") %>%
+    # merge cluster centroids
+    dplyr::left_join(
+      dplyr::distinct(trk_clust_dt, .data[[clust_col]], clust_centroid),
+      by = clust_col
+    ) %>%
+    dplyr::distinct() |> 
+    sf::st_set_geometry("clust_centroid")
+  
+  
+  # Core calculations
+  outdat <- clustarrivals |> 
+    mutate(
+      #' subset track's night-time locations within +/- 12hrs from its arrival
+      #' date to a given cluster
+      #' 
+      #' BC DOUBLE CHECKING QUESTION: this selects ALL (night-time) track
+      #' points, irrespective of their cluster affiliation, within the stipulated
+      #' period. Shouldn't it be only the points assigned to the cluster that we
+      #' are interested in here?
+      locs_slice = pmap(
+        list(trck = .data[[trck_col]], arr_dt = day_of_arrival, tz = tmzn),
+        .f = \(trck, arr_dt, tz, ann_dt = dt){
+          
+          #browser()
+          
+          ann_dt %>%
+            dplyr::filter(
+              .data[[trck_col]] == trck,
+              nightpoint == 1,
+              between(
+                .data[[tm_col]], 
+                arr_dt - hours(12),
+                arr_dt + hours(12)
+                #' BC QUESTION: Not sure it should be the following....?
+                #arr_dt,
+                #arr_dt + hours(24) - seconds(1)
+              )
+            ) |> 
+            # drop move2 attributes
+            as_tibble() |> 
+            dplyr::select(event_id, geometry)
+        }, 
+        .progress = TRUE)
+    ) |> 
+    # bring locations slice to the forefront, akin to a merge
+    tidyr::unnest(locs_slice) |> 
+    # calculate distances between night-point locations and cluster centroids
+    dplyr::mutate(dist = sf::st_distance(clust_centroid, geometry, by_element = TRUE)) |> 
+    sf::st_drop_geometry() |> 
+    # get the average distance from cluster centroids
+    dplyr::group_by(.data[[clust_col]], .data[[trck_col]], day_of_arrival) |> 
+    dplyr::summarise(
+      mean_arrival_dist = mean(dist, na.rm = TRUE), 
+      .groups = "drop"
+    ) |> 
+    dplyr::select(-day_of_arrival)
+  
+  return(outdat)
+}
+
+
+
+
+
+#' //////////////////////////////////////////////////////////////////////////////#
+#' Functions to calculate distance metrics between track location points and the
+#' centroid of each cluster, for non-member tracks "active" from 14-days prior
+#' to cluster spawning to the cluster's last timepoint.
+#' 
+#' -------------------------
+#'  Upper-level function
+#' -------------------------
+nearBirdsTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
+  
+  if(st_crs(dt) != st_crs(trk_clust_dt)){
+    cli::cli_abort("{.arg dt} and {.arg trk_clust_dt} must have the same CRS projection.")
+  }
+  
+  # List all clusters
+  topclusters <- trk_clust_dt %>% 
+    ungroup() %>%
+    st_set_geometry("clust_centroid") %>%
+    group_by(.data[[clust_col]]) %>%
+    summarise(
+      #tracks = paste(unique(.data[[trck_col]]), collapse = ", "),
+      tracks = list(unique(.data[[trck_col]])),
+      spawn_tm_loc = min(first_dttm_local, na.rm = TRUE),
+      end_tm_loc = max(last_dttm_local, na.rm = TRUE),
+      n_tracks = length(unique(.data[[trck_col]])),
+      .groups = "drop" 
+    )
+  
+  #' store csr to use in iterative `pmap` below
+  clust_crs <- st_crs(topclusters)
+  
+  #' For non-member tracks, relative to the centroid of a cluster, compute
+  #' (i) the closest location point
+  #'(ii) Number of tracks within 25km and 50km
+  topclusters |> 
+    mutate(
+      nearpts_prox = purrr::pmap(
+        .l = list(
+          trks = tracks, 
+          spawn_tm = spawn_tm_loc, 
+          end_tm = end_tm_loc, 
+          clst_ctrd = clust_centroid
+        ),
+        .f = \(trks, spawn_tm, end_tm, clst_ctrd, ...){
+          distvals_(
+            trks, spawn_tm, end_tm, clst_ctrd, clust_crs = clust_crs, 
+            dt = dt, tm_col = tm_col, trck_col = trck_col)
+        }, 
+        .progress = TRUE
+      )
+    ) |> 
+    unnest(nearpts_prox) |> 
+    as_tibble() |> 
+    dplyr::select(all_of(clust_col), trks_mindist_m, trks_n_within_25km, trks_n_within_50km)
+}
+
+
+#' -----------------------------
+#' Lower-level function
+#' -----------------------------
+distvals_ <- function(trks, spawn_tm, end_tm, clst_ctrd, 
+                      clust_crs, dt, tm_col, trck_col) {
+  
+  clst_ctrd <- st_sfc(clst_ctrd, crs = clust_crs)
+
+  #' get all point locations spanning from 14 days before the cluster
+  #' spawning to cluster end time, regardless of their cluster affiliation
+  nearpoints <- dt |>
+    dplyr::filter(between(.data[[tm_col]], spawn_tm - days(14), end_tm))
+
+  #' get track IDs of point locations occurring during the period
+  #' of the cluster
+  active_tracks <- nearpoints %>%
+    dplyr::filter(between(.data[[tm_col]], spawn_tm, end_tm)) %>%
+    #.[[trck_col]] %>%
+    pull(.data[[trck_col]]) |> 
+    unique()
+  
+  # subset for active tracks that are not part of the cluster
+  nearpoints_actv_out <- nearpoints |> 
+    filter(
+      .data[[trck_col]] %in% active_tracks,
+      .data[[trck_col]] %!in% trks
+    )
+  
+  #' For points of tracks that are not part of the cluster but occurred
+  #' during the cluster period, calculate their distance to the cluster
+  #' centroid
+  nearpoints_dist <- nearpoints_actv_out %>%
+    mutate(
+      dist = st_distance(geometry, clst_ctrd) |> units::set_units("m")
+      )
+  
+  #' For "active" tracks that not part of a given cluster, relative to
+  #' the cluster's centroid, find out:
+  #' (i) the the closest location point, across all non-member active tracks
+  #'(ii) how many tracks are within 25km and 50km
+  out <- nearpoints_dist |>
+    st_drop_geometry() |>
+    summarise(
+      trks_mindist_m = ifelse(length(dist) == 0, NA, min(dist, na.rm = TRUE)),  # ifelse used to skip annoying warning on min(empty) == Inf when `nearpoints_dist` is empty :\
+      #trks_mindist_m = ifelse(length(dist) == 0, NA, min(dist, na.rm = TRUE)) |> units::set_units("m"), # if one is too pesky with units...
+      trks_n_within_25km = length(unique(.data[[trck_col]][dist < units::set_units(25, "km")])),
+      trks_n_within_50km = length(unique(.data[[trck_col]][dist < units::set_units(50, "km")]))
+    )
+  
+  return(out)
+}
+
+
