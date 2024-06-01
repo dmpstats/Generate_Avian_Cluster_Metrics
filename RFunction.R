@@ -155,7 +155,7 @@ rFunction = function(data,
   # get names behaviour categories that are present in clusters
   if(not_null(behav_col)){
     behav_ctgs <- data |> 
-      dplyr::filter(!is.na(.data[[cluster_id_col]])) |> 
+      filter(!is.na(.data[[cluster_id_col]])) |> 
       count(.data[[behav_col]]) |> 
       pull(.data[[behav_col]]) |> 
       as.character()  
@@ -175,9 +175,9 @@ rFunction = function(data,
   
   ### 3.1 Basic summaries within each cluster ----
   track_cluster_tbl <- data |> 
-    dplyr::filter(!is.na(.data[[cluster_id_col]])) %>%
-    dplyr::group_by(.data[[cluster_id_col]], .data[[trk_id_col]]) |> 
-    dplyr::summarise(
+    filter(!is.na(.data[[cluster_id_col]])) %>%
+    group_by(.data[[cluster_id_col]], .data[[trk_id_col]]) |> 
+    summarise(
       # combine cluster points into multipoint
       all_points = st_combine(geometry),
       # size-related
@@ -200,7 +200,7 @@ rFunction = function(data,
       .groups = "drop"
     ) %>%
     # Calculate track-level geometric medians in each cluster
-    dplyr::mutate(median_point = calcGMedianSF(.), .after = all_points) 
+    mutate(median_point = calcGMedianSF(.), .after = all_points) 
   
   
   
@@ -216,7 +216,7 @@ rFunction = function(data,
       .by = all_of(cluster_id_col)
     ) %>%
     mutate(clust_centroid = calcGMedianSF(.)) |> 
-    sf::st_set_geometry("clust_centroid") |> 
+    st_set_geometry("clust_centroid") |> 
     select(-clust_track_meds) |> 
     as_tibble()
   
@@ -232,7 +232,7 @@ rFunction = function(data,
     
     track_cluster_tbl_acc <- data |> 
       # drop geometry for efficiency, by avoiding default parsing to multipoints by `summarise.sf()`
-      sf::st_drop_geometry() |> 
+      st_drop_geometry() |> 
       filter(!is.na(.data[[cluster_id_col]])) |> 
       group_by(.data[[cluster_id_col]], .data[[trk_id_col]]) |> 
       summarise(
@@ -339,9 +339,9 @@ rFunction = function(data,
   
   # basic whole-cluster metrics
   cluster_tbl <- data |> 
-    dplyr::filter(!is.na(.data[[cluster_id_col]])) %>%
-    dplyr::group_by(.data[[cluster_id_col]]) |> 
-    dplyr::summarise(
+    filter(!is.na(.data[[cluster_id_col]])) %>%
+    group_by(.data[[cluster_id_col]]) |> 
+    summarise(
       # combine cluster points into multipoint
       clust_points = st_combine(geometry),
       
@@ -364,7 +364,7 @@ rFunction = function(data,
     ) |>
     st_set_geometry("clust_points") %>%
     # Calculate cluster centroids based on geometric medians
-    dplyr::mutate(centroid = calcGMedianSF(.), .after = cease_dttm_lcl) %>%
+    mutate(centroid = calcGMedianSF(.), .after = cease_dttm_lcl) %>%
     st_set_geometry("centroid") %>%
     dplyr::select(-clust_points)
     
@@ -682,7 +682,7 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
   }
   
   # convert to tibble for cleaner processing, as move2 functionality not required here
-  dt <- dplyr::as_tibble(dt)
+  dt <- as_tibble(dt)
   
   # Firstly, filter to all night locations
   nightpts <- dt %>% 
@@ -700,7 +700,7 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
   # clust-bird-date, one entry for each clust visited by a bird on each date
   clustdays <- dt %>%
     filter(!is.na(.data[[clust_col]])) %>%
-    dplyr::distinct(.data[[clust_col]], .data[[trck_col]], date_local) %>%
+    distinct(.data[[clust_col]], .data[[trck_col]], date_local) %>%
     #' merge cluster centroids
     left_join(
       distinct(trk_clust_dt, .data[[clust_col]], clust_centroid), 
@@ -787,16 +787,16 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
   
   # Compute date of arrival (i.e. day of first visit) of tracks to clusters
   clustarrivals <- dt %>%
-    sf::st_drop_geometry() %>%
-    dplyr::group_by(.data[[clust_col]], .data[[trck_col]]) %>%
-    dplyr::summarise(day_of_arrival = as_datetime(min(date_local), tz = tmzn), .groups = "drop") %>%
+    st_drop_geometry() %>%
+    group_by(.data[[clust_col]], .data[[trck_col]]) %>%
+    summarise(day_of_arrival = as_datetime(min(date_local), tz = tmzn), .groups = "drop") %>%
     # merge cluster centroids
-    dplyr::left_join(
-      dplyr::distinct(trk_clust_dt, .data[[clust_col]], clust_centroid),
+    left_join(
+      distinct(trk_clust_dt, .data[[clust_col]], clust_centroid),
       by = clust_col
     ) %>%
-    dplyr::distinct() |> 
-    sf::st_set_geometry("clust_centroid")
+    distinct() |> 
+    st_set_geometry("clust_centroid")
   
   
   # Core calculations
@@ -816,7 +816,7 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
           #browser()
           
           ann_dt %>%
-            dplyr::filter(
+            filter(
               .data[[trck_col]] == trck,
               nightpoint == 1,
               between(
@@ -830,18 +830,18 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
             ) |> 
             # drop move2 attributes
             as_tibble() |> 
-            dplyr::select(event_id, geometry)
+            select(event_id, geometry)
         }, 
         .progress = TRUE)
     ) |> 
     # bring locations slice to the forefront, akin to a merge
     tidyr::unnest(locs_slice) |> 
     # calculate distances between night-point locations and cluster centroids
-    dplyr::mutate(dist = sf::st_distance(clust_centroid, geometry, by_element = TRUE)) |> 
-    sf::st_drop_geometry() |> 
+    mutate(dist = st_distance(clust_centroid, geometry, by_element = TRUE)) |> 
+    st_drop_geometry() |> 
     # get the average distance from cluster centroids
-    dplyr::group_by(.data[[clust_col]], .data[[trck_col]], day_of_arrival) |> 
-    dplyr::summarise(
+    group_by(.data[[clust_col]], .data[[trck_col]], day_of_arrival) |> 
+    summarise(
       mean_arrival_dist = mean(dist, na.rm = TRUE), 
       .groups = "drop"
     ) |> 
@@ -922,12 +922,12 @@ distvals_ <- function(trks, spawn_tm, end_tm, clst_ctrd,
   #' get all point locations spanning from 14 days before the cluster
   #' spawning to cluster end time, regardless of their cluster affiliation
   nearpoints <- dt |>
-    dplyr::filter(between(.data[[tm_col]], spawn_tm - days(14), end_tm))
+    filter(between(.data[[tm_col]], spawn_tm - days(14), end_tm))
 
   #' get track IDs of point locations occurring during the period
   #' of the cluster
   active_tracks <- nearpoints %>%
-    dplyr::filter(between(.data[[tm_col]], spawn_tm, end_tm)) %>%
+    filter(between(.data[[tm_col]], spawn_tm, end_tm)) %>%
     #.[[trck_col]] %>%
     pull(.data[[trck_col]]) |> 
     unique()
