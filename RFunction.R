@@ -185,6 +185,8 @@ rFunction = function(data,
       n_pts_night = sum(nightpoint == 1),
       n_pts_day = sum(nightpoint == 0),
       # Time-related
+      first_dttm = min(.data[[tm_id_col]]),
+      last_dttm = max(.data[[tm_id_col]]),
       first_dttm_local = min(timestamp_local),
       last_dttm_local = max(timestamp_local),
       duration_hrs = as.numeric(last_dttm_local - first_dttm_local, units = "hours"),
@@ -346,16 +348,18 @@ rFunction = function(data,
       clust_points = st_combine(geometry),
       
       # Time-related
-      spawn_dttm_lcl = min(timestamp_local),
-      cease_dttm_lcl = max(timestamp_local),
+      spawn_dttm = min(.data[[tm_id_col]]),
+      cease_dttm = max(.data[[tm_id_col]]),
+      spawn_dttm_local = min(timestamp_local),
+      cease_dttm_local = max(timestamp_local),
       
       # track membership
       member_tracks_n = length(unique(.data[[trk_id_col]])),
       member_tracks_ids = list(unique(.data[[trk_id_col]])),
       
       # lifespan metrics
-      duration_days = as.numeric(cease_dttm_lcl - spawn_dttm_lcl, units = "days"),
-      span_days = (ceiling_date(cease_dttm_lcl, unit = "days") - floor_date(spawn_dttm_lcl, unit = "days")) %>% as.integer(),
+      duration_days = as.numeric(cease_dttm_local - spawn_dttm_local, units = "days"),
+      span_days = (ceiling_date(cease_dttm_local, unit = "days") - floor_date(spawn_dttm_local, unit = "days")) %>% as.integer(),
       n_days_active = length(unique(date_local)),
       n_days_inactive = span_days - n_days_active,
       prop_days_inactive = n_days_inactive/span_days,
@@ -364,7 +368,7 @@ rFunction = function(data,
     ) |>
     st_set_geometry("clust_points") %>%
     # Calculate cluster centroids based on geometric medians
-    mutate(centroid = calcGMedianSF(.), .after = cease_dttm_lcl) %>%
+    mutate(centroid = calcGMedianSF(.), .after = cease_dttm_local) %>%
     st_set_geometry("centroid") %>%
     dplyr::select(-clust_points)
     
@@ -423,7 +427,7 @@ rFunction = function(data,
     #' given cluster
     cluster_data <- mt_as_move2(
       track_cluster_tbl |> select(-clust_centroid), 
-      time_column = "first_dttm_local", 
+      time_column = "first_dttm", 
       track_id_column = cluster_id_col
     ) |> 
       mt_set_track_data(cluster_tbl)  
@@ -438,7 +442,7 @@ rFunction = function(data,
     #' table. The track table is a placeholder with no further data
     cluster_data <- mt_as_move2(
       cluster_tbl, 
-      time_column = "spawn_dttm_lcl",
+      time_column = "spawn_dttm",
       track_id_column = cluster_id_col
     )
     

@@ -16,7 +16,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
         },
         "sf_column": {
           "type": "character",
@@ -29,7 +29,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
             },
             "levels": {
               "type": "character",
@@ -42,12 +42,12 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
           "attributes": {},
-          "value": ["first_dttm_local"]
+          "value": ["first_dttm"]
         },
         "track_id_column": {
           "type": "character",
@@ -70,7 +70,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm_lcl", "cease_dttm_lcl", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -93,10 +93,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm_lcl", "cease_dttm_lcl", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -104,6 +104,38 @@
               "type": "character",
               "attributes": {},
               "value": ["WCS.1", "WCS.10", "WCS.11", "WCS.12", "WCS.13", "WCS.14", "WCS.15", "WCS.16", "WCS.17", "WCS.18", "WCS.19", "WCS.2", "WCS.20", "WCS.21", "WCS.22", "WCS.23", "WCS.24", "WCS.25", "WCS.26", "WCS.27", "WCS.28", "WCS.29", "WCS.3", "WCS.30", "WCS.31", "WCS.32", "WCS.33", "WCS.34", "WCS.35", "WCS.36", "WCS.37", "WCS.38", "WCS.39", "WCS.4", "WCS.40", "WCS.41", "WCS.42", "WCS.43", "WCS.44", "WCS.45", "WCS.46", "WCS.47", "WCS.48", "WCS.49", "WCS.5", "WCS.50", "WCS.6", "WCS.7", "WCS.8", "WCS.9"]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["POSIXct", "POSIXt"]
+                }
+              },
+              "value": [1707883200, 1708686000, 1707883200, 1707919200, 1707991200, 1708012800, 1708081200, 1708099200, 1708182000, 1708257600, 1708272000, 1707915600, 1708344000, 1708430400, 1708509600, 1708599600, 1708603200, 1708689600, 1708790400, 1708855200, 1708786800, 1708866000, 1708009200, 1708934400, 1709042400, 1708948800, 1709046000, 1709121600, 1709125200, 1709218800, 1709294400, 1709398800, 1709301600, 1708099200, 1709377200, 1709474400, 1709560800, 1709647200, 1709737200, 1709823600, 1710000000, 1710082800, 1710172800, 1710255600, 1708167600, 1710043200, 1708354800, 1708444800, 1708527600, 1708610400]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["POSIXct", "POSIXt"]
+                }
+              },
+              "value": [1707890400, 1708754400, 1707897600, 1707980400, 1708077600, 1708034400, 1708088400, 1708153200, 1708239600, 1708268400, 1708322400, 1707980400, 1708423200, 1708495200, 1708581600, 1708668000, 1708610400, 1708758000, 1708844400, 1709020800, 1708844400, 1708945200, 1708322400, 1708941600, 1709100000, 1709017200, 1709103600, 1709200800, 1709190000, 1709272800, 1709359200, 1709416800, 1709359200, 1708146000, 1709974800, 1709535600, 1709625600, 1709719200, 1709964000, 1709877600, 1710054000, 1710136800, 1710223200, 1710309600, 1708246800, 1710406800, 1708380000, 1708495200, 1710453600, 1708671600]
             },
             {
               "type": "double",
@@ -3275,6 +3307,38 @@
             "tzone": {
               "type": "character",
               "attributes": {},
+              "value": ["UTC"]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["POSIXct", "POSIXt"]
+            }
+          },
+          "value": [1707883200, 1708686000, 1707883200, 1707919200, 1707991200, 1708012800, 1708081200, 1708099200, 1708182000, 1708257600, 1708272000, 1707915600, 1708344000, 1708430400, 1708509600, 1708599600, 1708603200, 1708689600, 1708790400, 1708855200, 1708786800, 1708866000, 1708009200, 1708934400, 1709042400, 1708948800, 1709046000, 1709121600, 1709125200, 1709218800, 1709294400, 1709398800, 1709301600, 1708099200, 1709377200, 1709474400, 1709560800, 1709647200, 1709737200, 1709823600, 1710000000, 1710082800, 1710172800, 1710255600, 1708167600, 1710043200, 1708354800, 1708444800, 1708527600, 1708610400]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["POSIXct", "POSIXt"]
+            }
+          },
+          "value": [1707890400, 1708754400, 1707897600, 1707980400, 1708077600, 1708034400, 1708088400, 1708153200, 1708239600, 1708268400, 1708322400, 1707980400, 1708423200, 1708495200, 1708581600, 1708668000, 1708610400, 1708758000, 1708844400, 1709020800, 1708844400, 1708945200, 1708322400, 1708941600, 1709100000, 1709017200, 1709103600, 1709200800, 1709190000, 1709272800, 1709359200, 1709416800, 1709359200, 1708146000, 1709974800, 1709535600, 1709625600, 1709719200, 1709964000, 1709877600, 1710054000, 1710136800, 1710223200, 1710309600, 1708246800, 1710406800, 1708380000, 1708495200, 1710453600, 1708671600]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "tzone": {
+              "type": "character",
+              "attributes": {},
               "value": ["Africa/Dar_es_Salaam"]
             },
             "class": {
@@ -3544,7 +3608,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
+          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
         },
         "sf_column": {
           "type": "character",
@@ -3557,7 +3621,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
+              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
             },
             "levels": {
               "type": "character",
@@ -3570,12 +3634,12 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
           "attributes": {},
-          "value": ["first_dttm_local"]
+          "value": ["first_dttm"]
         },
         "track_id_column": {
           "type": "character",
@@ -3598,7 +3662,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm_lcl", "cease_dttm_lcl", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -3621,10 +3685,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm_lcl", "cease_dttm_lcl", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -3632,6 +3696,38 @@
               "type": "character",
               "attributes": {},
               "value": ["A.1", "A.10", "A.100", "A.101", "A.102", "A.103", "A.104", "A.105", "A.106", "A.107", "A.108", "A.109", "A.11", "A.110", "A.111", "A.112", "A.113", "A.114", "A.115", "A.116", "A.117", "A.118", "A.119", "A.12", "A.120", "A.121", "A.122", "A.123", "A.124", "A.125", "A.126", "A.127", "A.128", "A.129", "A.13", "A.130", "A.131", "A.132", "A.133", "A.134", "A.135", "A.136", "A.137", "A.138", "A.139", "A.14", "A.140", "A.141", "A.15", "A.16", "A.17", "A.18", "A.19", "A.2", "A.20", "A.21", "A.22", "A.23", "A.24", "A.25", "A.26", "A.27", "A.28", "A.29", "A.3", "A.30", "A.31", "A.32", "A.33", "A.35", "A.36", "A.37", "A.38", "A.39", "A.4", "A.40", "A.41", "A.42", "A.43", "A.44", "A.45", "A.46", "A.47", "A.48", "A.49", "A.5", "A.50", "A.51", "A.52", "A.53", "A.54", "A.55", "A.56", "A.57", "A.58", "A.59", "A.6", "A.60", "A.61", "A.62", "A.63", "A.64", "A.65", "A.66", "A.67", "A.68", "A.69", "A.7", "A.70", "A.71", "A.72", "A.73", "A.74", "A.75", "A.76", "A.77", "A.78", "A.79", "A.8", "A.80", "A.81", "A.83", "A.84", "A.85", "A.86", "A.87", "A.88", "A.89", "A.9", "A.90", "A.91", "A.92", "A.93", "A.94", "A.95", "A.98", "A.99"]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["POSIXct", "POSIXt"]
+                }
+              },
+              "value": [1709179223, 1709647386, 1709979667, 1709989035, 1709998568, 1710001628, 1709976968, 1709981468, 1709982368, 1709992988, 1710062653, 1710069853, 1709655486, 1710080468, 1710057607, 1710072187, 1709803268, 1710060308, 1710061211, 1710065888, 1710082267, 1710147068, 1710165606, 1709179271, 1709980574, 1710158230, 1710142388, 1710146887, 1710160567, 1710146898, 1710246427, 1710248767, 1710261727, 1710234370, 1709200995, 1710257588, 1710263348, 1710233648, 1710320046, 1710320946, 1710325807, 1710426789, 1710433810, 1710392948, 1710417623, 1709300898, 1710079207, 1710414186, 1709309709, 1709376132, 1709397369, 1709468109, 1709485748, 1709214667, 1709530028.99900007, 1709565848, 1709651349, 1709658914, 1709720832, 1709735229, 1709179570, 1709214128, 1709227448, 1709272089, 1709282707, 1709285047, 1709311153, 1709367955, 1709378648, 1709391428, 1709390350, 1709627949, 1709722628, 1709737389, 1709299808, 1709179241, 1709198288, 1709224388, 1709278568, 1709288647, 1709368043, 1709371446, 1709378108, 1709379743, 1709386206, 1709365146, 1709452087, 1709454788, 1709468291, 1709552348, 1709566928, 1709570888, 1709645769, 1709714168, 1709718307, 1709726048, 1709383327, 1709742246, 1709179247, 1709283427, 1709371988, 1709376856, 1709381648, 1709381888, 1709458206, 1709464868, 1709476026, 1709396646, 1709540646, 1709622367, 1709640908, 1709647934, 1709713268, 1709719928, 1709739547, 1709802367, 1709803086, 1709827927, 1709542267, 1709265683, 1709830089, 1709448670, 1709794447, 1709816948, 1709807589, 1709891826, 1709894891, 1709912528, 1709564766, 1709917031, 1709886492, 1709883550, 1709903528.00099993, 1709884088, 1709887148, 1709969048, 1709988494]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["POSIXct", "POSIXt"]
+                }
+              },
+              "value": [1709199726, 1710141846, 1709984886, 1709989748, 1710001088, 1710056527, 1709980028, 1709982008, 1709984706, 1710060488, 1710068412, 1710075248, 1709711826, 1710151755, 1710061567, 1710140948, 1710088028, 1710060849, 1710063907, 1710319327, 1710083168, 1710148147, 1710230226, 1709196311, 1710234014, 1710348488, 1710142748, 1710156247, 1710229688, 1710152828, 1710248229, 1710250206, 1710318246, 1710257229, 1709229610, 1710262808, 1710328329, 1710439208, 1710330666, 1710321487, 1710329049, 1710430751, 1710439215, 1710393849, 1710426488, 1709305749, 1710081368, 1710419049, 1709366228, 1709397009, 1709456592, 1709470269, 1709528948, 1710439206, 1710244447, 1709625609, 1709710932, 1709699408, 1709723173, 1709796429, 1709202968, 1709227088, 1709271728, 1709284508, 1709286669, 1709293869, 1709364248, 1709372168, 1709383328, 1709621111, 1709983808, 1709629748, 1709728388, 1709738470, 1709364786, 1709188930, 1709224027, 1709276408, 1709364248, 1709299808, 1709371089, 1709373607, 1709379008, 1709382310, 1709450468, 1709367792, 1709452806, 1709460907, 1709547129, 1709566569, 1709570528, 1709621468, 1709706428, 1709714886, 1709719027, 1709728028, 1709536326, 1709794088, 1710439209, 1709995153, 1709373608, 1709381168, 1709555110, 1709384948, 1709462287, 1709475668, 1709477287, 1709454067, 1709980928, 1709976608, 1709646848, 1709648288, 1709714346, 1710334448, 1709827567, 1709802743, 1709810826, 1709969767, 1709813169, 1709278569, 1709888048, 1709450828, 1709799128, 1709882049, 1709811669.99799991, 1709900646, 1709896689, 1710405189, 1709718487, 1709970668, 1709888953, 1709893629, 1709967249, 1709886067, 1709892908, 1709974867, 1710002175]
             },
             {
               "type": "double",
@@ -11510,6 +11606,38 @@
             "tzone": {
               "type": "character",
               "attributes": {},
+              "value": ["UTC"]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["POSIXct", "POSIXt"]
+            }
+          },
+          "value": [1709179223, 1709647386, 1709979667, 1709989035, 1709998568, 1710001628, 1709976968, 1709981468, 1709982368, 1709992988, 1710062653, 1710069853, 1709655486, 1710080468, 1710057607, 1710072187, 1709803268, 1710060308, 1710061211, 1710065888, 1710082267, 1710147068, 1710165606, 1709179271, 1709980574, 1710158230, 1710142388, 1710146887, 1710160567, 1710146898, 1710246427, 1710248767, 1710261727, 1710234370, 1709200995, 1710257588, 1710263348, 1710233648, 1710320046, 1710320946, 1710325807, 1710426789, 1710433810, 1710392948, 1710417623, 1709300898, 1710079207, 1710414186, 1709309709, 1709376132, 1709397369, 1709468109, 1709485748, 1709214667, 1710241927, 1709530028.99900007, 1709565848, 1709651349, 1709658914, 1709720832, 1709735229, 1709179570, 1709214128, 1709227448, 1709272089, 1709282707, 1709285047, 1709311153, 1709367955, 1709378648, 1709391428, 1709390350, 1709627949, 1709722628, 1709737389, 1709299808, 1709179241, 1709198288, 1709224388, 1709278568, 1709288647, 1709368043, 1709371446, 1709378108, 1709379743, 1709386206, 1709365146, 1709452087, 1709454788, 1709468291, 1709552348, 1709566928, 1709570888, 1709645769, 1709714168, 1709718307, 1709726048, 1709383327, 1709742246, 1709179247, 1709283427, 1709371988, 1709376856, 1709381648, 1709381888, 1709458206, 1709464868, 1709476026, 1709396646, 1709540646, 1709622367, 1709640908, 1709647934, 1709713268, 1709719928, 1709739547, 1709802367, 1709803086, 1709827927, 1709542267, 1709807049, 1709265683, 1709830089, 1709448670, 1709794447, 1709816948, 1709807589, 1709891826, 1709894891, 1709912528, 1709564766, 1709639294, 1709917031, 1709886492, 1709883550, 1709903528.00099993, 1709884088, 1709887148, 1709969048, 1709988494]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["POSIXct", "POSIXt"]
+            }
+          },
+          "value": [1709199726, 1710141846, 1709984886, 1709989748, 1710001088, 1710056527, 1709980028, 1709982008, 1709984706, 1710060488, 1710068412, 1710075248, 1709711826, 1710151755, 1710061567, 1710140948, 1710088028, 1710060849, 1710063907, 1710319327, 1710083168, 1710148147, 1710230226, 1709196311, 1710234014, 1710348488, 1710142748, 1710156247, 1710229688, 1710152828, 1710248229, 1710250206, 1710318246, 1710257229, 1709229610, 1710262808, 1710328329, 1710439208, 1710330666, 1710321487, 1710329049, 1710430751, 1710439215, 1710393849, 1710426488, 1709305749, 1710081368, 1710419049, 1709366228, 1709397009, 1709456592, 1709470269, 1709528948, 1710439206, 1710244447, 1709537770, 1709625609, 1709710932, 1709699408, 1709723173, 1709796429, 1709202968, 1709227088, 1709271728, 1709284508, 1709286669, 1709293869, 1709364248, 1709372168, 1709383328, 1709621111, 1709983808, 1709629748, 1709728388, 1709738470, 1709364786, 1709188930, 1709224027, 1709276408, 1709364248, 1709299808, 1709371089, 1709373607, 1709379008, 1709382310, 1709450468, 1709367792, 1709452806, 1709460907, 1709547129, 1709566569, 1709570528, 1709621468, 1709706428, 1709714886, 1709719027, 1709728028, 1709536326, 1709794088, 1710439209, 1709995153, 1709373608, 1709381168, 1709555110, 1709384948, 1709462287, 1709475668, 1709477287, 1709454067, 1709980928, 1709976608, 1709646848, 1709648288, 1709714346, 1710334448, 1709827567, 1709802743, 1709810826, 1709969767, 1709549467, 1709813169, 1709278569, 1709888048, 1709450828, 1709799128, 1709882049, 1709811669.99799991, 1709900646, 1709896689, 1710405189, 1709718487, 1709641628, 1709970668, 1709888953, 1709893629, 1709967249, 1709886067, 1709892908, 1709974867, 1710002175]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "tzone": {
+              "type": "character",
+              "attributes": {},
               "value": ["Africa/Windhoek"]
             },
             "class": {
@@ -11809,7 +11937,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
         },
         "sf_column": {
           "type": "character",
@@ -11822,7 +11950,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "prop_days_empty", "SFeeding", "SResting", "SRoosting", "med_feed_hour_local", "med_daytime_hour_local", "meanvisit_duration", "meanvisit_daytime_duration", "mean_n_visits", "mean_n_daytime_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
             },
             "levels": {
               "type": "character",
@@ -11835,12 +11963,12 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
           "attributes": {},
-          "value": ["first_dttm_local"]
+          "value": ["first_dttm"]
         },
         "track_id_column": {
           "type": "character",
@@ -11863,7 +11991,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm_lcl", "cease_dttm_lcl", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -11886,10 +12014,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm_lcl", "cease_dttm_lcl", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "prop_days_inactive", "n_points", "n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local", "avg_daytime_hour_local", "avg_visit_duration", "avg_daytime_visit_duration", "avg_n_visits", "avg_n_daytime_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -11897,6 +12025,38 @@
               "type": "character",
               "attributes": {},
               "value": ["SAV.1", "SAV.10", "SAV.100", "SAV.101", "SAV.102", "SAV.103", "SAV.104", "SAV.105", "SAV.106", "SAV.107", "SAV.108", "SAV.11", "SAV.110", "SAV.112", "SAV.113", "SAV.114", "SAV.115", "SAV.116", "SAV.117", "SAV.118", "SAV.119", "SAV.12", "SAV.120", "SAV.121", "SAV.122", "SAV.123", "SAV.124", "SAV.125", "SAV.126", "SAV.128", "SAV.129", "SAV.13", "SAV.130", "SAV.131", "SAV.132", "SAV.133", "SAV.134", "SAV.135", "SAV.136", "SAV.137", "SAV.138", "SAV.139", "SAV.14", "SAV.140", "SAV.141", "SAV.142", "SAV.143", "SAV.144", "SAV.145", "SAV.146", "SAV.147", "SAV.148", "SAV.149", "SAV.15", "SAV.150", "SAV.151", "SAV.152", "SAV.153", "SAV.16", "SAV.17", "SAV.18", "SAV.19", "SAV.2", "SAV.20", "SAV.21", "SAV.22", "SAV.23", "SAV.24", "SAV.25", "SAV.26", "SAV.27", "SAV.28", "SAV.29", "SAV.3", "SAV.30", "SAV.31", "SAV.32", "SAV.33", "SAV.34", "SAV.35", "SAV.36", "SAV.37", "SAV.38", "SAV.39", "SAV.4", "SAV.40", "SAV.41", "SAV.42", "SAV.43", "SAV.44", "SAV.45", "SAV.46", "SAV.47", "SAV.48", "SAV.49", "SAV.5", "SAV.50", "SAV.51", "SAV.52", "SAV.53", "SAV.54", "SAV.55", "SAV.56", "SAV.57", "SAV.58", "SAV.59", "SAV.6", "SAV.60", "SAV.61", "SAV.62", "SAV.63", "SAV.64", "SAV.65", "SAV.66", "SAV.67", "SAV.68", "SAV.69", "SAV.7", "SAV.70", "SAV.71", "SAV.73", "SAV.74", "SAV.75", "SAV.76", "SAV.77", "SAV.78", "SAV.79", "SAV.8", "SAV.80", "SAV.81", "SAV.83", "SAV.84", "SAV.85", "SAV.86", "SAV.87", "SAV.88", "SAV.89", "SAV.9", "SAV.90", "SAV.91", "SAV.92", "SAV.93", "SAV.94", "SAV.95", "SAV.96", "SAV.98", "SAV.99"]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["POSIXct", "POSIXt"]
+                }
+              },
+              "value": [1707886820, 1708704020, 1709222714, 1709479822, 1709486214, 1708765509, 1709281808, 1709313312, 1709395507, 1709486122, 1709123408, 1707886836, 1709483408, 1709658013, 1709562010, 1709743216, 1709203811, 1709741109, 1709572509, 1709616921, 1709566227, 1707912008, 1709654713, 1709741120, 1709566209, 1709818209, 1709904611, 1709831731, 1709989836, 1709884511, 1709979337, 1708011011, 1709989807, 1709962519, 1709831726, 1709916037, 1709922308, 1709989809, 1709998220, 1710088210, 1710163819, 1710145811, 1708084820, 1710168907, 1710238508, 1710171019, 1710177311, 1710090920, 1710175206, 1710251108, 1710263708, 1710255609, 1710339619, 1708341937, 1710419720, 1710339607, 1710348020, 1710436508, 1708365008, 1708527310, 1708535709, 1708061720, 1707928207, 1708622108, 1708008928, 1707886837, 1707920438, 1708015236, 1708076408, 1708103708, 1708171208, 1708188009, 1708274409, 1708014609, 1708350312, 1708434610, 1708622108, 1708693813, 1708708527, 1707886808, 1707918309, 1707926711, 1708059610, 1708097407, 1708101013, 1708360807, 1708432508, 1708443006, 1708535706, 1708664410, 1708704330, 1707886836, 1707886836, 1707893111, 1707912021, 1708185608, 1708019476, 1708072208, 1708185908, 1708274437, 1708341908, 1708362908, 1708447205, 1708533609, 1708613722, 1708706413, 1708272036, 1708774221, 1708837217, 1708878609, 1708963208, 1708864508, 1708854019, 1708146013, 1708179637, 1708788608, 1708963508, 1708356626, 1708797037, 1708881308, 1709047820, 1709103609, 1709136009, 1709224208, 1708666506, 1708752909, 1709052011, 1708439409, 1709115308, 1709226912, 1708521006, 1709123707, 1709140522, 1709222719, 1708965633, 1709012105, 1709142605, 1708531214, 1709220619, 1709226919, 1709280009, 1709292312, 1709380819, 1709397008, 1709442016, 1709472609, 1709487014]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["POSIXct", "POSIXt"]
+                }
+              },
+              "value": [1708677009, 1708761609, 1709279708, 1709486108, 1709528408, 1709477721, 1709286010, 1709366118, 1709452508, 1709538908, 1709470809, 1707895211, 1709539209, 1710408607, 1709625320, 1709793912, 1710413420, 1709808621, 1709576728, 1709992819, 1709623209, 1710314409, 1709711719, 1709796012, 1710061207, 1709884809, 1709983807, 1709882424, 1710053111, 1709890820, 1709983513, 1708068008, 1710055209, 1709983522, 1709884508, 1709920208, 1709970937, 1710055208, 1710008723, 1710441036, 1710232208, 1710150008, 1708156508, 1710232208, 1710249008, 1710228020, 1710219621, 1710143713, 1710228008, 1710261608, 1710314407, 1710345614, 1710398708, 1708426209, 1710440712, 1710402908, 1710400808, 1710440708, 1708367121, 1708586412, 1708578025, 1710436512, 1707984009, 1708626320, 1709536808, 1707901509, 1707987908, 1708070111, 1708086923, 1708162809, 1710402908, 1708245009, 1708329313, 1708070409, 1708415720, 1708500008, 1708674908, 1708761309, 1708750810, 1710440707, 1707983711, 1707985808, 1708885511, 1708107913, 1708160436, 1708411510, 1708438819, 1708500012, 1708588521, 1708672808, 1708757110, 1710440728, 1707897309, 1707905707, 1707920420, 1708246807, 1708068008, 1708160712, 1708240822, 1708333508, 1708354521, 1708415708, 1708502111, 1708586417, 1708668626, 1708761310, 1708331407, 1708844411, 1708842619, 1708932626, 1709020807, 1708870836, 1708868712, 1708156508, 1710306026, 1708845609, 1709016311, 1708416008, 1708845606, 1708936221, 1709101809, 1709110820, 1710244820, 1709276424, 1709106909, 1709098509, 1709104808, 1708507822, 1709201713, 1709275508, 1709960426, 1709195420, 1709144737, 1709277608, 1709010036, 1709018409, 1709193311, 1708588820, 1709224807, 1709275509, 1709283608, 1709364617, 1709805612, 1709404210, 1709451020, 1709478009, 1709530207]
             },
             {
               "type": "double",
@@ -20714,6 +20874,38 @@
           "type": "integer",
           "attributes": {},
           "value": [30, 11, 4, 4, 3, 1, 1, 6, 3, 7, 9, 7, 3, 5, 6, 46, 12, 6, 11, 14, 1, 3, 5, 9, 162, 9, 8, 12, 14, 21, 6, 12, 4, 3, 8, 12, 11, 7, 2, 6, 9, 4, 9, 15, 3, 16, 11, 6, 7, 1, 7, 7, 6, 6, 3, 10, 20, 8, 11, 6, 0, 0, 8, 2, 18, 3, 24, 2, 10, 1, 9, 5, 8, 14, 8, 6, 10, 202, 9, 8, 10, 13, 13, 7, 8, 2, 26, 2, 8, 10, 1, 2, 4, 11, 6, 4, 9, 7, 5, 7, 656, 5, 5, 5, 12, 5, 17, 8, 10, 7, 7, 8, 7, 8, 8, 11, 9, 4, 8, 10, 4, 6, 6, 117, 9, 7, 11, 5, 8, 8, 5, 28, 7, 3, 1, 2, 1, 1, 9, 1, 9, 7, 16, 23, 5, 13, 15, 1, 8, 3, 4, 5, 10, 3, 5, 3, 9, 3, 15, 2, 6, 4, 2]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["POSIXct", "POSIXt"]
+            }
+          },
+          "value": [1707886820, 1708704020, 1709222714, 1709479830, 1709479822, 1709488219, 1709486214, 1708765509, 1709281808, 1709313312, 1709395507, 1709486122, 1709123408, 1707886836, 1709483408, 1709658013, 1709562010, 1709743216, 1709203811, 1709741109, 1709572509, 1709989220, 1709616921, 1709566227, 1707912008, 1709654713, 1709741120, 1709566209, 1709818209, 1709904611, 1709831731, 1709989836, 1709884511, 1709979337, 1708011011, 1709989807, 1709962519, 1709831726, 1709916037, 1709922308, 1709989809, 1709998220, 1710088210, 1710163819, 1710145811, 1708084820, 1710168907, 1710238508, 1710171019, 1710177311, 1710090920, 1710175206, 1710251108, 1710263708, 1710255609, 1710339619, 1708341937, 1710419720, 1710339607, 1710348020, 1710436508, 1708365008, 1708527310, 1708535709, 1708609521, 1709100609, 1708061720, 1709100610, 1707928207, 1708622108, 1708704320, 1708008928, 1707886837, 1707920438, 1708015236, 1708076408, 1708103708, 1708171208, 1708188009, 1708274409, 1708014609, 1708350312, 1708434610, 1708622108, 1708693813, 1708708527, 1707886808, 1707918309, 1707928837, 1707926711, 1708664436, 1708059610, 1708097407, 1708101013, 1708360807, 1708432508, 1708443006, 1708535706, 1708664410, 1708704330, 1707886836, 1707886836, 1707893111, 1707912021, 1708185608, 1708019476, 1708072208, 1708185908, 1708274437, 1708341908, 1708362908, 1708447205, 1708533609, 1708613722, 1708706413, 1708272036, 1708774221, 1708837217, 1708878609, 1708963208, 1708864508, 1708854019, 1708146013, 1708179637, 1708788608, 1708963508, 1708356626, 1708797037, 1708881308, 1709047820, 1709103609, 1709136009, 1709224208, 1708666506, 1709106909, 1708875008, 1709104807, 1708752909, 1709041507, 1708923637, 1709041536, 1709052011, 1708439409, 1709115308, 1709226912, 1708521006, 1709123707, 1709140522, 1709222719, 1708965633, 1709012105, 1709142605, 1708531214, 1709220619, 1709226919, 1709280009, 1709307020, 1709292312, 1709380819, 1709397008, 1709442016, 1709472609, 1709487014]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["POSIXct", "POSIXt"]
+            }
+          },
+          "value": [1708677009, 1708761609, 1709279708, 1709486108, 1709484007, 1709528408, 1709486214, 1709477721, 1709286010, 1709366118, 1709452508, 1709538908, 1709470809, 1707895211, 1709539209, 1710408607, 1709625320, 1709793912, 1710413420, 1709808621, 1709576728, 1709992819, 1709625307, 1709623209, 1710314409, 1709711719, 1709796012, 1710061207, 1709884809, 1709983807, 1709882424, 1710053111, 1709890820, 1709983513, 1708068008, 1710055209, 1709983522, 1709884508, 1709920208, 1709970937, 1710055208, 1710008723, 1710441036, 1710232208, 1710150008, 1708156508, 1710232208, 1710249008, 1710228020, 1710219621, 1710143713, 1710228008, 1710261608, 1710314407, 1710345614, 1710398708, 1708426209, 1710440712, 1710402908, 1710400808, 1710440708, 1708367121, 1708586412, 1708578025, 1710436512, 1709104808, 1709534709, 1709102709, 1707984009, 1708626320, 1709536808, 1708017307, 1707901509, 1707987908, 1708070111, 1708086923, 1708162809, 1710402908, 1708245009, 1708329313, 1708070409, 1708415720, 1708500008, 1708674908, 1708761309, 1708750810, 1710440707, 1707920424, 1707983711, 1707985808, 1708664436, 1708885511, 1708107913, 1708160436, 1708411510, 1708438819, 1708500012, 1708588521, 1708672808, 1708757110, 1710440728, 1707897309, 1707905707, 1707920420, 1708246807, 1708068008, 1708160712, 1708240822, 1708333508, 1708354521, 1708415708, 1708502111, 1708586417, 1708668626, 1708761310, 1708331407, 1708844411, 1708842619, 1708932626, 1709020807, 1708870836, 1708868712, 1708156508, 1710306026, 1708845609, 1709016311, 1708416008, 1708845606, 1708936221, 1709101809, 1709110820, 1710244820, 1709276424, 1708765509, 1709106909, 1708925710, 1709104807, 1708752909, 1709098509, 1708923637, 1709098509, 1709104808, 1708507822, 1709201713, 1709275508, 1709960426, 1709195420, 1709144737, 1709277608, 1709010036, 1709018409, 1709193311, 1708588820, 1709224807, 1709275509, 1709283608, 1709364617, 1709296512, 1709805612, 1709404210, 1709451020, 1709478009, 1709530207]
         },
         {
           "type": "double",
