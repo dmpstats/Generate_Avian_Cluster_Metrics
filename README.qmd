@@ -209,7 +209,12 @@ track_clust_details <- list(
   ),
   "`mean_arrival_dist`" = tibble(
     Description = "The mean distance between track's night-points and the centroid of the cluster on the date of arrival (i.e. first visit; unit: meters)",
-    Calculation = "Filter night-time location points spanning the date of the first visit to the cluster, and compute the mean distance to the cluster's centroid")
+    Calculation = "Filter night-time location points spanning the date of the first visit to the cluster, and compute the mean distance to the cluster's centroid"
+  ),
+  "`med_var_acc_<xyz>` and `sd_var_acc_<xyz>`" = tibble(
+    Description = "Median and standard deviation, respectively, of Accelerometer variance across track location points within the cluster, for each active accelerometer axis (`x`, `y` and/or `z`). Only calculated when accelerometer data is available.",
+    Calculation = "Median and SD of ACC variances on track points annotated with each cluster ID "
+  )
 )
 
 
@@ -235,14 +240,16 @@ list_rbind(track_clust_details, names_to = "Attribute Name") |>
 #| echo: false
 
 # cross-checking if output colnames match those in output description table
-track_clust_details_names <- names(track_clust_details) |> 
+track_clust_details_names <- names(track_clust_details) %>%
+  .[!stringr::str_detect(., "var_acc_<xyz>")] |> 
   stringr::str_remove_all("`") |> 
   stringr::str_remove("<behaviour-category> \\[e.g. ") |>
   stringr::str_remove("\\]") |> 
   stringr::str_split(" and |, ") |> 
   as_vector()
-  
-setdiff(track_clust_tbl_names, track_clust_details_names)
+
+
+symdiff(track_clust_tbl_names, track_clust_details_names)
 
 ```
 
@@ -386,6 +393,6 @@ clust_details_names <- names(clust_details) |>
   stringr::str_split(" and |, ") |> 
   as_vector()
   
-setdiff(clust_tbl_names, clust_details_names)
+symdiff(clust_tbl_names, clust_details_names)
 
 ```
