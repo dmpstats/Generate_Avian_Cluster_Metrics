@@ -90,8 +90,9 @@ identical(new, old)
 
 
 ### ---- output comparison: track tables [aka whole cluster metrics)
-out_dt_nam_trck <- mt_track_data(out_dt_nam) |> units::drop_units() |> data.frame()
+out_dt_nam_trck <- mt_track_data(out_dt_nam) |> units::drop_units() |> data.frame() |> arrange(clust_id)
 out_dt_nam_old_trck <- mt_track_data(out_dt_nam_old) |> 
+  arrange() |> 
   rename(
     clust_id = xy.clust,
     member_tracks = birds,
@@ -165,7 +166,9 @@ summary(out_dt$mean_arrival_dist - out_dt_utc$mean_arrival_dist)
 
 out_dt_gaia <- rFunction(data = test_dt$gaia)
 out_dt_gaia
+
 attributes(out_dt_gaia)
+mt_is_time_ordered(out_dt_gaia)
 
 sense_check_map(clust_metrics = out_dt_gaia, loc_dt = test_dt$gaia)
 
@@ -179,26 +182,26 @@ out_dt_wcs <- rFunction(
     #filter(individual_name_deployment_id == "AW196499..deploy_id.2023814814.")
 )
 
+out_dt_wcs
+
 sense_check_map(clust_metrics = out_dt_wcs, loc_dt = test_dt$wcs)
 
 
 
 #' ---------------------------------
 #' ---- South Africa vfa
-out_dt_sa_vfa <- rFunction(
-  data = test_dt$sa_vfa
-)
+out_dt_sa_vfa <- rFunction(data = test_dt$sa_vfa)
 
 out_dt_sa_vfa
+
+mt_is_track_id_cleaved(out_dt_sa_vfa)
 
 sense_check_map(out_dt_sa_vfa, test_dt$sa_vfa)
 
 
 #' --------------------------------
 #' --- Savahn 
-out_dt_savahn <- rFunction(
-  data = test_dt$savahn
-)
+out_dt_savahn <- rFunction(data = test_dt$savahn)
 
 out_dt_savahn
 
@@ -209,6 +212,7 @@ out_dt_ken_tnz <- rFunction(
   data = test_dt$ken_tnz
 )
 
+out_dt_ken_tnz
 
 
 
