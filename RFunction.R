@@ -113,7 +113,7 @@ rFunction = function(data,
     "Summary of data for cluster metrics calculation:\n",
     "         |- ", nrow(data), " location points\n",
     "         |- ", mt_n_tracks(data), " tracks\n",
-    "         |- ", length(unique(data[[cluster_id_col]])), " clusters"
+    "         |- ", sum(!is.na(unique(data[[cluster_id_col]]))), " clusters"
   ))
   
 
@@ -316,8 +316,6 @@ rFunction = function(data,
       left_join(track_cluster_tbl_acc, by = c(cluster_id_col, trk_id_col))
   }
   
-  
-
   
   #' --------------------------------------------------------------------------
   ## 4. Generate whole cluster attributes     ---------

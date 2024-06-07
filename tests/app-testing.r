@@ -253,3 +253,19 @@ bench::mark(check = FALSE,
 )
 
 
+
+
+
+
+
+metrics_out <- readRDS("C:/Users/Bruno/Downloads/Workflow_Instance_001__Generate_Avian_Cluster_Metrics__2024-06-05_16-33-10.rds")
+
+odd_clusts <- mt_track_data(metrics_out) |> filter(prop_days_inactive < 0) |> 
+  pull(clust_id)
+
+clust_det_output <- readRDS("C:/Users/Bruno/Downloads/Workflow_Instance_001__Avian_Cluster_Detection__2024-06-05_16-27-25.rds")
+
+rFunction(clust_det_output |>  filter(clust_id %in% odd_clusts))
+
+rFunction(clust_det_output)
+
