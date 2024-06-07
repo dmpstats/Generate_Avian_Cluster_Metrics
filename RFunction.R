@@ -409,6 +409,11 @@ rFunction = function(data,
 
   ## 5. Finalise Outputs ---------------------------------------------------------
   
+  # sort both tables by starting cluster time (ascending)
+  cluster_tbl <- cluster_tbl |> arrange(spawn_dttm_local)
+  track_cluster_tbl <- track_cluster_tbl |> arrange(.data[[cluster_id_col]], first_dttm_local)
+
+  
   #' Output either a move2_loc with both track-per-cluster and whole-cluster metrics
   #' OR whole-cluster-only metrics. 
   #' The chosen type of outputted cluster table is stored as an attribute of the output
