@@ -234,7 +234,7 @@ test_that("Expected outcome of `timeAtCarcTab_()` has not changed", {
 
 test_that("output colnames match those in output documentation", { 
   
-  out <- rFunction(data = test_sets$wcs |> slice(1:100))
+  out <- rFunction(data = test_sets$nam |> slice(1:500))
   
   track_clust_tbl_names <- out |> 
     as_tibble() |> 
@@ -254,7 +254,16 @@ test_that("output colnames match those in output documentation", {
     stringr::str_remove("<behaviour-category> \\[e.g. ") |>
     stringr::str_remove("\\]") |> 
     stringr::str_split(" and |, ") |> 
-    as_vector()
+    as_vector() |> 
+    # unpack acc colnames
+    sapply(\(x){
+      if(grepl("acc", x)){
+        x <- paste0(stringr::str_replace(x, "<xyz>", ""), c("x", "y", "z"))
+      }
+      return(x)
+    }, 
+    USE.NAMES = FALSE) |> 
+    unlist()
   
   expect_setequal(track_clust_tbl_names, track_clust_details_names)
   

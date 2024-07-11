@@ -193,10 +193,8 @@ rFunction = function(data,
       n_days_span = (ceiling_date(last_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(first_dttm_local, unit = "days")) %>% as.integer(),
       n_days_unique = length(unique(date_local)),
       n_days_empty = as.numeric(n_days_span - n_days_unique),
-      prop_days_empty = n_days_empty / n_days_span,
       # Behaviour-related
       if(not_null(behav_col)) count_ctgs(.data[[behav_col]], behav_ctgs),
-      med_feed_hour_local = if(not_null(feed_ctg)) median(hour_local[.data[[behav_col]] == feed_ctg], na.rm = TRUE),
       #med_daytime_hour_lcl = median(hour_local[hour_local > 5 & hour_local < 17], na.rm = TRUE),
       med_daytime_hour_local = median(hour_local[nightpoint == 0], na.rm = TRUE),
       .groups = "drop"
@@ -264,7 +262,7 @@ rFunction = function(data,
   ### 3.4 Revisitation Calculations  -------------------------------------------
   logger.info("   [c] Cyphering Revisitation metrics")
   
-  #' generate columns  `mean_n_visits` and `mean_n_daytime_visits`
+  #' generate columns  `mean_n_visits`
   #' 
   revisits <- revisitTab_(
     trk_clust_dt = track_cluster_tbl, 
@@ -338,7 +336,7 @@ rFunction = function(data,
   logger.info("   [ii] Summarizing and aggregating over track-level cluster metrics")
   
   # basic whole-cluster metrics
-  cluster_tbl <- data |> 
+  cluster_tbl <- data |>  
     filter(!is.na(.data[[cluster_id_col]])) %>%
     group_by(.data[[cluster_id_col]]) |> 
     summarise(
@@ -360,7 +358,6 @@ rFunction = function(data,
       span_days = (ceiling_date(cease_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(spawn_dttm_local, unit = "days")) %>% as.integer(),
       n_days_active = length(unique(date_local)),
       n_days_inactive = span_days - n_days_active,
-      prop_days_inactive = n_days_inactive/span_days,
 
       .groups = "drop"
     ) |>
@@ -380,13 +377,11 @@ rFunction = function(data,
       n_points = sum(n_pts, na.rm = TRUE),
       across(any_of(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "n_{.col}"),
       
-      avg_feed_hour_local = if(not_null(feed_ctg)) mean(med_feed_hour_local, na.rm = TRUE),
       avg_daytime_hour_local = mean(med_daytime_hour_local, na.rm = TRUE),
 
       avg_visit_duration = mean(meanvisit_duration, na.rm = TRUE),
       avg_daytime_visit_duration = mean(meanvisit_daytime_duration, na.rm = TRUE),
       avg_n_visits = mean(mean_n_visits, na.rm = TRUE),
-      avg_n_daytime_visits = mean(mean_n_daytime_visits, na.rm = TRUE),
 
       # Distance calculations
       avg_nightime_dist = mean(mean_night_dist, na.rm = TRUE),
@@ -653,21 +648,17 @@ revisit_calc_ <- function(clust, trck, start, end, dt, clust_col, trck_col, tm_c
       #' 0s denote track locations events not grouped into current cluster.
       #' Given data is ordered by time, 0s indicate instances where track
       #' "left" the cluster
-      incluster = dplyr::if_else(.data[[clust_col]] == clust, 1, 0, missing = 0),
-      indaycluster = dplyr::if_else(incluster == 1 & nightpoint == 0, 1, 0)
+      incluster = dplyr::if_else(.data[[clust_col]] == clust, 1, 0, missing = 0)
     ) |>
     #' Nr. of visits and nr. of daytime visits per day of current track to current cluster
     group_by(date_local) %>%
     summarise(
       visits = sum(rle(incluster)$values),
-      dayvisits = sum(rle(indaycluster)$values),
-      dayvisits = pmin(dayvisits, visits), # fix case where dayvisits > visits
       .groups = "drop" 
     ) %>%
     #' Daily averages
     summarise(
       mean_n_visits = mean(visits, na.rm = T),
-      mean_n_daytime_visits = mean(dayvisits, na.rm = T),
       .groups = "drop" 
     )
 }

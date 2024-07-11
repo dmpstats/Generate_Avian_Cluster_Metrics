@@ -167,18 +167,18 @@ track_clust_details <- list(
     Description = "Number of days where the track was absent from the cluster, having later revisited",
     Calculation = "The difference between `n_days_span` and `n_days_unique`"
   ),
-  "`prop_days_empty`" = tibble(
-    Description = "The proportion of days where the track was absent from the cluster, having later revisited",
-    Calculation = "The quotient between `n_days_empty` and `n_days_span`"
-  ),
+  # "`prop_days_empty`" = tibble(
+  #   Description = "The proportion of days where the track was absent from the cluster, having later revisited",
+  #   Calculation = "The quotient between `n_days_empty` and `n_days_span`"
+  # ),
   "`<behaviour-category>` [e.g. `SFeeding`, `SResting`, `SRoosting`]" = tibble(
     Description = "The total number of track location points assigned to each behavioural category within the cluster",
     Calculation = "Tally of track points annotated with the cluster ID AND each attributed behavioural class"
   ),
-  "`med_feed_hour_local`" = tibble(
-    Description = "The median local hour associated with 'feeding' behaviour across track location points within the cluster. This will not be generated if parameter `behav_col` is set to `NULL` or if a 'feeding' category cannot be found within the specified column through string pattern matching",
-    Calculation = "Extract the local hour component of all track locations annotated with 'feeding' behaviour in the cluster, and calculate the median"
-  ),
+  # "`med_feed_hour_local`" = tibble(
+  #   Description = "The median local hour associated with 'feeding' behaviour across track location points within the cluster. This will not be generated if parameter `behav_col` is set to `NULL` or if a 'feeding' category cannot be found within the specified column through string pattern matching",
+  #   Calculation = "Extract the local hour component of all track locations annotated with 'feeding' behaviour in the cluster, and calculate the median"
+  # ),
   "`med_daytime_hour_local`" = tibble(
     Description = "The median local daytime hour of track locations in the cluster",
     Calculation = "Filter the local hour component of all track locations in cluster where column `nightpoint`[^1] equals `0`, and calculate the median"
@@ -195,10 +195,10 @@ track_clust_details <- list(
     Description = "The track's mean number of unique visits to the cluster per day",
     Calculation = "Run length calculations are applied to the track location points to quantify the number of cluster visits per day (excluding absent days), which are then averaged across all visited days."
   ),
-  "`mean_n_daytime_visits`" = tibble(
-    Description = "The track's mean number of unique visits to the cluster during the daytime period per day",
-    Calculation = "Identical to `mean_n_visits`, but including only location events where `nightpoint == 0`"
-  ),
+  # "`mean_n_daytime_visits`" = tibble(
+  #   Description = "The track's mean number of unique visits to the cluster during the daytime period per day",
+  #   Calculation = "Identical to `mean_n_visits`, but including only location events where `nightpoint == 0`"
+  # ),
   "`mean_night_dist`" = tibble(
     Description = "The track's daily mean distance between all night-time location points and the cluster's centroid (unit: meters)", 
     Calculation = "For each day the track visits the cluster, calculate the median distance between all night-time location points (regardless of cluster affiliation status) and the cluster centroid. Median distances are then averaged over all days to produce this metric."
@@ -268,10 +268,10 @@ The following attributes are column names of a dataset where each row represents
 #| echo: false
 
 clust_details <- list(
-  "`spawn_dttm_local` and `cease_dttm_local`" = tibble(
-    Description = "Respectively, the 'spawning' and `ending` date-times of the cluster event (local timezone)",
-    Calculation = "The earliest and latest timestamps of all point locations associated with the cluster."
-  ),
+  # "`spawn_dttm_local` and `cease_dttm_local`" = tibble(
+  #   Description = "Respectively, the 'spawning' and `ending` date-times of the cluster event (local timezone)",
+  #   Calculation = "The earliest and latest timestamps of all point locations associated with the cluster."
+  # ),
   "`spawn_dttm` and `spawn_dttm_local`" = tibble(
     Description = "The 'spawning' date-time of the cluster event, in UTC and local timezone, respectively",
     Calculation = "The earliest timestamp of all point locations associated with the cluster."
@@ -308,14 +308,14 @@ clust_details <- list(
     Description = "Number of days the cluster was inactive, i.e. no track visited during the day",
     Calculation = "The difference between `span_days` and `n_days_active`"
   ),
-  "`prop_days_inactive`" = tibble(
-    Description = "The proportion of inactive days throughout the cluster event",
-    Calculation = "The quotient between `n_days_inactive` and `span_days`"
-  ),
-  "`avg_feed_hour_local`" = tibble(
-    Description = "The average local hour of track visits labelled as ‘feeding’ behaviour throughout the cluster event",
-    Calculation = "The mean of `med_feed_hour_local` across affiliated tracks"
-  ),
+  # "`prop_days_inactive`" = tibble(
+  #   Description = "The proportion of inactive days throughout the cluster event",
+  #   Calculation = "The quotient between `n_days_inactive` and `span_days`"
+  # ),
+  # "`avg_feed_hour_local`" = tibble(
+  #   Description = "The average local hour of track visits labelled as ‘feeding’ behaviour throughout the cluster event",
+  #   Calculation = "The mean of `med_feed_hour_local` across affiliated tracks"
+  # ),
   "`avg_daytime_hour_local`" = tibble(
     Description = "The average local daytime hour of track visits throughout the cluster event",
     Calculation = "The mean of `med_daytime_hour_local` across affiliated tracks"
@@ -340,10 +340,10 @@ clust_details <- list(
     Description = "The average number of unique visits per day by member tracks",
     Calculation = "The average `mean_n_visits` across member tracks"
   ),
-  "`avg_n_daytime_visits`" = tibble(
-    Description = "The average number of unique daytime visits per day by member tracks",
-    Calculation = "The average `mean_n_daytime_visits` across member tracks"
-  ),
+  # "`avg_n_daytime_visits`" = tibble(
+  #   Description = "The average number of unique daytime visits per day by member tracks",
+  #   Calculation = "The average `mean_n_daytime_visits` across member tracks"
+  # ),
   "`avg_nightime_dist`" = tibble(
     Description = "The daily average distance between member tracks' night-point locations and the cluster centroid (unit: meters)",
     Calculation = "The average `mean_night_dist` across member tracks"
