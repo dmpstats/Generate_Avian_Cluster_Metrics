@@ -124,6 +124,27 @@ rFunction = function(data,
   tm_id_col <- mt_time_column(data)
   trk_id_col <- mt_track_id_column(data)
   
+  
+  # force calculations to skip one-location clusters (not clusters by definition)
+  one_pnt_clusters <- count(data, .data[[cluster_id_col]]) |>
+    filter(n == 1) |>
+    pull(.data[[cluster_id_col]])
+
+  if(length(one_pnt_clusters) > 0){
+    logger.warn(paste0(
+      "Metrics will not be calculated for the following cluster(s), as they contain only one location-point each:\n",
+      "        * ",
+      paste0(one_pnt_clusters, collapse = "\n        * ")
+    ))
+    
+    # assign NAs to cluster IDs of identified one-point clusters. 
+    # This keeps the points for calculation purposes, but there will
+    # be no metrics for one-point clusters
+    data <- data |> 
+      mutate("{cluster_id_col}" := ifelse(.data[[cluster_id_col]] %in% one_pnt_clusters, NA, .data[[cluster_id_col]]))
+  }
+
+  
   # ensuring data is ordered by time within track ID
   data <- data |> arrange(.data[[trk_id_col]], .data[[tm_id_col]])
   
@@ -150,6 +171,9 @@ rFunction = function(data,
           sunset_timestamp),
         0, 1))
   }
+  
+  
+
   
   
   # get names behaviour categories that are present in clusters
@@ -431,7 +455,7 @@ rFunction = function(data,
 
 
   ## 5. Finalise Outputs ---------------------------------------------------------
-  
+
   # sort both tables by starting cluster time (ascending)
   cluster_tbl <- cluster_tbl |> arrange(spawn_dttm_local)
   track_cluster_tbl <- track_cluster_tbl |> arrange(.data[[cluster_id_col]], first_dttm_local)
