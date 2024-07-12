@@ -156,9 +156,8 @@ test_that("Option for type of ouputted cluster table works as expected", {
 
 test_that("Optional specification of behavioural column works as expected", {
   
-  behav_cols_event <- c("SFeeding", "SResting", "SRoosting", "med_feed_hour_local")
-  behav_cols_track <- c("n_SFeeding", "n_SResting", "n_SRoosting", "avg_feed_hour_local")
-  
+  behav_cols_event <- c("SFeeding_duration", "SResting_duration", "SRoosting_duration")
+  behav_cols_track <- c("cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration")
   
   actual <- rFunction(data = test_sets$wcs |> slice(1:100), behav_col = "behav")
   expect_contains(colnames(actual), behav_cols_event)
@@ -251,7 +250,7 @@ test_that("output colnames match those in output documentation", {
   # Track-per-cluster metrics 
   track_clust_details_names <- names(track_clust_details) |> 
     stringr::str_remove_all("`") |> 
-    stringr::str_remove("<behaviour-category> \\[e.g. ") |>
+    stringr::str_remove("<behaviour-category>_duration \\[e.g. ") |>
     stringr::str_remove("\\]") |> 
     stringr::str_split(" and |, ") |> 
     as_vector() |> 
@@ -270,7 +269,7 @@ test_that("output colnames match those in output documentation", {
   # whole-cluster metrics
   clust_details_names <- names(clust_details) |> 
     stringr::str_remove_all("`") |> 
-    stringr::str_remove("n_<behaviour-category> \\[e.g. ") |>
+    stringr::str_remove("cl_<behaviour-category>_duration \\[e.g. ") |>
     stringr::str_remove("\\]") |> 
     stringr::str_split(" and |, ") |> 
     as_vector()

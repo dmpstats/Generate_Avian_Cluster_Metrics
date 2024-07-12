@@ -61,7 +61,7 @@ rFunction = function(data,
     }
   }else{
     logger.info(paste0(
-      "`behav_col` specified to `NULL`, therefore skipping derivation of ",
+      "`behav_col` specified as `NULL`, therefore skipping derivation of ",
       "behavioural-based cluster metrics."))
   }
     
@@ -193,23 +193,19 @@ rFunction = function(data,
       n_days_span = (ceiling_date(last_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(first_dttm_local, unit = "days")) %>% as.integer(),
       n_days_unique = length(unique(date_local)),
       n_days_empty = as.numeric(n_days_span - n_days_unique),
-      # Behaviour-related
-      if(not_null(behav_col)) count_ctgs(.data[[behav_col]], behav_ctgs),
-      #med_daytime_hour_lcl = median(hour_local[hour_local > 5 & hour_local < 17], na.rm = TRUE),
-      med_daytime_hour_local = median(hour_local[nightpoint == 0], na.rm = TRUE),
+      med_hour_local = median(hour_local, na.rm = TRUE),
       .groups = "drop"
     ) %>%
     # Calculate track-level geometric medians in each cluster
     mutate(median_point = calcGMedianSF(.), .after = all_points) 
   
   
-  
-  
   #' Add second geometry column for cluster-level centroids. These are
-  #' per-cluster, not per-bird.
+  #' per-cluster, not per-bird. This is required to calculate some of the
+  #' metrics below.
   #'
-  #' !IMPORTANT!: centroids computed as the geometric median of the
-  #' track-level medians within each cluster
+  #' !IMPORTANT!: centroids computed as the geometric median of the track-level
+  #' medians within each cluster
   wholeclusts <- track_cluster_tbl |> 
     summarise(
       clust_track_meds = st_combine(median_point),
@@ -224,11 +220,34 @@ rFunction = function(data,
   
   
   
-  ### 3.2 Sub-table with Accelerometer summaries, if ACC is available -----
+  ### 3.2 Time spent at each behaviour category, per track within cluster -----
+  if(not_null(behav_col)){
+    
+    logger.info("   [a] Deriving Time-at-Behaviour metrics")
+    
+    time_at_behav <- data |> 
+      as_tibble() |> 
+      filter(!is.na(.data[[cluster_id_col]])) |> 
+      group_by(.data[[cluster_id_col]], .data[[trk_id_col]], behav) |> 
+      summarise(time_spent = sum(timediff_hrs), .groups = "drop") |>
+      tidyr::pivot_wider(
+        names_from = behav, 
+        values_from = time_spent, 
+        names_glue = "{behav}_duration", 
+        values_fill = units::set_units(0, "hr")
+      )  
+    
+  }else{
+    logger.info("   [a] Skipping Time-at-Behaviour calculations")
+    time_at_behav <- NULL
+  }
+  
+  
+  ### 3.3 Sub-table with Accelerometer summaries, if ACC is available -----
   
   if ("var_acc_x" %in% colnames(data)) {
   
-    logger.info("   [a] Accelerometer columns identified. Calculating ACC summaries")
+    logger.info("   [b] Accelerometer columns identified. Calculating ACC summaries")
     
     track_cluster_tbl_acc <- data |> 
       # drop geometry for efficiency, by avoiding default parsing to multipoints by `summarise.sf()`
@@ -242,14 +261,14 @@ rFunction = function(data,
       )
     
   } else {
-    logger.info("   |i No accelerometer data identified. Skipping ACC summaries")
+    logger.info("   [b] No accelerometer data identified. Skipping ACC summaries")
     track_cluster_tbl_acc <- NULL
   }
   
   
   
-  ### 3.3 Time-at-Carcass Calculations     -------------------------------------
-  logger.info("   [b] Deriving Time-at-Carcass metrics")
+  ### 3.4 Time-at-Carcass Calculations     -------------------------------------
+  logger.info("   [c] Deriving Time-at-Carcass metrics")
   
   #' generate columns `meanvisit_duration` `meanvisit_daytime_duration`
   #' 
@@ -259,8 +278,8 @@ rFunction = function(data,
     trck_col = trk_id_col)
   
   
-  ### 3.4 Revisitation Calculations  -------------------------------------------
-  logger.info("   [c] Cyphering Revisitation metrics")
+  ### 3.5 Revisitation Calculations  -------------------------------------------
+  logger.info("   [d] Cyphering Revisitation metrics")
   
   #' generate columns  `mean_n_visits`
   #' 
@@ -272,8 +291,8 @@ rFunction = function(data,
     tm_col = "timestamp_local")
   
   
-  ### 3.5 Night-Distance Calculations ------------------------------------------
-  logger.info("   [d] Cooking Night-distance metrics")
+  ### 3.6 Night-Distance Calculations ------------------------------------------
+  logger.info("   [e] Cooking Night-distance metrics")
   
   #' generate columns `mean_night_dist`; `night_prop_250m` and `night_prop_1km`
   #'
@@ -284,8 +303,8 @@ rFunction = function(data,
     trck_col = trk_id_col)
   
   
-  ### 3.6. Arrival-Distance Calculations ---------------------------------------
-  logger.info("   [e] Hammering Arrival-Distance metrics")
+  ### 3.7. Arrival-Distance Calculations ---------------------------------------
+  logger.info("   [f] Hammering Arrival-Distance metrics")
   
   #' generate column `mean_arrival_dist` 
   #' 
@@ -297,8 +316,13 @@ rFunction = function(data,
     tm_col = "timestamp_local")
   
   
-  ### 3.7 Stack outputs into final clustertable ---------------------------------
-  logger.info("   [f] Merging [a-e] metrics into primary track-level cluster table")
+  ### 3.8 Stack outputs into final clustertable ---------------------------------
+  logger.info("   [g] Merging [a-f] metrics into primary track-level cluster table")
+  
+  if (not_null(time_at_behav)) {
+    track_cluster_tbl <- track_cluster_tbl |>  
+      left_join(time_at_behav, by = c(cluster_id_col, trk_id_col))
+  }
   
   track_cluster_tbl <- track_cluster_tbl |> 
     left_join(carctime, by = c(cluster_id_col, trk_id_col)) |> 
@@ -310,9 +334,11 @@ rFunction = function(data,
   
   
   if (not_null(track_cluster_tbl_acc)) {
-    track_cluster_tbl <- track_cluster_tbl %>% 
+    track_cluster_tbl <- track_cluster_tbl |> 
       left_join(track_cluster_tbl_acc, by = c(cluster_id_col, trk_id_col))
   }
+  
+
   
   
   #' --------------------------------------------------------------------------
@@ -373,11 +399,13 @@ rFunction = function(data,
   cluster_track_based <- track_cluster_tbl %>%
     group_by(.data[[cluster_id_col]]) %>%
     summarise(
-      # location points frequency by behaviour
       n_points = sum(n_pts, na.rm = TRUE),
-      across(any_of(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "n_{.col}"),
       
-      avg_daytime_hour_local = mean(med_daytime_hour_local, na.rm = TRUE),
+      # total time spent on each behaviour
+      if(not_null(behav_ctgs)) across(matches(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "cl_{.col}"),
+      
+      #avg_daytime_hour_local = mean(med_daytime_hour_local, na.rm = TRUE),
+      avg_hour_local = mean(med_hour_local, na.rm = TRUE),
 
       avg_visit_duration = mean(meanvisit_duration, na.rm = TRUE),
       avg_daytime_visit_duration = mean(meanvisit_daytime_duration, na.rm = TRUE),
@@ -501,12 +529,24 @@ check_col_ids <- function(id_col, app_par_name, dt_names, suggest_msg, proceed_m
 
 
 
-#' //////////////////////////////////////////////////////////////////////////////
-#' Little helper to count frequencies of column elements which is compatible with use
-#' inside `summarise()`
-count_ctgs <- function(col, ctgs){
-  purrr::map(ctgs, ~tibble({{.x}} := sum(col == .x))) |> purrr::list_cbind()
-}
+#' #' //////////////////////////////////////////////////////////////////////////////
+#' #' Helper to count frequencies of column elements which is compatible with use
+#' #' inside `summarise()`
+#' count_ctgs <- function(col, ctgs){
+#'   purrr::map(ctgs, ~tibble({{.x}} := sum(col == .x))) |> purrr::list_cbind()
+#' }
+#' 
+#' 
+#' #' //////////////////////////////////////////////////////////////////////////////
+#' #' Helper to calculate time spent at each behaviour category, which is compatible with use
+#' #' inside `summarise()`
+#' timespent_by_behav <- function(behavs, lags, behav_ctgs){
+#'   purrr::map(behav_ctgs, \(behav){
+#'     tibble::tibble("{behav}_hrs" := sum(lags[behavs == behav], na.rm = TRUE))
+#'   }) |> 
+#'     purrr::list_cbind()
+#' }
+
 
 
 #' //////////////////////////////////////////////////////////////////////////////

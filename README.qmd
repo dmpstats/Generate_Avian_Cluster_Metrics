@@ -171,17 +171,21 @@ track_clust_details <- list(
   #   Description = "The proportion of days where the track was absent from the cluster, having later revisited",
   #   Calculation = "The quotient between `n_days_empty` and `n_days_span`"
   # ),
-  "`<behaviour-category>` [e.g. `SFeeding`, `SResting`, `SRoosting`]" = tibble(
-    Description = "The total number of track location points assigned to each behavioural category within the cluster",
-    Calculation = "Tally of track points annotated with the cluster ID AND each attributed behavioural class"
+  "`<behaviour-category>_duration` [e.g. `SFeeding_duration`, `SResting_duration`, `SRoosting_duration`]" = tibble(
+    Description = "The time spent by the track in each behavioural category while visiting the cluster (unit: hours)",
+    Calculation = "For each attributed behavioural class, sum over time lags between track points annotated with the cluster ID"
   ),
+  # "`<behaviour-category>` [e.g. `SFeeding`, `SResting`, `SRoosting`]" = tibble(
+  #   Description = "The total number of track location points assigned to each behavioural category within the cluster",
+  #   Calculation = "Tally of track points annotated with the cluster ID AND each attributed behavioural class"
+  # ),
   # "`med_feed_hour_local`" = tibble(
   #   Description = "The median local hour associated with 'feeding' behaviour across track location points within the cluster. This will not be generated if parameter `behav_col` is set to `NULL` or if a 'feeding' category cannot be found within the specified column through string pattern matching",
   #   Calculation = "Extract the local hour component of all track locations annotated with 'feeding' behaviour in the cluster, and calculate the median"
   # ),
-  "`med_daytime_hour_local`" = tibble(
-    Description = "The median local daytime hour of track locations in the cluster",
-    Calculation = "Filter the local hour component of all track locations in cluster where column `nightpoint`[^1] equals `0`, and calculate the median"
+  "`med_hour_local`" = tibble(
+    Description = "The median local hour of track locations in the cluster",
+    Calculation = "Filter the local hour component of all track locations in cluster and calculate the median"
   ),
   "`meanvisit_duration`" = tibble(
     Description = "The track's daily mean visit time to the cluster (unit: hours)",
@@ -243,7 +247,7 @@ list_rbind(track_clust_details, names_to = "Attribute Name") |>
 track_clust_details_names <- names(track_clust_details) %>%
   .[!stringr::str_detect(., "var_acc_<xyz>")] |> 
   stringr::str_remove_all("`") |> 
-  stringr::str_remove("<behaviour-category> \\[e.g. ") |>
+  stringr::str_remove("<behaviour-category>_duration \\[e.g. ") |>
   stringr::str_remove("\\]") |> 
   stringr::str_split(" and |, ") |> 
   as_vector()
@@ -316,18 +320,22 @@ clust_details <- list(
   #   Description = "The average local hour of track visits labelled as ‘feeding’ behaviour throughout the cluster event",
   #   Calculation = "The mean of `med_feed_hour_local` across affiliated tracks"
   # ),
-  "`avg_daytime_hour_local`" = tibble(
-    Description = "The average local daytime hour of track visits throughout the cluster event",
-    Calculation = "The mean of `med_daytime_hour_local` across affiliated tracks"
+  "`avg_hour_local`" = tibble(
+    Description = "The average local hour of track visits throughout the cluster event",
+    Calculation = "The mean of `med_hour_local` across affiliated tracks"
   ),
   "`n_points`" = tibble(
     Description = "The total number of location points comprised by the cluster",
     Calculation = "The sum of `n_pts` across associated tracks"
   ),
-  "`n_<behaviour-category>` [e.g. `n_SFeeding`, `n_SResting`, `n_SRoosting`]" = tibble(
-    Description = "The total number of location points under each behavioural category during the cluster event",
-    Calculation = "The sum of location events assigned to a `<behaviour-category>` (e.g. `SFeeding`) and to the cluster ID"
+  "`cl_<behaviour-category>_duration` [e.g. `cl_SFeeding_duration`, `cl_SResting_duration`, `cl_SRoosting_duration`]" = tibble(
+    Description = "The time spent by visiting tracks in each each behavioural category during the cluster event",
+    Calculation = "The sum `<behaviour-category>_duration` (e.g. `SFeeding_duration`) across member tracks"
   ),
+  #   "`n_<behaviour-category>` [e.g. `n_SFeeding`, `n_SResting`, `n_SRoosting`]" = tibble(
+  #   Description = "The total number of location points under each behavioural category during the cluster event",
+  #   Calculation = "The sum of location events assigned to a `<behaviour-category>` (e.g. `SFeeding`) and to the cluster ID"
+  # ),
   "`avg_visit_duration`" = tibble(
     Description = "The daily average time spent by member tracks in the cluster (unit: hours)",
     Calculation = "The average of `meanvisit_duration` across affiliated tracks"
@@ -388,7 +396,7 @@ list_rbind(clust_details, names_to = "Attribute Name") |>
 # cross-checking if output colnames match those in output description table
 clust_details_names <- names(clust_details) |> 
   stringr::str_remove_all("`") |> 
-  stringr::str_remove("n_<behaviour-category> \\[e.g. ") |>
+  stringr::str_remove("cl_<behaviour-category>_duration \\[e.g. ") |>
   stringr::str_remove("\\]") |> 
   stringr::str_split(" and |, ") |> 
   as_vector()
