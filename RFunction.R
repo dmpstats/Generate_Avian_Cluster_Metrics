@@ -608,11 +608,11 @@ timeAtCarcTab_ <- function(dt, clust_col, trck_col) {
     filter(!is.na(.data[[clust_col]])) %>%
     # drop locally unnecessary geometry, for efficiency
     st_drop_geometry() |> 
+    # flag last location of each day
+    mutate(date_last_loc = date_local != lead(date_local)) |> 
     group_by(.data[[clust_col]], .data[[trck_col]], date_local) %>%
-    # Exclude overnight times by dropping the last entry of a given date at
-    # which the track was in the cluster, if the time gap to the subsequent
-    # location in the original tracking data is greater than 3 hours
-    filter(if(last(na.omit(timediff_hrs)) > units::set_units(3, "h")) row_number() != n() else TRUE)  |>
+    # Exclude overnight times by dropping the last location of a given date
+    filter(date_last_loc == FALSE) |> 
     summarise(
       time_spent = sum(timediff_hrs, na.rm = TRUE),
       time_spent_daytime = sum(timediff_hrs[nightpoint == 0], na.rm = TRUE),
