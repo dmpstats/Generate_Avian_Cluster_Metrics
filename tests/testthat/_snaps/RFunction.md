@@ -70,7 +70,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -93,10 +93,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -1341,6 +1341,120 @@
                     {
                       "type": "character",
                       "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [12.38247598, 18.42658649, 17.90433348, 14.20567643, 87.05108358, 145.62550746, 122.66714194, 182.16182559, 11.38125015, 7.42852508, 77.56792283, 6.84572631, 128.11250326, 15.73404795, 117.27998681, 0, 3.99644351, 18.30039332, 38.59630106, 54.57708011, 25.3458525, 13.34367094, 73.11717496, 66.28623506, 95.41029867, 15.33639609, 19.28194132, 113.39679286, 101.46586584, 39.53708043, 17.16613965, 25.68553159, 90.27415191, 24.15073403, 25.15378046, 14.35974632, 82.07279977, 24.97945569, 40.79917267, 0, 44.68515244, 52.13576175, 93.67279516, 56.39731525, 165.66156056, 16.09272389, 28.82476069, 131.16382383, 31.91457813, 29.95186409]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [18.57371397, 18.73643849, 19.74021136, 19.92121474, 105.76480764, 257.34758888, 184.00071291, 273.24273839, 19.91718776, 0, 69.67857258, 0, 128.63505072, 19.9671067, 83.24375339, 0, 0, 19.66448818, 19.99578142, 26.26645814, 27.47017986, 20.01550641, 18.53895544, 61.30057748, 97.48268382, 19.81852528, 19.77956114, 118.00827763, 87.40330948, 43.71336645, 0, 19.6999596, 103.56202586, 19.73224317, 0, 18.56086883, 96.95290617, 19.6210599, 18.39614789, 0, 27.83786816, 27.88632204, 135.61145081, 0, 166.89080147, 18.56086313, 19.54578387, 19.70194699, 19.77822623, 19.76157701]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [10.72353876, 14.6555449, 12.78393279, 10.50248182, 48.99192988, 128.65627702, 106.23286113, 157.75676856, 10.09985758, 9.59018465, 48.63892346, 12.07472624, 126.95575618, 10.21860495, 97.43955958, 0, 8.08320499, 14.32166874, 38.93252429, 56.46237847, 18.11809349, 11.55595802, 121.06544878, 42.10093899, 55.29168797, 10.27430741, 14.12822895, 67.05213672, 76.70096643, 18.03789784, 22.03771443, 27.28525508, 53.84396366, 24.7884123, 42.71638705, 9.68042663, 52.0301562, 19.46756552, 56.66595196, 0, 35.26279855, 61.55376807, 68.14177504, 82.31976773, 97.60681062, 9.72778503, 32.85585568, 131.61387478, 36.08367644, 24.40544744]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
                       "value": ["h"]
                     },
                     {
@@ -1605,6 +1719,120 @@
                 }
               },
               "value": ["NaN", "NaN", "NaN", "NaN", 22687.94941464, 47118.53286381, 22339.06771886, 2558.2100483, 2023.99866359, 606.78606207, 41340.71006304, 48687.74269345, 16502.18213209, 17078.57311951, 59497.96908596, 667.57708614, 17706.02013565, 74758.52269653, 21726.99065975, 75873.75150181, 18854.77394843, 19119.9673007, 57560.35534698, 39481.56652349, 51113.0465726, 129651.62794829, 80703.38375209, 5511.53701026, 86943.7393575, 313.20304522, 493.79471019, 95472.65667497, 46498.867728, 71764.77009847, 61180.5525683, 89186.02186788, 19963.36480148, 127646.78569843, 88948.58878085, 20425.76903936, 92578.50478699, 129532.89288328, 73093.08037012, 41933.37178516, 44998.24323669, 36847.65565539, 26.84682476, 86167.75240565, 101438.6258413, 16487.57525079]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": ["NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             },
             {
               "type": "double",
@@ -3830,7 +4058,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -3853,10 +4081,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -6928,6 +7156,120 @@
                     {
                       "type": "character",
                       "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [129.4364904, 4.14447089, 68.88918508, 8.75359513, 124.03195272, 8.47212971, 73.7988634, 15.82517391, 103.12348924, 58.61390207, 7.94221091, 7.84395547, 42.23055833, 124.30469829, 3.57704378, 75.86469668, 10.70229292, 98.27636296, 153.86857198, 92.58472332, 9.04371042, 7.90108048, 51.70022179, 7.30285879, 27.98641762, 6.4696408, 22.66764649, 110.3516089, 69.55703808, 48.53150891, 13.20414606, 120.24117003, 187.21437785, 100.64624536, 69.31988865, 173.18570001, 110.77015729, 250.58089459, 15.20515979, 10.27732438, 6.68158469, 23.16653495, 19.12658599, 32.26253695, 12.49547581, 17.4358315, 94.75461938, 21.39416665, 132.27188279, 97.92733994, 31.13035689, 16.00791323, 83.06937332, 81.60571725, 147.75074637, 4.45319703, 41.74232478, 4.69936904, 13.20793706, 103.16028209, 65.95898761, 18.96281829, 7.07207234, 43.47718088, 8.20874858, 18.85757734, 93.26359083, 3.84747803, 0.83163589, 62.76198485, 7.33988994, 20.47903548, 6.87602546, 126.45836317, 170.36553459, 9.31953331, 5.34238982, 48.59698593, 27.59314689, 10.41490573, 138.06978018, 28.49089581, 9.48000464, 35.80814375, 10.5357134, 18.93522906, 43.65372565, 30.76112817, 28.61559086, 6.60111128, 7.66294784, 155.99649381, 11.30014827, 33.26044871, 10.35512127, 67.10332417, 99.51716882, 176.99854926, 4.01820884, 8.60317936, 20.33378482, 3.3026161, 157.9442304, 40.72869165, 22.47641836, 57.08328286, 5.43973328, 167.2754385, 15.30172734, 2.70795586, 12.61437825, 167.962907, 88.0383664, 40.15045897, 2.68184154, 70.08226381, 11.60768291, 149.23738756, 7.31537246, 64.45279774, 75.48973756, 22.55646478, 113.78614224, 54.35804493, 15.56659352, 102.04843393, 51.23327672, 72.89879746, 153.86133377, 49.97833859, 40.60056391, 28.77741023, 4.87155578, 36.23529379, 71.32732051, 12.03149416, 15.27503829]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [75.09979762, 3.84852255, 69.64507164, 6.09404629, 109.96953764, 3.7643446, 14.58665969, 8.1862915, 109.61600637, 7.15016594, 6.84868381, 6.19247068, 12.08778178, 103.41744284, 3.35298155, 46.03069588, 7.41386541, 72.34005621, 147.75762161, 15.16359924, 7.53740174, 6.83140294, 7.31997072, 3.91889784, 29.92051288, 4.56636394, 13.77608692, 193.46189209, 9.1216103, 62.03218588, 13.27754242, 223.94148083, 168.23880312, 31.90601935, 5.84893362, 116.44388247, 105.10166415, 288.31990336, 7.45277038, 6.93066119, 6.49131658, 30.61476336, 6.68006286, 7.6933762, 5.72534124, 4.70262261, 71.58022431, 34.58147114, 15.99154627, 7.46004197, 2.92053941, 13.53136529, 119.33989889, 116.30078912, 11.15784577, 4.13348074, 5.64207185, 4.48117714, 11.73420771, 25.14124196, 36.92615219, 7.46591679, 7.8035356, 13.42673243, 6.5670192, 8.3174079, 159.21165983, 4.20113962, 0.62101747, 87.72829745, 7.2259775, 13.43492917, 6.84474567, 158.18968857, 191.59140166, 4.21919812, 4.76054412, 10.90692153, 37.69997294, 7.10518529, 55.37802447, 34.23200237, 6.29054576, 7.43360569, 8.45704261, 4.5988088, 12.12490779, 41.13387838, 8.05742205, 6.58607579, 7.26131837, 26.69284997, 6.77351846, 7.13567703, 9.4712435, 3.2114458, 33.19130203, 197.56037486, 4.25355185, 8.18098829, 17.56106798, 3.17706965, 56.6045775, 4.50527482, 8.19826768, 6.56241986, 5.18298159, 278.76718706, 14.78567745, 2.35968384, 12.40999845, 105.06391605, 54.01717921, 13.39396051, 2.52036004, 101.75635919, 4.32633804, 13.80805278, 7.23093894, 66.95223394, 72.98531103, 13.12648629, 105.43571284, 9.48307282, 4.26995801, 176.38791608, 12.61386983, 7.87458374, 199.67124963, 6.1776284, 40.28313783, 32.71081593, 4.46561125, 39.80916374, 54.1954691, 10.60683333, 14.13333586]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [112.16300267, 2.24989073, 55.33833535, 7.77926714, 88.77438924, 26.7211394, 97.63417249, 41.27604054, 109.63853997, 142.39743555, 5.12341075, 5.9692921, 55.79151085, 103.31538422, 2.0372123, 65.97353983, 9.6268374, 84.43286136, 117.83152293, 97.05794624, 7.19290598, 5.47571262, 57.88075398, 7.36020522, 17.19287679, 6.89335145, 21.34252676, 101.69462749, 98.50669214, 42.30065666, 6.90279251, 114.15988041, 131.89992606, 120.9687093, 134.29571488, 164.57249693, 77.34558678, 161.10445119, 23.95065435, 11.59194422, 3.24561304, 14.36792937, 24.74856118, 52.13824203, 15.17596995, 29.53078852, 73.90021789, 17.72877101, 191.51082451, 154.3154025, 50.74618573, 12.49798837, 76.36721057, 69.85397501, 204.87460732, 2.06738341, 90.45962473, 2.61349806, 8.87816279, 132.65246621, 57.93372711, 41.54683602, 1.3984975, 67.07384678, 5.98788265, 18.72955756, 80.63506623, 1.98191496, 0.46168258, 54.29360479, 3.47351533, 31.13860728, 4.09977041, 114.54221778, 102.22609564, 36.94748779, 3.26716895, 61.1873354, 20.71893935, 8.12270737, 183.49157075, 17.01348147, 12.94527985, 61.44284795, 9.28035862, 32.40517231, 44.35735277, 21.02266875, 29.522222, 3.76270899, 4.75842635, 168.38036653, 20.44273679, 70.93550108, 6.21145705, 121.11650586, 156.61341832, 143.52795332, 1.55183347, 4.62189722, 13.06794135, 1.8749695, 152.9311665, 52.08126698, 36.98757523, 148.69344612, 2.81885019, 135.95366294, 9.67065265, 1.48640306, 7.37983285, 149.49727939, 82.86076446, 39.19878507, 1.21126052, 57.80148148, 25.36629014, 178.51665832, 4.13867448, 55.02446915, 65.51470539, 18.71565633, 69.18593136, 66.44507629, 25.90042109, 88.40546457, 63.03298439, 134.57541832, 128.83601166, 98.86570889, 42.0211358, 32.57873329, 2.00755813, 21.11433644, 71.00298661, 7.50245159, 8.33371075]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
                       "value": ["h"]
                     },
                     {
@@ -7192,6 +7534,120 @@
                 }
               },
               "value": [215.46474718, 3.12128097, 13.40810489, 9.02384393, 184.98535173, 57347.34666794, 21543.19022638, 64528.3391375, 84204.90941449, 57053.12556658, 64023.8015253, 30.89746184, 643.73515812, 11326.8969552, 5469.87780488, 15396.4264174, 819.07527919, 40773.28594237, 5247.84557089, 80734.05766747, 88115.02094377, 131779.33820466, 1384.31088116, 11381.43956203, 16849.39509715, 16343.97146465, 7590.89361355, 81929.18575774, 11046.98959287, 40893.14262656, 70274.26637106, 40213.94684306, 11964.54149624, 11894.1145429, 8195.38462133, 32109.4475887, 145526.15695303, 145850.75381593, 18245.32326514, 82094.69472968, 442.98913574, 15943.87218125, 13689.51805689, 11262.49775663, 12783.9761803, 84147.35581292, 68204.22567729, 13352.24998154, 191422.85842647, 7135.02871135, 2347.00965163, 31102.70580658, 35820.85101924, 40720.55223143, 187588.14179918, 36426.55465315, 36468.87766937, 907.9624454, 13631.23234775, 12073.49959608, 113394.71656796, 36563.71057417, 10199.84662005, 73840.87751912, 1132.9251431, 74263.69152456, 2998.49224601, 33992.94494846, 48569.99582058, 11512.73887915, 59482.507371, 15568.3612717, 65363.06178142, 78727.84145258, 7615.51642573, 34902.87016498, 60512.92975109, 392.95646049, 5893.1325157, 5508.44161394, 980.36505105, 10571.66597165, 39813.83209626, 681.584384, 165467.92910466, 741.52184904, 12226.76659409, 7095.54839511, 9899.78520352, 47376.01499875, 49319.3353897, 47873.46406503, 90090.51027671, 90617.03441674, 4290.4981258, 1681.45059043, 37410.74098288, 1299.23405908, 3808.52995988, 4155.91656785, 558.68967784, 60720.34845515, 13786.63310156, 81002.29731536, 80356.51535445, 1282.1379216, 14277.63858383, 14775.23638062, 5243.00636035, 14505.35608181, 5253.56887245, 50042.97339962, 10627.36891345, 3131.58471936, 11428.27764256, 4541.92345437, 23823.96747275, 4967.62309478, 22988.54624284, 14457.31894144, 49872.4847096, 184597.79154146, 4106.43395979, 817.6274602, 4298.01387938, 4783.9655741, 1049.93713628, 110912.54368945, 1983.36435528, 7525.30923677, 14467.40607475, 10370.14252272, 558.06817342, 8927.88253328, 9250.0286697, 151225.19940284, 161491.84360996]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": ["NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", 115.11237355, "NaN", 24.46973421, "NaN", 110.4639218, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", 115.11237355, "NA", 24.46973421, "NA", 110.4639218, "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", 0, "NA", 0, "NA", 0, "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             },
             {
               "type": "double",
@@ -12327,7 +12783,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -12350,10 +12806,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -15635,6 +16091,120 @@
                     {
                       "type": "character",
                       "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [135.26232791, 103.23418489, 38.9346222, 40.94403951, 154.07146965, 20.81659313, 76.91131006, 36.21807055, 52.435796, 130.00611152, 62.25188493, 167.36553192, 31.93027922, 125.73416053, 76.36994833, 74.1169368, 33.87341874, 8.04161239, 223.18734498, 152.09593578, 125.05461231, 150.98273985, 79.50935481, 114.39616825, 42.57669423, 30.55999175, 187.78340973, 40.38751112, 141.28634705, 21.89289796, 111.98471448, 107.54354969, 40.383745, 55.59502144, 12.62157168, 65.00805988, 73.41608932, 122.79289236, 27.90279809, 144.64369564, 17.11538005, 74.51850775, 311.87456716, 136.58527855, 74.95990999, 33.82365333, 115.56911045, 237.61849346, 34.19237858, 66.8783303, 64.70548531, 12.25259817, 34.00895039, 86.01741517, 9.36970368, 132.86076144, 12.03186778, 122.48138108, 138.45849924, 83.71930106, 93.18512367, 41.6788044, 68.99235777, 207.64703163, 383.735948, 142.15943793, 100.7439809, 176.21750508, 34.32447274, 17.52658357, 26.08581471, 43.65998108, 31.93729457, 90.64182916, 130.16665892, 216.40118047, 10.70185362, 124.81880806, 73.4014255, 7.94865598, 95.00858543, 269.92455291, 165.3174809, 80.56746081, 42.46550734, 36.44007167, 75.00780063, 41.3517465, 187.3346713, 44.38118015, 138.8622596, 62.07572291, 125.45880559, 60.64598947, 23.55639636, 106.29408917, 36.19529268, 139.67844155, 42.37333251, 32.75672325, 73.95570758, 10.66702098, 34.92302832, 103.91558155, 29.16000081, 122.61221252, 100.54868667, 175.89278411, 121.77806824, 176.40890828, 20.66866162, 63.38488603, 46.12229578, 70.40267232, 136.5093202, 118.69473724, 91.96901721, 69.10726929, 19.3068509, 43.66629735, 27.3534941, 60.93066714, 11.37481368, 76.88634828, 63.60467272, 6.43503671, 71.21062392, 66.96581729, 60.6333634, 65.43499249, 64.98972481, 55.20647524, 70.63513953, 74.05481553, 23.17563471, 111.72436668, 87.05504899, 72.59209613, 10.27806279, 88.08660941, 307.7646159, 33.21439859, 23.38399586, 54.80764271, 32.74185676, 202.19600798, 193.84098377]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [100.24370286, 85.43361039, 29.70519842, 34.7688429, 200.08287544, 12.31324346, 49.19387888, 30.4233697, 47.72796265, 34.41946887, 30.49340867, 35.90245371, 25.04541234, 90.72390999, 96.85773675, 78.62688775, 21.50596203, 6.96325545, 304.55638251, 79.11979051, 65.42720597, 196.66459131, 37.36204447, 21.34915142, 19.0982045, 27.83588654, 138.10232621, 34.47168114, 90.02269244, 21.38966393, 72.28743536, 49.02437159, 36.38707269, 47.24012843, 11.05327314, 67.32436618, 51.16549898, 20.60533986, 24.09129403, 48.68004477, 15.24058094, 74.51850775, 455.39838389, 166.44683579, 45.21766429, 22.75925704, 172.10152947, 243.55707955, 33.30341077, 52.31970214, 75.62524171, 12.22342832, 33.87870024, 85.37711249, 10.46237651, 182.50324268, 14.4970909, 115.48852958, 123.98488196, 91.41065332, 83.14115586, 45.0063904, 71.06074118, 168.14754137, 440.67617409, 104.90385543, 131.01093361, 180.48350682, 35.18490137, 14.99324398, 25.33550093, 37.05738104, 31.39131899, 38.0574113, 135.75100726, 314.22628075, 9.80732591, 185.93715293, 68.22943117, 6.44124931, 82.27760881, 232.12711015, 167.92816759, 40.60336733, 37.92688064, 33.95378005, 70.97574805, 59.84402794, 204.60850347, 40.86396433, 36.83898817, 20.52639405, 117.62245889, 66.91414365, 29.84612517, 120.05546745, 25.47315637, 145.32829695, 27.66399607, 7.2214561, 25.19349962, 10.67623267, 37.55810688, 70.44386446, 28.40879719, 128.55235938, 143.38865241, 161.99221657, 84.76178866, 102.12494297, 22.93157192, 57.60129968, 35.26292437, 65.25288677, 134.88909808, 104.03511453, 33.10742739, 64.14579881, 17.82817737, 32.01867416, 31.39222888, 40.05357946, 11.71434291, 29.84083701, 53.28184271, 6.31813967, 94.19283577, 40.41253419, 67.77689802, 81.22955789, 54.43708785, 17.96316363, 82.52155337, 73.24614449, 19.94865362, 174.93154499, 15.60227634, 70.070479, 10.03649691, 102.82074395, 276.10389242, 28.22150099, 20.04921423, 50.60948525, 26.22197571, 240.61670854, 195.55831185]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [102.58948615, 75.90071415, 26.86756021, 29.18311303, 102.72826672, 17.82671504, 52.61686026, 28.55823439, 25.22293007, 145.4958624, 67.24327184, 178.12896737, 20.95646192, 116.18540909, 56.25619192, 63.96150475, 28.08706521, 4.14411604, 163.76325911, 138.72901415, 112.83177699, 94.25127673, 72.46381826, 142.37362388, 61.82111058, 19.54299996, 147.95530792, 28.19586303, 123.27564077, 11.2598409, 81.28011614, 144.75387435, 30.59720637, 38.39078214, 8.9152565, 41.3828199, 55.6189853, 148.13261319, 18.58265176, 136.10095847, 9.57338538, 0, 228.42542446, 92.73721395, 63.30788486, 28.92192336, 91.69612718, 141.69343355, 18.03566494, 45.271492, 31.1257588, 5.55530832, 31.27684595, 47.74247615, 2.08765775, 85.3923802, 6.9983897, 59.8241936, 95.60923415, 63.78938787, 50.94527855, 27.23354614, 35.45110677, 163.25114013, 214.93539185, 115.89933642, 73.29238064, 74.24437239, 29.56282413, 9.90367816, 14.65753501, 26.42875581, 19.65772302, 110.76660969, 81.75331829, 146.28866538, 5.31368007, 104.8367171, 41.94917225, 4.95734408, 58.8987776, 76.96184308, 136.69966443, 95.00420381, 16.73779904, 29.76471911, 41.12934353, 32.91987488, 91.61225469, 24.02613664, 149.34630102, 71.90315965, 70.86274168, 22.01428748, 15.67252625, 69.47126901, 26.95039035, 102.77408442, 35.43298722, 34.85231214, 79.48004751, 5.952772, 15.03210049, 101.0998006, 16.10234624, 69.30625551, 69.43825127, 141.77910526, 115.8133711, 134.18279231, 7.54332117, 32.62655611, 31.15586653, 45.73405511, 91.08650655, 86.95204762, 103.03425075, 46.63410345, 8.57925187, 38.30491653, 7.94408682, 57.68481213, 5.53485754, 85.20132706, 41.23660714, 2.56347065, 42.5355161, 52.86248234, 28.71199377, 37.85048955, 44.6418364, 79.94565765, 33.87580124, 50.96252981, 15.13829195, 88.86175123, 93.37150308, 54.9705122, 4.29021625, 53.37205654, 104.82563701, 16.09781479, 13.51985645, 39.79678625, 20.70511816, 125.52227294, 60.40338112]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
                       "value": ["h"]
                     },
                     {
@@ -15899,6 +16469,120 @@
                 }
               },
               "value": ["NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", 23489.63320243, 117695.05980775, 103635.74008936, 89749.84168039, 1633.57077772, 1180.92985311, 5476.20827327, 2171.61612256, 12684.35399568, 42346.72175254, 166499.40914985, 250598.0237108, 30127.0690207, 318.68830061, 9438.34962907, 8552.73889417, 128616.93474647, 72783.69276328, 2626.66286484, 100459.17332226, 15568.55048031, 101391.70969024, 54177.49163993, 33792.21619176, 5453.73135187, 43942.75851977, 106453.36001952, 55892.02282675, 33295.28126425, 90095.54866199, 21996.56836828, 91802.21590864, 92287.18570942, 80571.28911054, 158690.76980209, 170822.3027579, 196739.24597268, 112193.9732556, 160457.04234225, 171011.5217882, 83729.13946598, 16810.48075905, 26480.81573007, 1312.02943579, 32653.51061101, 21675.41711702, 142268.40028959, 51488.67392666, 76326.48543724, 22040.32860234, 67031.10486191, 4658.45946596, 60498.80373122, 33739.08238179, 206099.81524535, 453.50928824, 2922.55699567, 17423.67934537, 169355.31730701, 153366.73977512, 37855.93962022, 135455.7499376, 148694.57881181, 595.49158494, 67144.47446186, 230850.54805258, 1088.5793915, 10216.83288863, 63643.26760299, 121808.84943326, 63794.0806979, 121882.4452879, 190793.11827287, 7511.28154122, 143855.2533583, 65308.16709929, 109591.33057505, 66232.28663954, 65825.30751811, 144021.01903459, 2116.05627372, 6294.72463093, 48555.74405426, 79648.57348523, 139316.14122352, 107896.0507642, 146538.24116344, 470.76797906, 8454.49094462, 165355.27179585, 1446.28447904, 113484.31174331, 164864.5600415, 2106.88681789, 47240.8836319, 7282.04774622, 37193.59391108, 173528.41702068, 4449.89378206, 118143.949249, 1663.09899177, 137067.42939796, 108544.03351731, 198396.80891823, 1134.28623453, 19118.99779831, 91678.20128224, 2205.46587915, 7291.7329381, 10012.86711072, 10466.08371627, 792.2150978, 9815.6378085, 2777.55466376, 41405.13801521, 135855.88495412, 41183.4513922, 8869.07745525, 119597.10897996, 7861.8702039, 80483.63298997, 39273.94793298, 57404.69376928, 36731.42318765, 57549.68586765, 5861.83005114, 103050.97337435, 88521.0500052, 102235.31994747, 47242.6342122, 161744.43603556, 92245.60222174, 31118.68749109, 70494.83677411]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": ["NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", 351.86131098, "NaN", "NaN", "NaN", 74.89872224, "NaN", "NaN", "NaN", "NaN", 324.39827785, 54.63635441, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", 116.72949279, "NaN", "NaN", "NaN", "NaN", "NaN", 178.3126824, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", 179.68316475, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", 29.27295032, "NaN", "NaN", 161.05763898, "NaN", "NaN", "NaN", "NaN", "NaN", 37.44307344, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", 351.86131098, "NA", "NA", "NA", 74.89872224, "NA", "NA", "NA", "NA", 324.39827785, 53.57371534, "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", 120.70226714, "NA", "NA", "NA", "NA", "NA", 175.4923417, "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", 179.68316475, "NA", "NA", "NA", "NA", "NA", "NA", 29.27295032, "NA", "NA", 161.05763898, "NA", "NA", "NA", "NA", "NA", 37.44307344, "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", 0, "NA", "NA", "NA", 0, "NA", "NA", "NA", "NA", 0, 43.45538966, "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", 57.44822112, "NA", "NA", "NA", "NA", "NA", 70.44930341, "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", 0, "NA", "NA", "NA", "NA", "NA", "NA", 0, "NA", "NA", 0, "NA", "NA", "NA", "NA", "NA", 0, "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             },
             {
               "type": "double",

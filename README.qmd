@@ -324,9 +324,13 @@ clust_details <- list(
     Description = "The average local hour of track visits throughout the cluster event",
     Calculation = "The mean of `med_hour_local` across affiliated tracks"
   ),
-  "`n_points`" = tibble(
+  "`n_pts`" = tibble(
     Description = "The total number of location points comprised by the cluster",
     Calculation = "The sum of `n_pts` across associated tracks"
+  ),
+  "`pnts_pairdist_mean`, `pnts_pairdist_med` and `pnts_pairdist_sd`" = tibble(
+    Description = "Respectively, the mean, median and standard deviation of pairwise distances between location points comprised by the cluster (unit: meters)",
+    Calculation = "Summary statistics applied to all points within the clusters"
   ),
   "`cl_<behaviour-category>_duration` [e.g. `cl_SFeeding_duration`, `cl_SResting_duration`, `cl_SRoosting_duration`]" = tibble(
     Description = "The time spent by visiting tracks in each each behavioural category during the cluster event",
@@ -364,6 +368,11 @@ clust_details <- list(
     Description = "The average distance between member tracks' night-points and the cluster centroid on the date of arrival (i.e. first visit; unit: meters)",
     Calculation = "The average of `mean_arrival_dist` across affiliated tracks"
   ),
+  "`track_cntrd_pairdist_mean`, `track_cntrd_pairdist_med` and `track_cntrd_pairdist_sd`" = tibble(
+    Description = "Respectively, the mean, median and standard deviation of pairwise distances between track-level centroids of location points in the cluster (unit: meters)",
+    Calculation = "Summary statistics applied to `median_point`s within the cluster"
+  ),
+  
   "`trks_mindist_m`" = tibble(
     Description = "The minimum distance between a **non-member** location point and the cluster centroid, during the 2 weeks leading up to and throughout the cluster event (unit: meters)",
     Calculation = "Find the closest distance from non-member location points to the cluster centroid occurring between `spawn_dttm_local - lubridate::days(14)` and `cease_dttm_lcl`"

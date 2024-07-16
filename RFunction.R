@@ -410,7 +410,9 @@ rFunction = function(data,
       n_days_inactive = span_days - n_days_active,
       
       n_pts = n(),
-      #avg_pnts_pairdist = mean_pairwise_dist(geometry) |> units::set_units("m"),
+      
+      # mean, median and sd of pairwise distance between points in cluster
+      pairwise_dist_stats(geometry, name_prefix = "pnts_pairdist"),
 
       .groups = "drop"
     ) |>
@@ -442,6 +444,10 @@ rFunction = function(data,
       avg_nightime_prop_250m = mean(night_prop_250m, na.rm = TRUE),
       avg_nightime_prop_1km = mean(night_prop_1km, na.rm = TRUE),
       avg_arrival_dists = mean(mean_arrival_dist, na.rm = TRUE),
+      
+      # mean, sd and median of pairwise distances between track centroids in the
+      # cluster
+      pairwise_dist_stats(median_point, name_prefix = "track_cntrd_pairdist"),
 
       .groups = "drop"
     ) |> 
@@ -554,15 +560,37 @@ check_col_ids <- function(id_col, app_par_name, dt_names, suggest_msg, proceed_m
 }
 
 
+#' //////////////////////////////////////////////////////////////////////////////
+#' Helper to calculate summary statistics for pairwise distances between
+#' locations points. Summaries calculated on the lower triangle of the distance
+#' matrix to avoid double accounting of paired distances and the inclusion of 0s
+#' from same-point distances (i.e. the matrix diagonal)
+pairwise_dist_stats <- function(geom_pts, name_prefix = "pnts_pairdist"){
+  
+  if(!all(st_is(geom_pts, "POINT"))){
+    cli::cli_abort(
+      "`geom_pts` must be an `sf` object of geometry type 'POINT'"
+    )
+  }
+  # pairwise distance matrix
+  dst_mat <- sf::st_distance(geom_pts)
+  
+  # lower triangle of distance matrix
+  dst_lower_tri <- dst_mat[lower.tri(dst_mat)]
+  
+  # summary statistics
+  tibble(
+    "{name_prefix}_mean" := mean(dst_lower_tri),
+    "{name_prefix}_med" := median(dst_lower_tri),
+    # ifelse to handle SD single distances (due to only two points), returning
+    # 0, instead of NA
+    "{name_prefix}_sd" := ifelse(length(dst_lower_tri) == 1, 0, sd(dst_lower_tri))
+  ) |> 
+    mutate(across(everything(), ~set_units(.x, "m")))
+}
 
-#' #' //////////////////////////////////////////////////////////////////////////////
-#' #' Helper to count frequencies of column elements which is compatible with use
-#' #' inside `summarise()`
-#' count_ctgs <- function(col, ctgs){
-#'   purrr::map(ctgs, ~tibble({{.x}} := sum(col == .x))) |> purrr::list_cbind()
-#' }
-#' 
-#' 
+
+
 #' #' //////////////////////////////////////////////////////////////////////////////
 #' #' Helper to calculate time spent at each behaviour category, which is compatible with use
 #' #' inside `summarise()`

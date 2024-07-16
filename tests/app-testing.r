@@ -34,79 +34,12 @@ testthat::test_file("tests/testthat/test_RFunction.R")
 # ----   Interactive RFunction testing  ----
 # ---------------------------------------- #
 
-#' ----------------------------------------------------
-#' Comparison wit previous rFunction implementation
-#'
-#' NOTE: Newer implementations performs the cluster flattening on top of the
-#' common metrics calcumations
+out_dt_nam <- rFunction(data = test_dt$nam)
 
-### ---- Speed comparison
-tictoc::tic()
-out_dt_nam <- rFunction(
-  data = test_dt$nam #|> slice(1:5000)
-  )
-tictoc::toc()
+out_dt_nam
 
-
-tictoc::tic()
-out_dt_nam_old <- rFunction_old(
-  data = test_dt$nam |> 
-    rename(xy.clust = clust_id) |> 
-    mt_set_time_column("timestamp_local") #|> slice(1:5000)
-) 
-tictoc::toc()
-
-
-### ---- output comparison: events tables [aka track-level cluster metrics)
-out_dt_nam_events <- out_dt_nam |> data.frame() |> units::drop_units()
-
-out_dt_nam_old_events <- out_dt_nam_old |> 
-  data.frame() |> 
-  rename(
-    first_dttm_local = firstdatetime,
-    last_dttm_local = lastdatetime ,
-    n_days_unique = days,
-    n_days_span = totalduration,
-    n_days_empty = daysempty,
-    prop_days_empty = daysemptyprop,
-    n_pts = Total,
-    meanvisit_duration = meanvisit_time, 
-    meanvisit_daytime_duration = meanvisit_time_day,
-    mean_n_visits = meanvisits, 
-    mean_n_daytime_visits = meanvisits_daytime,
-    mean_night_dist = nightdist_med,
-    night_prop_250m = near_night_prop,
-    mean_arrival_dist = arrivaldists,
-    clust_id = xy.clust,
-    med_feed_hour_local = MedianHourFeed,
-    med_daytime_hour_local = MedianHourDay
-  )
-
-event_cols <- intersect(names(out_dt_nam_events), names(out_dt_nam_old_events))
-new = out_dt_nam_events |> select(all_of(event_cols)) 
-old = out_dt_nam_old_events |> select(all_of(event_cols))
-
-identical(new, old)
-
-
-### ---- output comparison: track tables [aka whole cluster metrics)
-out_dt_nam_trck <- mt_track_data(out_dt_nam) |> units::drop_units() |> data.frame() |> arrange(clust_id)
-out_dt_nam_old_trck <- mt_track_data(out_dt_nam_old) |> 
-  arrange() |> 
-  rename(
-    clust_id = xy.clust,
-    member_tracks = birds,
-    trks_mindist_m = mindist_m,
-    trks_n_within_25km = within_25k,
-    trks_n_within_50km = within_50k
-  ) |> data.frame()
-
-trck_cols <- intersect(names(out_dt_nam_trck), names(out_dt_nam_old_trck))
-new_trks = out_dt_nam_trck |> select(all_of(trck_cols))
-old_trks = out_dt_nam_old_trck |> select(all_of(trck_cols))
-
-all.equal(new_trks, old_trks)
-
+mt_track_data(out_dt_nam)$pnts_pairdist_med
+mt_track_data(out_dt_nam)$track_cntrd_pairdist_mean 
 
 
 #' ----------------------------------------------------
@@ -159,13 +92,31 @@ summary(out_dt$mean_arrival_dist - out_dt_utc$mean_arrival_dist)
 
 
 #' ----------------------------------------------------
-#' Run for a test datasets from different studies
+#' Run for test datasets from different studies
 
 #' ---------------------
 #' ---- GAIA
 
 out_dt_gaia <- rFunction(data = test_dt$gaia)
 out_dt_gaia
+
+min(mt_track_data(out_dt_gaia)$n_points)
+
+out_dt_gaia$mean_attendance
+
+out_dt_gaia$mean_night_dist
+out_dt_gaia$mean_arrival_dist
+mt_track_data(out_dt_gaia)$avg_nightime_dist
+mt_track_data(out_dt_gaia)$avg_arrival_dists
+
+mt_track_data(out_dt_gaia)$pnts_pairdist_sd
+mt_track_data(out_dt_gaia)$track_cntrd_pairdist_sd
+
+
+
+out_dt_gaia |> 
+  filter(is.na(mean_night_dist))
+
 
 attributes(out_dt_gaia)
 mt_is_time_ordered(out_dt_gaia)
@@ -178,13 +129,35 @@ sense_check_map(clust_metrics = out_dt_gaia, loc_dt = test_dt$gaia)
 #' ---- WCS
 
 out_dt_wcs <- rFunction(
-  data = test_dt$wcs #|>  
-    #filter(individual_name_deployment_id == "AW196499..deploy_id.2023814814.")
+  data = test_dt$wcs # |> 
+  #filter(individual_name_deployment_id == "AW196499..deploy_id.2023814814.")
 )
 
 out_dt_wcs
 
 sense_check_map(clust_metrics = out_dt_wcs, loc_dt = test_dt$wcs)
+
+
+out_dt_wcs |> 
+  filter(is.na(mean_attendance))
+
+out_dt_wcs$mean_attendance
+
+min(mt_track_data(out_dt_wcs)$n_points)
+
+
+out_dt_wcs <- rFunction(data = test_dt$wcs |>  slice(-c(1:2)))
+
+mt_track_data(out_dt_wcs)$pnts_pairdist_sd
+mt_track_data(out_dt_wcs)$pnts_spread_area
+
+
+mt_track_data(out_dt_wcs) |> 
+  print(n = 100)
+
+
+out_dt_wcs |> 
+  filter(is.na(mean_night_dist))
 
 
 
@@ -198,12 +171,29 @@ mt_is_track_id_cleaved(out_dt_sa_vfa)
 
 sense_check_map(out_dt_sa_vfa, test_dt$sa_vfa)
 
+min(mt_track_data(out_dt_sa_vfa)$n_points)
+
+mt_track_data(out_dt_sa_vfa)$
+
+out_dt_sa_vfa |> 
+  filter(is.na(mean_night_dist))
+
+
+mt_track_data(out_dt_sa_vfa)$pnts_pairdist_sd
+
 
 #' --------------------------------
 #' --- Savahn 
 out_dt_savahn <- rFunction(data = test_dt$savahn)
-
 out_dt_savahn
+
+min(mt_track_data(out_dt_savahn)$n_points)
+
+
+out_dt_sa_vfa |> 
+  filter(is.na(mean_night_dist))
+
+mt_track_data(out_dt_savahn)$pnts_pairdist_sd
 
 
 #' ---------------------------------
@@ -212,7 +202,49 @@ out_dt_ken_tnz <- rFunction(
   data = test_dt$ken_tnz
 )
 
-out_dt_ken_tnz
+
+out_dt_ken_tnz$mean_attendance
+
+min(mt_track_data(out_dt_ken_tnz)$n_points)
+
+
+out_dt_ken_tnz |> 
+  filter(is.na(meanvisit_duration))
+
+mt_track_data(out_dt_ken_tnz) |> 
+  filter(pnts_spread_area == set_units(0, "m2"))
+
+
+
+out_dt_ken_tnz |> 
+  filter(is.na(mean_night_dist))
+
+
+mt_track_data(out_dt_ken_tnz)$pnts_pairdist_sd
+
+
+
+
+out_dt_ken_tnz |> 
+  filter(clust_id == "TZN.351", individual_name_deployment_id == "ST1035A..deploy_id.3056462820.")
+
+test_dt$ken_tnz |> 
+  filter(clust_id == "TZN.351", individual_name_deployment_id == "ST1035A..deploy_id.3056462820.") |> 
+  as_tibble() |> 
+  print(n = 20)
+
+
+
+
+out_dt_ken_tnz |> 
+  filter(clust_id == "TZN.11", individual_name_deployment_id == "C181261..deploy_id.3118998707.")
+
+test_dt$ken_tnz |> 
+  filter(clust_id == "TZN.11", individual_name_deployment_id == "C181261..deploy_id.3118998707.") |> 
+  as_tibble() |> 
+  print(n = 20)
+
+
 
 
 
