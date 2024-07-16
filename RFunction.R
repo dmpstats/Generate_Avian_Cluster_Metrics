@@ -416,6 +416,14 @@ rFunction = function(data,
 
       .groups = "drop"
     ) |>
+    mutate(
+      pnts_spread_area = st_convex_hull(clust_points) |>
+        # add 50cm buffer to deal with linearly positioned points, to which
+        # `st_convex_hull` doesn't produce a polygon
+        st_buffer(units::set_units(0.5, "m")) |>
+        st_area() |>
+        units::set_units("m2")
+    ) %>%
     st_set_geometry("clust_points") %>%
     # Calculate cluster centroids based on geometric medians
     mutate(centroid = calcGMedianSF(.), .after = cease_dttm_local) %>%

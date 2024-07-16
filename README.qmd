@@ -330,7 +330,11 @@ clust_details <- list(
   ),
   "`pnts_pairdist_mean`, `pnts_pairdist_med` and `pnts_pairdist_sd`" = tibble(
     Description = "Respectively, the mean, median and standard deviation of pairwise distances between location points comprised by the cluster (unit: meters)",
-    Calculation = "Summary statistics applied to all points within the clusters"
+    Calculation = "Summary statistics applied to all points within the cluster"
+  ),
+  "`pnts_spread_area`" = tibble(
+    Description = "The spread area of location points comprised by the cluster (units: m^2)",
+    Calculation = "The area of the polygon created from the convex hull of points in the cluster (calculated via [`sf::st_convex_hull`](https://r-spatial.github.io/sf/reference/geos_unary.html))."
   ),
   "`cl_<behaviour-category>_duration` [e.g. `cl_SFeeding_duration`, `cl_SResting_duration`, `cl_SRoosting_duration`]" = tibble(
     Description = "The time spent by visiting tracks in each each behavioural category during the cluster event",

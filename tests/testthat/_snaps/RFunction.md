@@ -70,7 +70,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -93,10 +93,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -1433,6 +1433,44 @@
                 }
               },
               "value": [10.72353876, 14.6555449, 12.78393279, 10.50248182, 48.99192988, 128.65627702, 106.23286113, 157.75676856, 10.09985758, 9.59018465, 48.63892346, 12.07472624, 126.95575618, 10.21860495, 97.43955958, 0, 8.08320499, 14.32166874, 38.93252429, 56.46237847, 18.11809349, 11.55595802, 121.06544878, 42.10093899, 55.29168797, 10.27430741, 14.12822895, 67.05213672, 76.70096643, 18.03789784, 22.03771443, 27.28525508, 53.84396366, 24.7884123, 42.71638705, 9.68042663, 52.0301562, 19.46756552, 56.66595196, 0, 35.26279855, 61.55376807, 68.14177504, 82.31976773, 97.60681062, 9.72778503, 32.85585568, 131.61387478, 36.08367644, 24.40544744]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m", "m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [19.35875331, 232.9488706, 425.31381635, 233.67714326, 7548.42436525, 5481.19291975, 184.78575251, 274.02777749, 20.70222713, 19.35635203, 10677.69399093, 28.16794457, 1534.21334478, 233.79940447, 13535.61858976, 0.78503934, 20.76725684, 239.16467657, 3991.4720857, 12928.08878302, 1017.5506921, 20.80054574, 1424.73096269, 3210.43567276, 11223.61405273, 231.21521546, 404.16779085, 26365.73708856, 8296.02259299, 451.21005037, 1232.23052135, 263.50051032, 8314.82930495, 846.41188801, 877.37195751, 204.87598214, 11292.68356779, 816.9443859, 40811.58244145, 0.78503934, 2171.28612134, 4202.54741499, 12036.83853203, 8986.53080302, 19914.18988121, 216.40526031, 14295.94847393, 4850.15792897, 860.66092627, 1037.71183446]
             },
             {
               "type": "double",
@@ -4058,7 +4096,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -4081,10 +4119,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -7248,6 +7286,44 @@
                 }
               },
               "value": [112.16300267, 2.24989073, 55.33833535, 7.77926714, 88.77438924, 26.7211394, 97.63417249, 41.27604054, 109.63853997, 142.39743555, 5.12341075, 5.9692921, 55.79151085, 103.31538422, 2.0372123, 65.97353983, 9.6268374, 84.43286136, 117.83152293, 97.05794624, 7.19290598, 5.47571262, 57.88075398, 7.36020522, 17.19287679, 6.89335145, 21.34252676, 101.69462749, 98.50669214, 42.30065666, 6.90279251, 114.15988041, 131.89992606, 120.9687093, 134.29571488, 164.57249693, 77.34558678, 161.10445119, 23.95065435, 11.59194422, 3.24561304, 14.36792937, 24.74856118, 52.13824203, 15.17596995, 29.53078852, 73.90021789, 17.72877101, 191.51082451, 154.3154025, 50.74618573, 12.49798837, 76.36721057, 69.85397501, 204.87460732, 2.06738341, 90.45962473, 2.61349806, 8.87816279, 132.65246621, 57.93372711, 41.54683602, 1.3984975, 67.07384678, 5.98788265, 18.72955756, 80.63506623, 1.98191496, 0.46168258, 54.29360479, 3.47351533, 31.13860728, 4.09977041, 114.54221778, 102.22609564, 36.94748779, 3.26716895, 61.1873354, 20.71893935, 8.12270737, 183.49157075, 17.01348147, 12.94527985, 61.44284795, 9.28035862, 32.40517231, 44.35735277, 21.02266875, 29.522222, 3.76270899, 4.75842635, 168.38036653, 20.44273679, 70.93550108, 6.21145705, 121.11650586, 156.61341832, 143.52795332, 1.55183347, 4.62189722, 13.06794135, 1.8749695, 152.9311665, 52.08126698, 36.98757523, 148.69344612, 2.81885019, 135.95366294, 9.67065265, 1.48640306, 7.37983285, 149.49727939, 82.86076446, 39.19878507, 1.21126052, 57.80148148, 25.36629014, 178.51665832, 4.13867448, 55.02446915, 65.51470539, 18.71565633, 69.18593136, 66.44507629, 25.90042109, 88.40546457, 63.03298439, 134.57541832, 128.83601166, 98.86570889, 42.0211358, 32.57873329, 2.00755813, 21.11433644, 71.00298661, 7.50245159, 8.33371075]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m", "m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [10408.78371, 90.90385547, 72201.86149493, 1200.93436376, 19381.31414964, 3447.08910291, 20302.16077521, 3521.11723424, 61354.62634881, 17295.52087724, 284.21627497, 377.13605845, 10932.5100134, 27738.34356791, 49.58465504, 11015.50499161, 628.05541573, 25469.70776708, 38550.91268374, 3129.99452864, 825.43581151, 485.96774586, 7116.90245675, 162.15640578, 1248.48358704, 107.80610255, 655.37139503, 4608.73124267, 6919.38339173, 1303.29583405, 453.84364798, 2500.54509478, 86682.11828955, 7370.30263686, 22802.74018223, 36173.87734219, 85496.60763645, 161791.51356145, 2255.56840824, 1435.22490693, 118.23658822, 301.9539713, 2148.12877661, 2187.58024385, 1119.03643404, 297.04820753, 15872.20772266, 230.40163714, 38742.21698649, 63185.1892911, 353.88842253, 1131.43605151, 16230.38472751, 32111.50664783, 11839.81945049, 64.08924078, 22751.0609611, 120.9018751, 192.35442906, 18737.63594886, 5189.62741914, 8248.69340092, 31.5593893, 5101.38300617, 702.54442726, 1953.40058698, 492.07223188, 22.75239446, 2.98335122, 8805.82054085, 113.62356752, 2091.69904839, 64.44968824, 29620.13419902, 14871.07186229, 2127.13357989, 243.94400029, 8082.80176654, 62.3241708, 202.63183669, 14116.59617007, 1645.87066746, 2915.41430253, 3286.51676057, 1143.80760195, 2989.03820262, 2435.79918975, 1581.46054756, 1393.37140516, 140.3616777, 142.01049304, 37235.67679604, 8644.9821655, 3559.70023637, 276.27144488, 1362.46188325, 14780.90815654, 23123.69816889, 17.11590123, 166.88675908, 1443.06006337, 12.71596132, 10679.6760612, 534.7704154, 7607.56437762, 4003.46819326, 18.32448193, 23293.90413308, 422.58357671, 12.6336955, 478.22268966, 28367.35093675, 8782.02174182, 5775.20727672, 15.1233186, 108.145241, 747.11717547, 9928.3857952, 46.01220747, 17396.79153066, 3302.32828078, 1318.70008998, 44256.11065858, 5573.11210555, 286.23971687, 661.9376067, 2638.50782745, 12491.16012197, 16549.92863732, 6182.66642971, 163.28679901, 1116.16601586, 31.88432983, 2324.37932616, 6202.3233413, 303.04562862, 676.1134103]
             },
             {
               "type": "double",
@@ -12783,7 +12859,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -12806,10 +12882,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -16183,6 +16259,44 @@
                 }
               },
               "value": [102.58948615, 75.90071415, 26.86756021, 29.18311303, 102.72826672, 17.82671504, 52.61686026, 28.55823439, 25.22293007, 145.4958624, 67.24327184, 178.12896737, 20.95646192, 116.18540909, 56.25619192, 63.96150475, 28.08706521, 4.14411604, 163.76325911, 138.72901415, 112.83177699, 94.25127673, 72.46381826, 142.37362388, 61.82111058, 19.54299996, 147.95530792, 28.19586303, 123.27564077, 11.2598409, 81.28011614, 144.75387435, 30.59720637, 38.39078214, 8.9152565, 41.3828199, 55.6189853, 148.13261319, 18.58265176, 136.10095847, 9.57338538, 0, 228.42542446, 92.73721395, 63.30788486, 28.92192336, 91.69612718, 141.69343355, 18.03566494, 45.271492, 31.1257588, 5.55530832, 31.27684595, 47.74247615, 2.08765775, 85.3923802, 6.9983897, 59.8241936, 95.60923415, 63.78938787, 50.94527855, 27.23354614, 35.45110677, 163.25114013, 214.93539185, 115.89933642, 73.29238064, 74.24437239, 29.56282413, 9.90367816, 14.65753501, 26.42875581, 19.65772302, 110.76660969, 81.75331829, 146.28866538, 5.31368007, 104.8367171, 41.94917225, 4.95734408, 58.8987776, 76.96184308, 136.69966443, 95.00420381, 16.73779904, 29.76471911, 41.12934353, 32.91987488, 91.61225469, 24.02613664, 149.34630102, 71.90315965, 70.86274168, 22.01428748, 15.67252625, 69.47126901, 26.95039035, 102.77408442, 35.43298722, 34.85231214, 79.48004751, 5.952772, 15.03210049, 101.0998006, 16.10234624, 69.30625551, 69.43825127, 141.77910526, 115.8133711, 134.18279231, 7.54332117, 32.62655611, 31.15586653, 45.73405511, 91.08650655, 86.95204762, 103.03425075, 46.63410345, 8.57925187, 38.30491653, 7.94408682, 57.68481213, 5.53485754, 85.20132706, 41.23660714, 2.56347065, 42.5355161, 52.86248234, 28.71199377, 37.85048955, 44.6418364, 79.94565765, 33.87580124, 50.96252981, 15.13829195, 88.86175123, 93.37150308, 54.9705122, 4.29021625, 53.37205654, 104.82563701, 16.09781479, 13.51985645, 39.79678625, 20.70511816, 125.52227294, 60.40338112]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m", "m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [65703.28776617, 47244.10695174, 790.37813488, 44968.88123366, 4968.97394446, 635.34218316, 3096.25943436, 27976.16877449, 1480.48080907, 9748.19799301, 3560.54261747, 13713.69681128, 1302.05296786, 59739.69226719, 5520.49611942, 10511.47978857, 2702.15268549, 74.64159562, 70862.60120158, 78442.9737706, 22029.32873354, 9909.74671832, 13993.12039748, 3754.55435741, 3969.27956711, 1869.43056503, 18888.45762535, 23807.46892183, 117159.19953587, 1126.12400142, 8611.69243126, 10912.23291501, 3469.79302915, 7802.41688091, 454.74854453, 3592.79165773, 11554.79426979, 10048.21527765, 1369.79683122, 7303.72542321, 561.92423789, 75.30354712, 7941.16848125, 30092.40220695, 22687.55291137, 1975.81464645, 4697.03129794, 98169.64246914, 1850.00588642, 7535.02072602, 4982.28949643, 218.24472203, 242.80680228, 11481.79414213, 49.57792184, 16540.42936483, 141.19878872, 15416.97236573, 27524.12434812, 13901.34370788, 7710.38412992, 3164.02527464, 2721.4680134, 76773.45950195, 87591.28609937, 17753.20821711, 15624.29398693, 37341.12940708, 376.10052603, 343.44616023, 106.84273065, 3950.5518348, 2114.73136893, 17769.89353046, 10754.98800951, 16396.67018588, 66.62593822, 9567.67077879, 4249.98817425, 42.87327276, 22732.10445918, 24959.50185607, 67242.2266385, 46516.40410192, 459.19763439, 1799.35843948, 7934.62245721, 158.83997699, 10794.05416842, 3329.04910576, 11851.38406209, 2002.68072749, 12739.70523209, 1297.35048768, 72.27420127, 16915.26785293, 2705.5131713, 51971.09051747, 4854.73629082, 332.32866212, 2798.78456606, 68.23011535, 1706.83868769, 8910.70788782, 1456.4624268, 7630.70114691, 2893.09679835, 18369.62471546, 46393.63242966, 48167.1139242, 171.85750672, 4658.71873109, 1891.55649308, 21669.58523187, 44082.15808606, 21924.77456789, 7419.97241202, 9734.32649674, 592.68419976, 1907.14432225, 595.21515786, 13611.09080242, 36.36561132, 5705.28559047, 6041.66301671, 20.92708619, 7576.4827213, 8084.91348434, 7336.49979753, 2344.89263966, 8415.23930512, 1354.51699344, 1387.6026397, 7191.22726423, 1691.591407, 1501.19678574, 18271.51433612, 420.05728382, 125.62725297, 7174.7503444, 27951.12536463, 1158.6712772, 1403.04888315, 5598.47686975, 2311.80818067, 49652.97910232, 13086.82429735]
             },
             {
               "type": "double",
