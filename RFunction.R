@@ -392,7 +392,7 @@ rFunction = function(data,
     summarise(
       # combine cluster points into multipoint
       clust_points = st_combine(geometry),
-      
+    
       # Time-related
       spawn_dttm = min(.data[[tm_id_col]]),
       cease_dttm = max(.data[[tm_id_col]]),
@@ -408,6 +408,9 @@ rFunction = function(data,
       span_days = (ceiling_date(cease_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(spawn_dttm_local, unit = "days")) %>% as.integer(),
       n_days_active = length(unique(date_local)),
       n_days_inactive = span_days - n_days_active,
+      
+      n_pts = n(),
+      #avg_pnts_pairdist = mean_pairwise_dist(geometry) |> units::set_units("m"),
 
       .groups = "drop"
     ) |>
@@ -423,7 +426,6 @@ rFunction = function(data,
   cluster_track_based <- track_cluster_tbl %>%
     group_by(.data[[cluster_id_col]]) %>%
     summarise(
-      n_points = sum(n_pts, na.rm = TRUE),
       
       # total time spent on each behaviour
       if(not_null(behav_ctgs)) across(matches(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "cl_{.col}"),
@@ -431,8 +433,8 @@ rFunction = function(data,
       #avg_daytime_hour_local = mean(med_daytime_hour_local, na.rm = TRUE),
       avg_hour_local = mean(med_hour_local, na.rm = TRUE),
 
-      avg_visit_duration = mean(meanvisit_duration, na.rm = TRUE),
-      avg_daytime_visit_duration = mean(meanvisit_daytime_duration, na.rm = TRUE),
+      avg_attendance = mean(mean_attendance, na.rm = TRUE),
+      avg_attendance_daytime = mean(mean_attendance_daytime, na.rm = TRUE),
       avg_n_visits = mean(mean_n_visits, na.rm = TRUE),
 
       # Distance calculations
@@ -617,7 +619,7 @@ calcGMedianSF <- function(data) {
 
 
 #' //////////////////////////////////////////////////////////////////////////////
-#' Function to calculate daily average visit time spend by a track/animal in a given
+#' Function to calculate daily average attendance time by a track/animal in a given
 #' cluster, which is assumed as a proxy of time at carcass
 #' 
 timeAtCarcTab_ <- function(dt, clust_col, trck_col) {
@@ -626,25 +628,43 @@ timeAtCarcTab_ <- function(dt, clust_col, trck_col) {
     cli::cli_abort(
       "Column {.code nightpoint} in input data must only contain numeric values 0 and/or 1.", 
       call = NULL)
-  }
+  } 
   
-  carctime <- dt %>%
-    filter(!is.na(.data[[clust_col]])) %>%
+  carctime <- dt |> 
     # drop locally unnecessary geometry, for efficiency
     st_drop_geometry() |> 
-    # flag last location of each day
-    mutate(date_last_loc = date_local != lead(date_local)) |> 
-    group_by(.data[[clust_col]], .data[[trck_col]], date_local) %>%
-    # Exclude overnight times by dropping the last location of a given date
-    filter(date_last_loc == FALSE) |> 
+    # flag last and first locations of each day.
+    # NOTE 1: purposefully *not* grouping by track, so that last/first points of
+    # the day are still tagged when the next/previous locations belong to a
+    # different track, allowing the calculations below for `date_attn_lags` to
+    # return values in those cases.
+    # NOTE 2: want to do this before filtering out non-clustered locations, to
+    # include all available data
+    mutate(
+      date_last_loc = date_local != lead(date_local),
+      date_first_loc = date_local != lag(date_local)
+    ) |> 
+    filter(!is.na(.data[[clust_col]])) |> 
+    group_by(.data[[clust_col]], .data[[trck_col]], date_local) |> 
+    # compute attendance time lags, accounting for gaps between last/first
+    # points and the midnight boundary
+    mutate(
+      date_attn_lags = case_when(
+        date_last_loc ~ as.numeric(ceiling_date(timestamp_local, "day") - timestamp_local, "hours") |> set_units("h"),
+        date_first_loc ~ timediff_hrs + as.numeric(timestamp_local - floor_date(timestamp_local, "day"), "hours") |> set_units("h"),
+        .default = timediff_hrs
+      )
+    ) |>
+    # track's full-day and daytime attendance to the cluster, per visited day 
     summarise(
-      time_spent = sum(timediff_hrs, na.rm = TRUE),
-      time_spent_daytime = sum(timediff_hrs[nightpoint == 0], na.rm = TRUE),
+      attendance = sum(date_attn_lags, na.rm = TRUE),
+      attendance_daytime = sum(date_attn_lags[nightpoint == 0], na.rm = TRUE),
       .groups = "drop_last"
     ) %>%
+    # track's mean daily and mean daily-daytime attendance time to the cluster
     summarise(
-      meanvisit_duration = mean(time_spent),
-      meanvisit_daytime_duration = mean(time_spent_daytime),
+      mean_attendance = mean(attendance),
+      mean_attendance_daytime = mean(attendance_daytime),
       .groups = "keep"
     ) 
   

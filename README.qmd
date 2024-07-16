@@ -187,13 +187,13 @@ track_clust_details <- list(
     Description = "The median local hour of track locations in the cluster",
     Calculation = "Filter the local hour component of all track locations in cluster and calculate the median"
   ),
-  "`meanvisit_duration`" = tibble(
-    Description = "The track's daily mean visit time to the cluster (unit: hours)",
-    Calculation = "Calculate the time spent by the track in the cluster per day (excluding absent days), and compute the mean across visited days"
+  "`mean_attendance`" = tibble(
+    Description = "The track's daily mean attendance time at the cluster (unit: hours)",
+    Calculation = "Calculate the time spent by the track in the cluster per present day (excluding absent days), and compute the mean across visited days."
   ),
-  "`meanvisit_daytime_duration`" = tibble(
-    Description = "The track's daily mean visit time to the cluster during the daytime period (unit: hours)",
-    Calculation = "Identical to `meanvisit_duration`, but including only location events where `nightpoint == 0`"
+  "`mean_attendance_daytime`" = tibble(
+    Description = "The track's daily mean attendance time at the cluster during the daytime, i.e. the period between sunset and sunrise (unit: hours)",
+    Calculation = "Identical to `mean_attendance`, but including only location events where `nightpoint == 0`"
   ),
   "`mean_n_visits`" = tibble(
     Description = "The track's mean number of unique visits to the cluster per day",
@@ -336,13 +336,13 @@ clust_details <- list(
   #   Description = "The total number of location points under each behavioural category during the cluster event",
   #   Calculation = "The sum of location events assigned to a `<behaviour-category>` (e.g. `SFeeding`) and to the cluster ID"
   # ),
-  "`avg_visit_duration`" = tibble(
-    Description = "The daily average time spent by member tracks in the cluster (unit: hours)",
-    Calculation = "The average of `meanvisit_duration` across affiliated tracks"
+  "`avg_attendance`" = tibble(
+    Description = "The daily average attendance time by member tracks at the cluster (unit: hours)",
+    Calculation = "The average of `mean_attendance` across affiliated tracks"
   ),
-  "`avg_daytime_visit_duration`" = tibble(
-    Description = "The daily average time spent by member tracks in the cluster during the daytime period (unit: hours)",
-    Calculation = "The average of `meanvisit_daytime_duration` across member tracks"
+  "`avg_attendance_daytime`" = tibble(
+    Description = "The daily average attendance time spent by member tracks in the cluster during the daytime period (unit: hours)",
+    Calculation = "The average of `mean_attendance_daytime` across member tracks"
   ),
   "`avg_n_visits`" = tibble(
     Description = "The average number of unique visits per day by member tracks",
