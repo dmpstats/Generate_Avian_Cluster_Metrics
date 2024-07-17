@@ -443,9 +443,10 @@ rFunction = function(data,
       #avg_daytime_hour_local = mean(med_daytime_hour_local, na.rm = TRUE),
       avg_hour_local = mean(med_hour_local, na.rm = TRUE),
 
-      # attendance metricsa
-      avg_attendance = mean(mean_attendance, na.rm = TRUE),
-      avg_attendance_daytime = mean(mean_attendance_daytime, na.rm = TRUE),
+      # attendance metrics
+      attendance_davg = mean(attendance_dmean, na.rm = TRUE),
+      attendance_daytime_davg = mean(attendance_daytime_dmean, na.rm = TRUE),
+      attendance_compound = sum(attendance_aggr, na.rm = TRUE),
       
       # visits metrics
       visits_day_avg = mean(visits_day_mean, na.rm = TRUE),
@@ -703,8 +704,9 @@ timeAtCarcTab_ <- function(dt, clust_col, trck_col) {
     ) %>%
     # track's mean daily and mean daily-daytime attendance time to the cluster
     summarise(
-      mean_attendance = mean(attendance),
-      mean_attendance_daytime = mean(attendance_daytime),
+      attendance_dmean = mean(attendance),
+      attendance_daytime_dmean = mean(attendance_daytime),
+      attendance_aggr = sum(attendance),
       .groups = "keep"
     ) 
   
@@ -755,9 +757,11 @@ revisitTab_ <- function(trk_clust_dt, dt, clust_col, trck_col, tm_col) {
     tidyr::unnest(mn_visits)
 }
 
-#' -----------------------------------
+
+
+#' --------------------------------------------------------------------------------
 #' Lower-level: computing avg nr. visits/day of a given track to a given cluster
-#' -----------------------------------
+#' --------------------------------------------------------------------------------
 revisit_calc_ <- function(clust, trck, start, end, dt, clust_col, trck_col, tm_col){
   
   # filter for current track within cluster's time span

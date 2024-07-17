@@ -40,8 +40,13 @@ out_dt_nam
 summary(out_dt_nam)
 
 mt_track_data(out_dt_nam)
-summary(mt_track_data(out_dt_nam) |> select(-member_tracks_ids ))
+summary(mt_track_data(out_dt_nam) |> select(-member_tracks_ids))
 
+
+
+mt_track_data(out_dt_nam) |> 
+  filter(member_tracks_n > 1)
+  
 
 
 #' ----------------------------------------------------
@@ -126,6 +131,7 @@ out_dt_wcs <- rFunction(
   data = test_dt$wcs # |> 
   #filter(individual_name_deployment_id == "AW196499..deploy_id.2023814814.")
 )
+
 
 out_dt_wcs
 summary(out_dt_wcs)

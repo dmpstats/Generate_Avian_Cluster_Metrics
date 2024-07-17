@@ -16,7 +16,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
         },
         "sf_column": {
           "type": "character",
@@ -29,7 +29,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
             },
             "levels": {
               "type": "character",
@@ -42,7 +42,7 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
@@ -70,7 +70,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -93,10 +93,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -1666,6 +1666,44 @@
                 }
               },
               "value": [3, 12, 4, 3.5, 5.5, 2.8, 0.5, 3, 2.5, 1.5, 6, 3, 4, 2, 6, 1, 4, 2, 5, 3.14285714, 3, 3, 3.5, 4.5, 4.5, 3, 2.5, 7, 6, 3, 4.5, 3, 3, 6, 4, 2.5, 4, 3, 11.625, 0, 3.5, 4, 4.5, 3, 2.5, 2.5, 10.4, 2.5, 2, 2.5]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [3, 12, 19, 18, 11, 36, 12, 3, 16, 14, 23, 17, 4, 15, 23, 13, 19, 11, 21, 82, 17, 3, 18, 20, 20, 17, 16, 43, 23, 3, 20, 17, 17, 23, 19, 16, 19, 17, 177, 11, 18, 19, 13, 34, 16, 16, 108, 16, 15, 16]
             },
             {
               "type": "double",
@@ -3970,6 +4008,44 @@
         },
         {
           "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 13, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
+        },
+        {
+          "type": "double",
           "attributes": {},
           "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1.66666667, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.125, 1, 1, 1.5, 1.25, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.14285714, 1]
         },
@@ -4118,7 +4194,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
+          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
         },
         "sf_column": {
           "type": "character",
@@ -4131,7 +4207,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
+              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
             },
             "levels": {
               "type": "character",
@@ -4144,7 +4220,7 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
@@ -4172,7 +4248,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -4195,10 +4271,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -7595,6 +7671,44 @@
                 }
               },
               "value": [4.65027778, 2.30333333, 4.52242591, 3.6925, 5.75083333, 7.15027778, 6.89861111, 3.30111111, 3.36625, 1.375, 0.44930556, 2.64472222, 3.35, 2.87458333, 1.14972222, 1.01236111, 2.29777778, 2.85222222, 3.17402778, 1.34777778, 1.80027778, 1.31277778, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 1.40777778, 0.84972222, 2.59981481, 2.63484403, 3.25027778, 1.91076389, 1.67527778, 2.34569444, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 4.81763889, 0.4, 0.2, 1.42527792, 0.2, 1.90013889, 3.58166667, 1.54194444, 2.20722222, 1, 1.22486111, 1.58347222, 0.55, 1.51277778, 2.44944444, 0.98777778, 0.14861111, 2.42416667, 2.025, 0.02416667, 0.35, 0.25, 0.24972222, 1.54430556, 0.70027778, 1.64972222, 0.59944444, 2.3, 0.30138889, 2.62513889, 1.40013903, 1.20027778, 0.15, 2.20027778, 0.17486111, 1.19972222, 2.81930556, 3.06675926, 2.20333333, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 2.30083319, 1.60064815, 1.54819444, 1.66666667, 0.84972222, 1.35138889, 0.93916667, 0.2, 0.7, 8.14777778, 0.24805556, 3.22513889, 0.75, 1.75069444, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.22513889, 1.54861111, 3.65, 0.59972222, 3.95333333, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 3.21361111, 3.66541667, 2.84847222, 8.44453315, 6.19888889, 0.55, 0.4, 1.40166667, 1.92555556, 3.07527778, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 0.60194444]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [5.54583333, 8.75555556, 230.49444417, 10.545, 6.10166667, 7.15027778, 11.39527778, 3.35111111, 59.84166667, 14.15055556, 12.05055556, 9.60111111, 3.35, 17.29916667, 1.14972222, 4.04944444, 2.29777778, 2.85222222, 17.89833333, 1.34777778, 14.99833333, 14.07916667, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 2.81555556, 0.84972222, 19.34944444, 16.86968806, 76.8, 29.94277778, 14.6, 16.09083333, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 21.23555556, 0.4, 11.80472222, 2.85055583, 0.4, 3.80027778, 3.58166667, 19.65138889, 15.96583333, 1, 14.04972222, 3.16694444, 0.55, 1.51277778, 16.54916667, 15.5, 0.14861111, 5.14833333, 15.65027778, 11.29944444, 0.35, 0.25, 0.24972222, 3.08861111, 0.70027778, 1.64972222, 0.59944444, 16.15, 0.30138889, 16.85027778, 14.40027806, 1.20027778, 0.15, 2.20027778, 0.34972222, 1.19972222, 17.23944444, 32.45027778, 15.89972222, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 16.30138861, 16.39722222, 14.74833333, 1.66666667, 0.84972222, 1.35138889, 2.8175, 0.2, 0.7, 8.14777778, 0.24805556, 18.1, 0.75, 15.05055556, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.45027778, 1.54861111, 18.99972222, 0.59972222, 19.50222222, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 15.09055556, 18.93277778, 17.39527778, 53.82554389, 6.19888889, 0.55, 0.4, 1.40166667, 15.35027778, 17.7025, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 5.24805556]
             },
             {
               "type": "double",
@@ -12779,6 +12893,44 @@
         },
         {
           "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [5.54583333, 15.5, 1.35138889, 0.24805556, 0.75, 15.05055556, 0.84972222, 0.2, 0.7, 18.1, 1.64972222, 1.54861111, 15.65027778, 19.50222222, 1.15027778, 18.99972222, 0.34972222, 0.2, 0.69916667, 0.45027778, 0.31694444, 0.34972222, 17.39527778, 10.545, 2.8175, 15.09055556, 0.15, 2.65, 18.93277778, 1.56027778, 0.55, 0.4, 15.35027778, 6.19888889, 11.39527778, 1.40166667, 17.7025, 53.82554389, 2.95027778, 0.2, 0.95027778, 1.15027778, 5.24805556, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 14.99833333, 5.6475, 16.09083333, 0.60083333, 11.80472222, 59.84166667, 2.20083361, 0.64972222, 15.96583333, 5.14833333, 11.29944444, 0.70027778, 16.15, 6.10166667, 3.35111111, 12.05055556, 3.35, 1.14972222, 2.29777778, 14.07916667, 1.02, 1.24972222, 29.94277778, 76.8, 0.55, 1.64972222, 0.30138889, 17.89833333, 8.75555556, 7.15027778, 14.15055556, 17.29916667, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 16.86968806, 0.75027778, 0.47694444, 1.50222222, 21.23555556, 3.58166667, 1, 14.04972222, 16.54916667, 0.25, 0.24972222, 0.59944444, 19.34944444, 14.40027806, 230.49444417, 4.04944444, 0.5, 1.21583333, 2.81555556, 0.84972222, 1.15333333, 3.04972222, 0.4, 14.6, 0.4, 3.16694444, 1.51277778, 0.14861111, 0.35, 3.08861111, 16.85027778, 0.15, 2.20027778, 32.45027778, 2.05, 1.75027778, 9.60111111, 15.89972222, 0.64916667, 1.20027778, 17.23944444, 1.19972222, 2.50083333, 0.54944444, 16.39722222, 19.05083333, 0.60055556, 14.74833333, 0.63277778, 3.34944444, 16.30138861, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
+        },
+        {
+          "type": "double",
           "attributes": {},
           "value": [4, 1.25, 3, 1, 1, 2.5, 2, 1, 1, 5.5, 1, 1, 1.5, 3.5, 1, 2.5, 1, 1, 3, 1, 1, 1, 4, 6, 1.66666667, 6, 1, 1, 3.5, 2, 1, 2, 4.5, 5, 7, 3, 3, 5.66666667, 2, 1, 1, 1, 4, 1, 1, 2, 2, 1, 6.5, 2, 5, 2, 3, 2.83333333, 1, 2, 4, 1.5, 1, 1, 6.5, 5, 6, 3, 4, 1, 3, 4, 3, 3, 8.5, 5.375, 1, 1, 2, 3, 1, 2, 3.5, 2, 5, 2, 1, 1, 2, 4.5, 1, 1, 4, 5.5, 4, 2, 1.5, 2.5, 1, 1, 1, 2.33333333, 1.5, 9.46666667, 1.25, 1, 2, 2.5, 2, 2, 1, 1, 5, 1, 1.5, 3, 1, 1, 3, 1.5, 1, 1, 3, 1, 1, 2, 2.5, 1, 3, 4, 1, 1, 1, 2.66666667, 1.66666667, 2, 2.5, 2, 2, 3, 1, 2, 1, 7]
         },
@@ -12957,7 +13109,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
         },
         "sf_column": {
           "type": "character",
@@ -12970,7 +13122,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
             },
             "levels": {
               "type": "character",
@@ -12983,7 +13135,7 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
@@ -13011,7 +13163,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -13034,10 +13186,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -16644,6 +16796,44 @@
                 }
               },
               "value": [3.16837302, 7.33685185, 9.91888889, 19.78309259, 9.91666667, 11.67222222, 2.92222222, 8.43465909, 2.91305556, 3.49847222, 7.58069444, 6.41986111, 6.00180556, 2.98704861, 5.83430556, 6.00125, 5.83166667, 4.95944444, 5.15453704, 2.12918287, 8.46263889, 3.50055556, 8.1675, 2.33361111, 6.25416667, 6.41833333, 10.5025, 9.19684444, 5.34901235, 6.51, 5.83736111, 6.12638889, 6.24847222, 5.84138889, 6.41722222, 4.08305556, 5.82930556, 7.29277778, 6.25194444, 5.25319444, 5.54291667, 0, 2.33666667, 7.29472222, 7.50097222, 6.12652778, 5.83569444, 2.43041667, 2.33152778, 6.00305556, 5.54444444, 5.5425, 4.08861111, 5.83430556, 0.58666667, 5.54694444, 9.91888889, 0.65642361, 2.33361111, 6.25513889, 5.54513889, 5.83486111, 4.08736111, 5.10569444, 0.875, 2.24930556, 6.12625, 4.95944444, 9.00305556, 3.49944444, 2.33333333, 5.50263889, 5.83625, 6.00152778, 5.54444444, 4.37375, 2.33416667, 5.50111111, 5.54666667, 2.50027778, 10.21305556, 0.75, 7.87986111, 2.625625, 0.58277778, 1.45486111, 1.28344444, 1.75, 1.16652778, 5.83388889, 5.25416667, 4.96055556, 4.95944444, 1.50027778, 1.75, 3.87451389, 5.54875, 2.90016667, 6.12625, 0.99972222, 10.00277778, 2.00055556, 2.05291667, 1.49847222, 5.54486111, 2.17361111, 4.00277778, 7.005, 1.49701389, 6.12722222, 0.5875, 2.20652778, 6.12638889, 6.0025, 7.58569444, 5.83263889, 5.54555556, 3.50083333, 5.54305556, 5.24736111, 2.3375, 5.25069444, 1.15861111, 5.25069444, 6.41388889, 1.74222222, 7.00125, 6.12763889, 6.99708333, 2.33305556, 1.49925926, 5.54527778, 1.74916667, 3.74791667, 6.71305556, 2.04069444, 5.54319444, 0.29152778, 3.5, 3.5, 0.74930556, 5.25138889, 3.20875, 6.42041667, 1.74833333, 4.66805556, 0]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [34.48861111, 26.00527778, 9.91888889, 720, 9.91666667, 11.67222222, 2.92222222, 251.9775, 2.91305556, 16.99194444, 19.32555556, 17, 16.00138889, 19.32722222, 15.83138889, 16.00027778, 15.82638889, 14.06444444, 24.07833333, 35.00666667, 21.08638889, 3.50055556, 20.49638889, 6.49805556, 16.99833333, 17.00083333, 10.5025, 298.24805556, 164.09305556, 17.50333333, 15.83472222, 16.41694444, 16.99166667, 15.84083333, 16.99944444, 4.08305556, 11.65861111, 18.74944444, 16.99861111, 14.66722222, 15.25027778, 4.16444444, 2.33666667, 18.75055556, 19.49972222, 16.41722222, 15.835, 30.50083333, 4.66305556, 16.50333333, 15.25027778, 15.25, 12.33638889, 15.82972222, 4.74777778, 15.25805556, 9.91888889, 4.08416667, 4.66722222, 16.50027778, 15.24666667, 15.83361111, 12.33111111, 40.99638889, 3.5, 8.49416667, 16.41722222, 14.07527778, 9.00305556, 3.49944444, 2.33333333, 15.49972222, 15.83361111, 16.49972222, 15.25361111, 12.90888889, 2.33416667, 15.49694444, 15.25, 2.50027778, 24.5875, 1.5, 15.75972222, 37.4975, 4.74388889, 14.66833333, 6.41722222, 1.75, 2.33305556, 15.83027778, 15.00333333, 14.08194444, 14.08027778, 1.50027778, 1.75, 18.24666667, 15.25416667, 18.99694444, 16.41694444, 5.49777778, 10.00277778, 2.00055556, 4.10583333, 2.99694444, 15.24611111, 12.30138889, 12.50166667, 18.16694444, 17.99277778, 16.41527778, 4.7475, 4.41305556, 16.41583333, 58.505, 19.33611111, 15.83, 14.66444444, 19.00027778, 15.245, 14.66, 2.3375, 22.5, 1.74194444, 14.0825, 6.41388889, 1.74222222, 18.75027778, 12.25527778, 18.15888889, 6.49444444, 20.99694444, 15.24694444, 1.74916667, 19.49694444, 18.16777778, 4.08138889, 15.25111111, 12.33555556, 3.5, 3.5, 1.49861111, 14.66694444, 14.00305556, 16.99722222, 15.24666667, 9.41111111, 1.16666667]
             },
             {
               "type": "double",
@@ -22564,6 +22754,44 @@
         },
         {
           "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [26.00527778, 16.50027778, 2.33305556, 1.77555556, 2.33027778, 0.55444444, 11.74694444, 3.5, 1.75, 15.25416667, 16.41694444, 15.24611111, 1.5, 9.91888889, 2.99694444, 58.505, 18.16694444, 14.66444444, 6.41722222, 19.33611111, 4.7475, 2.91305556, 1.5, 16.41527778, 251.9775, 16.41583333, 15.83, 17.99277778, 19.00027778, 22.5, 14.66, 18.15888889, 2.3375, 1.74222222, 15.83138889, 18.75027778, 6.41388889, 15.245, 1.74194444, 14.0825, 12.25527778, 6.49444444, 20.99694444, 19.49694444, 1.74916667, 20.49638889, 18.16777778, 3.5, 4.08138889, 12.33555556, 15.24694444, 15.25111111, 3.5, 14.66694444, 1.49861111, 16.99722222, 11.65861111, 9.41111111, 14.00305556, 15.24666667, 1.16666667, 4.16444444, 4.66305556, 12.33638889, 21.00472222, 11.08611111, 1.75, 1.16583333, 16.00138889, 4.74777778, 2.91111111, 16.41611111, 11.67222222, 19.32555556, 15.82638889, 3.50055556, 17.00083333, 298.24805556, 16.41694444, 15.84083333, 16.00027778, 18.74944444, 18.75055556, 15.25805556, 4.66722222, 12.33111111, 34.48861111, 1.16611111, 15.82583333, 17, 16.49333333, 7.585, 6.49805556, 16.99833333, 14.66722222, 2.33666667, 16.41722222, 15.25, 9.91888889, 15.24666667, 720, 9.91666667, 2.92222222, 2.91305556, 17.50333333, 14.06444444, 21.08638889, 15.83472222, 16.99944444, 4.08305556, 15.25027778, 15.835, 15.25027778, 15.82972222, 15.83361111, 16.99166667, 8.49416667, 9.00305556, 15.49972222, 16.49972222, 2.33333333, 3.49944444, 10.5025, 164.09305556, 16.41722222, 15.25361111, 16.99861111, 14.07527778, 15.83361111, 15.49694444, 2.50027778, 37.4975, 15.00333333, 1.75027778, 1.16666667, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 16.41722222, 16.40944444, 15.25, 19.49972222, 24.5875, 14.08194444, 30.50083333, 15.75972222, 4.74388889, 15.83027778, 12.90888889, 2.33416667, 14.66833333, 16.50333333, 1.75, 14.08027778, 1.50027778, 1.74888889, 16.49777778, 18.99694444, 5.49777778, 10.00277778, 2.00055556, 12.50166667]
+        },
+        {
+          "type": "double",
           "attributes": {},
           "value": [1, 1, 1, 1, 1, 1, 1, 1.25, 1, 1, 1, 1, 1.5, 1, 1, 1.4, 1, 1, 1, 1, 1, 1, 1, 1, 1.27272727, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.52, 1, 1, 1, 1, 1, 1, 1, 1, 1.14285714, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1.33333333, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         },
@@ -22712,7 +22940,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "mean_attendance", "mean_attendance_daytime"]
+          "value": ["clust_id", "individual_name_deployment_id", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr"]
         },
         "groups": {
           "type": "list",
@@ -23039,6 +23267,11 @@
           "type": "double",
           "attributes": {},
           "value": [3, 4.5, 12, 3.5, 5.5, 0.5, 3, 2.5, 3, 4, 2, 4, 6, 4, 5, 3, 3, 4.5, 2.5, 7, 3, 6, 2.8, 3, 3, 4.5, 3, 6, 4, 2.5, 4, 0, 3, 1.5, 11.625, 3.5, 4, 4.5, 3, 2.5, 2.5, 2.5, 2, 2.5, 6, 10.4, 1, 2, 3.14285714, 3.5]
+        },
+        {
+          "type": "double",
+          "attributes": {},
+          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 13, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
         }
       ]
     }
@@ -23061,7 +23294,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "mean_attendance", "mean_attendance_daytime"]
+          "value": ["clust_id", "individual_name_deployment_id", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr"]
         },
         "groups": {
           "type": "list",
@@ -26204,6 +26437,44 @@
             }
           },
           "value": [3, 3.5, 2.24611111, 1.74611111, 1.24583333, 1.49513889, 1.99736111, 1.99805556, 0.99611111, 0.82833333, 2.24611111, 4.49759259, 1.74986111, 2, 0, 1.74498457, 0.25, 1.5, 0.24625, 1.49222222, 1.00152778, 1.49986111, 10.50833333, 2.24579365, 0.74611111, 2.5, 1.50027778, 0, 1.99861111, 2.99013889, 11.99152778, 5.24097222, 5.68958333, 5.1587037, 1.49222222, 1.49972222, 3.48333333, 2, 3, 3.66398148, 6.74277778, 1.50027778, 3.99583333, 1.99972222, 2.99972222, 3.49875, 2.99569444, 3.74597222, 2.00777778, 2.49583333, 4.5, 6, 2.5, 3.09090909, 4.49222222, 1.5, 2, 2.24972222, 3.49569444, 4.74597222, 3.49583333, 3.49583333, 1.24375, 1.75819444, 5, 0.99694444, 1.5, 1.49833333, 1.25013889, 0.74611111, 2.74625, 1.24833333, 2.24944444, 0.74930556, 1, 4.52631579, 1.99652778, 5.00041667, 6, 1.99527778, 2.24611111, 1.00027778, 0.99597222, 2.71210317, 0.49972222, 1.99638889, 4.24319444, 3.49958333, 3.49416667, 2.49972222, 2.74583333, 4.24513889, 2.74972222, 1.99222222, 2.99611111, 3.8, 3.43152778, 8.24555556, 4.873125, 2.24902778, 5.24555556, 4.25097222, 0.99972222, 3.24583333, 4.24347222, 2.99583333, 2, 4.74583333, 10.00083333, 5.34962963, 3.49416667, 7.49416667, 1.4925, 3.24611111, 5.24611111, 3.24513889, 4.66425926, 2.66666667, 5, 5, 4.5, 1.4925, 2, 2, 3.50347222, 2, 4.56521739, 4.54545455, 3.5, 5, 8, 3, 1, 1, 2.5, 3.5, 2.5, 0, 1.66666667, 3, 4.5, 3, 2.5, 1, 1.33333333, 3, 2, 1.5, 2.5, 0.5, 0.99222222, 2, 8.25, 6, 3, 2.5, 2, 1.5, 5.14285714, 2.5, 2.49962963, 1.49222222, 2.24625, 1.49986111, 2.00027778, 1.5, 1.99222222, 0.99611111, 1.71509259, 0.5, 3.5, 1.5, 1.49972222, 4.24763889, 5.24111111, 2.49972222, 2.50805556, 1.5, 2.49583333, 1.50777778, 2, 1, 1.5, 1.74944444, 3.5, 3.49583333, 2.495, 4.25291667, 0.25027778, 1.49990741, 2.74555556, 3.99569444, 3.49597222, 6.49944444, 2.49694444, 3, 6, 1.5, 1, 3, 2.75, 2, 6, 3, 9, 0.5, 3, 6.80769231, 0.5, 2, 4.5, 5, 0.5, 7, 0, 5, 2.5, 3, 1.5, 3, 1, 1, 1, 2.74736111, 3.24555556, 3.49694444, 3.00027778, 2.5, 0.49986111, 1.49222222, 1.49222222, 5, 3.74986111, 1.99222222, 3.75013889, 0.66675926, 1.50055556, 0.5, 0.99222222, 1.4975, 1.49972222, 2.50083333, 5.74444444, 5.99972222, 2, 3.5, 1.5, 1.5, 1.5, 2.49583333, 1.5, 3.24583333, 1.49944444, 3.24569444, 1.99222222, 1.50055556, 1.83333333, 1.74652778, 0, 1.5, 3.74541667, 3, 1.74888889, 4.32944444, 3.24958333, 1.49944444, 1, 0.74875, 2.74597222, 2.74958333, 5.16611111, 6.24430556, 5.99638889, 0.5, 0.5, 3.5, 4.5, 3.5, 2, 1, 1.5, 6, 2, 1.66666667, 1.66666667, 0.5, 1, 3, 0, 1, 4.5, 1.5, 0, 8, 2.5, 6, 1, 6.33333333, 0.99611111, 0, 1.99263889, 1.25, 2, 0.66666667, 0, 1.49222222, 1.49611111, 1.32935185, 2.5, 0, 2.74930556, 3.24583333, 4.74527778, 1.5, 8.9962037, 3.24152778, 2.99583333, 4.24194444, 5.49277778, 2.16009259, 1.49972222, 2.00263889, 3.24208333, 1.49972222, 1.5, 2.74930556, 1.33074074, 3.74555556, 2.99569444, 2.99513889, 3.5, 3.5, 8, 2.33333333, 3.33333333, 3, 4.5, 0.66666667, 2.75, 2, 4, 1, 2.5, 13, 3, 1.5, 3.5, 2.5, 2.5, 2, 1.5, 2, 5, 3.65864198, 5.5, 2.5, 1.99972222, 0.25388889, 2.99618056, 0.49972222, 1.37090278, 0.49972222, 1.00777778, 1.33074074, 0.99645833, 2.99208333, 2.00055556, 0.74611111, 2.99958333, 2.5, 0.99916667, 1.74986111, 1.55151235, 0.5, 2.49388889, 3.74444444, 3.24972222, 5, 4.24430556, 2.74194444, 3.27900794, 1.23791667, 3, 1.75583333, 0.99194444, 1.24986111, 2, 3.74583333, 4.24555556, 3.35436508, 4.61875, 2.49972222, 3.5, 1.50027778, 2.74930556, 4.49972222, 4.74611111, 1, 4.5, 7, 2, 3.5, 3.5, 4.5, 8, 2, 3, 4.5, 3, 2, 0.5, 3.5, 2, 3, 6, 3.5, 7, 1.5, 1.5, 1, 4, 3, 3, 5.5, 2.5, 0.5, 3.5, 3.5, 2.5, 0.51638889, 2.49916667, 0.99736111, 1.49305556, 0.9925, 3, 3.49611111, 3.49486111, 2.50083333, 3.74930556, 5.24597222, 5.99027778, 3.49583333, 1.99222222, 1.74458333, 1.50027778, 2, 2.6637037, 3.24611111, 1.49972222, 4.99597222, 4.99180556, 5.49597222, 5.74569444, 2.99222222, 3.5, 5.5, 2, 2.5, 4, 4.5, 4.5, 0.5, 3, 0.5, 1, 3.5, 1, 1.5, 3, 1.5, 3, 3.5, 3.5, 2.5, 2.5, 3, 2.5, 8, 3, 4.5, 1.5, 1.5, 4, 1.49180556, 1.995, 8, 0.99708333, 3.99958333, 0.9925, 3.49583333, 3.24958333, 1.49222222, 5.16111111, 1.24583333, 1.50805556, 1, 1.24222222, 1.74638889, 0, 1.99222222, 1.16425926, 3.11875, 1.97722222, 1.49222222, 3.99236111, 5.99583333, 5.24402778, 1.00611111, 3.5, 3.24208333, 1.24652778, 3.24694444, 7.5, 3.5, 5.5, 1, 2, 1, 3, 3.5, 1.5, 1, 3.5, 3, 0.5, 2.75, 1.5, 0.5, 1, 4, 0.5, 0.99222222, 0.99972222, 4.99194444, 4.24486111, 1.50722222, 2.74583333, 2.49222222, 3.24930556, 0.74555556, 5, 3.0075, 0, 1.24611111, 0.75, 3.00027778, 4.49527778, 2.74583333, 3.24972222, 3, 5, 2, 1, 2, 4, 1, 2, 2, 2.5, 2.5, 3.66666667, 4.66666667, 3, 1, 3.5, 3.5, 0.5, 3.5, 5, 5, 5, 2, 1.5, 4.71428571, 11, 3, 2.5, 1.5, 5.5, 5, 7, 3, 3, 5.5, 3, 8, 2, 2, 3, 4, 7, 2.57142857, 5, 1.5, 10.00083333, 1.50055556, 1.24611111, 1.00027778, 0.49222222, 1.75]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [3, 15, 16.99972222, 16, 13.49888889, 15.49722222, 8.49305556, 1.99805556, 6.49166667, 13.49222222, 17, 17.99222222, 16.00722222, 2, 1, 164.46472222, 4.99888889, 1.5, 13, 5.99166667, 14.51055556, 15.5075, 10.50833333, 66.9525, 13.99916667, 13, 9.50861111, 12.50722222, 16.50444444, 16.9925, 30.49083333, 17.49027778, 150.96694444, 22.48444444, 8.50055556, 1.49972222, 3.48333333, 10, 25, 23.99888889, 20.49416667, 1.50027778, 15, 1.99972222, 2.99972222, 14.00583333, 13.99972222, 15.50027778, 2.00777778, 13, 25, 12, 27, 94, 16.9925, 1.5, 2, 12.50777778, 14.99972222, 17.50027778, 6.99166667, 13.49944444, 14.99583333, 3.51638889, 5, 14.50166667, 14.00722222, 1.49833333, 2.50027778, 13.99972222, 18, 15.00444444, 17.00666667, 12.50583333, 5.49944444, 134, 16.50083333, 10.00083333, 6, 9.99833333, 17, 5.49916667, 14.49916667, 46.49027778, 13.50694444, 9.99277778, 32.99777778, 15.01, 14.99666667, 13.00777778, 6.9925, 16.49861111, 13.50777778, 1.99222222, 12.49388889, 86, 57.98361111, 24.49972222, 36.00305556, 12.50638889, 18.5, 10.00583333, 0.99972222, 14.5, 16.49527778, 14, 32, 17.5, 10.00083333, 232.49944444, 15.00166667, 7.49416667, 9.50083333, 12.99777778, 18.50138889, 14.49861111, 30.00944444, 16, 18, 18, 17, 2.985, 10, 2, 7.00694444, 20, 297, 90, 15, 18, 8, 14, 2, 1, 5, 7, 34, 7, 46, 17, 17, 21, 6, 13, 37, 3, 16, 15, 17, 5, 0.99222222, 16, 57, 9, 11, 17, 16, 15, 203, 17, 20.00666667, 1.49222222, 15.49944444, 15.5075, 2.00027778, 14.00694444, 1.99222222, 14.49944444, 87.4775, 0.5, 15, 8.99944444, 1.49972222, 15.50388889, 17.49277778, 6.5, 2.50805556, 1.5, 11.49944444, 1.50777778, 2, 1, 1.5, 3.49888889, 15, 15, 17.495, 21.01333333, 13.00055556, 17.0075, 17.99888889, 15.99972222, 15.00027778, 6.49944444, 2.49694444, 28, 20, 11, 14, 3, 19, 2, 20, 14, 43, 13, 3, 296, 12, 9, 21, 22, 13, 18, 12, 18, 13, 3, 15, 18, 14, 14, 14, 9.99416667, 12.99888889, 19.50027778, 3.00027778, 2.5, 13.5075, 1.49222222, 7.48388889, 18, 20.0075, 1.99222222, 11.99972222, 2.00027778, 1.50055556, 0.5, 14.49222222, 5.98916667, 8.98916667, 2.50083333, 11.48888889, 25.51472222, 12, 15, 1.5, 1.5, 1.5, 13, 1.5, 14.5, 1.49944444, 14.49972222, 1.99222222, 1.50055556, 50, 3.49305556, 12.50722222, 1.5, 19.99861111, 3, 16.005, 38.00333333, 14.5075, 1.49944444, 4, 1.4975, 13.50027778, 13.5075, 31.515, 20.49916667, 20.00111111, 13, 13, 15, 17, 15, 5, 14, 15, 60, 16, 6, 16, 12, 14, 4, 11, 13, 20, 3, 12, 8, 17, 42, 14, 43, 14.5, 11, 3.98527778, 2.5, 16.50777778, 27.01472222, 4.49944444, 1.49222222, 15.5, 60.49666667, 5, 12.50777778, 5.49861111, 13.5, 16.49888889, 15, 27.48944444, 14.49361111, 5.99166667, 16.49222222, 18.99388889, 15.47916667, 1.49972222, 8.50388889, 6.48416667, 1.49972222, 15, 13.51305556, 3.99222222, 15.49944444, 13.99972222, 13.99861111, 15, 15, 24, 23, 54, 14, 17, 14, 35, 16, 20, 14, 17, 13, 3, 11, 19, 17, 17, 16, 15, 16, 39, 125.45861111, 19, 16, 1.99972222, 6.50777778, 22.99194444, 0.49972222, 5.48361111, 0.49972222, 1.00777778, 22.49944444, 24.50222222, 10.48361111, 4.00111111, 13.99888889, 18.50694444, 16, 0.99916667, 9.50138889, 60.97027778, 13.50777778, 2.49388889, 7.48888889, 14.50777778, 23, 8.48861111, 13.49222222, 66.47638889, 14.98305556, 17, 16.01944444, 6.48333333, 15.00777778, 2, 15.5, 16.49944444, 71.50555556, 31.48944444, 2.49972222, 18, 1.50027778, 12.00555556, 17.00777778, 17.50083333, 13, 17, 7, 10, 15, 15, 20, 8, 10, 3, 17, 3, 16, 13, 19, 15, 18, 24, 19, 26, 15, 15, 14, 4, 18, 3, 23, 5, 13, 19, 19, 17, 0.51638889, 6.99861111, 14.50222222, 7.48555556, 6.48388889, 17, 3.49611111, 13.99805556, 2.50083333, 14.50916667, 18.50027778, 19.98888889, 15, 16.49222222, 15.99666667, 1.50027778, 15, 16.00166667, 14.50055556, 1.49972222, 18.00027778, 17.99194444, 19.00027778, 19.49972222, 13.99277778, 15, 19, 2, 16, 16, 17, 17, 13, 3, 13, 14, 19, 10, 15, 18, 15, 18, 19, 19, 17, 5, 18, 17, 28, 11, 13, 15, 15, 20, 15.49638889, 16.49666667, 24, 14.50083333, 7.99916667, 8.00083333, 15, 14.5075, 1.49222222, 24.99222222, 14.99916667, 1.50805556, 9, 14.99222222, 16, 15.50361111, 1.99222222, 16.00055556, 28.49194444, 1.97722222, 1.49222222, 15.99305556, 18.49777778, 18.49638889, 1.00611111, 8, 12.99166667, 2.49305556, 14.50222222, 23, 30, 19, 42, 16, 29, 3, 19, 3, 29, 19, 3, 28, 35, 15, 28, 14, 16, 28, 0.99222222, 0.99972222, 16.99222222, 14.9975, 1.50722222, 29.49166667, 2.49222222, 30.49861111, 13.99888889, 5, 3.0075, 28.49916667, 6.99111111, 29.99944444, 3.00027778, 16.99888889, 29.49166667, 30.49944444, 18, 5, 16, 6, 16, 16, 13, 16, 15, 17, 10, 43, 14, 21, 14, 7, 15, 13, 19, 22, 22, 5, 5, 14, 81, 11, 20, 13, 14, 19, 54, 22, 17, 17, 19, 14, 24, 15, 10, 3, 16, 37, 62, 22, 15, 10.00083333, 1.50055556, 14.99944444, 1.00027778, 0.49222222, 16.00777778]
         }
       ]
     }
