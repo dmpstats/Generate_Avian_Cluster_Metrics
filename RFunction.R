@@ -305,7 +305,7 @@ rFunction = function(data,
   ### 3.5 Revisitation Calculations  -------------------------------------------
   logger.info("   [d] Cyphering Revisitation metrics")
   
-  #' generate columns  `mean_n_visits`
+  #' generate columns  `visits_day_mean` & `visit_drtn_mean`
   #' 
   revisits <- revisitTab_(
     trk_clust_dt = track_cluster_tbl, 
@@ -443,9 +443,13 @@ rFunction = function(data,
       #avg_daytime_hour_local = mean(med_daytime_hour_local, na.rm = TRUE),
       avg_hour_local = mean(med_hour_local, na.rm = TRUE),
 
+      # attendance metricsa
       avg_attendance = mean(mean_attendance, na.rm = TRUE),
       avg_attendance_daytime = mean(mean_attendance_daytime, na.rm = TRUE),
-      avg_n_visits = mean(mean_n_visits, na.rm = TRUE),
+      
+      # visits metrics
+      visits_day_avg = mean(visits_day_mean, na.rm = TRUE),
+      visit_drtn_avg = mean(visit_drtn_mean, na.rm = TRUE),
 
       # Distance calculations
       avg_nightime_dist = mean(mean_night_dist, na.rm = TRUE),
@@ -590,7 +594,7 @@ pairwise_dist_stats <- function(geom_pts, name_prefix = "pnts_pairdist"){
   tibble(
     "{name_prefix}_mean" := mean(dst_lower_tri),
     "{name_prefix}_med" := median(dst_lower_tri),
-    # ifelse to handle SD single distances (due to only two points), returning
+    # ifelse to handle SD on single distances (due to only two points), returning
     # 0, instead of NA
     "{name_prefix}_sd" := ifelse(length(dst_lower_tri) == 1, 0, sd(dst_lower_tri))
   ) |> 
@@ -763,26 +767,38 @@ revisit_calc_ <- function(clust, trck, start, end, dt, clust_col, trck_col, tm_c
   # check data is ordered
   if(is.unsorted(dt[[tm_col]])) stop("data must be ordered by time.")
   
-  dt |> 
-    # Identify visits of track to current cluster, and those occurring at daytime
+  # Identify visits of track to current cluster
+  dt <- dt |> 
     mutate(
       #' `if_else` offers better handling of NAs in clust ID col via `missing` arg
       #' 0s denote track locations events not grouped into current cluster.
       #' Given data is ordered by time, 0s indicate instances where track
       #' "left" the cluster
       incluster = dplyr::if_else(.data[[clust_col]] == clust, 1, 0, missing = 0)
-    ) |>
-    #' Nr. of visits and nr. of daytime visits per day of current track to current cluster
+    ) 
+  
+  #' Nr. visits of current track per day of whole timespan of current cluster event
+  visits_num <- dt |>
     group_by(date_local) %>%
-    summarise(
-      visits = sum(rle(incluster)$values),
-      .groups = "drop" 
-    ) %>%
+    summarise(visits_day = sum(rle(incluster)$values), .groups = "drop" ) |> 
+    # exclude absent days
+    filter(visits_day > 0) |> 
     #' Daily averages
-    summarise(
-      mean_n_visits = mean(visits, na.rm = T),
-      .groups = "drop" 
-    )
+    summarise(visits_day_mean = mean(visits_day, na.rm = TRUE))
+  
+  #' Duration of each visit and mean visit duration of current track to current cluster
+  visits_duration <- dt |> 
+    mutate(visit_id = consecutive_id(incluster)) |> 
+    filter(incluster == 1) |> 
+    group_by(visit_id) |> 
+    # visits durations
+    summarise(visit_drtn = sum(timediff_hrs, na.rm = TRUE)) |> 
+    # mean visit duration
+    summarise(visit_drtn_mean = mean(visit_drtn, na.rm = TRUE))
+    
+  # bind the two metrics
+  bind_cols(visits_num, visits_duration)
+  
 }
 
 

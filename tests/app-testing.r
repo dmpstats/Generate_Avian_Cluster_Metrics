@@ -37,9 +37,11 @@ testthat::test_file("tests/testthat/test_RFunction.R")
 out_dt_nam <- rFunction(data = test_dt$nam)
 
 out_dt_nam
+summary(out_dt_nam)
 
-mt_track_data(out_dt_nam)$pnts_pairdist_med
-mt_track_data(out_dt_nam)$track_cntrd_pairdist_mean 
+mt_track_data(out_dt_nam)
+summary(mt_track_data(out_dt_nam) |> select(-member_tracks_ids ))
+
 
 
 #' ----------------------------------------------------
@@ -98,25 +100,17 @@ summary(out_dt$mean_arrival_dist - out_dt_utc$mean_arrival_dist)
 #' ---- GAIA
 
 out_dt_gaia <- rFunction(data = test_dt$gaia)
+
 out_dt_gaia
+summary(out_dt_gaia)
 
-min(mt_track_data(out_dt_gaia)$n_points)
-
-out_dt_gaia$mean_attendance
-
-out_dt_gaia$mean_night_dist
-out_dt_gaia$mean_arrival_dist
-mt_track_data(out_dt_gaia)$avg_nightime_dist
-mt_track_data(out_dt_gaia)$avg_arrival_dists
-
-mt_track_data(out_dt_gaia)$pnts_pairdist_sd
-mt_track_data(out_dt_gaia)$track_cntrd_pairdist_sd
+mt_track_data(out_dt_gaia)
+summary(mt_track_data(out_dt_gaia) |> select(-member_tracks_ids ))
 
 
 
 out_dt_gaia |> 
   filter(is.na(mean_night_dist))
-
 
 attributes(out_dt_gaia)
 mt_is_time_ordered(out_dt_gaia)
@@ -134,27 +128,19 @@ out_dt_wcs <- rFunction(
 )
 
 out_dt_wcs
+summary(out_dt_wcs)
+
+mt_track_data(out_dt_wcs)
+summary(mt_track_data(out_dt_wcs) |> select(-member_tracks_ids ))
+
 
 sense_check_map(clust_metrics = out_dt_wcs, loc_dt = test_dt$wcs)
 
 
-out_dt_wcs |> 
-  filter(is.na(mean_attendance))
-
-out_dt_wcs$mean_attendance
-
-min(mt_track_data(out_dt_wcs)$n_points)
-
-
-out_dt_wcs <- rFunction(data = test_dt$wcs |>  slice(-c(1:2)))
-
-mt_track_data(out_dt_wcs)$pnts_pairdist_sd
-mt_track_data(out_dt_wcs)$pnts_spread_area
 
 
 mt_track_data(out_dt_wcs) |> 
   print(n = 100)
-
 
 out_dt_wcs |> 
   filter(is.na(mean_night_dist))
@@ -166,34 +152,27 @@ out_dt_wcs |>
 out_dt_sa_vfa <- rFunction(data = test_dt$sa_vfa)
 
 out_dt_sa_vfa
+summary(out_dt_sa_vfa)
 
-mt_is_track_id_cleaved(out_dt_sa_vfa)
+summary(mt_track_data(out_dt_sa_vfa) |> select(-member_tracks_ids ))
+
+
 
 sense_check_map(out_dt_sa_vfa, test_dt$sa_vfa)
 
-min(mt_track_data(out_dt_sa_vfa)$n_points)
 
-mt_track_data(out_dt_sa_vfa)$
-
-out_dt_sa_vfa |> 
-  filter(is.na(mean_night_dist))
-
-
-mt_track_data(out_dt_sa_vfa)$pnts_pairdist_sd
 
 
 #' --------------------------------
 #' --- Savahn 
 out_dt_savahn <- rFunction(data = test_dt$savahn)
-out_dt_savahn
 
-min(mt_track_data(out_dt_savahn)$n_points)
+out_dt_savahn
+summary(out_dt_savahn)
 
 
 out_dt_sa_vfa |> 
   filter(is.na(mean_night_dist))
-
-mt_track_data(out_dt_savahn)$pnts_pairdist_sd
 
 
 #' ---------------------------------
@@ -202,26 +181,23 @@ out_dt_ken_tnz <- rFunction(
   data = test_dt$ken_tnz
 )
 
+out_dt_ken_tnz
+summary(out_dt_ken_tnz)
 
-out_dt_ken_tnz$mean_attendance
+summary(mt_track_data(out_dt_ken_tnz) |> select(-member_tracks_ids ))
 
-min(mt_track_data(out_dt_ken_tnz)$n_points)
+
+
+
+
 
 
 out_dt_ken_tnz |> 
   filter(is.na(meanvisit_duration))
 
-mt_track_data(out_dt_ken_tnz) |> 
-  filter(pnts_spread_area == set_units(0, "m2"))
-
-
 
 out_dt_ken_tnz |> 
   filter(is.na(mean_night_dist))
-
-
-mt_track_data(out_dt_ken_tnz)$pnts_pairdist_sd
-
 
 
 

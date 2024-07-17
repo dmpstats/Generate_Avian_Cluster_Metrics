@@ -16,7 +16,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "mean_n_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
         },
         "sf_column": {
           "type": "character",
@@ -29,7 +29,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "mean_n_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
             },
             "levels": {
               "type": "character",
@@ -42,7 +42,7 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
@@ -70,7 +70,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -93,10 +93,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -1670,7 +1670,45 @@
             {
               "type": "double",
               "attributes": {},
-              "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.33333333, 1.5, 1, 1, 1, 1, 1, 1, 1.66666667, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.125, 1, 1, 1, 1.5, 1.25, 1, 1, 1, 1, 1, 1]
+              "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.14285714, 1.5, 1, 1, 1, 1, 1, 1, 1.66666667, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.125, 1, 1, 1, 1.5, 1.25, 1, 1, 1, 1, 1, 1]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [3, 5, 19, 18, 5.5, 12, 12, 3, 16, 14, 23, 17, 4, 15, 23, 13, 19, 5, 21, 15, 8.5, 3, 18, 20, 20, 17, 16, 14.33333333, 23, 3, 20, 17, 17, 23, 19, 16, 19, 17, 92, 11, 18, 19, 4.66666667, 11.33333333, 16, 16, 101, 16, 15, 16]
             },
             {
               "type": "double",
@@ -3933,7 +3971,45 @@
         {
           "type": "double",
           "attributes": {},
-          "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1.66666667, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.125, 1, 1, 1.5, 1.25, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.33333333, 1]
+          "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1.66666667, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.125, 1, 1, 1.5, 1.25, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.14285714, 1]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [3, 20, 5, 18, 5.5, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 8.5, 3, 20, 16, 14.33333333, 17, 23, 12, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 92, 18, 19, 4.66666667, 11.33333333, 16, 16, 16, 15, 16, 23, 101, 13, 5, 15, 18]
         },
         {
           "type": "double",
@@ -4042,7 +4118,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "mean_n_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
+          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
         },
         "sf_column": {
           "type": "character",
@@ -4055,7 +4131,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "mean_n_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
+              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
             },
             "levels": {
               "type": "character",
@@ -4068,7 +4144,7 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
@@ -4096,7 +4172,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -4119,10 +4195,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -7523,7 +7599,45 @@
             {
               "type": "double",
               "attributes": {},
-              "value": [4, 1, 9.46666667, 6, 5, 2, 7, 6, 1.13333333, 3.5, 3, 2, 4, 2, 1, 0.55555556, 3, 5, 3, 2, 6.5, 4, 1, 3, 2, 1, 1, 2, 2, 1, 3, 2, 1.66666667, 2, 2.33333333, 4.5, 5.375, 8.5, 5, 5, 1, 1, 4, 2, 1, 2, 5.5, 1, 3, 1.5, 0.33333333, 1, 4, 1.83333333, 4, 2, 1.5, 0.6, 1, 3, 2.5, 0.71428571, 1, 1.5, 1.5, 1, 1, 1, 1, 0.75, 1, 1, 1, 6.5, 2, 1.5, 1.5, 3, 1, 1, 0.5, 1, 4, 3, 2.5, 2, 1, 2, 2, 1, 1, 3, 1.14285714, 2.5, 1, 2, 3, 1.25, 1, 1, 7, 1, 5.5, 1, 2.5, 1, 1, 3, 1, 0.5, 1, 2.5, 2, 3.5, 1, 1, 1, 2, 1, 6, 3.5, 4, 5.66666667, 5, 1, 2, 3, 4.5, 3, 2, 1, 1, 1, 1, 1, 1, 4]
+              "value": [4, 1, 9.46666667, 6, 5, 2, 7, 6, 2.83333333, 3.5, 3, 2, 4, 2, 1, 1.25, 3, 5, 3, 2, 6.5, 4, 1, 3, 2, 1, 1, 2, 2, 1, 3, 2, 2.5, 2, 2.33333333, 4.5, 5.375, 8.5, 5, 5, 1, 1, 4, 2, 1, 2, 5.5, 1, 3, 1.5, 1, 1, 4, 1.83333333, 4, 2, 1.5, 1.5, 1, 3, 2.5, 1.25, 1, 1.5, 1.5, 1, 1, 1, 1, 3, 1, 1, 1, 6.5, 2, 1.5, 1.5, 3, 1, 1, 1, 1, 4, 3, 2.5, 2, 1, 2, 2, 1, 1, 3, 2.66666667, 2.5, 1, 2, 3, 1.66666667, 1, 1, 7, 1, 5.5, 1, 2.5, 1, 1, 3, 1, 1, 1, 2.5, 2, 3.5, 1, 1, 1, 2, 1, 6, 3.5, 4, 5.66666667, 5, 1, 2, 3, 4.5, 3, 2, 1, 1, 1, 1, 1, 1, 4]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [1.38645833, 2.74416667, 1.78677864, 0.75421296, 1.22033333, 3.57513889, 2.48833333, 0.55851852, 3.98880952, 2.35842593, 2.41011111, 1.78902778, 0.8375, 5.76638889, 1.14972222, 0.80988889, 0.76592593, 0.57044444, 3.57966667, 0.67388889, 1.24986111, 2.01130952, 0.75027778, 0.34, 0.42305556, 0.65083333, 0.5, 2.82375, 0.60791667, 0.30083333, 0.41657407, 0.355, 0.56311111, 0.42486111, 3.22490741, 2.10871101, 2.02105263, 0.93571181, 1.62222222, 1.78787037, 0.64916667, 0.47694444, 0.37555556, 0.57666667, 3.04972222, 0.30041667, 2.12355556, 0.4, 2.36094444, 1.26284736, 0.2, 1.90013889, 0.89541667, 2.53149306, 2.28083333, 0.5, 7.02486111, 1.05564815, 0.55, 0.50425926, 4.13729167, 3.875, 0.14861111, 1.71611111, 7.82513889, 11.29944444, 0.35, 0.25, 0.24972222, 0.51476852, 0.70027778, 1.64972222, 0.59944444, 1.34583333, 0.15069444, 8.42513889, 7.20013903, 0.40009259, 0.15, 2.20027778, 0.17486111, 1.19972222, 2.46277778, 4.63575397, 3.97493056, 1.67472222, 0.59972222, 0.31638889, 0.77361111, 2.50083333, 0.54944444, 3.26027772, 2.34246032, 3.68708333, 1.66666667, 0.42486111, 0.45046296, 0.5635, 0.2, 0.7, 2.59353175, 0.24805556, 1.81, 0.75, 3.76263889, 1.15027778, 0.2, 0.23305556, 1.64972222, 0.22513889, 1.54861111, 4.74993056, 0.29986111, 3.25037037, 0.31694444, 0.15, 2.65, 0.78013889, 0.34972222, 1.17251543, 3.15546296, 2.48503968, 3.32185107, 1.23977778, 0.55, 0.2, 0.46722222, 1.91878472, 3.5405, 1.47513889, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 0.31305556]
             },
             {
               "type": "double",
@@ -12666,7 +12780,45 @@
         {
           "type": "double",
           "attributes": {},
-          "value": [4, 0.71428571, 3, 1, 1, 2.5, 2, 1, 1, 5.5, 1, 1, 1.5, 3.5, 1, 2.5, 0.5, 1, 3, 0.5, 1, 1, 4, 6, 1.25, 6, 1, 1, 3.5, 2, 1, 2, 4.5, 5, 7, 3, 3, 5.66666667, 2, 1, 1, 1, 4, 1, 1, 2, 2, 1, 6.5, 2, 5, 2, 3, 1.13333333, 1, 2, 4, 1.5, 1, 1, 6.5, 5, 6, 3, 4, 1, 3, 4, 3, 3, 8.5, 5.375, 1, 1, 2, 3, 1, 2, 3.5, 2, 5, 2, 1, 1, 2, 4.5, 1, 1, 4, 5.5, 4, 2, 1.5, 2.5, 1, 1, 1, 2.33333333, 1.5, 9.46666667, 0.55555556, 1, 2, 1.66666667, 2, 2, 1, 1, 5, 0.33333333, 0.6, 3, 1, 1, 0.75, 1.5, 1, 1, 3, 1, 1, 2, 2.5, 1, 3, 4, 1, 1, 1, 1.14285714, 1.66666667, 2, 2.5, 2, 2, 3, 1, 2, 1, 7]
+          "value": [4, 1.25, 3, 1, 1, 2.5, 2, 1, 1, 5.5, 1, 1, 1.5, 3.5, 1, 2.5, 1, 1, 3, 1, 1, 1, 4, 6, 1.66666667, 6, 1, 1, 3.5, 2, 1, 2, 4.5, 5, 7, 3, 3, 5.66666667, 2, 1, 1, 1, 4, 1, 1, 2, 2, 1, 6.5, 2, 5, 2, 3, 2.83333333, 1, 2, 4, 1.5, 1, 1, 6.5, 5, 6, 3, 4, 1, 3, 4, 3, 3, 8.5, 5.375, 1, 1, 2, 3, 1, 2, 3.5, 2, 5, 2, 1, 1, 2, 4.5, 1, 1, 4, 5.5, 4, 2, 1.5, 2.5, 1, 1, 1, 2.33333333, 1.5, 9.46666667, 1.25, 1, 2, 2.5, 2, 2, 1, 1, 5, 1, 1.5, 3, 1, 1, 3, 1.5, 1, 1, 3, 1, 1, 2, 2.5, 1, 3, 4, 1, 1, 1, 2.66666667, 1.66666667, 2, 2.5, 2, 2, 3, 1, 2, 1, 7]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [1.38645833, 3.875, 0.45046296, 0.24805556, 0.75, 3.76263889, 0.42486111, 0.2, 0.7, 1.81, 1.64972222, 1.54861111, 7.82513889, 3.25037037, 1.15027778, 4.74993056, 0.17486111, 0.2, 0.23305556, 0.22513889, 0.31694444, 0.34972222, 2.48503968, 0.75421296, 0.5635, 1.17251543, 0.15, 2.65, 3.15546296, 0.78013889, 0.55, 0.2, 1.91878472, 1.23977778, 2.48833333, 0.46722222, 3.5405, 3.32185107, 1.47513889, 0.2, 0.95027778, 1.15027778, 0.31305556, 0.3, 2.52888889, 0.67388889, 0.29986111, 1.40055556, 1.24986111, 2.82375, 1.78787037, 0.30041667, 2.36094444, 3.98880952, 2.20083361, 0.32486111, 2.28083333, 1.71611111, 11.29944444, 0.70027778, 1.34583333, 1.22033333, 0.55851852, 2.41011111, 0.8375, 1.14972222, 0.76592593, 2.01130952, 0.34, 0.41657407, 0.93571181, 2.02105263, 0.55, 1.64972222, 0.15069444, 3.57966667, 2.74416667, 3.57513889, 2.35842593, 5.76638889, 0.57044444, 0.42305556, 0.65083333, 0.30083333, 0.355, 2.10871101, 0.75027778, 0.47694444, 0.37555556, 2.12355556, 0.89541667, 0.5, 7.02486111, 4.13729167, 0.25, 0.24972222, 0.59944444, 3.22490741, 7.20013903, 1.78677864, 0.80988889, 0.5, 0.60791667, 0.56311111, 0.42486111, 0.57666667, 3.04972222, 0.4, 1.62222222, 0.2, 1.05564815, 0.50425926, 0.14861111, 0.35, 0.51476852, 8.42513889, 0.15, 2.20027778, 4.63575397, 2.05, 1.75027778, 1.78902778, 3.97493056, 0.64916667, 0.40009259, 2.46277778, 1.19972222, 2.50083333, 0.54944444, 2.34246032, 4.76270833, 0.30027778, 3.68708333, 0.31638889, 1.67472222, 3.26027772, 0.59972222, 0.77361111, 1.66666667, 2.59353175]
         },
         {
           "type": "double",
@@ -12805,7 +12957,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "mean_n_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
         },
         "sf_column": {
           "type": "character",
@@ -12818,7 +12970,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "mean_n_visits", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "mean_attendance", "mean_attendance_daytime", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
             },
             "levels": {
               "type": "character",
@@ -12831,7 +12983,7 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
@@ -12859,7 +13011,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
             },
             "sf_column": {
               "type": "character",
@@ -12882,10 +13034,10 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "avg_n_visits", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "avg_attendance", "avg_attendance_daytime", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
                 }
               },
-              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+              "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
             }
           },
           "value": [
@@ -16496,7 +16648,45 @@
             {
               "type": "double",
               "attributes": {},
-              "value": [0.26666667, 0.3, 1, 1, 2, 1, 2, 0.96551724, 1, 1, 1, 1, 1, 0.68181818, 1.5, 1, 1, 1, 0.65, 0.64015152, 1.5, 1, 1, 1, 1, 1, 1, 1.40740741, 0.92307692, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.33333333, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.125, 1, 1, 1, 1, 1, 1, 0.55555556, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, 0.57142857, 1, 1, 0.33333333, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.83333333, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.57142857, 1, 1, 1, 1, 0.7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1]
+              "value": [1.14285714, 1, 1, 1, 2, 1, 2, 1.27272727, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1.52, 1.33333333, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.125, 1, 1, 1, 1, 1, 1, 1.25, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [2.11270833, 13.00263889, 2.90888889, 709.41444444, 1.45333333, 4.66194444, 1.46111111, 17.99839286, 2.91305556, 8.49597222, 19.32555556, 17, 16.00138889, 4.19157407, 7.91569444, 16.00027778, 15.82638889, 14.06444444, 4.20597222, 1.86637731, 10.54319444, 3.50055556, 20.49638889, 13.50166667, 16.99833333, 17.00083333, 3.49888889, 13.5567298, 10.69352431, 17.50333333, 15.83472222, 16.41694444, 16.99166667, 15.84083333, 16.99944444, 4.08305556, 5.82930556, 18.74944444, 16.99861111, 14.66722222, 15.25027778, 11.17444444, 2.33666667, 18.75055556, 19.49972222, 16.41722222, 15.835, 7.62520833, 2.33152778, 16.50333333, 15.25027778, 15.25, 12.33638889, 15.82972222, 11.75777778, 15.25805556, 2.91611111, 0.58349537, 2.33361111, 16.50027778, 15.24666667, 15.83361111, 12.33111111, 8.49652778, 0.7, 3.87472222, 16.41722222, 14.07527778, 1.99833333, 1.74972222, 2.33333333, 15.49972222, 15.83361111, 16.49972222, 15.25361111, 12.90888889, 2.33416667, 15.49694444, 15.25, 2.50027778, 24.5875, 0.5, 4.37513889, 6.24958333, 11.75333333, 14.66833333, 1.28344444, 1.75, 1.16652778, 15.83027778, 15.00333333, 14.08194444, 14.08027778, 1.50027778, 1.75, 9.12333333, 15.25416667, 4.74923611, 16.41694444, 12.50222222, 2.99833333, 2.00055556, 2.05291667, 1.49847222, 15.24611111, 6.15069444, 12.50166667, 18.16694444, 5.99759259, 16.41527778, 11.75111111, 2.20652778, 16.41583333, 14.62625, 19.33611111, 15.83, 14.66444444, 19.00027778, 15.245, 14.66, 2.3375, 22.5, 1.74194444, 14.0825, 6.41388889, 1.74222222, 18.75027778, 2.62458333, 18.15888889, 13.50055556, 8.75347222, 15.24694444, 1.74916667, 19.49694444, 18.16777778, 2.04069444, 15.25111111, 12.33555556, 3.5, 3.5, 0.49953704, 14.66694444, 3.49972222, 16.99722222, 15.24666667, 5.83111111, 1.16666667]
             },
             {
               "type": "double",
@@ -22375,7 +22565,45 @@
         {
           "type": "double",
           "attributes": {},
-          "value": [0.3, 1, 1, 1, 1, 1, 1, 0.55555556, 1, 1, 1, 1, 0.6, 1, 1, 0.7, 1, 1, 0.33333333, 1, 1, 1, 1, 1, 0.96551724, 1, 1, 0.57142857, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.33333333, 0.22727273, 1, 1, 1, 1, 1, 0.36363636, 1, 1, 1, 1, 1, 1.40740741, 1, 1, 1, 1, 1, 1, 1, 1, 0.26666667, 1, 1, 1, 0.3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 0.92307692, 1, 1, 1, 1, 1, 1, 1, 0.57142857, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.33333333, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.83333333, 1, 1, 1, 1]
+          "value": [1, 1, 1, 1, 1, 1, 1, 1.25, 1, 1, 1, 1, 1.5, 1, 1, 1.4, 1, 1, 1, 1, 1, 1, 1, 1, 1.27272727, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.52, 1, 1, 1, 1, 1, 1, 1, 1, 1.14285714, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1.33333333, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [13.00263889, 16.50027778, 1.16652778, 1.77555556, 2.33027778, 0.55444444, 11.74694444, 0.7, 1.75, 15.25416667, 16.41694444, 15.24611111, 0.5, 2.90888889, 1.49847222, 14.62625, 18.16694444, 14.66444444, 1.28344444, 19.33611111, 11.75111111, 2.91305556, 1.5, 16.41527778, 17.99839286, 16.41583333, 15.83, 5.99759259, 19.00027778, 22.5, 14.66, 18.15888889, 2.3375, 1.74222222, 7.91569444, 18.75027778, 6.41388889, 15.245, 1.74194444, 14.0825, 2.62458333, 13.50055556, 8.75347222, 19.49694444, 1.74916667, 20.49638889, 18.16777778, 3.5, 2.04069444, 12.33555556, 15.24694444, 15.25111111, 3.5, 14.66694444, 0.49953704, 16.99722222, 5.82930556, 5.83111111, 3.49972222, 15.24666667, 1.16666667, 11.17444444, 2.33152778, 12.33638889, 2.3324537, 2.21722222, 1.75, 1.16583333, 16.00138889, 11.75777778, 2.91111111, 5.47203704, 4.66194444, 19.32555556, 15.82638889, 3.50055556, 17.00083333, 13.5567298, 16.41694444, 15.84083333, 16.00027778, 18.74944444, 18.75055556, 15.25805556, 2.33361111, 12.33111111, 2.11270833, 1.16611111, 15.82583333, 17, 7.83694444, 0.575, 13.50166667, 16.99833333, 14.66722222, 2.33666667, 16.41722222, 15.25, 2.91611111, 15.24666667, 709.41444444, 1.45333333, 1.46111111, 2.91305556, 17.50333333, 14.06444444, 10.54319444, 15.83472222, 16.99944444, 4.08305556, 15.25027778, 15.835, 15.25027778, 15.82972222, 15.83361111, 16.99166667, 3.87472222, 1.99833333, 15.49972222, 16.49972222, 2.33333333, 1.74972222, 3.49888889, 10.69352431, 16.41722222, 15.25361111, 16.99861111, 14.07527778, 15.83361111, 15.49694444, 2.50027778, 6.24958333, 15.00333333, 0.58342593, 0.58333333, 0.58388889, 0.58333333, 0.58361111, 0.57583333, 16.41722222, 16.40944444, 15.25, 19.49972222, 24.5875, 14.08194444, 7.62520833, 4.37513889, 11.75333333, 15.83027778, 12.90888889, 2.33416667, 14.66833333, 16.50333333, 1.75, 14.08027778, 1.50027778, 1.74888889, 16.49777778, 4.74923611, 12.50222222, 2.99833333, 2.00055556, 12.50166667]
         },
         {
           "type": "double",

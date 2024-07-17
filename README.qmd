@@ -192,12 +192,16 @@ track_clust_details <- list(
     Calculation = "Calculate the time spent by the track in the cluster per present day (excluding absent days), and compute the mean across visited days."
   ),
   "`mean_attendance_daytime`" = tibble(
-    Description = "The track's daily mean attendance time at the cluster during the daytime, i.e. the period between sunset and sunrise (unit: hours)",
+    Description = "The track's daily mean attendance time at the cluster during daytime, i.e. the period between sunset and sunrise (unit: hours)",
     Calculation = "Identical to `mean_attendance`, but including only location events where `nightpoint == 0`"
   ),
-  "`mean_n_visits`" = tibble(
-    Description = "The track's mean number of unique visits to the cluster per day",
+  "`visits_day_mean`" = tibble(
+    Description = "The track's mean number of unique visits per day to the cluster",
     Calculation = "Run length calculations are applied to the track location points to quantify the number of cluster visits per day (excluding absent days), which are then averaged across all visited days."
+  ),
+  "`visit_drtn_mean`" = tibble(
+    Description = "The mean duration of the track's visits to the cluster (units: hours)",
+    Calculation = "Track revisits to the cluster are identified via run lengths, from which visit durations are calculated and the mean across visits is taken"
   ),
   # "`mean_n_daytime_visits`" = tibble(
   #   Description = "The track's mean number of unique visits to the cluster during the daytime period per day",
@@ -333,7 +337,7 @@ clust_details <- list(
     Calculation = "Summary statistics applied to all points within the cluster"
   ),
   "`pnts_spread_area`" = tibble(
-    Description = "The spread area of location points comprised by the cluster (units: m^2)",
+    Description = "The spread area of location points comprised by the cluster (units: km^2)",
     Calculation = "The area of the polygon created from the convex hull of points in the cluster (calculated via [`sf::st_convex_hull`](https://r-spatial.github.io/sf/reference/geos_unary.html))."
   ),
   "`cl_<behaviour-category>_duration` [e.g. `cl_SFeeding_duration`, `cl_SResting_duration`, `cl_SRoosting_duration`]" = tibble(
@@ -352,9 +356,13 @@ clust_details <- list(
     Description = "The daily average attendance time spent by member tracks in the cluster during the daytime period (unit: hours)",
     Calculation = "The average of `mean_attendance_daytime` across member tracks"
   ),
-  "`avg_n_visits`" = tibble(
-    Description = "The average number of unique visits per day by member tracks",
-    Calculation = "The average `mean_n_visits` across member tracks"
+  "`visits_day_avg`" = tibble(
+    Description = "The average number of unique visits per day of member tracks",
+    Calculation = "The average `visits_day_mean` across member tracks"
+  ),
+    "`visit_drtn_avg`" = tibble(
+    Description = "The average visit duration of member tracks to the cluster (units: hours)",
+    Calculation = "The average `visit_drtn_mean` across member tracks"
   ),
   # "`avg_n_daytime_visits`" = tibble(
   #   Description = "The average number of unique daytime visits per day by member tracks",
