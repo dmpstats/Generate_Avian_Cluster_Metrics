@@ -824,7 +824,30 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
   # convert to tibble for cleaner processing, as move2 functionality not required here
   dt <- as_tibble(dt)
   
-  # Firstly, filter to all night locations
+  # Inputting missing night-points (only in the context of the current function)
+  # This step intends to handle cases when, on a given date, there are no
+  # night-points for the track forming/visiting the cluster, which would lead to
+  # the cluster being dropped from calculations on that date and, if a
+  # single-date cluster, on the whole output - producing NAs for these metrics
+  # for the offended cluster. Here we try to minimize the issue by converting
+  # the track's first day-point of the next day to a nightpoint. This is a
+  # conservative approach because the first point of the next day might be quite
+  # late in the day, artificially inflating the "nightime" distance. 
+  #
+  # BEWARE: the issue will persists (and NAs will occur) if there is no next day
+  # data for the track
+  dt <- dt |>
+    group_by(.data[[trck_col]]) |>
+    mutate(
+      prev_row_prev_day = date_local - lag(date_local) == 1,
+      nightpoint_prev = lag(nightpoint),
+      nightpoint = if_else(prev_row_prev_day & nightpoint_prev == 0 & nightpoint == 0,  
+                           1, 
+                           nightpoint, 
+                           missing = nightpoint)
+    )
+  
+  # Filter to all night locations
   nightpts <- dt %>% 
     dplyr::select(-all_of(clust_col)) %>%
     filter(nightpoint == 1) %>%
@@ -836,8 +859,9 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
       hour_local < 12 ~ date_local - days(1)
     ))
   
-  # Generate second table:
-  # clust-bird-date, one entry for each clust visited by a bird on each date
+  
+  # Generate second table
+  # cluster-bird-date, one entry for each cluster visited by a bird on each date
   clustdays <- dt %>%
     filter(!is.na(.data[[clust_col]])) %>%
     distinct(.data[[clust_col]], .data[[trck_col]], date_local) %>%

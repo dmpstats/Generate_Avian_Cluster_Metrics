@@ -213,7 +213,7 @@ track_clust_details <- list(
   # ),
   "`mean_night_dist`" = tibble(
     Description = "The track's daily mean distance between all night-time location points and the cluster's centroid (unit: meters)", 
-    Calculation = "For each day the track visits the cluster, calculate the median distance between all night-time location points (regardless of cluster affiliation status) and the cluster centroid. Median distances are then averaged over all days to produce this metric."
+    Calculation = "For each date the track visits the cluster, calculate the median distance between all night-time location points occurred on that date (regardless of cluster affiliation status) and the cluster centroid. Median distances are then averaged over all days to produce this metric."
   ),
   "`night_prop_250m` and `night_prop_1km`" = tibble(
     Description = "Mean proportion of all night-time track location points within, respectively, 250m and 1km from the cluster centroid, on a daily basis",
