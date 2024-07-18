@@ -928,7 +928,9 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
 
 #' //////////////////////////////////////////////////////////////////////////////
 #' Compute the average distance between tracks' night-points and centroids of
-#' associated clusters on the date of arrival at the cluster (i.e. first overnight)
+#' associated clusters on the night before the date of arrival at the cluster.
+#' In other words, the travelled distance to the cluster from the previous
+#' overnight location on the first arrival
 #' 
 #' @param dt a `move2_loc` object
 #' @param trk_clust_dt a data.frame with track-level cluster data
@@ -948,6 +950,37 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
   
   # timezone required for accurate slicing of locations data below
   tmzn <- tz(dt[[tm_col]])
+  
+  # convert to tibble for cleaner processing, as move2 functionality not required here
+  dt <- as_tibble(dt)
+  
+  
+  # Inputting missing night-points (only in the context of the current function)
+  # Handle cases when, for the date of first arrival of a given track to the
+  # cluster, there are no night-points available for the period covering
+  # midnight -/+ 12 hours of the arrival date. This leads to the cluster being dropped
+  # from calculations below, producing NAs for these metrics for the offended
+  # cluster. Here we try to minimize the issue by converting the track's last
+  # day-point of the previous day to a nigh-point. This is a conservative
+  # approach because the last location of the previous day may be further away
+  # from where the track was overnight before heading to the cluster for it's
+  # first visit, therefore inflating the distance travelled.
+  #
+  # BEWARE: the issue will persists (and NAs will occur for the given track) if there is no track
+  # data on the previous day after 12 o'clock
+  dt <- dt |>
+    group_by(.data[[trck_col]]) |>
+    mutate(
+      next_row_next_day =  lead(date_local) - date_local == 1,
+      nightpoint_next = lag(nightpoint),
+      nightpoint = if_else(
+        next_row_next_day & nightpoint_next == 0 & nightpoint == 0,  
+        1, 
+        nightpoint, 
+        missing = nightpoint
+      )
+    )
+  
   
   # Compute date of arrival (i.e. day of first visit) of tracks to clusters
   clustarrivals <- dt %>%
@@ -987,9 +1020,6 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
                 .data[[tm_col]], 
                 arr_dt - hours(12),
                 arr_dt + hours(12)
-                #' BC QUESTION: Not sure it should be the following....?
-                #arr_dt,
-                #arr_dt + hours(24) - seconds(1)
               )
             ) |> 
             # drop move2 attributes
@@ -998,7 +1028,7 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
         }, 
         .progress = TRUE)
     ) |> 
-    # bring locations slice to the forefront, akin to a merge
+    # bring night-point locations slice to the forefront, akin to a merge
     tidyr::unnest(locs_slice) |> 
     # calculate distances between night-point locations and cluster centroids
     mutate(dist = st_distance(clust_centroid, geometry, by_element = TRUE)) |> 
