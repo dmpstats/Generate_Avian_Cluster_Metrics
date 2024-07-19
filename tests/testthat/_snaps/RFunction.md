@@ -16,7 +16,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
         },
         "sf_column": {
           "type": "character",
@@ -29,7 +29,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
             },
             "levels": {
               "type": "character",
@@ -70,7 +70,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -93,7 +93,7 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
@@ -1297,8 +1297,41 @@
             },
             {
               "type": "double",
-              "attributes": {},
-              "value": [0.08333333, 0.16666667, 0.75, 0.70833333, 1, 3.625, 0.25, 0.08333333, 0.625, 0.54166667, 0.91666667, 0.66666667, 0.125, 0.58333333, 0.91666667, 0.29166667, 0.75, 0.58333333, 0.83333333, 22.29166667, 0.79166667, 0.08333333, 0.70833333, 0.79166667, 0.79166667, 0.66666667, 0.625, 1.91666667, 0.91666667, 0.08333333, 0.79166667, 0.66666667, 0.66666667, 0.91666667, 0.75, 0.625, 0.75, 0.66666667, 6.91666667, 0.20833333, 0.70833333, 0.75, 0.83333333, 2.625, 0.625, 0.625, 4.20833333, 0.625, 0.58333333, 0.625]
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [2, 4, 18, 17, 24, 87, 6, 2, 15, 13, 22, 16, 3, 14, 22, 7, 18, 14, 20, 535, 19, 2, 17, 19, 19, 16, 15, 46, 22, 2, 19, 16, 16, 22, 18, 15, 18, 16, 166, 5, 17, 18, 20, 63, 15, 15, 101, 15, 14, 15]
             },
             {
               "type": "integer",
@@ -1627,6 +1660,44 @@
                   "value": ["units"]
                 }
               },
+              "value": [3, 12, 19, 18, 11, 36, 12, 3, 16, 14, 23, 17, 4, 15, 23, 13, 19, 11, 21, 82, 17, 3, 18, 20, 20, 17, 16, 43, 23, 3, 20, 17, 17, 23, 19, 16, 19, 17, 177, 11, 18, 19, 13, 34, 16, 16, 108, 16, 15, 16]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
               "value": [3, 12, 9.5, 9, 5.5, 7.2, 6, 3, 8, 7, 11.5, 8.5, 4, 7.5, 11.5, 6.5, 9.5, 5.5, 10.5, 11.71428571, 8.5, 3, 9, 10, 10, 8.5, 8, 14.33333333, 11.5, 3, 10, 8.5, 8.5, 11.5, 9.5, 8, 9.5, 8.5, 22.125, 5.5, 9, 9.5, 6.5, 8.5, 8, 8, 21.6, 8, 7.5, 8]
             },
             {
@@ -1666,44 +1737,6 @@
                 }
               },
               "value": [3, 12, 4, 3.5, 5.5, 2.8, 0.5, 3, 2.5, 1.5, 6, 3, 4, 2, 6, 1, 4, 2, 5, 3.14285714, 3, 3, 3.5, 4.5, 4.5, 3, 2.5, 7, 6, 3, 4.5, 3, 3, 6, 4, 2.5, 4, 3, 11.625, 0, 3.5, 4, 4.5, 3, 2.5, 2.5, 10.4, 2.5, 2, 2.5]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [3, 12, 19, 18, 11, 36, 12, 3, 16, 14, 23, 17, 4, 15, 23, 13, 19, 11, 21, 82, 17, 3, 18, 20, 20, 17, 16, 43, 23, 3, 20, 17, 17, 23, 19, 16, 19, 17, 177, 11, 18, 19, 13, 34, 16, 16, 108, 16, 15, 16]
             },
             {
               "type": "double",
@@ -1832,7 +1865,7 @@
                   "value": ["units"]
                 }
               },
-              "value": ["NaN", "NaN", "NaN", "NaN", 22687.94941464, 47118.53286381, 22339.06771886, 2558.2100483, 2023.99866359, 606.78606207, 41340.71006304, 48687.74269345, 16502.18213209, 17078.57311951, 59497.96908596, 667.57708614, 17706.02013565, 74758.52269653, 21726.99065975, 75873.75150181, 18854.77394843, 19119.9673007, 57560.35534698, 39481.56652349, 51113.0465726, 129651.62794829, 80703.38375209, 5511.53701026, 86943.7393575, 313.20304522, 493.79471019, 95472.65667497, 46498.867728, 71764.77009847, 61180.5525683, 89186.02186788, 19963.36480148, 127646.78569843, 88948.58878085, 20425.76903936, 92578.50478699, 129532.89288328, 73093.08037012, 41933.37178516, 44998.24323669, 36847.65565539, 26.84682476, 86167.75240565, 101438.6258413, 16487.57525079]
+              "value": ["NaN", "NaN", "NaN", "NaN", 22687.94941464, 47118.53286381, 22339.06771886, 2558.2100483, 2023.99866359, 606.78606207, 41340.71006304, 48687.74269345, 16502.18213209, 17078.57311951, 59497.96908596, 667.57708614, 17706.02013565, 74758.52269653, 21726.99065975, 75873.75150181, 18854.77394843, 19119.9673007, 57560.35534698, 39481.56652349, 51113.0465726, 129651.62794829, 80703.38375209, 5511.53701026, 86943.7393575, 313.20304522, 493.79471019, 95472.65667497, 46498.867728, 71764.77009847, 61180.5525683, 89186.02186788, 19963.36480148, 127646.78569843, 88948.58878085, 20425.76903936, 92578.50478699, 129532.89288328, 73093.08037012, 41933.37178516, 44998.24323669, 36847.65565539, 99.06597465, 86167.75240565, 101438.6258413, 16487.57525079]
             },
             {
               "type": "double",
@@ -1950,7 +1983,40 @@
             },
             {
               "type": "double",
-              "attributes": {},
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
               "value": [258359.27723472, 257515.8926451, 222559.37529549, 227352.05526297, 237128.59151195, 241857.16687048, 239724.2866795, 239157.1255053, 238735.19582562, 253160.29952455, 203252.84730308, 202568.18328129, 216532.58128005, 217072.6926484, 262635.06860608, 241409.89037186, 259719.88037748, 271247.07321734, 257865.15680827, 12059.66297421, 245126.71589128, 244741.42216887, 238790.35670475, 199601.92168623, 207492.11970081, 78871.09395972, 76903.46272631, 1012.99236962, 1038.18697724, 894.00928858, 1038.39512096, 40560.43982056, 22062.89301976, 29447.92216275, 13035.24595483, 4325.75820251, 9783.82114912, 71927.22741812, 131008.64539506, 11687.80780722, 42481.04976176, 10381.44098287, 10126.14730732, 12828.00169768, 5809.4859644, 11123.17240261, 131166.95776357, 6033.67760654, 1947.16963901, 37240.89621901]
             },
             {
@@ -1975,12 +2041,12 @@
         {
           "type": "character",
           "attributes": {},
-          "value": ["WCS.1", "WCS.10", "WCS.11", "WCS.12", "WCS.13", "WCS.14", "WCS.15", "WCS.16", "WCS.17", "WCS.18", "WCS.19", "WCS.2", "WCS.20", "WCS.21", "WCS.22", "WCS.23", "WCS.24", "WCS.25", "WCS.26", "WCS.27", "WCS.28", "WCS.29", "WCS.3", "WCS.30", "WCS.31", "WCS.32", "WCS.33", "WCS.34", "WCS.35", "WCS.36", "WCS.37", "WCS.38", "WCS.39", "WCS.4", "WCS.40", "WCS.41", "WCS.42", "WCS.43", "WCS.44", "WCS.45", "WCS.46", "WCS.47", "WCS.48", "WCS.49", "WCS.5", "WCS.50", "WCS.6", "WCS.7", "WCS.8", "WCS.9"]
+          "value": ["AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814."]
         },
         {
           "type": "character",
           "attributes": {},
-          "value": ["AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "B175706..deploy_id.2023814800.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814.", "AW196499..deploy_id.2023814814."]
+          "value": ["WCS.1", "WCS.10", "WCS.11", "WCS.12", "WCS.13", "WCS.14", "WCS.15", "WCS.16", "WCS.17", "WCS.18", "WCS.19", "WCS.2", "WCS.20", "WCS.21", "WCS.22", "WCS.23", "WCS.24", "WCS.25", "WCS.26", "WCS.27", "WCS.28", "WCS.29", "WCS.3", "WCS.30", "WCS.31", "WCS.32", "WCS.33", "WCS.34", "WCS.35", "WCS.36", "WCS.37", "WCS.38", "WCS.39", "WCS.4", "WCS.40", "WCS.41", "WCS.42", "WCS.43", "WCS.44", "WCS.45", "WCS.46", "WCS.47", "WCS.48", "WCS.49", "WCS.5", "WCS.50", "WCS.6", "WCS.7", "WCS.8", "WCS.9"]
         },
         {
           "type": "list",
@@ -3793,7 +3859,40 @@
         },
         {
           "type": "double",
-          "attributes": {},
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
           "value": [2, 19, 4, 17, 24, 6, 2, 15, 16, 3, 14, 18, 22, 18, 20, 19, 2, 19, 15, 46, 16, 22, 87, 2, 16, 19, 16, 22, 18, 15, 18, 5, 16, 13, 166, 17, 18, 20, 63, 15, 15, 15, 14, 15, 22, 101, 7, 14, 535, 17]
         },
         {
@@ -3966,6 +4065,44 @@
               "value": ["units"]
             }
           },
+          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 13, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
           "value": [3, 10, 12, 9, 5.5, 6, 3, 8, 8.5, 4, 7.5, 9.5, 11.5, 9.5, 10.5, 8.5, 3, 10, 8, 14.33333333, 8.5, 11.5, 7.2, 3, 8.5, 10, 8.5, 11.5, 9.5, 8, 9.5, 5.5, 8.5, 7, 22.125, 9, 9.5, 6.5, 8.5, 8, 8, 8, 7.5, 8, 11.5, 21.6, 6.5, 5.5, 11.71428571, 9]
         },
         {
@@ -4005,44 +4142,6 @@
             }
           },
           "value": [3, 4.5, 12, 3.5, 5.5, 0.5, 3, 2.5, 3, 4, 2, 4, 6, 4, 5, 3, 3, 4.5, 2.5, 7, 3, 6, 2.8, 3, 3, 4.5, 3, 6, 4, 2.5, 4, 0, 3, 1.5, 11.625, 3.5, 4, 4.5, 3, 2.5, 2.5, 2.5, 2, 2.5, 6, 10.4, 1, 2, 3.14285714, 3.5]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 13, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
         },
         {
           "type": "double",
@@ -4171,7 +4270,7 @@
               "value": ["units"]
             }
           },
-          "value": ["NA", 39481.56652349, "NA", "NA", 22687.94941464, 22339.06771886, 2558.2100483, 2023.99866359, 48687.74269345, 16502.18213209, 17078.57311951, "NA", 59497.96908596, 17706.02013565, 21726.99065975, 18854.77394843, 19119.9673007, 51113.0465726, 80703.38375209, 5511.53701026, 129651.62794829, 86943.7393575, 47118.53286381, 313.20304522, 95472.65667497, 493.79471019, 46498.867728, 71764.77009847, 61180.5525683, 89186.02186788, 19963.36480148, 20425.76903936, 127646.78569843, 606.78606207, 88948.58878085, 92578.50478699, 129532.89288328, 73093.08037012, 41933.37178516, 44998.24323669, 36847.65565539, 86167.75240565, 101438.6258413, 16487.57525079, 41340.71006304, 26.84682476, 667.57708614, 74758.52269653, 75873.75150181, 57560.35534698]
+          "value": ["NA", 39481.56652349, "NA", "NA", 22687.94941464, 22339.06771886, 2558.2100483, 2023.99866359, 48687.74269345, 16502.18213209, 17078.57311951, "NA", 59497.96908596, 17706.02013565, 21726.99065975, 18854.77394843, 19119.9673007, 51113.0465726, 80703.38375209, 5511.53701026, 129651.62794829, 86943.7393575, 47118.53286381, 313.20304522, 95472.65667497, 493.79471019, 46498.867728, 71764.77009847, 61180.5525683, 89186.02186788, 19963.36480148, 20425.76903936, 127646.78569843, 606.78606207, 88948.58878085, 92578.50478699, 129532.89288328, 73093.08037012, 41933.37178516, 44998.24323669, 36847.65565539, 86167.75240565, 101438.6258413, 16487.57525079, 41340.71006304, 99.06597465, 667.57708614, 74758.52269653, 75873.75150181, 57560.35534698]
         }
       ]
     }
@@ -4194,7 +4293,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
+          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", "var_acc_z_sd"]
         },
         "sf_column": {
           "type": "character",
@@ -4207,7 +4306,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist", "med_var_acc_x", "med_var_acc_y", "med_var_acc_z", "sd_var_acc_x", "sd_var_acc_y", "sd_var_acc_z"]
+              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", "var_acc_z_sd"]
             },
             "levels": {
               "type": "character",
@@ -4248,7 +4347,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -4271,7 +4370,7 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
@@ -7302,8 +7401,41 @@
             },
             {
               "type": "double",
-              "attributes": {},
-              "value": [0.23730324, 0.1121412, 14.58289352, 0.19722222, 0.27081019, 0.29790509, 0.33119213, 0.15, 14.17290509, 0.60208333, 0.5125, 0.14914352, 0.14373843, 0.99166667, 0.04585648, 8.23756944, 0.10210648, 0.12917824, 0.75206019, 0.05614583, 0.65415509, 0.61452546, 0.030625, 0.04876157, 0.03525463, 0.02501157, 0.01875, 0.24163194, 0.04990741, 0.01041667, 0.05416667, 0.02971065, 2.00766204, 0.03541667, 1.77082176, 0.74377315, 6.86872685, 2.65836806, 0.66459491, 0.68545139, 0.02497685, 0.00832176, 0.07082176, 0.0472338, 0.125, 0.025, 0.91247685, 0.01459491, 0.5, 8.26872686, 5.09585648, 3.13543981, 0.16459491, 1.77917824, 0.69167824, 0.04166667, 0.58541667, 4.10001157, 0.02082176, 0.06875, 0.70207176, 5.72291667, 0.00409722, 0.68961806, 0.65208333, 0.46868056, 0.01247685, 0.00831019, 0.00833333, 7.1125, 0.02709491, 0.06666667, 0.02291667, 0.70833333, 0.01251157, 1.01875, 0.60002315, 0.05417824, 0.00435185, 0.08958333, 3.29583333, 0.04723377, 0.7534838, 1.64166667, 0.67082176, 0.11665509, 0.02290509, 0.0284838, 0.06666667, 0.10208333, 0.02081019, 0.73751156, 5.70209491, 0.62079861, 0.06734954, 0.03541667, 0.06040509, 2.93333333, 0.00625, 0.02706019, 0.15834491, 0.00825231, 0.78125, 0.02916667, 0.63540509, 0.04583333, 0.00626157, 0.0312037, 0.06665509, 2.93332176, 0.06244213, 0.79584491, 0.02501157, 0.82508102, 0.01042824, 0.00416667, 0.10833333, 0.06863426, 0.01248843, 2.20206019, 0.80001157, 0.74791667, 2.37916667, 0.26457176, 0.02085648, 0.01665509, 0.06041667, 0.65415509, 0.75209491, 0.12291667, 0.00626157, 0.03752315, 0.01042824, 0.05628472, 0.10260417, 0.04585648, 0.06255787]
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [5.69527778, 2.69138889, 349.98944444, 4.73333333, 6.49944444, 7.14972222, 7.94861111, 3.6, 340.14972222, 14.45, 12.3, 3.57944444, 3.44972222, 23.8, 1.10055556, 197.70166667, 2.45055556, 3.10027778, 18.04944444, 1.3475, 15.69972222, 14.74861111, 0.735, 1.17027778, 0.84611111, 0.60027778, 0.45, 5.79916667, 1.19777778, 0.25, 1.3, 0.71305556, 48.18388889, 0.85, 42.49972222, 17.85055556, 164.84944444, 63.80083333, 15.95027778, 16.45083333, 0.59944444, 0.19972222, 1.69972222, 1.13361111, 3, 0.6, 21.89944444, 0.35027778, 12, 198.44944472, 122.30055556, 75.25055556, 3.95027778, 42.70027778, 16.60027778, 1, 14.05, 98.40027778, 0.49972222, 1.65, 16.84972222, 137.35, 0.09833333, 16.55083333, 15.65, 11.24833333, 0.29944444, 0.19944444, 0.2, 170.7, 0.65027778, 1.6, 0.55, 17, 0.30027778, 24.45, 14.40055556, 1.30027778, 0.10444444, 2.15, 79.1, 1.13361056, 18.08361111, 39.4, 16.09972222, 2.79972222, 0.54972222, 0.68361111, 1.6, 2.45, 0.49944444, 17.7002775, 136.85027778, 14.89916667, 1.61638889, 0.85, 1.44972222, 70.4, 0.15, 0.64944444, 3.80027778, 0.19805556, 18.75, 0.7, 15.24972222, 1.1, 0.15027778, 0.74888889, 1.59972222, 70.39972222, 1.49861111, 19.10027778, 0.60027778, 19.80194444, 0.25027778, 0.1, 2.6, 1.64722222, 0.29972222, 52.84944444, 19.20027778, 17.95, 57.1, 6.34972222, 0.50055556, 0.39972222, 1.45, 15.69972222, 18.05027778, 2.95, 0.15027778, 0.90055556, 0.25027778, 1.35083333, 2.4625, 1.10055556, 1.50138889]
             },
             {
               "type": "integer",
@@ -7632,6 +7764,44 @@
                   "value": ["units"]
                 }
               },
+              "value": [5.54583333, 8.75555556, 230.49444417, 10.545, 6.10166667, 7.15027778, 11.39527778, 3.35111111, 59.84166667, 14.15055556, 12.05055556, 9.60111111, 3.35, 17.29916667, 1.14972222, 4.04944444, 2.29777778, 2.85222222, 17.89833333, 1.34777778, 14.99833333, 14.07916667, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 2.81555556, 0.84972222, 19.34944444, 16.86968806, 76.8, 29.94277778, 14.6, 16.09083333, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 21.23555556, 0.4, 11.80472222, 2.85055583, 0.4, 3.80027778, 3.58166667, 19.65138889, 15.96583333, 1, 14.04972222, 3.16694444, 0.55, 1.51277778, 16.54916667, 15.5, 0.14861111, 5.14833333, 15.65027778, 11.29944444, 0.35, 0.25, 0.24972222, 3.08861111, 0.70027778, 1.64972222, 0.59944444, 16.15, 0.30138889, 16.85027778, 14.40027806, 1.20027778, 0.15, 2.20027778, 0.34972222, 1.19972222, 17.23944444, 32.45027778, 15.89972222, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 16.30138861, 16.39722222, 14.74833333, 1.66666667, 0.84972222, 1.35138889, 2.8175, 0.2, 0.7, 8.14777778, 0.24805556, 18.1, 0.75, 15.05055556, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.45027778, 1.54861111, 18.99972222, 0.59972222, 19.50222222, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 15.09055556, 18.93277778, 17.39527778, 53.82554389, 6.19888889, 0.55, 0.4, 1.40166667, 15.35027778, 17.7025, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 5.24805556]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
               "value": [5.54583333, 8.75555556, 15.36629628, 10.545, 6.10166667, 7.15027778, 11.39527778, 3.35111111, 9.97361111, 7.07527778, 6.02527778, 9.60111111, 3.35, 8.64958333, 1.14972222, 1.01236111, 2.29777778, 2.85222222, 8.94916667, 1.34777778, 7.49916667, 7.03958333, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 1.40777778, 0.84972222, 6.44981481, 8.43484403, 9.6, 7.48569444, 7.3, 8.04541667, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 10.61777778, 0.4, 5.90236111, 1.42527792, 0.2, 1.90013889, 3.58166667, 3.47541667, 7.98291667, 1, 7.02486111, 1.58347222, 0.55, 1.51277778, 8.27458333, 3.875, 0.14861111, 2.57416667, 7.82513889, 5.64972222, 0.35, 0.25, 0.24972222, 1.54430556, 0.70027778, 1.64972222, 0.59944444, 8.075, 0.30138889, 8.42513889, 7.20013903, 1.20027778, 0.15, 2.20027778, 0.17486111, 1.19972222, 8.61972222, 10.81675926, 7.94986111, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 8.15069431, 5.46574074, 7.37416667, 1.66666667, 0.84972222, 1.35138889, 0.93916667, 0.2, 0.7, 8.14777778, 0.24805556, 9.05, 0.75, 7.52527778, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.22513889, 1.54861111, 9.49986111, 0.59972222, 9.75111111, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 5.03018519, 9.46638889, 8.69763889, 17.94184796, 6.19888889, 0.55, 0.4, 1.40166667, 7.67513889, 8.85125, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 5.24805556]
             },
             {
@@ -7671,44 +7841,6 @@
                 }
               },
               "value": [4.65027778, 2.30333333, 4.52242591, 3.6925, 5.75083333, 7.15027778, 6.89861111, 3.30111111, 3.36625, 1.375, 0.44930556, 2.64472222, 3.35, 2.87458333, 1.14972222, 1.01236111, 2.29777778, 2.85222222, 3.17402778, 1.34777778, 1.80027778, 1.31277778, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 1.40777778, 0.84972222, 2.59981481, 2.63484403, 3.25027778, 1.91076389, 1.67527778, 2.34569444, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 4.81763889, 0.4, 0.2, 1.42527792, 0.2, 1.90013889, 3.58166667, 1.54194444, 2.20722222, 1, 1.22486111, 1.58347222, 0.55, 1.51277778, 2.44944444, 0.98777778, 0.14861111, 2.42416667, 2.025, 0.02416667, 0.35, 0.25, 0.24972222, 1.54430556, 0.70027778, 1.64972222, 0.59944444, 2.3, 0.30138889, 2.62513889, 1.40013903, 1.20027778, 0.15, 2.20027778, 0.17486111, 1.19972222, 2.81930556, 3.06675926, 2.20333333, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 2.30083319, 1.60064815, 1.54819444, 1.66666667, 0.84972222, 1.35138889, 0.93916667, 0.2, 0.7, 8.14777778, 0.24805556, 3.22513889, 0.75, 1.75069444, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.22513889, 1.54861111, 3.65, 0.59972222, 3.95333333, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 3.21361111, 3.66541667, 2.84847222, 8.44453315, 6.19888889, 0.55, 0.4, 1.40166667, 1.92555556, 3.07527778, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 0.60194444]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [5.54583333, 8.75555556, 230.49444417, 10.545, 6.10166667, 7.15027778, 11.39527778, 3.35111111, 59.84166667, 14.15055556, 12.05055556, 9.60111111, 3.35, 17.29916667, 1.14972222, 4.04944444, 2.29777778, 2.85222222, 17.89833333, 1.34777778, 14.99833333, 14.07916667, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 2.81555556, 0.84972222, 19.34944444, 16.86968806, 76.8, 29.94277778, 14.6, 16.09083333, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 21.23555556, 0.4, 11.80472222, 2.85055583, 0.4, 3.80027778, 3.58166667, 19.65138889, 15.96583333, 1, 14.04972222, 3.16694444, 0.55, 1.51277778, 16.54916667, 15.5, 0.14861111, 5.14833333, 15.65027778, 11.29944444, 0.35, 0.25, 0.24972222, 3.08861111, 0.70027778, 1.64972222, 0.59944444, 16.15, 0.30138889, 16.85027778, 14.40027806, 1.20027778, 0.15, 2.20027778, 0.34972222, 1.19972222, 17.23944444, 32.45027778, 15.89972222, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 16.30138861, 16.39722222, 14.74833333, 1.66666667, 0.84972222, 1.35138889, 2.8175, 0.2, 0.7, 8.14777778, 0.24805556, 18.1, 0.75, 15.05055556, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.45027778, 1.54861111, 18.99972222, 0.59972222, 19.50222222, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 15.09055556, 18.93277778, 17.39527778, 53.82554389, 6.19888889, 0.55, 0.4, 1.40166667, 15.35027778, 17.7025, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 5.24805556]
             },
             {
               "type": "double",
@@ -7955,7 +8087,40 @@
             },
             {
               "type": "double",
-              "attributes": {},
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
               "value": [98531.64428564, 180783.85168558, 60860.43048151, 98482.11219617, 322372.56589219, 113961.08505164, 108857.22603495, 301242.55732496, 1601.27760597, 114292.17511834, 301049.85842498, 108615.42273781, 300588.99952897, 103190.99094907, 177179.26941732, 54083.74326517, 299514.88867756, 77726.93162069, 154030.57870393, 108582.22843509, 109832.30325397, 222747.38932068, 153362.63433491, 221138.03985998, 87029.24209284, 87491.75489103, 87798.88881022, 182825.9700894, 68751.78417021, 62995.61006015, 220343.22740265, 64056.56825571, 50193.30989469, 68588.09809783, 148464.08658001, 71509.40815014, 186809.89593035, 195199.50548819, 161673.86825394, 182803.31435588, 205546.44806332, 66937.07869285, 64500.43305747, 70720.35738838, 50175.4775395, 108913.12614276, 82638.98617242, 49726.77608128, 96576.09865068, 252515.48546255, 58736.09045783, 213637.38330038, 118481.49741612, 212342.9700326, 15158.81169366, 119084.56575992, 119115.10089243, 60166.68816912, 205290.82139733, 52446.54779971, 227274.90104833, 2693.06465321, 53755.18402071, 39048.93567773, 367.12355461, 39482.69411642, 59079.97562469, 247508.18202118, 269748.70442435, 53039.67005925, 1263.82799818, 199443.49559675, 292336.46792474, 19638.5236206, 193740.24787403, 1861.71055956, 174785.63415174, 175143.32081716, 3368.2930863, 636.48669831, 61670.73108171, 54267.15380928, 146518.01293124, 2365.38253848, 62877.46433549, 147257.1929244, 53143.0815307, 191103.03130251, 52492.70528009, 2723.98177523, 95228.18835741, 104709.21592016, 65557.20223179, 150407.52379293, 183393.67624234, 59527.75947168, 71177.14973178, 67971.86744147, 57179.02827031, 56737.52912832, 186535.31314888, 64681.13030251, 150843.49138593, 66869.69625216, 67130.80831686, 65863.9115927, 54942.07979285, 54409.36784899, 149308.91849255, 51281.00448464, 153742.33156774, 116960.02265539, 54407.08488834, 147766.95717509, 54803.13416117, 112532.12917295, 93350.0269011, 61225.8331837, 1421.68009502, 65518.97073876, 67361.67735769, 1583.12664537, 63426.63542373, 65250.63309825, 1233.34353483, 2011.63912794, 65620.2699502, 12029.57406209, 65371.80378205, 12433.28464194, 52485.86888571, 54262.23970641, 63052.65691019, 52347.38056547, 74061.53612023, 1305.74782255, 1251.9809512]
             },
             {
@@ -7980,12 +8145,12 @@
         {
           "type": "character",
           "attributes": {},
-          "value": ["A.1", "A.10", "A.100", "A.101", "A.102", "A.103", "A.104", "A.105", "A.106", "A.107", "A.108", "A.109", "A.11", "A.110", "A.111", "A.112", "A.113", "A.114", "A.115", "A.116", "A.117", "A.118", "A.119", "A.12", "A.120", "A.121", "A.122", "A.123", "A.124", "A.125", "A.126", "A.127", "A.128", "A.129", "A.13", "A.130", "A.131", "A.132", "A.133", "A.134", "A.135", "A.136", "A.137", "A.138", "A.139", "A.14", "A.140", "A.141", "A.15", "A.16", "A.17", "A.18", "A.19", "A.2", "A.20", "A.20", "A.21", "A.22", "A.23", "A.24", "A.25", "A.26", "A.27", "A.28", "A.29", "A.3", "A.30", "A.31", "A.32", "A.33", "A.35", "A.36", "A.37", "A.38", "A.39", "A.4", "A.40", "A.41", "A.42", "A.43", "A.44", "A.45", "A.46", "A.47", "A.48", "A.49", "A.5", "A.50", "A.51", "A.52", "A.53", "A.54", "A.55", "A.56", "A.57", "A.58", "A.59", "A.6", "A.60", "A.61", "A.62", "A.63", "A.64", "A.65", "A.66", "A.67", "A.68", "A.69", "A.7", "A.70", "A.71", "A.72", "A.73", "A.74", "A.75", "A.76", "A.77", "A.78", "A.79", "A.8", "A.8", "A.80", "A.81", "A.83", "A.84", "A.85", "A.86", "A.87", "A.88", "A.89", "A.9", "A.9", "A.90", "A.91", "A.92", "A.93", "A.94", "A.95", "A.98", "A.99"]
+          "value": ["GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "TO_6032..deploy_id.1080747003.", "GA_5404..deploy_id.1080727521.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "GA_6581..deploy_id.1080727527.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_5404..deploy_id.1080727521.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_5404..deploy_id.1080727521.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "GA_5404..deploy_id.1080727521.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "GA_5404..deploy_id.1080727521.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6594..deploy_id.1080727543.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6594..deploy_id.1080727543.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543."]
         },
         {
           "type": "character",
           "attributes": {},
-          "value": ["GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "TO_6032..deploy_id.1080747003.", "GA_5404..deploy_id.1080727521.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "GA_6581..deploy_id.1080727527.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_5404..deploy_id.1080727521.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543.", "GA_5404..deploy_id.1080727521.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "GA_5404..deploy_id.1080727521.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "GA_5404..deploy_id.1080727521.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6594..deploy_id.1080727543.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_5404..deploy_id.1080727521.", "GA_6581..deploy_id.1080727527.", "GA_6581..deploy_id.1080727527.", "GA_6594..deploy_id.1080727543.", "TO_6032..deploy_id.1080747003.", "TO_6032..deploy_id.1080747003.", "TO_6485..deploy_id.1080756173.", "TO_6485..deploy_id.1080756173.", "GA_6594..deploy_id.1080727543.", "GA_6594..deploy_id.1080727543."]
+          "value": ["A.1", "A.10", "A.100", "A.101", "A.102", "A.103", "A.104", "A.105", "A.106", "A.107", "A.108", "A.109", "A.11", "A.110", "A.111", "A.112", "A.113", "A.114", "A.115", "A.116", "A.117", "A.118", "A.119", "A.12", "A.120", "A.121", "A.122", "A.123", "A.124", "A.125", "A.126", "A.127", "A.128", "A.129", "A.13", "A.130", "A.131", "A.132", "A.133", "A.134", "A.135", "A.136", "A.137", "A.138", "A.139", "A.14", "A.140", "A.141", "A.15", "A.16", "A.17", "A.18", "A.19", "A.2", "A.20", "A.20", "A.21", "A.22", "A.23", "A.24", "A.25", "A.26", "A.27", "A.28", "A.29", "A.3", "A.30", "A.31", "A.32", "A.33", "A.35", "A.36", "A.37", "A.38", "A.39", "A.4", "A.40", "A.41", "A.42", "A.43", "A.44", "A.45", "A.46", "A.47", "A.48", "A.49", "A.5", "A.50", "A.51", "A.52", "A.53", "A.54", "A.55", "A.56", "A.57", "A.58", "A.59", "A.6", "A.60", "A.61", "A.62", "A.63", "A.64", "A.65", "A.66", "A.67", "A.68", "A.69", "A.7", "A.70", "A.71", "A.72", "A.73", "A.74", "A.75", "A.76", "A.77", "A.78", "A.79", "A.8", "A.8", "A.80", "A.81", "A.83", "A.84", "A.85", "A.86", "A.87", "A.88", "A.89", "A.9", "A.9", "A.90", "A.91", "A.92", "A.93", "A.94", "A.95", "A.98", "A.99"]
         },
         {
           "type": "list",
@@ -12678,7 +12843,40 @@
         },
         {
           "type": "double",
-          "attributes": {},
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
           "value": [5.69527778, 137.35, 1.44972222, 0.19805556, 0.7, 15.24972222, 0.85, 0.15, 0.64944444, 18.75, 1.59972222, 1.49861111, 15.65, 19.80194444, 1.1, 19.10027778, 79.1, 0.15027778, 0.74888889, 70.39972222, 0.25027778, 0.29972222, 17.95, 4.73333333, 70.4, 52.84944444, 0.1, 2.6, 19.20027778, 1.64722222, 0.50055556, 0.39972222, 15.69972222, 6.34972222, 7.94861111, 1.45, 18.05027778, 57.1, 2.95, 0.15027778, 0.90055556, 1.10055556, 1.50138889, 0.25027778, 2.4625, 1.3475, 0.60027778, 1.35083333, 15.69972222, 5.79916667, 16.45083333, 0.6, 12, 340.14972222, 2.15027806, 0.7, 16.60027778, 16.55083333, 11.24833333, 0.65027778, 17, 6.49944444, 3.6, 12.3, 3.44972222, 1.10055556, 2.45055556, 14.74861111, 1.17027778, 1.3, 63.80083333, 164.84944444, 0.49972222, 1.6, 0.30027778, 18.04944444, 2.69138889, 7.14972222, 14.45, 23.8, 3.10027778, 0.84611111, 0.60027778, 0.25, 0.71305556, 17.85055556, 0.735, 0.19972222, 1.69972222, 21.89944444, 3.95027778, 1, 14.05, 16.84972222, 0.19944444, 0.2, 0.55, 42.49972222, 14.40055556, 349.98944444, 197.70166667, 0.45, 1.19777778, 48.18388889, 0.85, 1.13361111, 3, 0.35027778, 15.95027778, 122.30055556, 98.40027778, 1.65, 0.09833333, 0.29944444, 170.7, 24.45, 0.10444444, 2.15, 39.4, 2, 1.7, 3.57944444, 16.09972222, 0.59944444, 1.30027778, 18.08361111, 1.13361056, 2.45, 0.49944444, 136.85027778, 42.70027778, 0.64833333, 14.89916667, 0.68361111, 2.79972222, 17.7002775, 0.54972222, 1.6, 1.61638889, 3.80027778]
         },
         {
@@ -12851,6 +13049,44 @@
               "value": ["units"]
             }
           },
+          "value": [5.54583333, 15.5, 1.35138889, 0.24805556, 0.75, 15.05055556, 0.84972222, 0.2, 0.7, 18.1, 1.64972222, 1.54861111, 15.65027778, 19.50222222, 1.15027778, 18.99972222, 0.34972222, 0.2, 0.69916667, 0.45027778, 0.31694444, 0.34972222, 17.39527778, 10.545, 2.8175, 15.09055556, 0.15, 2.65, 18.93277778, 1.56027778, 0.55, 0.4, 15.35027778, 6.19888889, 11.39527778, 1.40166667, 17.7025, 53.82554389, 2.95027778, 0.2, 0.95027778, 1.15027778, 5.24805556, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 14.99833333, 5.6475, 16.09083333, 0.60083333, 11.80472222, 59.84166667, 2.20083361, 0.64972222, 15.96583333, 5.14833333, 11.29944444, 0.70027778, 16.15, 6.10166667, 3.35111111, 12.05055556, 3.35, 1.14972222, 2.29777778, 14.07916667, 1.02, 1.24972222, 29.94277778, 76.8, 0.55, 1.64972222, 0.30138889, 17.89833333, 8.75555556, 7.15027778, 14.15055556, 17.29916667, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 16.86968806, 0.75027778, 0.47694444, 1.50222222, 21.23555556, 3.58166667, 1, 14.04972222, 16.54916667, 0.25, 0.24972222, 0.59944444, 19.34944444, 14.40027806, 230.49444417, 4.04944444, 0.5, 1.21583333, 2.81555556, 0.84972222, 1.15333333, 3.04972222, 0.4, 14.6, 0.4, 3.16694444, 1.51277778, 0.14861111, 0.35, 3.08861111, 16.85027778, 0.15, 2.20027778, 32.45027778, 2.05, 1.75027778, 9.60111111, 15.89972222, 0.64916667, 1.20027778, 17.23944444, 1.19972222, 2.50083333, 0.54944444, 16.39722222, 19.05083333, 0.60055556, 14.74833333, 0.63277778, 3.34944444, 16.30138861, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
           "value": [5.54583333, 3.875, 1.35138889, 0.24805556, 0.75, 7.52527778, 0.84972222, 0.2, 0.7, 9.05, 1.64972222, 1.54861111, 7.82513889, 9.75111111, 1.15027778, 9.49986111, 0.17486111, 0.2, 0.69916667, 0.22513889, 0.31694444, 0.34972222, 8.69763889, 10.545, 0.93916667, 5.03018519, 0.15, 2.65, 9.46638889, 1.56027778, 0.55, 0.4, 7.67513889, 6.19888889, 11.39527778, 1.40166667, 8.85125, 17.94184796, 2.95027778, 0.2, 0.95027778, 1.15027778, 5.24805556, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 7.49916667, 5.6475, 8.04541667, 0.60083333, 5.90236111, 9.97361111, 2.20083361, 0.64972222, 7.98291667, 2.57416667, 5.64972222, 0.70027778, 8.075, 6.10166667, 3.35111111, 6.02527778, 3.35, 1.14972222, 2.29777778, 7.03958333, 1.02, 1.24972222, 7.48569444, 9.6, 0.55, 1.64972222, 0.30138889, 8.94916667, 8.75555556, 7.15027778, 7.07527778, 8.64958333, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 8.43484403, 0.75027778, 0.47694444, 1.50222222, 10.61777778, 3.58166667, 1, 7.02486111, 8.27458333, 0.25, 0.24972222, 0.59944444, 6.44981481, 7.20013903, 15.36629628, 1.01236111, 0.5, 1.21583333, 1.40777778, 0.84972222, 1.15333333, 3.04972222, 0.4, 7.3, 0.2, 1.58347222, 1.51277778, 0.14861111, 0.35, 1.54430556, 8.42513889, 0.15, 2.20027778, 10.81675926, 2.05, 1.75027778, 9.60111111, 7.94986111, 0.64916667, 1.20027778, 8.61972222, 1.19972222, 2.50083333, 0.54944444, 5.46574074, 6.35027778, 0.60055556, 7.37416667, 0.63277778, 3.34944444, 8.15069431, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
         },
         {
@@ -12890,44 +13126,6 @@
             }
           },
           "value": [4.65027778, 0.98777778, 1.35138889, 0.24805556, 0.75, 1.75069444, 0.84972222, 0.2, 0.7, 3.22513889, 1.64972222, 1.54861111, 2.025, 3.95333333, 1.15027778, 3.65, 0.17486111, 0.2, 0.69916667, 0.22513889, 0.31694444, 0.34972222, 2.84847222, 3.6925, 0.93916667, 3.21361111, 0.15, 2.65, 3.66541667, 1.56027778, 0.55, 0.4, 1.92555556, 6.19888889, 6.89861111, 1.40166667, 3.07527778, 8.44453315, 2.95027778, 0.2, 0.95027778, 1.15027778, 0.60194444, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 1.80027778, 5.6475, 2.34569444, 0.60083333, 0.2, 3.36625, 2.20083361, 0.64972222, 2.20722222, 2.42416667, 0.02416667, 0.70027778, 2.3, 5.75083333, 3.30111111, 0.44930556, 3.35, 1.14972222, 2.29777778, 1.31277778, 1.02, 1.24972222, 1.91076389, 3.25027778, 0.55, 1.64972222, 0.30138889, 3.17402778, 2.30333333, 7.15027778, 1.375, 2.87458333, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 2.63484403, 0.75027778, 0.47694444, 1.50222222, 4.81763889, 3.58166667, 1, 1.22486111, 2.44944444, 0.25, 0.24972222, 0.59944444, 2.59981481, 1.40013903, 4.52242591, 1.01236111, 0.5, 1.21583333, 1.40777778, 0.84972222, 1.15333333, 3.04972222, 0.4, 1.67527778, 0.2, 1.58347222, 1.51277778, 0.14861111, 0.35, 1.54430556, 2.62513889, 0.15, 2.20027778, 3.06675926, 2.05, 1.75027778, 2.64472222, 2.20333333, 0.64916667, 1.20027778, 2.81930556, 1.19972222, 2.50083333, 0.54944444, 1.60064815, 2.48333333, 0.60055556, 1.54819444, 0.63277778, 3.34944444, 2.30083319, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [5.54583333, 15.5, 1.35138889, 0.24805556, 0.75, 15.05055556, 0.84972222, 0.2, 0.7, 18.1, 1.64972222, 1.54861111, 15.65027778, 19.50222222, 1.15027778, 18.99972222, 0.34972222, 0.2, 0.69916667, 0.45027778, 0.31694444, 0.34972222, 17.39527778, 10.545, 2.8175, 15.09055556, 0.15, 2.65, 18.93277778, 1.56027778, 0.55, 0.4, 15.35027778, 6.19888889, 11.39527778, 1.40166667, 17.7025, 53.82554389, 2.95027778, 0.2, 0.95027778, 1.15027778, 5.24805556, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 14.99833333, 5.6475, 16.09083333, 0.60083333, 11.80472222, 59.84166667, 2.20083361, 0.64972222, 15.96583333, 5.14833333, 11.29944444, 0.70027778, 16.15, 6.10166667, 3.35111111, 12.05055556, 3.35, 1.14972222, 2.29777778, 14.07916667, 1.02, 1.24972222, 29.94277778, 76.8, 0.55, 1.64972222, 0.30138889, 17.89833333, 8.75555556, 7.15027778, 14.15055556, 17.29916667, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 16.86968806, 0.75027778, 0.47694444, 1.50222222, 21.23555556, 3.58166667, 1, 14.04972222, 16.54916667, 0.25, 0.24972222, 0.59944444, 19.34944444, 14.40027806, 230.49444417, 4.04944444, 0.5, 1.21583333, 2.81555556, 0.84972222, 1.15333333, 3.04972222, 0.4, 14.6, 0.4, 3.16694444, 1.51277778, 0.14861111, 0.35, 3.08861111, 16.85027778, 0.15, 2.20027778, 32.45027778, 2.05, 1.75027778, 9.60111111, 15.89972222, 0.64916667, 1.20027778, 17.23944444, 1.19972222, 2.50083333, 0.54944444, 16.39722222, 19.05083333, 0.60055556, 14.74833333, 0.63277778, 3.34944444, 16.30138861, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
         },
         {
           "type": "double",
@@ -13066,22 +13264,22 @@
         {
           "type": "double",
           "attributes": {},
-          "value": [1390.43059565, 3416.05217355, 1775.95707649, 1000.3724075, 279.50488551, 593.47035009, 1244.2995852, 2559.6890078, 822.99515514, 234.23139603, 1261.67824788, 1105.43235441, 177.59844865, 137.65508545, 1414.37189528, 793.14794259, 2.9516675, 6792.12472208, 1619.81355567, 351.74821636, 122.57059897, "NA", "NA", 605.44982578, 85.5168077, 71.73414634, 729.46668326, 1435.20258157, 254.58428737, 826.88713918, "NA", "NA", "NA", 122.85431649, 95.58315912, 333.48027211, 252.13427908, 370.82908578, "NA", 288.7172142, 251.58654389, 308.4543554, 57.93875892, 11.72152812, 1498.64391074, 568.83811183, 1031.49659864, 1177.59429775, 470.94761905, 200.14670508, 137.2623271, 798.25212842, 27.69258337, 258.0972955, 223.41895924, "NA", 366.80372228, 367.00097893, 12.58012868, 1031.24610918, 201.94340468, 715.52342791, 474.98053758, 76.14831591, 597.65285858, 1291.84828273, 784.68338537, 101.52785797, 992.4278082, 174.37960901, 104.91441038, 77.41377136, 1993.19880538, 30.58527233, 1509.83578065, 533.3657624, 70.35229799, 1039.84232118, 202.66747967, 421.69132238, 1110.71353907, 822.75712627, 958.96560565, 1004.49381855, 879.59057768, 363.41381916, 1351.51187158, 416.102074, 1434.31964986, 200.17286378, 1130.24438361, 815.12935818, 27.59091298, 333.7265611, 5110.43656877, 2124.59726232, 1739.57942592, 397.25886843, 33.39838574, 237.80919197, 1222.76683259, 800.96340634, 1276.68668901, 1176.74619214, 1334.24796748, 922.95224822, 1042.20936776, 722.18846026, 245.11606106, 36139.15679443, 862.43612079, 917.96974905, 1399.90033184, 908.03280239, 1081.06551615, 658.36046126, 748.32123776, 1210.22784138, 350.04173808, 1840.0080969, 686.84831591, 296.25191638, 64.08332529, 66.27942592, 745.82382612, 448.27324875, 1561.80357961, 1645.76074332, "NA", 582.75170068, 383.61895636, 985.2286151, 349.26736283, 8060.8526111, 1221.57023395, 137.62482619, 277.20054754, 1120.29248382, 112.71889829, 1483.99840839]
-        },
-        {
-          "type": "double",
-          "attributes": {},
-          "value": [1631.91685747, 12646.2111996, 7490.25956529, 4721.43188983, 227.5221899, 213.87875394, 3790.57653891, 606.93473536, 3516.63281898, 632.62134561, 4915.05234777, 2369.00081114, 701.92691223, 368.61153144, 5856.50242243, 1047.19356592, 8.4429401, 3679.9620375, 3182.19625021, 160.53034677, 366.73247885, "NA", "NA", 1590.71557989, 274.49495603, 191.68677989, 3992.29918699, 6582.84225481, 239.261897, 374.71579559, "NA", "NA", "NA", 255.48757259, 223.53842708, 603.49900466, 530.74816658, 401.34610116, "NA", 36.80670317, 35.31602787, 807.73666833, 192.87036668, 20.1340302, 5957.40691057, 2499.25493213, 2863.9309192, 3985.27237637, 1691.35115052, 400.70178824, 515.94672308, 1426.25803342, 42.27367949, 323.46952049, 361.40349587, "NA", 757.22544012, 637.21589883, 64.95331438, 5064.04674252, 1136.01154803, 2018.52850506, 658.87726321, 183.45512693, 1638.57728555, 1660.90919197, 1770.56904762, 187.92858746, 3018.59447486, 260.5707993, 348.48291024, 313.36969494, 7934.89983408, 25.57474188, 2945.15351589, 2018.40284833, 89.83554007, 2933.17041646, 195.70772857, 265.3419114, 4478.48615891, 4202.24423428, 4035.1116208, 3750.06272926, 3818.53028269, 590.55655161, 6191.51604447, 1160.27006803, 5244.53452765, 124.53333333, 3909.19371163, 263.86419446, 34.82328168, 314.68763, 3041.45545047, 4031.64831591, 6352.41945412, 1053.74612577, 12.77577568, 314.46538908, 4129.47683756, 3371.80219844, 416.6860959, 4603.70116882, 843.07126265, 3628.68081964, 4379.57302425, 3926.31776553, 848.11934628, 20677.34184503, 2972.86718102, 4457.37547702, 9046.34666318, 2942.63807865, 3883.17422465, 1797.10491123, 3267.70306952, 4173.4497843, 933.39460269, 7483.43442841, 2696.75707649, 1089.12317568, 150.23159672, 261.70824623, 295.92732064, 647.32657346, 396.36097378, 6515.26205409, "NA", 1206.26275095, 2032.50673635, 4516.74322607, 1135.4604891, 6991.68247793, 1919.21435728, 181.92417453, 422.22419114, 2807.21397576, 248.97440703, 3666.74731093]
-        },
-        {
-          "type": "double",
-          "attributes": {},
           "value": [3524.03550226, 2059.29178003, 513.50496241, 167.8593315, 1218.71205222, 1633.58213157, 246.03115284, 206.70352356, 529.31659913, 3097.69266998, 246.929977, 8093.29075956, 2696.98119367, 2990.43124402, 1305.78088219, 2179.54549725, 165.52378648, 3660.20611633, 1424.06703716, 455.91110656, 392.38400067, "NA", "NA", 1872.66164124, 4740.08016124, 941.60226046, 17.92997117, 5387.4643545, 2157.08066334, 427.75543773, "NA", "NA", "NA", 2809.31026251, 3296.19445703, 1774.55221902, 5076.72733573, 5078.05745275, "NA", 159.89127186, 667.78642721, 3351.88502056, 1645.41232226, 482.88684762, 2223.19061007, 291.13237791, 2178.65421939, 357.98191054, 4020.4360611, 3524.50883163, 4603.63979743, 645.41251375, 723.21890859, 7749.58590487, 3025.47379178, "NA", 2490.43721422, 1278.73375078, 496.52353293, 470.47272701, 1153.73526921, 1318.94501993, 2056.11619877, 2663.99124647, 1018.936141, 4766.43233696, 3132.36843459, 999.29525309, 1207.15864527, 7072.05056224, 642.9303164, 5600.03653694, 7224.04057333, 7768.96168765, 731.35002545, 799.88380496, 508.31016728, 2476.17527397, 979.69818643, 5098.15361139, 380.89728394, 257.07587547, 187.65592323, 334.19908017, 261.08328412, 648.14833562, 146.83114298, 420.47117275, 389.84249584, 972.56102892, 511.99413437, 6686.45998015, 3309.10519245, 1231.56755318, 5970.73951297, 6600.2870064, 331.9041563, 1889.85874835, 3761.79920325, 3645.44828469, 633.59210996, 282.75664604, 19941.75443613, 346.95400552, 1923.77680213, 294.93448102, 5286.79670699, 508.07198266, 2218.41807371, 17396.00825953, 3283.6322231, 3622.63819194, 712.06118766, 263.5339968, 3303.45847048, 5835.3698869, 181.23069271, 1066.59917803, 4011.92355994, 750.58709178, 437.33840514, 2724.64133499, 1503.48336474, 316.71720166, 1853.5809942, 1988.55716018, 1104.67088292, 716.44060065, "NA", 1067.27775271, 1643.24580768, 4131.69850542, 6201.03449844, 3665.86531679, 43485.64804837, 755.1533596, 1807.80486376, 2435.78182994, 6397.38705887, 3565.72992556]
         },
         {
           "type": "double",
           "attributes": {},
+          "value": [1390.43059565, 3416.05217355, 1775.95707649, 1000.3724075, 279.50488551, 593.47035009, 1244.2995852, 2559.6890078, 822.99515514, 234.23139603, 1261.67824788, 1105.43235441, 177.59844865, 137.65508545, 1414.37189528, 793.14794259, 2.9516675, 6792.12472208, 1619.81355567, 351.74821636, 122.57059897, "NA", "NA", 605.44982578, 85.5168077, 71.73414634, 729.46668326, 1435.20258157, 254.58428737, 826.88713918, "NA", "NA", "NA", 122.85431649, 95.58315912, 333.48027211, 252.13427908, 370.82908578, "NA", 288.7172142, 251.58654389, 308.4543554, 57.93875892, 11.72152812, 1498.64391074, 568.83811183, 1031.49659864, 1177.59429775, 470.94761905, 200.14670508, 137.2623271, 798.25212842, 27.69258337, 258.0972955, 223.41895924, "NA", 366.80372228, 367.00097893, 12.58012868, 1031.24610918, 201.94340468, 715.52342791, 474.98053758, 76.14831591, 597.65285858, 1291.84828273, 784.68338537, 101.52785797, 992.4278082, 174.37960901, 104.91441038, 77.41377136, 1993.19880538, 30.58527233, 1509.83578065, 533.3657624, 70.35229799, 1039.84232118, 202.66747967, 421.69132238, 1110.71353907, 822.75712627, 958.96560565, 1004.49381855, 879.59057768, 363.41381916, 1351.51187158, 416.102074, 1434.31964986, 200.17286378, 1130.24438361, 815.12935818, 27.59091298, 333.7265611, 5110.43656877, 2124.59726232, 1739.57942592, 397.25886843, 33.39838574, 237.80919197, 1222.76683259, 800.96340634, 1276.68668901, 1176.74619214, 1334.24796748, 922.95224822, 1042.20936776, 722.18846026, 245.11606106, 36139.15679443, 862.43612079, 917.96974905, 1399.90033184, 908.03280239, 1081.06551615, 658.36046126, 748.32123776, 1210.22784138, 350.04173808, 1840.0080969, 686.84831591, 296.25191638, 64.08332529, 66.27942592, 745.82382612, 448.27324875, 1561.80357961, 1645.76074332, "NA", 582.75170068, 383.61895636, 985.2286151, 349.26736283, 8060.8526111, 1221.57023395, 137.62482619, 277.20054754, 1120.29248382, 112.71889829, 1483.99840839]
+        },
+        {
+          "type": "double",
+          "attributes": {},
           "value": [5212.80724901, 5229.31260592, 969.4032383, 613.69696794, 14255.5678763, 5303.31299487, 490.8996698, 1920.418764, 487.80079681, 7187.951575, 572.60561233, 28421.70840602, 5918.83500771, 7086.24026785, 3869.41246303, 6014.43113938, 610.68517756, 4275.40810925, 6997.92882904, 1478.27949175, 163.59691291, "NA", "NA", 3473.76075937, 10759.49577033, 3919.45924038, 253.4019528, 6247.99477893, 10682.90128233, 2359.28537462, "NA", "NA", "NA", 4830.71045876, 3121.66566564, 7715.05157608, 12274.03867043, 8452.06704248, "NA", 640.95287219, 1526.75657465, 7081.09492267, 7142.25122792, 8862.18225753, 3374.19037641, 400.35504098, 10309.30656736, 560.77061934, 12363.86250113, 10552.56916433, 7691.48137767, 1847.25949731, 928.9917627, 15739.46085732, 9137.82852942, "NA", 5505.84038678, 1979.37988152, 5985.37957444, 411.42428875, 3568.47337735, 5195.81455994, 3880.74335915, 6287.18280022, 3298.73228996, 10016.32380508, 7357.21473754, 4551.27423485, 2758.82508826, 9366.68637074, 4301.58147379, 8983.91700501, 10428.75721268, 9434.64052434, 1180.96446914, 3310.97634262, 892.34732198, 6606.46313522, 3956.70247584, 7903.07584822, 1480.98095796, 414.66992624, 617.75901172, 1014.99640686, 504.50141526, 6172.26285358, 592.57800308, 11979.75010788, 933.23385559, 2782.95489287, 1751.55647731, 14847.5955744, 8362.75321305, 6998.83021603, 11153.05729018, 32246.70748813, 804.78000691, 7003.23654682, 3968.96575844, 6727.87121649, 813.48818127, 612.58956705, 21893.75582286, 679.3859417, 10389.41476318, 602.45831533, 14117.02741811, 673.32729119, 8667.63213812, 34252.66453519, 5133.16364692, 4011.65068886, 661.43086304, 487.58149276, 6420.76961385, 10325.15895385, 187.50715512, 2266.81847023, 8116.65839761, 1021.55186404, 745.73797044, 5229.47435646, 5826.2399518, 3807.92354251, 1476.23619879, 4385.23790686, 7193.15548435, 672.69670644, "NA", 8648.65718101, 4640.9049874, 6505.14753633, 9333.60194661, 22142.06386335, 17297.13667589, 4962.63135832, 781.65756805, 4934.12880482, 10659.84912066, 9643.02048013]
+        },
+        {
+          "type": "double",
+          "attributes": {},
+          "value": [1631.91685747, 12646.2111996, 7490.25956529, 4721.43188983, 227.5221899, 213.87875394, 3790.57653891, 606.93473536, 3516.63281898, 632.62134561, 4915.05234777, 2369.00081114, 701.92691223, 368.61153144, 5856.50242243, 1047.19356592, 8.4429401, 3679.9620375, 3182.19625021, 160.53034677, 366.73247885, "NA", "NA", 1590.71557989, 274.49495603, 191.68677989, 3992.29918699, 6582.84225481, 239.261897, 374.71579559, "NA", "NA", "NA", 255.48757259, 223.53842708, 603.49900466, 530.74816658, 401.34610116, "NA", 36.80670317, 35.31602787, 807.73666833, 192.87036668, 20.1340302, 5957.40691057, 2499.25493213, 2863.9309192, 3985.27237637, 1691.35115052, 400.70178824, 515.94672308, 1426.25803342, 42.27367949, 323.46952049, 361.40349587, "NA", 757.22544012, 637.21589883, 64.95331438, 5064.04674252, 1136.01154803, 2018.52850506, 658.87726321, 183.45512693, 1638.57728555, 1660.90919197, 1770.56904762, 187.92858746, 3018.59447486, 260.5707993, 348.48291024, 313.36969494, 7934.89983408, 25.57474188, 2945.15351589, 2018.40284833, 89.83554007, 2933.17041646, 195.70772857, 265.3419114, 4478.48615891, 4202.24423428, 4035.1116208, 3750.06272926, 3818.53028269, 590.55655161, 6191.51604447, 1160.27006803, 5244.53452765, 124.53333333, 3909.19371163, 263.86419446, 34.82328168, 314.68763, 3041.45545047, 4031.64831591, 6352.41945412, 1053.74612577, 12.77577568, 314.46538908, 4129.47683756, 3371.80219844, 416.6860959, 4603.70116882, 843.07126265, 3628.68081964, 4379.57302425, 3926.31776553, 848.11934628, 20677.34184503, 2972.86718102, 4457.37547702, 9046.34666318, 2942.63807865, 3883.17422465, 1797.10491123, 3267.70306952, 4173.4497843, 933.39460269, 7483.43442841, 2696.75707649, 1089.12317568, 150.23159672, 261.70824623, 295.92732064, 647.32657346, 396.36097378, 6515.26205409, "NA", 1206.26275095, 2032.50673635, 4516.74322607, 1135.4604891, 6991.68247793, 1919.21435728, 181.92417453, 422.22419114, 2807.21397576, 248.97440703, 3666.74731093]
         },
         {
           "type": "double",
@@ -13109,7 +13307,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "all_points", "median_point", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
         },
         "sf_column": {
           "type": "character",
@@ -13122,7 +13320,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "individual_name_deployment_id", "all_points", "n_pts", "n_pts_night", "n_pts_day", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "duration_hrs", "n_days_span", "n_days_unique", "n_days_empty", "med_hour_local", "SFeeding_duration", "SResting_duration", "SRoosting_duration", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr", "visits_day_mean", "visit_drtn_mean", "mean_night_dist", "night_prop_250m", "night_prop_1km", "mean_arrival_dist"]
+              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
             },
             "levels": {
               "type": "character",
@@ -13163,7 +13361,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -13186,7 +13384,7 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "member_tracks_n", "member_tracks_ids", "duration_days", "span_days", "n_days_active", "n_days_inactive", "n_pts", "pnts_pairdist_mean", "pnts_pairdist_med", "pnts_pairdist_sd", "pnts_spread_area", "cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration", "avg_hour_local", "attendance_davg", "attendance_daytime_davg", "attendance_compound", "visits_day_avg", "visit_drtn_avg", "avg_nightime_dist", "avg_nightime_prop_250m", "avg_nightime_prop_1km", "avg_arrival_dists", "track_cntrd_pairdist_mean", "track_cntrd_pairdist_med", "track_cntrd_pairdist_sd", "trks_mindist_m", "trks_n_within_25km", "trks_n_within_50km"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
@@ -16427,8 +16625,41 @@
             },
             {
               "type": "double",
-              "attributes": {},
-              "value": [29.5590162, 9.14570602, 0.09693287, 29.55893519, 0.12121528, 0.16981481, 0.14578704, 27.80556713, 0.09721065, 0.75696759, 0.78090278, 0.68399306, 0.64585648, 17.6837963, 0.6596875, 0.64583333, 0.63512731, 0.56171296, 9.55903935, 27.48601852, 1.02435185, 0.12170139, 0.82972222, 0.12159722, 0.6877662, 0.68403935, 0.12146991, 25.82986111, 24.6109838, 0.70832176, 0.6355787, 0.65972222, 0.68716435, 0.63546296, 0.68369213, 0.1459838, 0.97537037, 0.75703704, 0.68729167, 0.58684028, 0.61111111, 0.02445602, 0.07304398, 0.7569213, 0.79181713, 0.65979167, 0.63548611, 16.6599537, 0.68405093, 0.66673611, 0.6112037, 0.61128472, 0.48976852, 0.63546296, 0.04875, 0.61111111, 0.09719907, 5.09725694, 0.7812037, 0.66653935, 0.61087963, 0.63538194, 0.48938657, 4, 8.24319444, 0.81238426, 0.6597338, 0.5621412, 0.06252315, 0.17005787, 0.07324074, 0.62519676, 0.63556713, 0.66665509, 0.61114583, 0.51392361, 0.07296296, 0.62487269, 0.61107639, 0.08346065, 1.00005787, 4.02084491, 0.83001157, 12.83346065, 0.04878472, 0.586875, 14.00010417, 0.04847222, 0.65965278, 0.63528935, 0.60435185, 0.5624537, 0.56238426, 0.04165509, 0.04863426, 0.83686343, 0.61118056, 4.91658565, 0.6597338, 0.08335648, 0.10421296, 0.0625, 0.07275463, 0.64584491, 0.61094907, 0.48835648, 0.49991898, 0.73275463, 5.72914352, 0.65951389, 0.04883102, 4.3506713, 0.65979167, 8.68743056, 0.78138889, 0.63532407, 0.58675926, 0.77083333, 0.61090278, 0.58672454, 0.07302083, 0.91662037, 0.04827546, 0.56283565, 0.24309028, 0.04833333, 0.75696759, 0.75693287, 0.73234954, 0.1215625, 4.08363426, 0.61103009, 0.04857639, 0.79153935, 0.73265046, 0.6597338, 0.61113426, 0.48969907, 0.12152778, 0.12152778, 1.04172454, 0.58679398, 0.73265046, 0.68390046, 0.61097222, 0.24296296, 0.04861111]
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [709.41638889, 219.49694444, 2.32638889, 709.41444444, 2.90916667, 4.07555556, 3.49888889, 667.33361111, 2.33305556, 18.16722222, 18.74166667, 16.41583333, 15.50055556, 424.41111111, 15.8325, 15.5, 15.24305556, 13.48111111, 229.41694444, 659.66444444, 24.58444444, 2.92083333, 19.91333333, 2.91833333, 16.50638889, 16.41694444, 2.91527778, 619.91666667, 590.66361111, 16.99972222, 15.25388889, 15.83333333, 16.49194444, 15.25111111, 16.40861111, 3.50361111, 23.40888889, 18.16888889, 16.495, 14.08416667, 14.66666667, 0.58694444, 1.75305556, 18.16611111, 19.00361111, 15.835, 15.25166667, 399.83888889, 16.41722222, 16.00166667, 14.66888889, 14.67083333, 11.75444444, 15.25111111, 1.17, 14.66666667, 2.33277778, 122.33416667, 18.74888889, 15.99694444, 14.66111111, 15.24916667, 11.74527778, 96, 197.83666667, 19.49722222, 15.83361111, 13.49138889, 1.50055556, 4.08138889, 1.75777778, 15.00472222, 15.25361111, 15.99972222, 14.6675, 12.33416667, 1.75111111, 14.99694444, 14.66583333, 2.00305556, 24.00138889, 96.50027778, 19.92027778, 308.00305556, 1.17083333, 14.085, 336.0025, 1.16333333, 15.83166667, 15.24694444, 14.50444444, 13.49888889, 13.49722222, 0.99972222, 1.16722222, 20.08472222, 14.66833333, 117.99805556, 15.83361111, 2.00055556, 2.50111111, 1.5, 1.74611111, 15.50027778, 14.66277778, 11.72055556, 11.99805556, 17.58611111, 137.49944444, 15.82833333, 1.17194444, 104.41611111, 15.835, 208.49833333, 18.75333333, 15.24777778, 14.08222222, 18.5, 14.66166667, 14.08138889, 1.7525, 21.99888889, 1.15861111, 13.50805556, 5.83416667, 1.16, 18.16722222, 18.16638889, 17.57638889, 2.9175, 98.00722222, 14.66472222, 1.16583333, 18.99694444, 17.58361111, 15.83361111, 14.66722222, 11.75277778, 2.91666667, 2.91666667, 25.00138889, 14.08305556, 17.58361111, 16.41361111, 14.66333333, 5.83111111, 1.16666667]
             },
             {
               "type": "integer",
@@ -16757,6 +16988,44 @@
                   "value": ["units"]
                 }
               },
+              "value": [34.48861111, 26.00527778, 9.91888889, 720, 9.91666667, 11.67222222, 2.92222222, 251.9775, 2.91305556, 16.99194444, 19.32555556, 17, 16.00138889, 19.32722222, 15.83138889, 16.00027778, 15.82638889, 14.06444444, 24.07833333, 35.00666667, 21.08638889, 3.50055556, 20.49638889, 6.49805556, 16.99833333, 17.00083333, 10.5025, 298.24805556, 164.09305556, 17.50333333, 15.83472222, 16.41694444, 16.99166667, 15.84083333, 16.99944444, 4.08305556, 11.65861111, 18.74944444, 16.99861111, 14.66722222, 15.25027778, 4.16444444, 2.33666667, 18.75055556, 19.49972222, 16.41722222, 15.835, 30.50083333, 4.66305556, 16.50333333, 15.25027778, 15.25, 12.33638889, 15.82972222, 4.74777778, 15.25805556, 9.91888889, 4.08416667, 4.66722222, 16.50027778, 15.24666667, 15.83361111, 12.33111111, 40.99638889, 3.5, 8.49416667, 16.41722222, 14.07527778, 9.00305556, 3.49944444, 2.33333333, 15.49972222, 15.83361111, 16.49972222, 15.25361111, 12.90888889, 2.33416667, 15.49694444, 15.25, 2.50027778, 24.5875, 1.5, 15.75972222, 37.4975, 4.74388889, 14.66833333, 6.41722222, 1.75, 2.33305556, 15.83027778, 15.00333333, 14.08194444, 14.08027778, 1.50027778, 1.75, 18.24666667, 15.25416667, 18.99694444, 16.41694444, 5.49777778, 10.00277778, 2.00055556, 4.10583333, 2.99694444, 15.24611111, 12.30138889, 12.50166667, 18.16694444, 17.99277778, 16.41527778, 4.7475, 4.41305556, 16.41583333, 58.505, 19.33611111, 15.83, 14.66444444, 19.00027778, 15.245, 14.66, 2.3375, 22.5, 1.74194444, 14.0825, 6.41388889, 1.74222222, 18.75027778, 12.25527778, 18.15888889, 6.49444444, 20.99694444, 15.24694444, 1.74916667, 19.49694444, 18.16777778, 4.08138889, 15.25111111, 12.33555556, 3.5, 3.5, 1.49861111, 14.66694444, 14.00305556, 16.99722222, 15.24666667, 9.41111111, 1.16666667]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
               "value": [4.92694444, 8.66842593, 9.91888889, 24, 9.91666667, 11.67222222, 2.92222222, 11.45352273, 2.91305556, 4.53951389, 9.66277778, 8.5, 8.00069444, 3.50756944, 7.91569444, 8.00013889, 7.91319444, 7.03222222, 6.54138889, 2.15846065, 10.54319444, 3.50055556, 10.24819444, 6.49805556, 8.49916667, 8.50041667, 10.5025, 11.92992222, 9.11628086, 8.75166667, 7.91736111, 8.20847222, 8.49583333, 7.92041667, 8.49972222, 4.08305556, 5.82930556, 9.37472222, 8.49930556, 7.33361111, 7.62513889, 4.16444444, 2.33666667, 9.37527778, 9.74986111, 8.20861111, 7.9175, 5.08347222, 2.33152778, 8.25166667, 7.62513889, 7.625, 6.16819444, 7.91486111, 4.74777778, 7.62902778, 9.91888889, 0.65642361, 2.33361111, 8.25013889, 7.62333333, 7.91680556, 6.16555556, 6.14576389, 0.875, 4.24708333, 8.20861111, 7.03763889, 9.00305556, 3.49944444, 2.33333333, 7.74986111, 7.91680556, 8.24986111, 7.62680556, 6.45444444, 2.33416667, 7.74847222, 7.625, 2.50027778, 12.29375, 0.75, 7.87986111, 4.6871875, 4.74388889, 7.33416667, 1.28344444, 1.75, 1.16652778, 7.91513889, 7.50166667, 7.04097222, 7.04013889, 1.50027778, 1.75, 4.99888889, 7.62708333, 3.79938889, 8.20847222, 5.49777778, 10.00277778, 2.00055556, 2.05291667, 1.49847222, 7.62305556, 3.21395833, 6.25083333, 9.08347222, 4.49819444, 8.20763889, 4.7475, 2.20652778, 8.20791667, 11.701, 9.66805556, 7.915, 7.33222222, 9.50013889, 7.6225, 7.33, 2.3375, 11.25, 1.74194444, 7.04125, 6.41388889, 1.74222222, 9.37513889, 6.12763889, 9.07944444, 6.49444444, 6.99898148, 7.62347222, 1.74916667, 9.74847222, 9.08388889, 2.04069444, 7.62555556, 6.16777778, 3.5, 3.5, 0.74930556, 7.33347222, 7.00152778, 8.49861111, 7.62333333, 9.41111111, 1.16666667]
             },
             {
@@ -16796,44 +17065,6 @@
                 }
               },
               "value": [3.16837302, 7.33685185, 9.91888889, 19.78309259, 9.91666667, 11.67222222, 2.92222222, 8.43465909, 2.91305556, 3.49847222, 7.58069444, 6.41986111, 6.00180556, 2.98704861, 5.83430556, 6.00125, 5.83166667, 4.95944444, 5.15453704, 2.12918287, 8.46263889, 3.50055556, 8.1675, 2.33361111, 6.25416667, 6.41833333, 10.5025, 9.19684444, 5.34901235, 6.51, 5.83736111, 6.12638889, 6.24847222, 5.84138889, 6.41722222, 4.08305556, 5.82930556, 7.29277778, 6.25194444, 5.25319444, 5.54291667, 0, 2.33666667, 7.29472222, 7.50097222, 6.12652778, 5.83569444, 2.43041667, 2.33152778, 6.00305556, 5.54444444, 5.5425, 4.08861111, 5.83430556, 0.58666667, 5.54694444, 9.91888889, 0.65642361, 2.33361111, 6.25513889, 5.54513889, 5.83486111, 4.08736111, 5.10569444, 0.875, 2.24930556, 6.12625, 4.95944444, 9.00305556, 3.49944444, 2.33333333, 5.50263889, 5.83625, 6.00152778, 5.54444444, 4.37375, 2.33416667, 5.50111111, 5.54666667, 2.50027778, 10.21305556, 0.75, 7.87986111, 2.625625, 0.58277778, 1.45486111, 1.28344444, 1.75, 1.16652778, 5.83388889, 5.25416667, 4.96055556, 4.95944444, 1.50027778, 1.75, 3.87451389, 5.54875, 2.90016667, 6.12625, 0.99972222, 10.00277778, 2.00055556, 2.05291667, 1.49847222, 5.54486111, 2.17361111, 4.00277778, 7.005, 1.49701389, 6.12722222, 0.5875, 2.20652778, 6.12638889, 6.0025, 7.58569444, 5.83263889, 5.54555556, 3.50083333, 5.54305556, 5.24736111, 2.3375, 5.25069444, 1.15861111, 5.25069444, 6.41388889, 1.74222222, 7.00125, 6.12763889, 6.99708333, 2.33305556, 1.49925926, 5.54527778, 1.74916667, 3.74791667, 6.71305556, 2.04069444, 5.54319444, 0.29152778, 3.5, 3.5, 0.74930556, 5.25138889, 3.20875, 6.42041667, 1.74833333, 4.66805556, 0]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [34.48861111, 26.00527778, 9.91888889, 720, 9.91666667, 11.67222222, 2.92222222, 251.9775, 2.91305556, 16.99194444, 19.32555556, 17, 16.00138889, 19.32722222, 15.83138889, 16.00027778, 15.82638889, 14.06444444, 24.07833333, 35.00666667, 21.08638889, 3.50055556, 20.49638889, 6.49805556, 16.99833333, 17.00083333, 10.5025, 298.24805556, 164.09305556, 17.50333333, 15.83472222, 16.41694444, 16.99166667, 15.84083333, 16.99944444, 4.08305556, 11.65861111, 18.74944444, 16.99861111, 14.66722222, 15.25027778, 4.16444444, 2.33666667, 18.75055556, 19.49972222, 16.41722222, 15.835, 30.50083333, 4.66305556, 16.50333333, 15.25027778, 15.25, 12.33638889, 15.82972222, 4.74777778, 15.25805556, 9.91888889, 4.08416667, 4.66722222, 16.50027778, 15.24666667, 15.83361111, 12.33111111, 40.99638889, 3.5, 8.49416667, 16.41722222, 14.07527778, 9.00305556, 3.49944444, 2.33333333, 15.49972222, 15.83361111, 16.49972222, 15.25361111, 12.90888889, 2.33416667, 15.49694444, 15.25, 2.50027778, 24.5875, 1.5, 15.75972222, 37.4975, 4.74388889, 14.66833333, 6.41722222, 1.75, 2.33305556, 15.83027778, 15.00333333, 14.08194444, 14.08027778, 1.50027778, 1.75, 18.24666667, 15.25416667, 18.99694444, 16.41694444, 5.49777778, 10.00277778, 2.00055556, 4.10583333, 2.99694444, 15.24611111, 12.30138889, 12.50166667, 18.16694444, 17.99277778, 16.41527778, 4.7475, 4.41305556, 16.41583333, 58.505, 19.33611111, 15.83, 14.66444444, 19.00027778, 15.245, 14.66, 2.3375, 22.5, 1.74194444, 14.0825, 6.41388889, 1.74222222, 18.75027778, 12.25527778, 18.15888889, 6.49444444, 20.99694444, 15.24694444, 1.74916667, 19.49694444, 18.16777778, 4.08138889, 15.25111111, 12.33555556, 3.5, 3.5, 1.49861111, 14.66694444, 14.00305556, 16.99722222, 15.24666667, 9.41111111, 1.16666667]
             },
             {
               "type": "double",
@@ -17080,7 +17311,40 @@
             },
             {
               "type": "double",
-              "attributes": {},
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["m"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
               "value": [1223.25575842, 2804.34564305, 24571.51942706, 1432.62873859, 49970.90992755, 35079.12691043, 49683.47047656, 12174.87266046, 2900.74766842, 51261.50311763, 23605.36384105, 1062.49099067, 13853.75514248, 493.79014355, 7474.42455885, 4760.65481283, 4378.18471656, 1833.70015797, 6689.3014903, 37521.74206262, 2214.95943377, 3020.31137358, 10497.08266182, 2873.86891461, 216916.93557969, 9312.89508316, 2675.36718335, 252.90398769, 1453.95144615, 285920.84512804, 8270.72657219, 11124.37808164, 274884.41673498, 4156.32554919, 12082.92277065, 3925.22476101, 2023.46584372, 3373.07333952, 250727.38612749, 8710.63361105, 7115.86367146, 2428.19022266, 6625.46453414, 581.65110793, 231339.97062345, 8338.8180825, 10791.70907115, 2102.20413864, 9961.45483771, 85208.44987021, 4734.27831239, 6754.62765947, 10351.09319373, 21299.31253792, 334.68969552, 3581.83186407, 925.54117857, 37466.01840318, 5169.30397407, 3684.64870589, 7111.77158813, 952.29473192, 5125.09014014, 37998.28716875, 588.85753888, 44226.87554718, 7949.99364116, 88709.23475619, 44376.43231047, 3070.53941652, 22126.41786566, 21806.37235148, 3814.91311756, 2692.08872527, 5478.64616081, 4242.08309523, 3664.42197155, 3089.11128342, 10334.08648144, 2259.49941925, 3033.52429678, 979.83991596, 2227.76878609, 745.87110591, 1869.33781508, 14794.5693101, 40.90310602, 2087.84704383, 7433.32661221, 2253.68200287, 1665.51036621, 7192.22058099, 2087.09371941, 2005.10215165, 1597.3007736, 26303.83066206, 7554.58515383, 493.82702777, 7773.21348807, 8261.53458119, 7999.8832348, 101.81543762, 1577.61051853, 7110.06907736, 3473.06014925, 1164.0373379, 6472.87355637, 1910.23557396, 863.5547387, 545.47367508, 4565.24603086, 19140.32364533, 1058.87337051, 1563.55538835, 2622.41678566, 8601.73474729, 34379.14103369, 1707.15688184, 2292.95216848, 7927.05475004, 390.05033069, 7490.85859252, 2519.20535302, 2337.28289359, 1533.02982521, 2753.77952873, 3023.75085072, 2923.34165488, 53.11059883, 3374.20587093, 8118.03024435, 4934.3251137, 8506.730052, 39082.27816303, 1981.42510603, 6367.38728219, 1924.13378157, 5744.20019443, 7472.78221656, 4913.32415838, 1100.21552092, 4112.13030376, 9988.01112399, 5807.14494888, 788.04300642, 1818.12684223, 9303.575666]
             },
             {
@@ -17105,12 +17369,12 @@
         {
           "type": "character",
           "attributes": {},
-          "value": ["SAV.1", "SAV.10", "SAV.100", "SAV.101", "SAV.101", "SAV.102", "SAV.102", "SAV.103", "SAV.104", "SAV.105", "SAV.106", "SAV.107", "SAV.108", "SAV.11", "SAV.110", "SAV.112", "SAV.113", "SAV.114", "SAV.115", "SAV.116", "SAV.117", "SAV.118", "SAV.118", "SAV.119", "SAV.12", "SAV.120", "SAV.121", "SAV.122", "SAV.123", "SAV.124", "SAV.125", "SAV.126", "SAV.128", "SAV.129", "SAV.13", "SAV.130", "SAV.131", "SAV.132", "SAV.133", "SAV.134", "SAV.135", "SAV.136", "SAV.137", "SAV.138", "SAV.139", "SAV.14", "SAV.140", "SAV.141", "SAV.142", "SAV.143", "SAV.144", "SAV.145", "SAV.146", "SAV.147", "SAV.148", "SAV.149", "SAV.15", "SAV.150", "SAV.151", "SAV.152", "SAV.153", "SAV.16", "SAV.17", "SAV.18", "SAV.19", "SAV.19", "SAV.19", "SAV.19", "SAV.2", "SAV.20", "SAV.21", "SAV.21", "SAV.22", "SAV.23", "SAV.24", "SAV.25", "SAV.26", "SAV.27", "SAV.28", "SAV.29", "SAV.3", "SAV.30", "SAV.31", "SAV.32", "SAV.33", "SAV.34", "SAV.35", "SAV.36", "SAV.36", "SAV.37", "SAV.38", "SAV.38", "SAV.39", "SAV.4", "SAV.40", "SAV.41", "SAV.42", "SAV.43", "SAV.44", "SAV.45", "SAV.46", "SAV.47", "SAV.48", "SAV.49", "SAV.5", "SAV.50", "SAV.51", "SAV.52", "SAV.53", "SAV.54", "SAV.55", "SAV.56", "SAV.57", "SAV.58", "SAV.59", "SAV.6", "SAV.60", "SAV.61", "SAV.62", "SAV.63", "SAV.64", "SAV.65", "SAV.66", "SAV.67", "SAV.68", "SAV.69", "SAV.7", "SAV.70", "SAV.71", "SAV.73", "SAV.74", "SAV.75", "SAV.76", "SAV.77", "SAV.77", "SAV.77", "SAV.77", "SAV.78", "SAV.78", "SAV.78", "SAV.78", "SAV.79", "SAV.8", "SAV.80", "SAV.81", "SAV.83", "SAV.84", "SAV.85", "SAV.86", "SAV.87", "SAV.88", "SAV.89", "SAV.9", "SAV.90", "SAV.91", "SAV.92", "SAV.93", "SAV.93", "SAV.94", "SAV.95", "SAV.96", "SAV.98", "SAV.99"]
+          "value": ["SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4360.A..deploy_id.2601766196.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210."]
         },
         {
           "type": "character",
           "attributes": {},
-          "value": ["SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4360.A..deploy_id.2601766196.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4356.A..deploy_id.2790876200.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4358.A..deploy_id.2790879124.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4386.A..deploy_id.2790877801.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4357.A..deploy_id.2796332882.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210.", "SAV.4355.B..deploy_id.2806115210."]
+          "value": ["SAV.1", "SAV.10", "SAV.100", "SAV.101", "SAV.101", "SAV.102", "SAV.102", "SAV.103", "SAV.104", "SAV.105", "SAV.106", "SAV.107", "SAV.108", "SAV.11", "SAV.110", "SAV.112", "SAV.113", "SAV.114", "SAV.115", "SAV.116", "SAV.117", "SAV.118", "SAV.118", "SAV.119", "SAV.12", "SAV.120", "SAV.121", "SAV.122", "SAV.123", "SAV.124", "SAV.125", "SAV.126", "SAV.128", "SAV.129", "SAV.13", "SAV.130", "SAV.131", "SAV.132", "SAV.133", "SAV.134", "SAV.135", "SAV.136", "SAV.137", "SAV.138", "SAV.139", "SAV.14", "SAV.140", "SAV.141", "SAV.142", "SAV.143", "SAV.144", "SAV.145", "SAV.146", "SAV.147", "SAV.148", "SAV.149", "SAV.15", "SAV.150", "SAV.151", "SAV.152", "SAV.153", "SAV.16", "SAV.17", "SAV.18", "SAV.19", "SAV.19", "SAV.19", "SAV.19", "SAV.2", "SAV.20", "SAV.21", "SAV.21", "SAV.22", "SAV.23", "SAV.24", "SAV.25", "SAV.26", "SAV.27", "SAV.28", "SAV.29", "SAV.3", "SAV.30", "SAV.31", "SAV.32", "SAV.33", "SAV.34", "SAV.35", "SAV.36", "SAV.36", "SAV.37", "SAV.38", "SAV.38", "SAV.39", "SAV.4", "SAV.40", "SAV.41", "SAV.42", "SAV.43", "SAV.44", "SAV.45", "SAV.46", "SAV.47", "SAV.48", "SAV.49", "SAV.5", "SAV.50", "SAV.51", "SAV.52", "SAV.53", "SAV.54", "SAV.55", "SAV.56", "SAV.57", "SAV.58", "SAV.59", "SAV.6", "SAV.60", "SAV.61", "SAV.62", "SAV.63", "SAV.64", "SAV.65", "SAV.66", "SAV.67", "SAV.68", "SAV.69", "SAV.7", "SAV.70", "SAV.71", "SAV.73", "SAV.74", "SAV.75", "SAV.76", "SAV.77", "SAV.77", "SAV.77", "SAV.77", "SAV.78", "SAV.78", "SAV.78", "SAV.78", "SAV.79", "SAV.8", "SAV.80", "SAV.81", "SAV.83", "SAV.84", "SAV.85", "SAV.86", "SAV.87", "SAV.88", "SAV.89", "SAV.9", "SAV.90", "SAV.91", "SAV.92", "SAV.93", "SAV.93", "SAV.94", "SAV.95", "SAV.96", "SAV.98", "SAV.99"]
         },
         {
           "type": "list",
@@ -22539,7 +22803,40 @@
         },
         {
           "type": "double",
-          "attributes": {},
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
           "value": [219.49694444, 15.99694444, 15.83166667, 1.1625, 1.74388889, 0, 11.16361111, 197.83666667, 1.16722222, 14.66833333, 15.83361111, 14.66277778, 96.50027778, 2.32638889, 15.50027778, 208.49833333, 17.58611111, 14.08222222, 336.0025, 18.75333333, 1.17194444, 2.32944444, 0.99972222, 15.82833333, 667.33361111, 15.835, 15.24777778, 137.49944444, 18.5, 21.99888889, 14.08138889, 17.57638889, 1.7525, 1.16, 15.8325, 18.16722222, 5.83416667, 14.66166667, 1.15861111, 13.50805556, 18.16638889, 2.9175, 98.00722222, 18.99694444, 1.16583333, 19.91333333, 17.58361111, 2.91666667, 15.83361111, 11.75277778, 14.66472222, 14.66722222, 2.91666667, 14.08305556, 25.00138889, 16.41361111, 23.40888889, 5.83111111, 17.58361111, 14.66333333, 1.16666667, 0.58694444, 16.41722222, 11.75444444, 409.16361111, 507.4975, 1.16638889, 0.58305556, 15.50055556, 1.17, 2.3275, 231.24666667, 4.07555556, 18.74166667, 15.24305556, 2.92083333, 16.41694444, 619.91666667, 15.83333333, 15.25111111, 15.5, 18.16888889, 18.16611111, 14.66666667, 18.74888889, 11.74527778, 709.41638889, 0.5875, 15.24277778, 16.41583333, 229.41694444, 0, 2.91833333, 16.50638889, 14.08416667, 1.75305556, 15.835, 14.67083333, 2.33277778, 14.66111111, 709.41444444, 2.90916667, 3.49888889, 2.33305556, 16.99972222, 13.48111111, 24.58444444, 15.25388889, 16.40861111, 3.50361111, 14.66666667, 15.25166667, 14.66888889, 15.25111111, 15.24916667, 16.49194444, 19.49722222, 1.50055556, 15.00472222, 15.99972222, 1.75777778, 4.08138889, 2.91527778, 590.66361111, 15.83361111, 14.6675, 16.495, 13.49138889, 15.25361111, 14.99694444, 2.00305556, 308.00305556, 14.50444444, 27.50083333, 14.08388889, 0, 0, 0, 0, 15.83388889, 15.82583333, 14.66583333, 19.00361111, 24.00138889, 13.49888889, 399.83888889, 19.92027778, 1.17083333, 15.24694444, 12.33416667, 1.75111111, 14.085, 16.00166667, 1.16333333, 13.49722222, 0.99972222, 1.16666667, 15.99916667, 117.99805556, 2.00055556, 2.50111111, 1.5, 11.99805556]
         },
         {
@@ -22712,6 +23009,44 @@
               "value": ["units"]
             }
           },
+          "value": [26.00527778, 16.50027778, 2.33305556, 1.77555556, 2.33027778, 0.55444444, 11.74694444, 3.5, 1.75, 15.25416667, 16.41694444, 15.24611111, 1.5, 9.91888889, 2.99694444, 58.505, 18.16694444, 14.66444444, 6.41722222, 19.33611111, 4.7475, 2.91305556, 1.5, 16.41527778, 251.9775, 16.41583333, 15.83, 17.99277778, 19.00027778, 22.5, 14.66, 18.15888889, 2.3375, 1.74222222, 15.83138889, 18.75027778, 6.41388889, 15.245, 1.74194444, 14.0825, 12.25527778, 6.49444444, 20.99694444, 19.49694444, 1.74916667, 20.49638889, 18.16777778, 3.5, 4.08138889, 12.33555556, 15.24694444, 15.25111111, 3.5, 14.66694444, 1.49861111, 16.99722222, 11.65861111, 9.41111111, 14.00305556, 15.24666667, 1.16666667, 4.16444444, 4.66305556, 12.33638889, 21.00472222, 11.08611111, 1.75, 1.16583333, 16.00138889, 4.74777778, 2.91111111, 16.41611111, 11.67222222, 19.32555556, 15.82638889, 3.50055556, 17.00083333, 298.24805556, 16.41694444, 15.84083333, 16.00027778, 18.74944444, 18.75055556, 15.25805556, 4.66722222, 12.33111111, 34.48861111, 1.16611111, 15.82583333, 17, 16.49333333, 7.585, 6.49805556, 16.99833333, 14.66722222, 2.33666667, 16.41722222, 15.25, 9.91888889, 15.24666667, 720, 9.91666667, 2.92222222, 2.91305556, 17.50333333, 14.06444444, 21.08638889, 15.83472222, 16.99944444, 4.08305556, 15.25027778, 15.835, 15.25027778, 15.82972222, 15.83361111, 16.99166667, 8.49416667, 9.00305556, 15.49972222, 16.49972222, 2.33333333, 3.49944444, 10.5025, 164.09305556, 16.41722222, 15.25361111, 16.99861111, 14.07527778, 15.83361111, 15.49694444, 2.50027778, 37.4975, 15.00333333, 1.75027778, 1.16666667, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 16.41722222, 16.40944444, 15.25, 19.49972222, 24.5875, 14.08194444, 30.50083333, 15.75972222, 4.74388889, 15.83027778, 12.90888889, 2.33416667, 14.66833333, 16.50333333, 1.75, 14.08027778, 1.50027778, 1.74888889, 16.49777778, 18.99694444, 5.49777778, 10.00277778, 2.00055556, 12.50166667]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
           "value": [8.66842593, 8.25013889, 1.16652778, 1.77555556, 2.33027778, 0.55444444, 5.87347222, 0.875, 1.75, 7.62708333, 8.20847222, 7.62305556, 0.75, 9.91888889, 1.49847222, 11.701, 9.08347222, 7.33222222, 1.28344444, 9.66805556, 4.7475, 2.91305556, 1.5, 8.20763889, 11.45352273, 8.20791667, 7.915, 4.49819444, 9.50013889, 11.25, 7.33, 9.07944444, 2.3375, 1.74222222, 7.91569444, 9.37513889, 6.41388889, 7.6225, 1.74194444, 7.04125, 6.12763889, 6.49444444, 6.99898148, 9.74847222, 1.74916667, 10.24819444, 9.08388889, 3.5, 2.04069444, 6.16777778, 7.62347222, 7.62555556, 3.5, 7.33347222, 0.74930556, 8.49861111, 5.82930556, 9.41111111, 7.00152778, 7.62333333, 1.16666667, 4.16444444, 2.33152778, 6.16819444, 3.50078704, 2.21722222, 1.75, 1.16583333, 8.00069444, 4.74777778, 2.91111111, 4.10402778, 11.67222222, 9.66277778, 7.91319444, 3.50055556, 8.50041667, 11.92992222, 8.20847222, 7.92041667, 8.00013889, 9.37472222, 9.37527778, 7.62902778, 2.33361111, 6.16555556, 4.92694444, 1.16611111, 7.91291667, 8.5, 5.49777778, 7.585, 6.49805556, 8.49916667, 7.33361111, 2.33666667, 8.20861111, 7.625, 9.91888889, 7.62333333, 24, 9.91666667, 2.92222222, 2.91305556, 8.75166667, 7.03222222, 10.54319444, 7.91736111, 8.49972222, 4.08305556, 7.62513889, 7.9175, 7.62513889, 7.91486111, 7.91680556, 8.49583333, 4.24708333, 9.00305556, 7.74986111, 8.24986111, 2.33333333, 3.49944444, 10.5025, 9.11628086, 8.20861111, 7.62680556, 8.49930556, 7.03763889, 7.91680556, 7.74847222, 2.50027778, 4.6871875, 7.50166667, 0.87513889, 0.58333333, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 8.20861111, 8.20472222, 7.625, 9.74986111, 12.29375, 7.04097222, 5.08347222, 7.87986111, 4.74388889, 7.91513889, 6.45444444, 2.33416667, 7.33416667, 8.25166667, 1.75, 7.04013889, 1.50027778, 1.74888889, 8.24888889, 3.79938889, 5.49777778, 10.00277778, 2.00055556, 6.25083333]
         },
         {
@@ -22751,44 +23086,6 @@
             }
           },
           "value": [7.33685185, 6.25513889, 1.16652778, 1.77555556, 2.33027778, 0.55444444, 3.79277778, 0.875, 1.75, 5.54875, 6.12625, 5.54486111, 0.75, 9.91888889, 1.49847222, 6.0025, 7.005, 5.54555556, 1.28344444, 7.58569444, 0.5875, 2.91305556, 1.5, 6.12722222, 8.43465909, 6.12638889, 5.83263889, 1.49701389, 3.50083333, 5.25069444, 5.24736111, 6.99708333, 2.3375, 1.74222222, 5.83430556, 7.00125, 6.41388889, 5.54305556, 1.15861111, 5.25069444, 6.12763889, 2.33305556, 1.49925926, 3.74791667, 1.74916667, 8.1675, 6.71305556, 3.5, 2.04069444, 0.29152778, 5.54527778, 5.54319444, 3.5, 5.25138889, 0.74930556, 6.42041667, 5.82930556, 4.66805556, 3.20875, 1.74833333, 0, 0, 2.33152778, 4.08861111, 3.50078704, 2.10011111, 1.75, 1.16583333, 6.00180556, 0.58666667, 2.91111111, 3.06298611, 11.67222222, 7.58069444, 5.83166667, 3.50055556, 6.41833333, 9.19684444, 6.12638889, 5.84138889, 6.00125, 7.29277778, 7.29472222, 5.54694444, 2.33361111, 4.08736111, 3.16837302, 1.16611111, 5.83083333, 6.41986111, 2.72407407, 7.585, 2.33361111, 6.25416667, 5.25319444, 2.33666667, 6.12652778, 5.5425, 9.91888889, 5.54513889, 19.78309259, 9.91666667, 2.92222222, 2.91305556, 6.51, 4.95944444, 8.46263889, 5.83736111, 6.41722222, 4.08305556, 5.54291667, 5.83569444, 5.54444444, 5.83430556, 5.83486111, 6.24847222, 2.24930556, 9.00305556, 5.50263889, 6.00152778, 2.33333333, 3.49944444, 10.5025, 5.34901235, 6.12625, 5.54444444, 6.25194444, 4.95944444, 5.83625, 5.50111111, 2.50027778, 2.625625, 5.25416667, 0.87513889, 0.58333333, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 6.12902778, 6.12402778, 5.54666667, 7.50097222, 10.21305556, 4.96055556, 2.43041667, 7.87986111, 0.58277778, 5.83388889, 4.37375, 2.33416667, 1.45486111, 6.00305556, 1.75, 4.95944444, 1.50027778, 1.74888889, 6.00013889, 2.90016667, 0.99972222, 10.00277778, 2.00055556, 4.00277778]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [26.00527778, 16.50027778, 2.33305556, 1.77555556, 2.33027778, 0.55444444, 11.74694444, 3.5, 1.75, 15.25416667, 16.41694444, 15.24611111, 1.5, 9.91888889, 2.99694444, 58.505, 18.16694444, 14.66444444, 6.41722222, 19.33611111, 4.7475, 2.91305556, 1.5, 16.41527778, 251.9775, 16.41583333, 15.83, 17.99277778, 19.00027778, 22.5, 14.66, 18.15888889, 2.3375, 1.74222222, 15.83138889, 18.75027778, 6.41388889, 15.245, 1.74194444, 14.0825, 12.25527778, 6.49444444, 20.99694444, 19.49694444, 1.74916667, 20.49638889, 18.16777778, 3.5, 4.08138889, 12.33555556, 15.24694444, 15.25111111, 3.5, 14.66694444, 1.49861111, 16.99722222, 11.65861111, 9.41111111, 14.00305556, 15.24666667, 1.16666667, 4.16444444, 4.66305556, 12.33638889, 21.00472222, 11.08611111, 1.75, 1.16583333, 16.00138889, 4.74777778, 2.91111111, 16.41611111, 11.67222222, 19.32555556, 15.82638889, 3.50055556, 17.00083333, 298.24805556, 16.41694444, 15.84083333, 16.00027778, 18.74944444, 18.75055556, 15.25805556, 4.66722222, 12.33111111, 34.48861111, 1.16611111, 15.82583333, 17, 16.49333333, 7.585, 6.49805556, 16.99833333, 14.66722222, 2.33666667, 16.41722222, 15.25, 9.91888889, 15.24666667, 720, 9.91666667, 2.92222222, 2.91305556, 17.50333333, 14.06444444, 21.08638889, 15.83472222, 16.99944444, 4.08305556, 15.25027778, 15.835, 15.25027778, 15.82972222, 15.83361111, 16.99166667, 8.49416667, 9.00305556, 15.49972222, 16.49972222, 2.33333333, 3.49944444, 10.5025, 164.09305556, 16.41722222, 15.25361111, 16.99861111, 14.07527778, 15.83361111, 15.49694444, 2.50027778, 37.4975, 15.00333333, 1.75027778, 1.16666667, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 16.41722222, 16.40944444, 15.25, 19.49972222, 24.5875, 14.08194444, 30.50083333, 15.75972222, 4.74388889, 15.83027778, 12.90888889, 2.33416667, 14.66833333, 16.50333333, 1.75, 14.08027778, 1.50027778, 1.74888889, 16.49777778, 18.99694444, 5.49777778, 10.00277778, 2.00055556, 12.50166667]
         },
         {
           "type": "double",
@@ -22922,7 +23219,7 @@
       ]
     }
 
-# Expected outcome of `timeAtCarcTab_()` has not changed
+# Expected outcome of `attendanceTab_()` has not changed
 
     {
       "type": "list",
@@ -22940,7 +23237,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr"]
+          "value": ["clust_id", "individual_name_deployment_id", "attendance", "attendance_dmean", "attendance_daytime_dmean"]
         },
         "groups": {
           "type": "list",
@@ -23261,17 +23558,17 @@
         {
           "type": "double",
           "attributes": {},
+          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 13, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
+        },
+        {
+          "type": "double",
+          "attributes": {},
           "value": [3, 10, 12, 9, 5.5, 6, 3, 8, 8.5, 4, 7.5, 9.5, 11.5, 9.5, 10.5, 8.5, 3, 10, 8, 14.33333333, 8.5, 11.5, 7.2, 3, 8.5, 10, 8.5, 11.5, 9.5, 8, 9.5, 5.5, 8.5, 7, 22.125, 9, 9.5, 6.5, 8.5, 8, 8, 8, 7.5, 8, 11.5, 21.6, 6.5, 5.5, 11.71428571, 9]
         },
         {
           "type": "double",
           "attributes": {},
           "value": [3, 4.5, 12, 3.5, 5.5, 0.5, 3, 2.5, 3, 4, 2, 4, 6, 4, 5, 3, 3, 4.5, 2.5, 7, 3, 6, 2.8, 3, 3, 4.5, 3, 6, 4, 2.5, 4, 0, 3, 1.5, 11.625, 3.5, 4, 4.5, 3, 2.5, 2.5, 2.5, 2, 2.5, 6, 10.4, 1, 2, 3.14285714, 3.5]
-        },
-        {
-          "type": "double",
-          "attributes": {},
-          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 13, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
         }
       ]
     }
@@ -23294,7 +23591,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "attendance_dmean", "attendance_daytime_dmean", "attendance_aggr"]
+          "value": ["clust_id", "individual_name_deployment_id", "attendance", "attendance_dmean", "attendance_daytime_dmean"]
         },
         "groups": {
           "type": "list",
@@ -26398,6 +26695,44 @@
               "value": ["units"]
             }
           },
+          "value": [3, 15, 16.99972222, 16, 13.49888889, 15.49722222, 8.49305556, 1.99805556, 6.49166667, 13.49222222, 17, 17.99222222, 16.00722222, 2, 1, 164.46472222, 4.99888889, 1.5, 13, 5.99166667, 14.51055556, 15.5075, 10.50833333, 66.9525, 13.99916667, 13, 9.50861111, 12.50722222, 16.50444444, 16.9925, 30.49083333, 17.49027778, 150.96694444, 22.48444444, 8.50055556, 1.49972222, 3.48333333, 10, 25, 23.99888889, 20.49416667, 1.50027778, 15, 1.99972222, 2.99972222, 14.00583333, 13.99972222, 15.50027778, 2.00777778, 13, 25, 12, 27, 94, 16.9925, 1.5, 2, 12.50777778, 14.99972222, 17.50027778, 6.99166667, 13.49944444, 14.99583333, 3.51638889, 5, 14.50166667, 14.00722222, 1.49833333, 2.50027778, 13.99972222, 18, 15.00444444, 17.00666667, 12.50583333, 5.49944444, 134, 16.50083333, 10.00083333, 6, 9.99833333, 17, 5.49916667, 14.49916667, 46.49027778, 13.50694444, 9.99277778, 32.99777778, 15.01, 14.99666667, 13.00777778, 6.9925, 16.49861111, 13.50777778, 1.99222222, 12.49388889, 86, 57.98361111, 24.49972222, 36.00305556, 12.50638889, 18.5, 10.00583333, 0.99972222, 14.5, 16.49527778, 14, 32, 17.5, 10.00083333, 232.49944444, 15.00166667, 7.49416667, 9.50083333, 12.99777778, 18.50138889, 14.49861111, 30.00944444, 16, 18, 18, 17, 2.985, 10, 2, 7.00694444, 20, 297, 90, 15, 18, 8, 14, 2, 1, 5, 7, 34, 7, 46, 17, 17, 21, 6, 13, 37, 3, 16, 15, 17, 5, 0.99222222, 16, 57, 9, 11, 17, 16, 15, 203, 17, 20.00666667, 1.49222222, 15.49944444, 15.5075, 2.00027778, 14.00694444, 1.99222222, 14.49944444, 87.4775, 0.5, 15, 8.99944444, 1.49972222, 15.50388889, 17.49277778, 6.5, 2.50805556, 1.5, 11.49944444, 1.50777778, 2, 1, 1.5, 3.49888889, 15, 15, 17.495, 21.01333333, 13.00055556, 17.0075, 17.99888889, 15.99972222, 15.00027778, 6.49944444, 2.49694444, 28, 20, 11, 14, 3, 19, 2, 20, 14, 43, 13, 3, 296, 12, 9, 21, 22, 13, 18, 12, 18, 13, 3, 15, 18, 14, 14, 14, 9.99416667, 12.99888889, 19.50027778, 3.00027778, 2.5, 13.5075, 1.49222222, 7.48388889, 18, 20.0075, 1.99222222, 11.99972222, 2.00027778, 1.50055556, 0.5, 14.49222222, 5.98916667, 8.98916667, 2.50083333, 11.48888889, 25.51472222, 12, 15, 1.5, 1.5, 1.5, 13, 1.5, 14.5, 1.49944444, 14.49972222, 1.99222222, 1.50055556, 50, 3.49305556, 12.50722222, 1.5, 19.99861111, 3, 16.005, 38.00333333, 14.5075, 1.49944444, 4, 1.4975, 13.50027778, 13.5075, 31.515, 20.49916667, 20.00111111, 13, 13, 15, 17, 15, 5, 14, 15, 60, 16, 6, 16, 12, 14, 4, 11, 13, 20, 3, 12, 8, 17, 42, 14, 43, 14.5, 11, 3.98527778, 2.5, 16.50777778, 27.01472222, 4.49944444, 1.49222222, 15.5, 60.49666667, 5, 12.50777778, 5.49861111, 13.5, 16.49888889, 15, 27.48944444, 14.49361111, 5.99166667, 16.49222222, 18.99388889, 15.47916667, 1.49972222, 8.50388889, 6.48416667, 1.49972222, 15, 13.51305556, 3.99222222, 15.49944444, 13.99972222, 13.99861111, 15, 15, 24, 23, 54, 14, 17, 14, 35, 16, 20, 14, 17, 13, 3, 11, 19, 17, 17, 16, 15, 16, 39, 125.45861111, 19, 16, 1.99972222, 6.50777778, 22.99194444, 0.49972222, 5.48361111, 0.49972222, 1.00777778, 22.49944444, 24.50222222, 10.48361111, 4.00111111, 13.99888889, 18.50694444, 16, 0.99916667, 9.50138889, 60.97027778, 13.50777778, 2.49388889, 7.48888889, 14.50777778, 23, 8.48861111, 13.49222222, 66.47638889, 14.98305556, 17, 16.01944444, 6.48333333, 15.00777778, 2, 15.5, 16.49944444, 71.50555556, 31.48944444, 2.49972222, 18, 1.50027778, 12.00555556, 17.00777778, 17.50083333, 13, 17, 7, 10, 15, 15, 20, 8, 10, 3, 17, 3, 16, 13, 19, 15, 18, 24, 19, 26, 15, 15, 14, 4, 18, 3, 23, 5, 13, 19, 19, 17, 0.51638889, 6.99861111, 14.50222222, 7.48555556, 6.48388889, 17, 3.49611111, 13.99805556, 2.50083333, 14.50916667, 18.50027778, 19.98888889, 15, 16.49222222, 15.99666667, 1.50027778, 15, 16.00166667, 14.50055556, 1.49972222, 18.00027778, 17.99194444, 19.00027778, 19.49972222, 13.99277778, 15, 19, 2, 16, 16, 17, 17, 13, 3, 13, 14, 19, 10, 15, 18, 15, 18, 19, 19, 17, 5, 18, 17, 28, 11, 13, 15, 15, 20, 15.49638889, 16.49666667, 24, 14.50083333, 7.99916667, 8.00083333, 15, 14.5075, 1.49222222, 24.99222222, 14.99916667, 1.50805556, 9, 14.99222222, 16, 15.50361111, 1.99222222, 16.00055556, 28.49194444, 1.97722222, 1.49222222, 15.99305556, 18.49777778, 18.49638889, 1.00611111, 8, 12.99166667, 2.49305556, 14.50222222, 23, 30, 19, 42, 16, 29, 3, 19, 3, 29, 19, 3, 28, 35, 15, 28, 14, 16, 28, 0.99222222, 0.99972222, 16.99222222, 14.9975, 1.50722222, 29.49166667, 2.49222222, 30.49861111, 13.99888889, 5, 3.0075, 28.49916667, 6.99111111, 29.99944444, 3.00027778, 16.99888889, 29.49166667, 30.49944444, 18, 5, 16, 6, 16, 16, 13, 16, 15, 17, 10, 43, 14, 21, 14, 7, 15, 13, 19, 22, 22, 5, 5, 14, 81, 11, 20, 13, 14, 19, 54, 22, 17, 17, 19, 14, 24, 15, 10, 3, 16, 37, 62, 22, 15, 10.00083333, 1.50055556, 14.99944444, 1.00027778, 0.49222222, 16.00777778]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
           "value": [3, 7.5, 8.49986111, 8, 6.74944444, 7.74861111, 4.24652778, 1.99805556, 3.24583333, 4.49740741, 8.5, 5.99740741, 8.00361111, 2, 1, 9.13692901, 2.49944444, 1.5, 6.5, 5.99166667, 7.25527778, 7.75375, 10.50833333, 4.78232143, 6.99958333, 6.5, 9.50861111, 6.25361111, 8.25222222, 8.49625, 15.24541667, 8.74513889, 8.38705247, 7.49481481, 8.50055556, 1.49972222, 3.48333333, 10, 8.33333333, 7.99962963, 10.24708333, 1.50027778, 7.5, 1.99972222, 2.99972222, 7.00291667, 6.99986111, 7.75013889, 2.00777778, 6.5, 12.5, 6, 6.75, 8.54545455, 8.49625, 1.5, 2, 6.25388889, 7.49986111, 8.75013889, 3.49583333, 6.74972222, 7.49791667, 1.75819444, 5, 7.25083333, 7.00361111, 1.49833333, 1.25013889, 6.99986111, 9, 7.50222222, 8.50333333, 6.25291667, 5.49944444, 7.05263158, 8.25041667, 5.00041667, 6, 4.99916667, 8.5, 5.49916667, 7.24958333, 6.64146825, 6.75347222, 4.99638889, 8.24944444, 7.505, 7.49833333, 6.50388889, 3.49625, 8.24930556, 6.75388889, 1.99222222, 6.24694444, 8.6, 7.24795139, 12.24986111, 9.00076389, 6.25319444, 9.25, 5.00291667, 0.99972222, 7.25, 8.24763889, 7, 8, 8.75, 10.00083333, 9.68747685, 7.50083333, 7.49416667, 9.50083333, 6.49888889, 9.25069444, 7.24930556, 10.00314815, 5.33333333, 9, 9, 8.5, 1.4925, 10, 2, 3.50347222, 5, 12.91304348, 8.18181818, 7.5, 9, 8, 7, 1, 1, 2.5, 3.5, 8.5, 7, 7.66666667, 5.66666667, 8.5, 7, 3, 6.5, 6.16666667, 3, 8, 7.5, 8.5, 2.5, 0.99222222, 8, 14.25, 9, 11, 8.5, 8, 7.5, 9.66666667, 8.5, 6.66888889, 1.49222222, 7.74972222, 7.75375, 2.00027778, 7.00347222, 1.99222222, 7.24972222, 9.71972222, 0.5, 7.5, 4.49972222, 1.49972222, 7.75194444, 8.74638889, 3.25, 2.50805556, 1.5, 5.74972222, 1.50777778, 2, 1, 1.5, 1.74944444, 7.5, 7.5, 8.7475, 10.50666667, 6.50027778, 5.66916667, 8.99944444, 7.99986111, 7.50013889, 6.49944444, 2.49694444, 7, 10, 5.5, 7, 3, 4.75, 2, 10, 7, 14.33333333, 6.5, 3, 11.38461538, 6, 4.5, 10.5, 11, 6.5, 9, 6, 9, 6.5, 3, 7.5, 9, 7, 7, 7, 4.99708333, 6.49944444, 9.75013889, 3.00027778, 2.5, 6.75375, 1.49222222, 3.74194444, 9, 10.00375, 1.99222222, 5.99986111, 0.66675926, 1.50055556, 0.5, 7.24611111, 5.98916667, 4.49458333, 2.50083333, 5.74444444, 12.75736111, 6, 7.5, 1.5, 1.5, 1.5, 6.5, 1.5, 7.25, 1.49944444, 7.24986111, 1.99222222, 1.50055556, 8.33333333, 1.74652778, 6.25361111, 1.5, 9.99930556, 3, 8.0025, 12.66777778, 7.25375, 1.49944444, 1, 0.74875, 6.75013889, 6.75375, 10.505, 10.24958333, 10.00055556, 6.5, 6.5, 7.5, 8.5, 7.5, 2.5, 7, 7.5, 15, 8, 2, 5.33333333, 6, 7, 4, 5.5, 6.5, 10, 1.5, 6, 8, 8.5, 14, 7, 14.33333333, 7.25, 5.5, 1.99263889, 1.25, 8.25388889, 9.00490741, 4.49944444, 1.49222222, 7.75, 6.72185185, 2.5, 6.25388889, 2.74930556, 6.75, 8.24944444, 7.5, 9.16314815, 7.24680556, 2.99583333, 8.24611111, 9.49694444, 5.15972222, 1.49972222, 4.25194444, 3.24208333, 1.49972222, 7.5, 6.75652778, 1.33074074, 7.74972222, 6.99986111, 6.99930556, 7.5, 7.5, 12, 7.66666667, 6, 7, 8.5, 4.66666667, 8.75, 8, 10, 7, 8.5, 13, 3, 5.5, 9.5, 8.5, 8.5, 8, 7.5, 8, 13, 13.93984568, 9.5, 8, 1.99972222, 3.25388889, 5.74798611, 0.49972222, 1.37090278, 0.49972222, 1.00777778, 7.49981481, 6.12555556, 5.24180556, 2.00055556, 6.99944444, 9.25347222, 8, 0.99916667, 4.75069444, 6.77447531, 6.75388889, 2.49388889, 3.74444444, 7.25388889, 7.66666667, 4.24430556, 6.74611111, 9.49662698, 7.49152778, 8.5, 8.00972222, 3.24166667, 7.50388889, 2, 7.75, 8.24972222, 10.21507937, 7.87236111, 2.49972222, 9, 1.50027778, 6.00277778, 8.50388889, 8.75041667, 6.5, 8.5, 7, 10, 7.5, 7.5, 10, 8, 10, 3, 8.5, 3, 8, 6.5, 9.5, 7.5, 9, 12, 9.5, 13, 7.5, 7.5, 7, 4, 9, 3, 11.5, 2.5, 6.5, 9.5, 9.5, 8.5, 0.51638889, 6.99861111, 7.25111111, 3.74277778, 3.24194444, 8.5, 3.49611111, 6.99902778, 2.50083333, 7.25458333, 9.25013889, 9.99444444, 7.5, 8.24611111, 7.99833333, 1.50027778, 7.5, 5.33388889, 7.25027778, 1.49972222, 9.00013889, 8.99597222, 9.50013889, 9.74986111, 6.99638889, 7.5, 9.5, 2, 8, 8, 8.5, 8.5, 6.5, 3, 6.5, 7, 9.5, 5, 7.5, 9, 7.5, 9, 9.5, 9.5, 8.5, 2.5, 9, 8.5, 14, 11, 6.5, 7.5, 7.5, 10, 7.74819444, 8.24833333, 12, 7.25041667, 3.99958333, 8.00083333, 7.5, 7.25375, 1.49222222, 8.33074074, 7.49958333, 1.50805556, 4.5, 7.49611111, 8, 5.16787037, 1.99222222, 5.33351852, 7.12298611, 1.97722222, 1.49222222, 7.99652778, 9.24888889, 9.24819444, 1.00611111, 4, 6.49583333, 1.24652778, 7.25111111, 11.5, 15, 9.5, 14, 8, 14.5, 3, 9.5, 1.5, 14.5, 9.5, 3, 14, 8.75, 7.5, 14, 7, 8, 14, 0.99222222, 0.99972222, 8.49611111, 7.49875, 1.50722222, 14.74583333, 2.49222222, 15.24930556, 6.99944444, 5, 3.0075, 14.24958333, 3.49555556, 14.99972222, 3.00027778, 8.49944444, 14.74583333, 15.24972222, 9, 5, 8, 3, 8, 8, 6.5, 8, 7.5, 8.5, 5, 14.33333333, 4.66666667, 7, 7, 3.5, 7.5, 6.5, 9.5, 11, 11, 5, 2.5, 7, 11.57142857, 11, 6.66666667, 6.5, 7, 9.5, 9, 11, 8.5, 8.5, 9.5, 7, 12, 7.5, 10, 3, 8, 12.33333333, 8.85714286, 11, 7.5, 10.00083333, 1.50055556, 7.49972222, 1.00027778, 0.49222222, 8.00388889]
         },
         {
@@ -26437,44 +26772,6 @@
             }
           },
           "value": [3, 3.5, 2.24611111, 1.74611111, 1.24583333, 1.49513889, 1.99736111, 1.99805556, 0.99611111, 0.82833333, 2.24611111, 4.49759259, 1.74986111, 2, 0, 1.74498457, 0.25, 1.5, 0.24625, 1.49222222, 1.00152778, 1.49986111, 10.50833333, 2.24579365, 0.74611111, 2.5, 1.50027778, 0, 1.99861111, 2.99013889, 11.99152778, 5.24097222, 5.68958333, 5.1587037, 1.49222222, 1.49972222, 3.48333333, 2, 3, 3.66398148, 6.74277778, 1.50027778, 3.99583333, 1.99972222, 2.99972222, 3.49875, 2.99569444, 3.74597222, 2.00777778, 2.49583333, 4.5, 6, 2.5, 3.09090909, 4.49222222, 1.5, 2, 2.24972222, 3.49569444, 4.74597222, 3.49583333, 3.49583333, 1.24375, 1.75819444, 5, 0.99694444, 1.5, 1.49833333, 1.25013889, 0.74611111, 2.74625, 1.24833333, 2.24944444, 0.74930556, 1, 4.52631579, 1.99652778, 5.00041667, 6, 1.99527778, 2.24611111, 1.00027778, 0.99597222, 2.71210317, 0.49972222, 1.99638889, 4.24319444, 3.49958333, 3.49416667, 2.49972222, 2.74583333, 4.24513889, 2.74972222, 1.99222222, 2.99611111, 3.8, 3.43152778, 8.24555556, 4.873125, 2.24902778, 5.24555556, 4.25097222, 0.99972222, 3.24583333, 4.24347222, 2.99583333, 2, 4.74583333, 10.00083333, 5.34962963, 3.49416667, 7.49416667, 1.4925, 3.24611111, 5.24611111, 3.24513889, 4.66425926, 2.66666667, 5, 5, 4.5, 1.4925, 2, 2, 3.50347222, 2, 4.56521739, 4.54545455, 3.5, 5, 8, 3, 1, 1, 2.5, 3.5, 2.5, 0, 1.66666667, 3, 4.5, 3, 2.5, 1, 1.33333333, 3, 2, 1.5, 2.5, 0.5, 0.99222222, 2, 8.25, 6, 3, 2.5, 2, 1.5, 5.14285714, 2.5, 2.49962963, 1.49222222, 2.24625, 1.49986111, 2.00027778, 1.5, 1.99222222, 0.99611111, 1.71509259, 0.5, 3.5, 1.5, 1.49972222, 4.24763889, 5.24111111, 2.49972222, 2.50805556, 1.5, 2.49583333, 1.50777778, 2, 1, 1.5, 1.74944444, 3.5, 3.49583333, 2.495, 4.25291667, 0.25027778, 1.49990741, 2.74555556, 3.99569444, 3.49597222, 6.49944444, 2.49694444, 3, 6, 1.5, 1, 3, 2.75, 2, 6, 3, 9, 0.5, 3, 6.80769231, 0.5, 2, 4.5, 5, 0.5, 7, 0, 5, 2.5, 3, 1.5, 3, 1, 1, 1, 2.74736111, 3.24555556, 3.49694444, 3.00027778, 2.5, 0.49986111, 1.49222222, 1.49222222, 5, 3.74986111, 1.99222222, 3.75013889, 0.66675926, 1.50055556, 0.5, 0.99222222, 1.4975, 1.49972222, 2.50083333, 5.74444444, 5.99972222, 2, 3.5, 1.5, 1.5, 1.5, 2.49583333, 1.5, 3.24583333, 1.49944444, 3.24569444, 1.99222222, 1.50055556, 1.83333333, 1.74652778, 0, 1.5, 3.74541667, 3, 1.74888889, 4.32944444, 3.24958333, 1.49944444, 1, 0.74875, 2.74597222, 2.74958333, 5.16611111, 6.24430556, 5.99638889, 0.5, 0.5, 3.5, 4.5, 3.5, 2, 1, 1.5, 6, 2, 1.66666667, 1.66666667, 0.5, 1, 3, 0, 1, 4.5, 1.5, 0, 8, 2.5, 6, 1, 6.33333333, 0.99611111, 0, 1.99263889, 1.25, 2, 0.66666667, 0, 1.49222222, 1.49611111, 1.32935185, 2.5, 0, 2.74930556, 3.24583333, 4.74527778, 1.5, 8.9962037, 3.24152778, 2.99583333, 4.24194444, 5.49277778, 2.16009259, 1.49972222, 2.00263889, 3.24208333, 1.49972222, 1.5, 2.74930556, 1.33074074, 3.74555556, 2.99569444, 2.99513889, 3.5, 3.5, 8, 2.33333333, 3.33333333, 3, 4.5, 0.66666667, 2.75, 2, 4, 1, 2.5, 13, 3, 1.5, 3.5, 2.5, 2.5, 2, 1.5, 2, 5, 3.65864198, 5.5, 2.5, 1.99972222, 0.25388889, 2.99618056, 0.49972222, 1.37090278, 0.49972222, 1.00777778, 1.33074074, 0.99645833, 2.99208333, 2.00055556, 0.74611111, 2.99958333, 2.5, 0.99916667, 1.74986111, 1.55151235, 0.5, 2.49388889, 3.74444444, 3.24972222, 5, 4.24430556, 2.74194444, 3.27900794, 1.23791667, 3, 1.75583333, 0.99194444, 1.24986111, 2, 3.74583333, 4.24555556, 3.35436508, 4.61875, 2.49972222, 3.5, 1.50027778, 2.74930556, 4.49972222, 4.74611111, 1, 4.5, 7, 2, 3.5, 3.5, 4.5, 8, 2, 3, 4.5, 3, 2, 0.5, 3.5, 2, 3, 6, 3.5, 7, 1.5, 1.5, 1, 4, 3, 3, 5.5, 2.5, 0.5, 3.5, 3.5, 2.5, 0.51638889, 2.49916667, 0.99736111, 1.49305556, 0.9925, 3, 3.49611111, 3.49486111, 2.50083333, 3.74930556, 5.24597222, 5.99027778, 3.49583333, 1.99222222, 1.74458333, 1.50027778, 2, 2.6637037, 3.24611111, 1.49972222, 4.99597222, 4.99180556, 5.49597222, 5.74569444, 2.99222222, 3.5, 5.5, 2, 2.5, 4, 4.5, 4.5, 0.5, 3, 0.5, 1, 3.5, 1, 1.5, 3, 1.5, 3, 3.5, 3.5, 2.5, 2.5, 3, 2.5, 8, 3, 4.5, 1.5, 1.5, 4, 1.49180556, 1.995, 8, 0.99708333, 3.99958333, 0.9925, 3.49583333, 3.24958333, 1.49222222, 5.16111111, 1.24583333, 1.50805556, 1, 1.24222222, 1.74638889, 0, 1.99222222, 1.16425926, 3.11875, 1.97722222, 1.49222222, 3.99236111, 5.99583333, 5.24402778, 1.00611111, 3.5, 3.24208333, 1.24652778, 3.24694444, 7.5, 3.5, 5.5, 1, 2, 1, 3, 3.5, 1.5, 1, 3.5, 3, 0.5, 2.75, 1.5, 0.5, 1, 4, 0.5, 0.99222222, 0.99972222, 4.99194444, 4.24486111, 1.50722222, 2.74583333, 2.49222222, 3.24930556, 0.74555556, 5, 3.0075, 0, 1.24611111, 0.75, 3.00027778, 4.49527778, 2.74583333, 3.24972222, 3, 5, 2, 1, 2, 4, 1, 2, 2, 2.5, 2.5, 3.66666667, 4.66666667, 3, 1, 3.5, 3.5, 0.5, 3.5, 5, 5, 5, 2, 1.5, 4.71428571, 11, 3, 2.5, 1.5, 5.5, 5, 7, 3, 3, 5.5, 3, 8, 2, 2, 3, 4, 7, 2.57142857, 5, 1.5, 10.00083333, 1.50055556, 1.24611111, 1.00027778, 0.49222222, 1.75]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [3, 15, 16.99972222, 16, 13.49888889, 15.49722222, 8.49305556, 1.99805556, 6.49166667, 13.49222222, 17, 17.99222222, 16.00722222, 2, 1, 164.46472222, 4.99888889, 1.5, 13, 5.99166667, 14.51055556, 15.5075, 10.50833333, 66.9525, 13.99916667, 13, 9.50861111, 12.50722222, 16.50444444, 16.9925, 30.49083333, 17.49027778, 150.96694444, 22.48444444, 8.50055556, 1.49972222, 3.48333333, 10, 25, 23.99888889, 20.49416667, 1.50027778, 15, 1.99972222, 2.99972222, 14.00583333, 13.99972222, 15.50027778, 2.00777778, 13, 25, 12, 27, 94, 16.9925, 1.5, 2, 12.50777778, 14.99972222, 17.50027778, 6.99166667, 13.49944444, 14.99583333, 3.51638889, 5, 14.50166667, 14.00722222, 1.49833333, 2.50027778, 13.99972222, 18, 15.00444444, 17.00666667, 12.50583333, 5.49944444, 134, 16.50083333, 10.00083333, 6, 9.99833333, 17, 5.49916667, 14.49916667, 46.49027778, 13.50694444, 9.99277778, 32.99777778, 15.01, 14.99666667, 13.00777778, 6.9925, 16.49861111, 13.50777778, 1.99222222, 12.49388889, 86, 57.98361111, 24.49972222, 36.00305556, 12.50638889, 18.5, 10.00583333, 0.99972222, 14.5, 16.49527778, 14, 32, 17.5, 10.00083333, 232.49944444, 15.00166667, 7.49416667, 9.50083333, 12.99777778, 18.50138889, 14.49861111, 30.00944444, 16, 18, 18, 17, 2.985, 10, 2, 7.00694444, 20, 297, 90, 15, 18, 8, 14, 2, 1, 5, 7, 34, 7, 46, 17, 17, 21, 6, 13, 37, 3, 16, 15, 17, 5, 0.99222222, 16, 57, 9, 11, 17, 16, 15, 203, 17, 20.00666667, 1.49222222, 15.49944444, 15.5075, 2.00027778, 14.00694444, 1.99222222, 14.49944444, 87.4775, 0.5, 15, 8.99944444, 1.49972222, 15.50388889, 17.49277778, 6.5, 2.50805556, 1.5, 11.49944444, 1.50777778, 2, 1, 1.5, 3.49888889, 15, 15, 17.495, 21.01333333, 13.00055556, 17.0075, 17.99888889, 15.99972222, 15.00027778, 6.49944444, 2.49694444, 28, 20, 11, 14, 3, 19, 2, 20, 14, 43, 13, 3, 296, 12, 9, 21, 22, 13, 18, 12, 18, 13, 3, 15, 18, 14, 14, 14, 9.99416667, 12.99888889, 19.50027778, 3.00027778, 2.5, 13.5075, 1.49222222, 7.48388889, 18, 20.0075, 1.99222222, 11.99972222, 2.00027778, 1.50055556, 0.5, 14.49222222, 5.98916667, 8.98916667, 2.50083333, 11.48888889, 25.51472222, 12, 15, 1.5, 1.5, 1.5, 13, 1.5, 14.5, 1.49944444, 14.49972222, 1.99222222, 1.50055556, 50, 3.49305556, 12.50722222, 1.5, 19.99861111, 3, 16.005, 38.00333333, 14.5075, 1.49944444, 4, 1.4975, 13.50027778, 13.5075, 31.515, 20.49916667, 20.00111111, 13, 13, 15, 17, 15, 5, 14, 15, 60, 16, 6, 16, 12, 14, 4, 11, 13, 20, 3, 12, 8, 17, 42, 14, 43, 14.5, 11, 3.98527778, 2.5, 16.50777778, 27.01472222, 4.49944444, 1.49222222, 15.5, 60.49666667, 5, 12.50777778, 5.49861111, 13.5, 16.49888889, 15, 27.48944444, 14.49361111, 5.99166667, 16.49222222, 18.99388889, 15.47916667, 1.49972222, 8.50388889, 6.48416667, 1.49972222, 15, 13.51305556, 3.99222222, 15.49944444, 13.99972222, 13.99861111, 15, 15, 24, 23, 54, 14, 17, 14, 35, 16, 20, 14, 17, 13, 3, 11, 19, 17, 17, 16, 15, 16, 39, 125.45861111, 19, 16, 1.99972222, 6.50777778, 22.99194444, 0.49972222, 5.48361111, 0.49972222, 1.00777778, 22.49944444, 24.50222222, 10.48361111, 4.00111111, 13.99888889, 18.50694444, 16, 0.99916667, 9.50138889, 60.97027778, 13.50777778, 2.49388889, 7.48888889, 14.50777778, 23, 8.48861111, 13.49222222, 66.47638889, 14.98305556, 17, 16.01944444, 6.48333333, 15.00777778, 2, 15.5, 16.49944444, 71.50555556, 31.48944444, 2.49972222, 18, 1.50027778, 12.00555556, 17.00777778, 17.50083333, 13, 17, 7, 10, 15, 15, 20, 8, 10, 3, 17, 3, 16, 13, 19, 15, 18, 24, 19, 26, 15, 15, 14, 4, 18, 3, 23, 5, 13, 19, 19, 17, 0.51638889, 6.99861111, 14.50222222, 7.48555556, 6.48388889, 17, 3.49611111, 13.99805556, 2.50083333, 14.50916667, 18.50027778, 19.98888889, 15, 16.49222222, 15.99666667, 1.50027778, 15, 16.00166667, 14.50055556, 1.49972222, 18.00027778, 17.99194444, 19.00027778, 19.49972222, 13.99277778, 15, 19, 2, 16, 16, 17, 17, 13, 3, 13, 14, 19, 10, 15, 18, 15, 18, 19, 19, 17, 5, 18, 17, 28, 11, 13, 15, 15, 20, 15.49638889, 16.49666667, 24, 14.50083333, 7.99916667, 8.00083333, 15, 14.5075, 1.49222222, 24.99222222, 14.99916667, 1.50805556, 9, 14.99222222, 16, 15.50361111, 1.99222222, 16.00055556, 28.49194444, 1.97722222, 1.49222222, 15.99305556, 18.49777778, 18.49638889, 1.00611111, 8, 12.99166667, 2.49305556, 14.50222222, 23, 30, 19, 42, 16, 29, 3, 19, 3, 29, 19, 3, 28, 35, 15, 28, 14, 16, 28, 0.99222222, 0.99972222, 16.99222222, 14.9975, 1.50722222, 29.49166667, 2.49222222, 30.49861111, 13.99888889, 5, 3.0075, 28.49916667, 6.99111111, 29.99944444, 3.00027778, 16.99888889, 29.49166667, 30.49944444, 18, 5, 16, 6, 16, 16, 13, 16, 15, 17, 10, 43, 14, 21, 14, 7, 15, 13, 19, 22, 22, 5, 5, 14, 81, 11, 20, 13, 14, 19, 54, 22, 17, 17, 19, 14, 24, 15, 10, 3, 16, 37, 62, 22, 15, 10.00083333, 1.50055556, 14.99944444, 1.00027778, 0.49222222, 16.00777778]
         }
       ]
     }

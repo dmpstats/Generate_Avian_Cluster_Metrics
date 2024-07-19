@@ -200,24 +200,24 @@ rFunction = function(data,
   ### 3.1 Basic summaries within each cluster ----
   track_cluster_tbl <- data |> 
     filter(!is.na(.data[[cluster_id_col]])) %>%
-    group_by(.data[[cluster_id_col]], .data[[trk_id_col]]) |> 
+    group_by(.data[[trk_id_col]], .data[[cluster_id_col]]) |> 
     summarise(
       # combine cluster points into multipoint
       all_points = st_combine(geometry),
       # size-related
-      n_pts = n(),
-      n_pts_night = sum(nightpoint == 1),
-      n_pts_day = sum(nightpoint == 0),
+      pts_n = n(),
+      pts_night_n = sum(nightpoint == 1),
+      pts_day_n = sum(nightpoint == 0),
       # Time-related
       first_dttm = min(.data[[tm_id_col]]),
       last_dttm = max(.data[[tm_id_col]]),
       first_dttm_local = min(timestamp_local),
       last_dttm_local = max(timestamp_local),
-      duration_hrs = as.numeric(last_dttm_local - first_dttm_local, units = "hours"),
-      n_days_span = (ceiling_date(last_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(first_dttm_local, unit = "days")) %>% as.integer(),
-      n_days_unique = length(unique(date_local)),
-      n_days_empty = as.numeric(n_days_span - n_days_unique),
-      med_hour_local = median(hour_local, na.rm = TRUE),
+      timespan = as.numeric(last_dttm_local - first_dttm_local, units = "hours") |> units::set_units("h"),
+      timespan_ndays = (ceiling_date(last_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(first_dttm_local, unit = "days")) %>% as.integer(),
+      days_present_n = length(unique(date_local)),
+      days_absent_n = as.numeric(timespan_ndays - days_present_n),
+      hour_local_med = median(hour_local, na.rm = TRUE),
       .groups = "drop"
     ) %>%
     # Calculate track-level geometric medians in each cluster
@@ -252,13 +252,13 @@ rFunction = function(data,
     time_at_behav <- data |> 
       as_tibble() |> 
       filter(!is.na(.data[[cluster_id_col]])) |> 
-      group_by(.data[[cluster_id_col]], .data[[trk_id_col]], behav) |> 
+      group_by(.data[[trk_id_col]], .data[[cluster_id_col]], behav) |> 
       summarise(time_spent = sum(timediff_hrs), .groups = "drop") |>
       tidyr::pivot_wider(
         names_from = behav, 
         values_from = time_spent, 
-        names_glue = "{behav}_duration", 
-        values_fill = units::set_units(0, "hr")
+        names_glue = "{behav}_drtn", 
+        values_fill = units::set_units(0, "h")
       )  
     
   }else{
@@ -277,10 +277,13 @@ rFunction = function(data,
       # drop geometry for efficiency, by avoiding default parsing to multipoints by `summarise.sf()`
       st_drop_geometry() |> 
       filter(!is.na(.data[[cluster_id_col]])) |> 
-      group_by(.data[[cluster_id_col]], .data[[trk_id_col]]) |> 
+      group_by(.data[[trk_id_col]], .data[[cluster_id_col]]) |> 
       summarise(
-        across(starts_with("var_acc_"), \(x) median(x, na.rm = TRUE), .names = "med_{.col}"),
-        across(starts_with("var_acc_"), \(x) sd(x, na.rm = TRUE), .names = "sd_{.col}"),
+        across(
+          starts_with("var_acc_"), 
+          list(med = ~ median(.x, na.rm = TRUE), sd = ~sd(.x, na.rm = TRUE)),
+          .names = "{.col}_{.fn}"
+        ),
         .groups = "drop"
       )
     
@@ -291,12 +294,12 @@ rFunction = function(data,
   
   
   
-  ### 3.4 Time-at-Carcass Calculations     -------------------------------------
-  logger.info("   [c] Deriving Time-at-Carcass metrics")
+  ### 3.4 Attendance Calculations     -------------------------------------
+  logger.info("   [c] Deriving Attendance metrics")
   
-  #' generate columns `meanvisit_duration` `meanvisit_daytime_duration`
+  #' generate columns `attendance`, `attendance_dmean` & `attendance_daytime_dmean`
   #' 
-  carctime <- timeAtCarcTab_(
+  attendance_time <- attendanceTab_(
     dt = data, 
     clust_col = cluster_id_col, 
     trck_col = trk_id_col)
@@ -318,7 +321,7 @@ rFunction = function(data,
   ### 3.6 Night-Distance Calculations ------------------------------------------
   logger.info("   [e] Cooking Night-distance metrics")
   
-  #' generate columns `mean_night_dist`; `night_prop_250m` and `night_prop_1km`
+  #' generate columns  `nightpts_dist_dmean`; `nightpts_250m_prop` & `nightpts_1km_prop`
   #'
   nightdists <- nightTab_(
     dt = data, 
@@ -330,7 +333,7 @@ rFunction = function(data,
   ### 3.7. Arrival-Distance Calculations ---------------------------------------
   logger.info("   [f] Hammering Arrival-Distance metrics")
   
-  #' generate column `mean_arrival_dist` 
+  #' generate column `arrival_dist_mean` 
   #' 
   arrivaldists <- arrivalTab_(
     dt = data, 
@@ -349,7 +352,7 @@ rFunction = function(data,
   }
   
   track_cluster_tbl <- track_cluster_tbl |> 
-    left_join(carctime, by = c(cluster_id_col, trk_id_col)) |> 
+    left_join(attendance_time, by = c(cluster_id_col, trk_id_col)) |> 
     left_join(revisits, by = c(cluster_id_col, trk_id_col)) |> 
     left_join(nightdists, by = c(cluster_id_col, trk_id_col)) |> 
     left_join(arrivaldists, by = c(cluster_id_col, trk_id_col)) |> 
@@ -400,24 +403,24 @@ rFunction = function(data,
       cease_dttm_local = max(timestamp_local),
       
       # track membership
-      member_tracks_n = length(unique(.data[[trk_id_col]])),
-      member_tracks_ids = list(unique(.data[[trk_id_col]])),
+      members_n = length(unique(.data[[trk_id_col]])),
+      members_ids = list(unique(.data[[trk_id_col]])),
       
       # lifespan metrics
-      duration_days = as.numeric(cease_dttm_local - spawn_dttm_local, units = "days"),
-      span_days = (ceiling_date(cease_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(spawn_dttm_local, unit = "days")) %>% as.integer(),
-      n_days_active = length(unique(date_local)),
-      n_days_inactive = span_days - n_days_active,
+      timespan = as.numeric(cease_dttm_local - spawn_dttm_local, units = "hours") |> units::set_units("h"),
+      timespan_ndays = (ceiling_date(cease_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(spawn_dttm_local, unit = "days")) %>% as.integer(),
+      days_active_n = length(unique(date_local)),
+      days_inactive_n = timespan_ndays - days_active_n,
       
-      n_pts = n(),
+      pts_n = n(),
       
       # mean, median and sd of pairwise distance between points in cluster
-      pairwise_dist_stats(geometry, name_prefix = "pnts_pairdist"),
+      pairwise_dist_stats(geometry, name_prefix = "pts_pairdist"),
 
       .groups = "drop"
     ) |>
     mutate(
-      pnts_spread_area = st_convex_hull(clust_points) |>
+      pts_spread_area = st_convex_hull(clust_points) |>
         # add 50cm buffer to deal with linearly positioned points, to which
         # `st_convex_hull` doesn't produce a polygon
         st_buffer(units::set_units(0.5, "m")) |>
@@ -438,29 +441,29 @@ rFunction = function(data,
     summarise(
       
       # total time spent on each behaviour
-      if(not_null(behav_ctgs)) across(matches(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "cl_{.col}"),
+      if(not_null(behav_ctgs)) across(matches(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "{.col}_cmpd"),
       
       #avg_daytime_hour_local = mean(med_daytime_hour_local, na.rm = TRUE),
-      avg_hour_local = mean(med_hour_local, na.rm = TRUE),
+      hour_local_avg = mean(hour_local_med, na.rm = TRUE),
 
       # attendance metrics
+      attendance_cmpd = sum(attendance, na.rm = TRUE),
       attendance_davg = mean(attendance_dmean, na.rm = TRUE),
       attendance_daytime_davg = mean(attendance_daytime_dmean, na.rm = TRUE),
-      attendance_compound = sum(attendance_aggr, na.rm = TRUE),
       
       # visits metrics
       visits_day_avg = mean(visits_day_mean, na.rm = TRUE),
       visit_drtn_avg = mean(visit_drtn_mean, na.rm = TRUE),
 
       # Distance calculations
-      avg_nightime_dist = mean(mean_night_dist, na.rm = TRUE),
-      avg_nightime_prop_250m = mean(night_prop_250m, na.rm = TRUE),
-      avg_nightime_prop_1km = mean(night_prop_1km, na.rm = TRUE),
-      avg_arrival_dists = mean(mean_arrival_dist, na.rm = TRUE),
+      nightpts_dist_davg = mean(nightpts_dist_dmean, na.rm = TRUE),
+      nightpts_250m_avgprop = mean(nightpts_250m_prop, na.rm = TRUE),
+      nightpts_1km_avgprop = mean(nightpts_1km_prop, na.rm = TRUE),
+      arrival_dist_avg = mean(arrival_dist_mean, na.rm = TRUE),
       
       # mean, sd and median of pairwise distances between track centroids in the
       # cluster
-      pairwise_dist_stats(median_point, name_prefix = "track_cntrd_pairdist"),
+      pairwise_dist_stats(median_point, name_prefix = "members_centroid_pairdist"),
 
       .groups = "drop"
     ) |> 
@@ -474,6 +477,7 @@ rFunction = function(data,
     #' drop move2 and sf classes for parsing as track data of the App's output, below
     as_tibble()
 
+  
 
   ## 5. Finalise Outputs ---------------------------------------------------------
 
@@ -663,7 +667,7 @@ calcGMedianSF <- function(data) {
 #' Function to calculate daily average attendance time by a track/animal in a given
 #' cluster, which is assumed as a proxy of time at carcass
 #' 
-timeAtCarcTab_ <- function(dt, clust_col, trck_col) {
+attendanceTab_ <- function(dt, clust_col, trck_col) {
   
   if(!all(dt$nightpoint %in% c(0,1))){
     cli::cli_abort(
@@ -671,7 +675,7 @@ timeAtCarcTab_ <- function(dt, clust_col, trck_col) {
       call = NULL)
   } 
   
-  carctime <- dt |> 
+  dt |> 
     # drop locally unnecessary geometry, for efficiency
     st_drop_geometry() |> 
     # flag last and first locations of each day.
@@ -698,19 +702,17 @@ timeAtCarcTab_ <- function(dt, clust_col, trck_col) {
     ) |>
     # track's full-day and daytime attendance to the cluster, per visited day 
     summarise(
-      attendance = sum(date_attn_lags, na.rm = TRUE),
-      attendance_daytime = sum(date_attn_lags[nightpoint == 0], na.rm = TRUE),
+      daily_attendance = sum(date_attn_lags, na.rm = TRUE),
+      daily_attendance_daytime = sum(date_attn_lags[nightpoint == 0], na.rm = TRUE),
       .groups = "drop_last"
     ) %>%
     # track's mean daily and mean daily-daytime attendance time to the cluster
     summarise(
-      attendance_dmean = mean(attendance),
-      attendance_daytime_dmean = mean(attendance_daytime),
-      attendance_aggr = sum(attendance),
+      attendance = sum(daily_attendance),
+      attendance_dmean = mean(daily_attendance),
+      attendance_daytime_dmean = mean(daily_attendance_daytime),
       .groups = "keep"
     ) 
-  
-  return(carctime)
 }
 
 
@@ -787,7 +789,7 @@ revisit_calc_ <- function(clust, trck, start, end, dt, clust_col, trck_col, tm_c
     summarise(visits_day = sum(rle(incluster)$values), .groups = "drop" ) |> 
     # exclude absent days
     filter(visits_day > 0) |> 
-    #' Daily averages
+    #' mean number of visits per day
     summarise(visits_day_mean = mean(visits_day, na.rm = TRUE))
   
   #' Duration of each visit and mean visit duration of current track to current cluster
@@ -894,8 +896,8 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
   nearnights <- night_table %>%
     group_by(.data[[clust_col]], .data[[trck_col]]) %>%
     summarise(
-      night_prop_250m = sum(night_dist < units::set_units(250, "m")) / n(), 
-      night_prop_1km = sum(night_dist < units::set_units(1000, "m")) / n(),
+      nightpts_250m_prop = sum(night_dist < units::set_units(250, "m")) / n(), 
+      nightpts_1km_prop = sum(night_dist < units::set_units(1000, "m")) / n(),
       .groups = "drop"
     )
   
@@ -914,7 +916,7 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
   nightdists_track_clust <- nightdists_by_day %>%
     group_by(.data[[clust_col]], .data[[trck_col]]) %>%
     summarise(
-      mean_night_dist = mean(med_night_dist, na.rm = TRUE), 
+      nightpts_dist_dmean = mean(med_night_dist, na.rm = TRUE), 
       .groups = "drop"
       ) %>%
     left_join(nearnights, by = c(clust_col, trck_col))
@@ -1001,17 +1003,10 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
     mutate(
       #' subset track's night-time locations within +/- 12hrs from its arrival
       #' date to a given cluster
-      #' 
-      #' BC DOUBLE CHECKING QUESTION: this selects ALL (night-time) track
-      #' points, irrespective of their cluster affiliation, within the stipulated
-      #' period. Shouldn't it be only the points assigned to the cluster that we
-      #' are interested in here?
       locs_slice = pmap(
         list(trck = .data[[trck_col]], arr_dt = day_of_arrival, tz = tmzn),
         .f = \(trck, arr_dt, tz, ann_dt = dt){
-          
           #browser()
-          
           ann_dt %>%
             filter(
               .data[[trck_col]] == trck,
@@ -1036,7 +1031,7 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
     # get the average distance from cluster centroids
     group_by(.data[[clust_col]], .data[[trck_col]], day_of_arrival) |> 
     summarise(
-      mean_arrival_dist = mean(dist, na.rm = TRUE), 
+      arrival_dist_mean = mean(dist, na.rm = TRUE), 
       .groups = "drop"
     ) |> 
     dplyr::select(-day_of_arrival)
@@ -1101,7 +1096,7 @@ nearBirdsTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
     ) |> 
     unnest(nearpts_prox) |> 
     as_tibble() |> 
-    dplyr::select(all_of(clust_col), trks_mindist_m, trks_n_within_25km, trks_n_within_50km)
+    dplyr::select(all_of(clust_col), nonmembers_dist_min, nonmembers_within_25km_n, nonmembers_within_50km_n)
 }
 
 
@@ -1148,10 +1143,9 @@ distvals_ <- function(trks, spawn_tm, end_tm, clst_ctrd,
   out <- nearpoints_dist |>
     st_drop_geometry() |>
     summarise(
-      trks_mindist_m = ifelse(length(dist) == 0, NA, min(dist, na.rm = TRUE)),  # ifelse used to skip annoying warning on min(empty) == Inf when `nearpoints_dist` is empty :\
-      #trks_mindist_m = ifelse(length(dist) == 0, NA, min(dist, na.rm = TRUE)) |> units::set_units("m"), # if one is too pesky with units...
-      trks_n_within_25km = length(unique(.data[[trck_col]][dist < units::set_units(25, "km")])),
-      trks_n_within_50km = length(unique(.data[[trck_col]][dist < units::set_units(50, "km")]))
+      nonmembers_dist_min = ifelse(length(dist) == 0, NA, min(dist, na.rm = TRUE)) |> units::set_units("m"),  # ifelse used to skip annoying warning on min(empty) == Inf when `nearpoints_dist` is empty
+      nonmembers_within_25km_n = length(unique(.data[[trck_col]][dist < units::set_units(25, "km")])),
+      nonmembers_within_50km_n = length(unique(.data[[trck_col]][dist < units::set_units(50, "km")]))
     )
   
   return(out)

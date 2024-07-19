@@ -66,7 +66,6 @@ test_sets <- map(test_sets, \(dt){
 
 
 
-
 # Main rFunction -----------------------------------------
 
 test_that("output is a valid move2 object", {
@@ -80,200 +79,200 @@ test_that("output is a valid move2 object", {
 
 
 test_that("input validation is doing it's job correctly", {
-  
+
   # specified cluster ID column
   expect_error(
-    rFunction(data = test_sets$nam, cluster_id_col = "NONEXISTENT"), 
+    rFunction(data = test_sets$nam, cluster_id_col = "NONEXISTENT"),
     "Specified column name `NONEXISTENT` must be present in the input data."
   )
-  
+
   expect_error(
-    rFunction(data = test_sets$nam, cluster_id_col = 3), 
+    rFunction(data = test_sets$nam, cluster_id_col = 3),
     "Parameter 'Cluster ID Column' \\(`cluster_id_col`\\) must be a string."
   )
 
   expect_error(
-    rFunction(data = test_sets$nam, cluster_id_col = NULL), 
+    rFunction(data = test_sets$nam, cluster_id_col = NULL),
     "Parameter 'Cluster ID Column' \\(`cluster_id_col`\\) must be a string, not `NULL`."
   )
-  
+
   # behav_col
   expect_error(
-    rFunction(data = test_sets$nam, behav_col = "NONEXISTENT"), 
+    rFunction(data = test_sets$nam, behav_col = "NONEXISTENT"),
     "Specified column name `NONEXISTENT` must be present in the input data."
   )
-  
-  
+
+
   expect_error(
-    rFunction(data = test_sets$wcs |> select(-behav), behav_col = "behav"), 
+    rFunction(data = test_sets$wcs |> select(-behav), behav_col = "behav"),
     "Specified column name `behav` must be present in the input data"
   )
-  
+
   expect_error(
-    rFunction(data = test_sets$wcs, behav_col = "dist_m"), 
+    rFunction(data = test_sets$wcs, behav_col = "dist_m"),
     class = "invalid-behav-col-class"
   )
-  
-  
+
+
     # invalid specification for type of output
   expect_error(
     rFunction(data = test_sets$wcs, cluster_tbl_type = "WRONG_TYPE_SPEC"),
     "`cluster_tbl_type` must be one of \"track-and-whole\" or \"whole-only\", not \"WRONG_TYPE_SPEC\"."
   )
-  
-  
+
+
   # input data missing required timestamp_local
   expect_error(
-    rFunction(data = test_sets$wcs |> select(-timestamp_local)), 
+    rFunction(data = test_sets$wcs |> select(-timestamp_local)),
     "Input data must contain column `timestamp_local`"
   )
-  
+
   # input data missing required sun times when nightpoint is not available in input data
   expect_error(
-    rFunction(data = test_sets$wcs |> select(-c(nightpoint, sunset_timestamp, sunrise_timestamp))), 
+    rFunction(data = test_sets$wcs |> select(-c(nightpoint, sunset_timestamp, sunrise_timestamp))),
     "Input data must contain columns `sunset_timestamp` and `sunrise_timestamp`."
   )
-  
+
 })
 
 
 
 test_that("Option for type of ouputted cluster table works as expected", {
-  
+
   # "whole-only"
   actual <- rFunction(data = test_sets$wcs |> slice(1:500), cluster_tbl_type = "whole-only")
   expect_equal(attributes(actual)$cluster_tbl_type, "whole-only")
   expect_equal(ncol(mt_track_data(actual)), 1)
-  
+
   # "track-and-whole"
   actual <- rFunction(data = test_sets$wcs |> slice(1:500), cluster_tbl_type = "track-and-whole")
   expect_equal(attributes(actual)$cluster_tbl_type, "track-and-whole")
   expect_gt(ncol(mt_track_data(actual)), 1)
-  
+
 })
 
 
 
 test_that("Optional specification of behavioural column works as expected", {
-  
-  behav_cols_event <- c("SFeeding_duration", "SResting_duration", "SRoosting_duration")
-  behav_cols_track <- c("cl_SFeeding_duration", "cl_SResting_duration", "cl_SRoosting_duration")
-  
+
+  behav_cols_event <- c("SFeeding_drtn", "SResting_drtn", "SRoosting_drtn")
+  behav_cols_track <- c("SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd")
+
   actual <- rFunction(data = test_sets$wcs |> slice(1:100), behav_col = "behav")
   expect_contains(colnames(actual), behav_cols_event)
   expect_contains(colnames(mt_track_data(actual)), behav_cols_track)
   expect_false("STravelling" %in% colnames(actual))
-  
+
   actual <- rFunction(data = test_sets$wcs |> slice(1:100), behav_col = NULL)
   expect_false(any(behav_cols_event %in% colnames(actual)))
   expect_false(any(behav_cols_track %in% colnames(mt_track_data(actual))))
-  
+
 })
 
 
 
 
 test_that("Expected main app outcome has not changed", {
-  
+
   testthat::local_edition(3)
-  
+
   # WCS
   expect_snapshot_value(
     rFunction(test_sets$wcs) |>
       as_tibble(),
     style = "json2"
   )
-  
+
   # Namibia
   expect_snapshot_value(
     rFunction(test_sets$nam) |>
       as_tibble(),
     style = "json2"
   )
-  
+
   # savanah
   expect_snapshot_value(
     rFunction(test_sets$savahn) |>
       as_tibble(),
     style = "json2"
   )
-  
+
 })
 
-
+ 
 # Helper functions -----------------------------------------
 
-test_that("Expected outcome of `timeAtCarcTab_()` has not changed", {
-  
+test_that("Expected outcome of `attendanceTab_()` has not changed", {
+
   testthat::local_edition(3)
-  
+
   # WCS
   expect_snapshot_value(
-    timeAtCarcTab_(
-      dt = test_sets$wcs, 
-      clust_col = "clust_id", 
-      trck_col = mt_track_id_column(test_sets$wcs)) |> 
+    attendanceTab_(
+      dt = test_sets$wcs,
+      clust_col = "clust_id",
+      trck_col = mt_track_id_column(test_sets$wcs)) |>
       units::drop_units(),
     style = "json2"
   )
 
   # Kendall Tanzania
   expect_snapshot_value(
-    timeAtCarcTab_(
-      dt = test_sets$ken_tnz, 
-      clust_col = "clust_id", 
+    attendanceTab_(
+      dt = test_sets$ken_tnz,
+      clust_col = "clust_id",
       trck_col = mt_track_id_column(test_sets$ken_tnz)),
     style = "json2"
   )
-  
-})
-  
 
+})
+ 
+ 
 # Documentation   ---------------------------------------
 
-test_that("output colnames match those in output documentation", { 
-  
+test_that("output colnames match those in output documentation", {
+
   out <- rFunction(data = test_sets$nam |> slice(1:500))
-  
-  track_clust_tbl_names <- out |> 
-    as_tibble() |> 
-    dplyr::select(-c(clust_id, individual_name_deployment_id)) |> 
+
+  track_clust_tbl_names <- out |>
+    as_tibble() |>
+    dplyr::select(-c(clust_id, individual_name_deployment_id)) |>
     names()
-  
-  clust_tbl_names <- mt_track_data(out) |> 
-    select(-clust_id) |> 
+
+  clust_tbl_names <- mt_track_data(out) |>
+    select(-clust_id) |>
     names()
-  
+
   track_clust_details <- read_rds(here("doc/track_clust_details.rds"))
   clust_details <- read_rds(here("doc/clust_details.rds"))
-  
-  # Track-per-cluster metrics 
-  track_clust_details_names <- names(track_clust_details) |> 
-    stringr::str_remove_all("`") |> 
-    stringr::str_remove("<behaviour-category>_duration \\[e.g. ") |>
-    stringr::str_remove("\\]") |> 
-    stringr::str_split(" and |, ") |> 
-    as_vector() |> 
+
+  # Track-per-cluster metrics
+  track_clust_details_names <- names(track_clust_details) |>
+    stringr::str_remove_all("`") |>
+    stringr::str_remove("<behaviour-category>_drtn \\[e.g. ") |>
+    stringr::str_remove("\\]") |>
+    stringr::str_split(" and |, ") |>
+    as_vector() |>
     # unpack acc colnames
     sapply(\(x){
       if(grepl("acc", x)){
-        x <- paste0(stringr::str_replace(x, "<xyz>", ""), c("x", "y", "z"))
+        x <- sapply(c("x", "y", "z"), \(y) paste0(stringr::str_split(x, "<xyz>", simplify = TRUE), collapse = y))
       }
       return(x)
-    }, 
-    USE.NAMES = FALSE) |> 
+    },
+    USE.NAMES = FALSE) |>
     unlist()
-  
+
   expect_setequal(track_clust_tbl_names, track_clust_details_names)
-  
+
   # whole-cluster metrics
-  clust_details_names <- names(clust_details) |> 
-    stringr::str_remove_all("`") |> 
-    stringr::str_remove("cl_<behaviour-category>_duration \\[e.g. ") |>
-    stringr::str_remove("\\]") |> 
-    stringr::str_split(" and |, ") |> 
+  clust_details_names <- names(clust_details) |>
+    stringr::str_remove_all("`") |>
+    stringr::str_remove("<behaviour-category>_drtn_cmpd \\[e.g. ") |>
+    stringr::str_remove("\\]") |>
+    stringr::str_split(" and |, ") |>
     as_vector()
-  
+
   expect_setequal(clust_tbl_names, clust_details_names)
 })
 
@@ -281,27 +280,27 @@ test_that("output colnames match those in output documentation", {
 
 
 # test_that("Expected outcome of `revisitTab_()` has not changed", {
-#   
+#
 #   testthat::local_edition(3)
-# 
+#
 #   # SOP Namibia
 #   expect_snapshot_value(
 #     revisitTab_(
-#       trk_clust_dt = test_cluster_sets$nam, 
-#       dt = test_sets$nam, 
-#       clust_col = "clust_id", 
-#       trck_col = mt_track_id_column(test_sets$nam), 
+#       trk_clust_dt = test_cluster_sets$nam,
+#       dt = test_sets$nam,
+#       clust_col = "clust_id",
+#       trck_col = mt_track_id_column(test_sets$nam),
 #       tm_col = "timestamp_local"),
 #     style = "json2"
 #   )
-#    
+#
 #   # Savanah
 #   expect_snapshot_value(
 #     revisitTab_(
-#       trk_clust_dt = test_cluster_sets$savahn, 
-#       dt = test_sets$savahn, 
-#       clust_col = "clust_id", 
-#       trck_col = mt_track_id_column(test_sets$savahn), 
+#       trk_clust_dt = test_cluster_sets$savahn,
+#       dt = test_sets$savahn,
+#       clust_col = "clust_id",
+#       trck_col = mt_track_id_column(test_sets$savahn),
 #       tm_col = "timestamp_local"),
 #     style = "json2"
 #   )
