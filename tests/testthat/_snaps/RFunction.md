@@ -2031,7 +2031,7 @@
             }
           ]
         },
-        "cluster_tbl_type": {
+        "clust_dt_type": {
           "type": "character",
           "attributes": {},
           "value": ["track-and-whole"]
@@ -8135,7 +8135,7 @@
             }
           ]
         },
-        "cluster_tbl_type": {
+        "clust_dt_type": {
           "type": "character",
           "attributes": {},
           "value": ["track-and-whole"]
@@ -17359,7 +17359,7 @@
             }
           ]
         },
-        "cluster_tbl_type": {
+        "clust_dt_type": {
           "type": "character",
           "attributes": {},
           "value": ["track-and-whole"]

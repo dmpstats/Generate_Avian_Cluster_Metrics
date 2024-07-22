@@ -114,12 +114,24 @@ test_that("input validation is doing it's job correctly", {
   )
 
 
-    # invalid specification for type of output
+  # invalid specification of cluster table type in output
   expect_error(
     rFunction(data = test_sets$wcs, cluster_tbl_type = "WRONG_TYPE_SPEC"),
     "`cluster_tbl_type` must be one of \"track-and-whole\" or \"whole-only\", not \"WRONG_TYPE_SPEC\"."
   )
 
+  # invalid specification of cluster table type in output
+  expect_error(
+    rFunction(data = test_sets$wcs, output_type = "WRONG_OUTPUT_TYPE"),
+    "`output_type` must be one of \"cluster\" or \"locs\", not \"WRONG_OUTPUT_TYPE\"."
+  )
+  
+  # invalid specification for type of output
+  expect_error(
+    rFunction(data = test_sets$wcs, cluster_tbl_type = "WRONG_TYPE_SPEC"),
+    "`cluster_tbl_type` must be one of \"track-and-whole\" or \"whole-only\", not \"WRONG_TYPE_SPEC\"."
+  )
+  
 
   # input data missing required timestamp_local
   expect_error(
@@ -141,14 +153,28 @@ test_that("Option for type of ouputted cluster table works as expected", {
 
   # "whole-only"
   actual <- rFunction(data = test_sets$wcs |> slice(1:500), cluster_tbl_type = "whole-only")
-  expect_equal(attributes(actual)$cluster_tbl_type, "whole-only")
+  expect_equal(attributes(actual)$clust_dt_type, "whole-only")
   expect_equal(ncol(mt_track_data(actual)), 1)
 
   # "track-and-whole"
   actual <- rFunction(data = test_sets$wcs |> slice(1:500), cluster_tbl_type = "track-and-whole")
-  expect_equal(attributes(actual)$cluster_tbl_type, "track-and-whole")
+  expect_equal(attributes(actual)$clust_dt_type, "track-and-whole")
   expect_gt(ncol(mt_track_data(actual)), 1)
 
+})
+
+
+
+testthat::test_that("Option `output_type` is working as expected", {
+  
+  # if "locs" selected, output and input should have the same number of rows 
+  dt <- test_sets$wcs |> slice(1:300)
+  actual <- rFunction(data = dt, output_type = "locs")
+  expect_equal(nrow(actual), nrow(dt))
+  
+  # if "locs" selected, selection correctly stored in output
+  expect_equal(attributes(actual)$clust_dt_type, "whole-binned-to-locs")
+  
 })
 
 

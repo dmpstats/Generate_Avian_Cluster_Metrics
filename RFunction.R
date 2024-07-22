@@ -17,6 +17,7 @@ not_null <- Negate(is.null)
 rFunction = function(data, 
                      cluster_id_col = "clust_id", 
                      behav_col = "behav",
+                     output_type = c("cluster", "locs"),
                      cluster_tbl_type = c("track-and-whole", "whole-only")) {
   
 
@@ -66,8 +67,9 @@ rFunction = function(data,
   }
     
   
-  #' Type of output ------
-  cluster_tbl_type <- rlang::arg_match(cluster_tbl_type)
+  #' output choices ---------------
+  output_type <- rlang::arg_match(output_type)
+  if(output_type == "cluster") cluster_tbl_type <- rlang::arg_match(cluster_tbl_type)
   
   
   #' Input data columns ----------
@@ -174,8 +176,6 @@ rFunction = function(data,
   
   
 
-  
-  
   # get names behaviour categories that are present in clusters
   if(not_null(behav_col)){
     behav_ctgs <- data |> 
@@ -479,57 +479,101 @@ rFunction = function(data,
 
   
 
-  ## 5. Finalise Outputs ---------------------------------------------------------
-
+  ## 5. Process result for Outputs ---------------------------------------------------------
+  
+  logger.info(paste0(
+    "Processing results according to output options"
+  ))
+  
+  
   # sort both tables by starting cluster time (ascending)
   cluster_tbl <- cluster_tbl |> arrange(spawn_dttm_local)
   track_cluster_tbl <- track_cluster_tbl |> arrange(.data[[cluster_id_col]], first_dttm_local)
-
   
-  #' Output either a move2_loc with both track-per-cluster and whole-cluster metrics
-  #' OR whole-cluster-only metrics. 
-  #' The chosen type of outputted cluster table is stored as an attribute of the output
-  if(cluster_tbl_type == "track-and-whole"){
+  
+  if(output_type == "cluster"){
     
+    ### 5.1 Cluster tables --------------------------------------------
     logger.info(paste0(
-      "Option 'track-and-whole' selected, so output to contain both track-per-cluster ",
-      "and whole-cluster metrics."
-    ))
-    
-    #' Output is a move2_loc object holding track-per-cluster metrics as the event
-    #' dataset and whole-clusters metrics as the track data. Track ID is the
-    #' cluster ID and the time column is the first timepoint of each track at a
-    #' given cluster
-    cluster_data <- mt_as_move2(
-      track_cluster_tbl |> select(-clust_centroid), 
-      time_column = "first_dttm", 
-      track_id_column = cluster_id_col
-    ) |> 
-      mt_set_track_data(cluster_tbl)  
-    
-    attr(cluster_data, "cluster_tbl_type") <- "track-and-whole"
+      "   |- 'cluster' option selected for `output_type`, so producing ",
+      "cluster-based outputs"
+      ))
+ 
+    #' Output either a move2_loc with both track-per-cluster and whole-cluster metrics
+    #' OR whole-cluster-only metrics. 
+    #' The chosen type of outputted cluster table is stored as an attribute of the output
+    if(cluster_tbl_type == "track-and-whole"){
+      
+      logger.info(paste0(
+        "   |-  'track-and-whole' option chosen for `cluster_tbl_type`, so ",
+        "output to contain both track-per-cluster and whole-cluster metrics."
+      ))
+      
+      #' Output is a move2_loc object holding track-per-cluster metrics as the event
+      #' dataset and whole-clusters metrics as the track data. Track ID is the
+      #' cluster ID and the time column is the first timepoint of each track at a
+      #' given cluster
+      output <- mt_as_move2(
+        track_cluster_tbl |> select(-clust_centroid), 
+        time_column = "first_dttm", 
+        track_id_column = cluster_id_col
+      ) |> 
+        mt_set_track_data(cluster_tbl)  
+      
+      # store type of output, for reference in downstream apps
+      attr(output, "clust_dt_type") <- "track-and-whole"
+      
+    } else {
+      
+      logger.info(paste0(
+        "   |- 'whole-only' option selected for `cluster_tbl_type`, so output to ",
+        "contain only whole-cluster metrics"
+      ))
+      
+      #' Output is a move2_loc object with whole-cluster metrics as the event
+      #' table. The track table is a placeholder with no further data
+      output <- mt_as_move2(
+        cluster_tbl, 
+        time_column = "spawn_dttm",
+        track_id_column = cluster_id_col
+      )
+      
+      # store type of output, for reference in downstream apps
+      attr(output, "clust_dt_type") <- "whole-only"
+    }
     
   } else {
     
-    logger.info("Option 'whole-only' selected, so output to contain only whole-cluster metrics")
+    ### 5.2 Bind metrics to input location data --------------------------------------------
+    logger.info(paste0(
+      "   |-  'locs' option selected for `output_type`, therefore binding calculated ",
+      "whole-cluster metrics to input track location data"
+      ))
+
+    # bind metrics to input data
+    # NOTE: rename metrics with "cl" prefix, for separation with columns describing
+    # individual-level tracking data
+    output <- left_join(
+      data, 
+      cluster_tbl |> rename_with(~paste0("cl_", .x), .cols = !clust_id), 
+      by = "clust_id") 
     
-    #' Output is a move2_loc object with whole-cluster metrics as the event
-    #' table. The track table is a placeholder with no further data
-    cluster_data <- mt_as_move2(
-      cluster_tbl, 
-      time_column = "spawn_dttm",
-      track_id_column = cluster_id_col
-    )
+    # Append track-level and whole level metrics table as attributes of move2
+    # output object
+    attr(output, "cluster_tbl") <- cluster_tbl
+    attr(output, "track_cluster_tbl") <- track_cluster_tbl |> select(-clust_centroid)
     
-    attr(cluster_data, "cluster_tbl_type") <- "whole-only"
+    # store type of output, for reference in downstream apps
+    attr(output, "clust_dt_type") <- "whole-binned-to-locs"
+    
   }
   
   
-  logger.info(paste0("Size of the generated cluster table: ", object.size(cluster_data) %>% format(units = "Mb")))
+  logger.info(paste0("Size of the generated cluster table: ", object.size(output) %>% format(units = "Mb")))
   
   logger.info("Right, that's the cluster metrics calculation done!")
   
-  return(cluster_data)
+  return(output)
   
 }
 
@@ -832,9 +876,7 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
   # the cluster being dropped from calculations on that date and, if a
   # single-date cluster, on the whole output - producing NAs for these metrics
   # for the offended cluster. Here we try to minimize the issue by converting
-  # the track's first day-point of the next day to a nightpoint. This is a
-  # conservative approach because the first point of the next day might be quite
-  # late in the day, artificially inflating the "nightime" distance. 
+  # the track's first day-point of the next day to a nightpoint. 
   #
   # BEWARE: the issue will persists (and NAs will occur) if there is no next day
   # data for the track
@@ -963,13 +1005,10 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
   # midnight -/+ 12 hours of the arrival date. This leads to the cluster being dropped
   # from calculations below, producing NAs for these metrics for the offended
   # cluster. Here we try to minimize the issue by converting the track's last
-  # day-point of the previous day to a nigh-point. This is a conservative
-  # approach because the last location of the previous day may be further away
-  # from where the track was overnight before heading to the cluster for it's
-  # first visit, therefore inflating the distance travelled.
+  # day-point of the previous day to a nigh-point. 
   #
-  # BEWARE: the issue will persists (and NAs will occur for the given track) if there is no track
-  # data on the previous day after 12 o'clock
+  # BEWARE: the issue will persists (and NAs will occur for the given track) if
+  # there is no track data on the previous day after 12 o'clock
   dt <- dt |>
     group_by(.data[[trck_col]]) |>
     mutate(
