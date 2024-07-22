@@ -294,7 +294,7 @@ The formatting of whole-cluster metrics in the App's output is defined by settin
   - if `output_type` is set to `"locs"`, then whole-metrics are included alongside track location attributes, with repeated values for location points associated with a common cluster ID. 
 
 ::: {.callout-important}
-  When `output_type` is set to `"locs"`, a prefix "`cl_`" is added to the names of all cluster-level properties to distinguish them from observation-specific attributes.
+  When `output_type` is set to `"locs"`, a prefix "`cl_`" is added to the names of all cluster-level properties to distinguish them from track location attributes.
 :::
 
 
