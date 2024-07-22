@@ -1,5 +1,6 @@
 {
   "cluster_id_col": "clust_id",
   "behav_col": "behav",
+  "output_type": "cluster",
   "cluster_tbl_type": "track-and-whole"
 }

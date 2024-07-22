@@ -58,6 +58,11 @@ out_dt
 out_dt <- rFunction(data = test_dt$gaia, cluster_tbl_type = "track-and-whole")
 out_dt
 
+out_dt <- rFunction(data = test_dt$gaia, output_type = "locs")
+out_dt
+attributes(out_dt)
+
+
 
 rFunction(data = test_dt$gaia)
 
@@ -70,7 +75,7 @@ out_dt
 
 out_dt <- rFunction(data = test_dt$wcs, behav_id_col = "RULE")
 out_dt
-
+attributes(out_dt)
 
 
 
@@ -114,9 +119,6 @@ summary(mt_track_data(out_dt_gaia) |> select(-member_tracks_ids ))
 
 
 
-out_dt_gaia |> 
-  filter(is.na(mean_night_dist))
-
 attributes(out_dt_gaia)
 mt_is_time_ordered(out_dt_gaia)
 
@@ -149,7 +151,7 @@ mt_track_data(out_dt_wcs) |>
   print(n = 100)
 
 out_dt_wcs |> 
-  filter(is.na(mean_night_dist))
+  filter(is.na(arrival_dist_mean))
 
 
 
@@ -177,8 +179,14 @@ out_dt_savahn
 summary(out_dt_savahn)
 
 
-out_dt_sa_vfa |> 
-  filter(is.na(mean_night_dist))
+out_dt_savahn |> 
+  filter(is.na(arrival_dist_mean))
+
+
+test_dt$savahn |> 
+  filter(individual_name_deployment_id == "SAV.4358.A..deploy_id.2790879124.") |> 
+  print(n = 100)
+
 
 
 #' ---------------------------------
@@ -244,6 +252,11 @@ read_rds("data/output/output.rds")
 run_sdk(data = test_dt$sa_vfa, behav_col = "uydyd")
 
 run_sdk(data = test_dt$savahn, behav_col = NULL)
+
+
+run_sdk(data = test_dt$sa_vfa, output_type = "locs")
+read_rds("data/output/output.rds")
+
 
 
 

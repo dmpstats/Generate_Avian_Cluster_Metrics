@@ -10,14 +10,31 @@
      {
       "id": "behav_col",
       "name": "Behaviour Category Column",
-      "description": "Specify the name of the column in the input data indicating the behavioural categories of location points. Setting this to `NULL` will skip the derivation of behavioural-related cluster metrics",
+      "description": "Specify the name of the column in the input data indicating the behavioural categories of location points. Setting this to `NULL` will skip the derivation of behavioural-related cluster metrics.",
       "defaultValue": "behav",
       "type": "STRING"
     },
     {
+      "id": "output_type",
+      "name": "Output Type",
+      "description": "Choose the format for outputting cluster metrics. Note: Select 'Merge to input dataset' if using the 'EarthRanger Integration' App as a downstream App.",
+      "defaultValue": "cluster",
+      "type": "RADIOBUTTONS",
+      "options": [
+        {
+          "value": "cluster",
+          "displayText": "Cluster-based"
+        },
+        {
+          "value": "locs",
+          "displayText": "Merge to input dataset"
+        }
+        ]
+    },
+    {
       "id": "cluster_tbl_type",
-      "name": "Cluster Metrics Aggregation Level",
-      "description": "Choose the content of the output dataset",
+      "name": "Cluster-based Contents",
+      "description": "If 'Output Type' is set to 'Cluster-based', choose the content of the ouput dataset.",
       "defaultValue": "track-and-whole",
       "type": "RADIOBUTTONS",
       "options": [
