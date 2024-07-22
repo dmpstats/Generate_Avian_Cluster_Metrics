@@ -555,8 +555,8 @@ rFunction = function(data,
     # individual-level tracking data
     output <- left_join(
       data, 
-      cluster_tbl |> rename_with(~paste0("cl_", .x), .cols = !clust_id), 
-      by = "clust_id") 
+      cluster_tbl |> rename_with(~paste0("cl_", .x), .cols = !all_of(cluster_id_col)), 
+      by = cluster_id_col) 
     
     # Append track-level and whole level metrics table as attributes of move2
     # output object
@@ -565,6 +565,7 @@ rFunction = function(data,
     
     # store type of output, for reference in downstream apps
     attr(output, "clust_dt_type") <- "whole-binned-to-locs"
+    attr(output, "cluster_id_col") <- cluster_id_col
     
   }
   
