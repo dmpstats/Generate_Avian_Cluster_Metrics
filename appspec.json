@@ -18,7 +18,7 @@
       "id": "output_type",
       "name": "Output Type",
       "description": "Choose the data format for outputting cluster metrics. Note: Select 'Merge to input dataset' if using the 'EarthRanger Integration' App as a downstream App.",
-      "defaultValue": "cluster",
+      "defaultValue": "cluster-based",
       "type": "RADIOBUTTONS",
       "options": [
         {
