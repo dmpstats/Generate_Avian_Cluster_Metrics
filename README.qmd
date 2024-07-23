@@ -58,7 +58,7 @@ A `move2::move2_loc` object.
 
 ### Output data
 
-A `move2::move2_loc` object. The format of the output dataset can be either cluster-based tables or retain the same structure as the input data (i.e. by track location event). See he [Settings](#settings) section below for further details.
+A `move2::move2_loc` object. The format of the output dataset can be either cluster-based tables or retain the same structure as the input data (i.e. by track location event). See the [Settings](#settings) section below for further details.
 
 
 ### Artefacts
@@ -73,16 +73,16 @@ None
 **Behaviour Category Column** (`behav_col`): character string, the name of the column in the input data indicating the behavioural categories of location points. Setting this to `NULL` will skip the derivation of behavioural-related cluster metrics. Default: `"behav"`.
 
 
-**Output Type** (`output_type`): Choose the format for outputting derived cluster metrics. Two options available:
+**Output Type** (`output_type`): Choose the data format for outputting derived cluster metrics. Two options available:
 
-  1. As a compact cluster-based dataset (`"cluster"`, default) - see setting **Cluster-based Output Content** for additional options.
-  2. Merge whole-cluster metrics to the track-location attributes provided by the input dataset (`"locs"`). Note: this option must be selected if using the 'EarthRanger Integration' App as a downstream App.
+  1. As a compact cluster-based dataset (`"cluster-based"`, default) - see setting **Cluster-based Output Content** for additional options.
+  2. Merge [whole-cluster](#whole-cluster-level) metrics to the track-location attributes provided by the input dataset (`"merge-to-locs"`). Note: this option must be selected if using the 'EarthRanger Integration' App as a downstream App.
 
 
 **Cluster-based Output Content** (`cluster_tbl_type`): If **Output Type** is set to 'Cluster-based', choose the content of the output dataset:
 
-  1. Metrics at both track-per-cluster and whole-cluster levels (`"track-and-whole"`, default)
-  2. Solely whole-cluster level metrics (`"whole-only"`)
+  1. Metrics at both [track-per-cluster](#track-per-cluster-level) and [whole-cluster](#whole-cluster-level) levels (`"track-and-whole"`, default)
+  2. Solely  [whole-cluster](#whole-cluster-level) level metrics (`"whole-only"`)
 
 
 
@@ -105,7 +105,8 @@ The app will halt processing an throw an error under the following conditions:
 
 ### Cluster Metrics
 
-This section provides a detailed description of the cluster metrics generated in the App [Generate Avian Cluster Metrics](https://github.com/dmpstats/Generate_Avian_Cluster_Metrics), including how each attribute is calculated.
+This section provides a detailed description of the cluster metrics generated in
+this App, including how each attribute is calculated.
 
 ```{r preamble}
 #| include: false
@@ -143,7 +144,7 @@ clust_tbl_names <- mt_track_data(out) |>
 
 #### Track-per-Cluster Level
 
-The attributes listed below denote column names of a dataset where each row represents a subset of track location points spatially grouped into a cluster event. Track ID is extracted using the function `move2::mt_track_id_column()`, while cluster ID is specified by the App parameter `clust_id_col`. This dataset constitutes the events table of the `move2_loc` output object when the App settings `output_type` is set to `"cluster"` and `cluster_tbl_type` is defined to `"track-and-whole"`.
+The attributes listed below denote column names of a dataset where each row represents a subset of track location points spatially grouped into a cluster event. Track ID is extracted using the function `move2::mt_track_id_column()`, while cluster ID is specified by the App parameter `clust_id_col`. This dataset constitutes the events table of the `move2_loc` output object when the App settings `output_type` is set to `"cluster-based"` and `cluster_tbl_type` is defined to `"track-and-whole"`.
 
 ```{r}
 #| include: false
@@ -282,19 +283,17 @@ symdiff(track_clust_tbl_names, track_clust_details_names)
 
 #### Whole-Cluster Level
 
-The following attributes are column names of a dataset where each row represents the properties of a cluster event, which can comprise one or multiple tracks at any given time during the cluster's existence. Cluster IDs are provided in the input data column specified by App parameter `clust_id_col`. 
+Attributes specified table below are column names of the whole-cluster metrics dataset generated during the App's calculations. Each row represents the properties of a cluster event, which can comprise one or multiple tracks at any given time during the cluster's existence. Cluster IDs are provided in the input data column specified by App parameter `clust_id_col`. The rendering of these metrics in the App's output is defined by settings `output_type` and `cluster_tbl_type`:
 
-The formatting of whole-cluster metrics in the App's output is defined by settings `output_type` and `cluster_tbl_type`:
-
-  - if `output_type` is set to `"cluster"`, whole-cluster metrics are provided as a dedicated table, with its placement in the `move2_loc` output object determined by the `cluster_tbl_type` setting:
+  - if `output_type` is set to `"cluster-based"`, whole-cluster metrics are provided as a dedicated table, with its placement in the `move2_loc` output object determined by the `cluster_tbl_type` setting:
     
       - if `"track-and-whole"` (default), metrics are provided as the track table
       - if `cluster_tbl_type = "whole-only"`, metrics are outputted as the events table 
 
-  - if `output_type` is set to `"locs"`, then whole-metrics are included alongside track location attributes, with repeated values for location points associated with a common cluster ID. 
+  - if `output_type` is set to `"merge-to-locs"`, then whole-metrics are included alongside track location attributes, with repeated values for location points associated with a common cluster ID. 
 
 ::: {.callout-important}
-  When `output_type` is set to `"locs"`, a prefix "`cl_`" is added to the names of all cluster-level properties to distinguish them from track location attributes.
+  When `output_type` is set to `"merge-to-locs"`, a prefix "`cl_`" is added to the names of all cluster-level properties to distinguish them from track location attributes.
 :::
 
 
@@ -410,6 +409,7 @@ write_rds(clust_details, "doc/clust_details.rds")
 
 ```
 
+
 ```{r}
 #| echo: false
 
@@ -417,6 +417,7 @@ list_rbind(clust_details, names_to = "Attribute Name") |>
   knitr::kable(digits = 1) 
   #kableExtra::kable_styling(font_size = 7)
 ```
+
 
 
 

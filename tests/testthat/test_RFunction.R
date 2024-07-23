@@ -123,7 +123,7 @@ test_that("input validation is doing it's job correctly", {
   # invalid specification of cluster table type in output
   expect_error(
     rFunction(data = test_sets$wcs, output_type = "WRONG_OUTPUT_TYPE"),
-    "`output_type` must be one of \"cluster\" or \"locs\", not \"WRONG_OUTPUT_TYPE\"."
+    "`output_type` must be one of \"cluster-based\" or \"merge-to-locs\", not \"WRONG_OUTPUT_TYPE\"."
   )
   
   # invalid specification for type of output
@@ -167,12 +167,12 @@ test_that("Option for type of ouputted cluster table works as expected", {
 
 testthat::test_that("Option `output_type` is working as expected", {
   
-  # if "locs" selected, output and input should have the same number of rows 
+  # if "merge-to-locs" selected, output and input should have the same number of rows 
   dt <- test_sets$wcs |> slice(1:300)
-  actual <- rFunction(data = dt, output_type = "locs")
+  actual <- rFunction(data = dt, output_type = "merge-to-locs")
   expect_equal(nrow(actual), nrow(dt))
   
-  # if "locs" selected, selection correctly stored in output
+  # if "merge-to-locs" selected, selection correctly stored in output
   expect_equal(attributes(actual)$clust_dt_type, "whole-binned-to-locs")
   
 })

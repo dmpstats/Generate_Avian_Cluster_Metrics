@@ -58,7 +58,7 @@ out_dt
 out_dt <- rFunction(data = test_dt$gaia, cluster_tbl_type = "track-and-whole")
 out_dt
 
-out_dt <- rFunction(data = test_dt$gaia, output_type = "locs")
+out_dt <- rFunction(data = test_dt$gaia, output_type = "merge-to-locs")
 out_dt
 attributes(out_dt)
 
@@ -254,7 +254,7 @@ run_sdk(data = test_dt$sa_vfa, behav_col = "uydyd")
 run_sdk(data = test_dt$savahn, behav_col = NULL)
 
 
-run_sdk(data = test_dt$sa_vfa, output_type = "locs")
+run_sdk(data = test_dt$sa_vfa, output_type = "merge-to-locs")
 read_rds("data/output/output.rds")
 
 

@@ -17,7 +17,7 @@ not_null <- Negate(is.null)
 rFunction = function(data, 
                      cluster_id_col = "clust_id", 
                      behav_col = "behav",
-                     output_type = c("cluster", "locs"),
+                     output_type = c("cluster-based", "merge-to-locs"),
                      cluster_tbl_type = c("track-and-whole", "whole-only")) {
   
 
@@ -69,7 +69,7 @@ rFunction = function(data,
   
   #' output choices ---------------
   output_type <- rlang::arg_match(output_type)
-  if(output_type == "cluster") cluster_tbl_type <- rlang::arg_match(cluster_tbl_type)
+  if(output_type == "cluster-based") cluster_tbl_type <- rlang::arg_match(cluster_tbl_type)
   
   
   #' Input data columns ----------
@@ -491,7 +491,7 @@ rFunction = function(data,
   track_cluster_tbl <- track_cluster_tbl |> arrange(.data[[cluster_id_col]], first_dttm_local)
   
   
-  if(output_type == "cluster"){
+  if(output_type == "cluster-based"){
     
     ### 5.1 Cluster tables --------------------------------------------
     logger.info(paste0(

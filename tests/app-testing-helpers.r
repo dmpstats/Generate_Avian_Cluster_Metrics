@@ -152,7 +152,7 @@ sense_check_map <- function(clust_metrics, loc_dt){
 run_sdk <- function(data, 
                     cluster_id_col = "clust_id", 
                     behav_col = "behav",
-                    output_type = c("cluster", "locs"),
+                    output_type = c("cluster-based", "merge-to-locs"),
                     cluster_tbl_type = c("track-and-whole")
 ){
 
