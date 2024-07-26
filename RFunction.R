@@ -38,7 +38,21 @@ rFunction = function(data,
     )
   )
   
-
+  
+  
+  if(all(is.na(data[[cluster_id_col]]))){
+    logger.fatal(cli::cli_text("Column {.code {cluster_id_col}} contains universally NA values"))
+    cli::cli_abort(c(
+      "Column {.code {cluster_id_col}} contains only NA values. Unable to proceed with cluster metrics calculations.",
+      "i" = paste0(
+        "Input data must include annotations for at least one cluster - Metrics cannot be derived for non-existent clusters!"
+      )
+    ),
+    class = "no-clusters-in-input"
+    )
+  }
+  
+  
   # `behav_col`
   if(not_null(behav_col)){
     
