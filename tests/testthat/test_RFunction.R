@@ -167,14 +167,20 @@ test_that("Option for type of ouputted cluster table works as expected", {
 
 testthat::test_that("Option `output_type` is working as expected", {
   
-  # if "merge-to-locs" selected, output and input should have the same number of rows 
   dt <- test_sets$wcs |> slice(1:300)
-  actual <- rFunction(data = dt, output_type = "merge-to-locs")
-  expect_equal(nrow(actual), nrow(dt))
   
-  # if "merge-to-locs" selected, selection correctly stored in output
+  # if "merge-to-locs" selected
+  actual <- rFunction(data = dt, output_type = "merge-to-locs")
+  # output and input should have the same number location points per cluster
+  expect_equal(table(actual$clust_id), table(dt$clust_id))
+  # chosen option correctly stored in output as a
   expect_equal(attributes(actual)$clust_dt_type, "whole-binned-to-locs")
   
+  # if "cluster-based"
+  actual <- rFunction(data = dt, output_type = "cluster-based")
+  # chosen option correctly stored in output as a
+  expect_equal(attributes(actual)$clust_dt_type, "track-and-whole")
+  expect_equal(sort(actual$clust_id), sort(unique(na.omit(dt$clust_id))))
 })
 
 

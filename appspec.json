@@ -17,7 +17,7 @@
     {
       "id": "output_type",
       "name": "Output Type",
-      "description": "Choose the data format for outputting cluster metrics. Note: Select 'Merge to input dataset' if using the 'EarthRanger Integration' App as a downstream App.",
+      "description": "Choose the data format for outputting cluster metrics. Note: Select 'Merge to track location points' if using the 'EarthRanger Integration' App as a downstream App.",
       "defaultValue": "cluster-based",
       "type": "RADIOBUTTONS",
       "options": [
@@ -27,7 +27,7 @@
         },
         {
           "value": "merge-to-locs",
-          "displayText": "Merge to input dataset"
+          "displayText": "Merge to track location points"
         }
         ]
     },

@@ -89,10 +89,11 @@ derived cluster metrics. Two options available:
 
 1.  As a compact cluster-based dataset (`"cluster-based"`, default) -
     see setting **Cluster-based Output Content** for additional options.
-2.  Merge [whole-cluster](#whole-cluster-level) metrics to the
-    track-location attributes provided by the input dataset
-    (`"merge-to-locs"`). Note: this option must be selected if using the
-    ‘EarthRanger Integration’ App as a downstream App.
+2.  Merge [whole-cluster](#whole-cluster-level) metrics to track
+    location points provided in the input data (`"merge-to-locs"`). Note
+    that non-clustered location points are not carried forward. This
+    option must be selected if using the ‘EarthRanger Integration’ App
+    as a downstream App.
 
 **Cluster-based Output Content** (`cluster_tbl_type`): If **Output
 Type** is set to ‘Cluster-based’, choose the content of the output
@@ -176,13 +177,13 @@ output is defined by settings `output_type` and `cluster_tbl_type`:
   `move2_loc` output object determined by the `cluster_tbl_type`
   setting:
 
-  - if `"track-and-whole"` (default), metrics are provided as the track
-    table
+  - if `cluster_tbl_type = "track-and-whole"` (default), metrics are
+    provided as the track table
   - if `cluster_tbl_type = "whole-only"`, metrics are outputted as the
     events table
 
 - if `output_type` is set to `"merge-to-locs"`, then whole-metrics are
-  included alongside track location attributes, with repeated values for
+  included alongside track locations, with repeated metric values for
   location points associated with a common cluster ID.
 
 > [!IMPORTANT]
@@ -208,7 +209,7 @@ output is defined by settings `output_type` and `cluster_tbl_type`:
 | `<behaviour-category>_drtn_cmpd` \[e.g. `SFeeding_drtn_cmpd`, `SResting_drtn_cmpd`, `SRoosting_drtn_cmpd`\] | The compounded time spent by visiting tracks in each each behavioural category during the cluster event                                                                           | The sum `<behaviour-category>_drtn` (e.g. `SFeeding_drtn`) across member tracks                                                                                                  |
 | `hour_local_avg`                                                                                            | The average local hour of track visits throughout the cluster event                                                                                                               | The mean of `hour_local_med` across affiliated tracks                                                                                                                            |
 | `attendance_cmpd`                                                                                           | The compounded time spent by member tracks in the cluster (units: hours)                                                                                                          | Sum of `attendance_aggr` across member tracks                                                                                                                                    |
-| `attendance_davg`                                                                                           | The daily average attendance time by member tracks at the cluster (unit: hours)                                                                                                   | The average of `mean_attendance` across affiliated tracks                                                                                                                        |
+| `attendance_davg`                                                                                           | The daily average attendance time spent by member tracks at the cluster (unit: hours)                                                                                             | The average of `mean_attendance` across affiliated tracks                                                                                                                        |
 | `attendance_daytime_davg`                                                                                   | The daily average attendance time spent by member tracks in the cluster during the daytime period (unit: hours)                                                                   | The average of `mean_attendance_daytime` across member tracks                                                                                                                    |
 | `visits_day_avg`                                                                                            | The average number of unique visits per day by member tracks                                                                                                                      | The average `visits_day_mean` across member tracks                                                                                                                               |
 | `visit_drtn_avg`                                                                                            | The average visit duration of member tracks to the cluster (units: hours)                                                                                                         | The average `visit_drtn_mean` across member tracks                                                                                                                               |

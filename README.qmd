@@ -76,7 +76,7 @@ None
 **Output Type** (`output_type`): Choose the data format for outputting derived cluster metrics. Two options available:
 
   1. As a compact cluster-based dataset (`"cluster-based"`, default) - see setting **Cluster-based Output Content** for additional options.
-  2. Merge [whole-cluster](#whole-cluster-level) metrics to the track-location attributes provided by the input dataset (`"merge-to-locs"`). Note: this option must be selected if using the 'EarthRanger Integration' App as a downstream App.
+  2. Merge [whole-cluster](#whole-cluster-level) metrics to track location points provided in the input data (`"merge-to-locs"`). Note that non-clustered location points are not carried forward. This option must be selected if using the 'EarthRanger Integration' App as a downstream App.
 
 
 **Cluster-based Output Content** (`cluster_tbl_type`): If **Output Type** is set to 'Cluster-based', choose the content of the output dataset:
@@ -287,10 +287,10 @@ Attributes specified table below are column names of the whole-cluster metrics d
 
   - if `output_type` is set to `"cluster-based"`, whole-cluster metrics are provided as a dedicated table, with its placement in the `move2_loc` output object determined by the `cluster_tbl_type` setting:
     
-      - if `"track-and-whole"` (default), metrics are provided as the track table
+      - if `cluster_tbl_type = "track-and-whole"` (default), metrics are provided as the track table
       - if `cluster_tbl_type = "whole-only"`, metrics are outputted as the events table 
 
-  - if `output_type` is set to `"merge-to-locs"`, then whole-metrics are included alongside track location attributes, with repeated values for location points associated with a common cluster ID. 
+  - if `output_type` is set to `"merge-to-locs"`, then whole-metrics are included alongside track locations, with repeated metric values for location points associated with a common cluster ID. 
 
 ::: {.callout-important}
   When `output_type` is set to `"merge-to-locs"`, a prefix "`cl_`" is added to the names of all cluster-level properties to distinguish them from track location attributes.
@@ -363,7 +363,7 @@ clust_details <- list(
     Calculation = "Sum of `attendance_aggr` across member tracks"
   ),
   "`attendance_davg`" = tibble(
-    Description = "The daily average attendance time by member tracks at the cluster (unit: hours)",
+    Description = "The daily average attendance time spent by member tracks at the cluster (unit: hours)",
     Calculation = "The average of `mean_attendance` across affiliated tracks"
   ),
   "`attendance_daytime_davg`" = tibble(

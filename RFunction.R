@@ -544,19 +544,30 @@ rFunction = function(data,
     
   } else {
     
-    ### 5.2 Bind metrics to input location data --------------------------------------------
+    ### 5.2 Merge metrics to track location points --------------------------------------------
     logger.info(paste0(
-      "   |-  'locs' option selected for `output_type`, therefore binding calculated ",
-      "whole-cluster metrics to input track location data"
+      "   |-  'merge-to-locs' option selected for `output_type`, therefore merging calculated ",
+      "whole-cluster metrics to track locations data"
       ))
 
-    # bind metrics to input data
-    # NOTE: rename metrics with "cl" prefix, for separation with columns describing
+    
+    # Merge metrics to track location points
+    #
+    # NOTE 1: only keeping location points annotated with cluster ID (i.e.
+    # non-clustered points are dropped) and only keep strictly necessary columns
+    # 
+    # NOTE 2: rename metrics with "cl" prefix, for separation with columns describing
     # individual-level tracking data
-    output <- left_join(
-      data, 
-      cluster_tbl |> rename_with(~paste0("cl_", .x), .cols = !all_of(cluster_id_col)), 
-      by = cluster_id_col) 
+    output <- data |> 
+      # drop non-clustered location points
+      filter(!is.na(.data[[cluster_id_col]])) |> 
+      # strip down dataset to key columns
+      select(any_of(c(trk_id_col, tm_id_col, "event_id", behav_col, cluster_id_col))) |> 
+      # merge cluster metrics
+      left_join( 
+        cluster_tbl |> rename_with(~paste0("cl_", .x), .cols = !all_of(cluster_id_col)), 
+        by = cluster_id_col
+      ) 
     
     # Append track-level and whole level metrics table as attributes of move2
     # output object
