@@ -1203,13 +1203,24 @@ distvals_ <- function(trks, spawn_tm, end_tm, clst_ctrd,
   #' the cluster's centroid, find out:
   #' (i) the the closest location point, across all non-member active tracks
   #'(ii) how many tracks are within 25km and 50km
-  out <- nearpoints_dist |>
-    st_drop_geometry() |>
-    summarise(
-      nonmembers_dist_min = ifelse(length(dist) == 0, NA, min(dist, na.rm = TRUE)) |> units::set_units("m"),  # ifelse used to skip annoying warning on min(empty) == Inf when `nearpoints_dist` is empty
-      nonmembers_within_25km_n = length(unique(.data[[trck_col]][dist < units::set_units(25, "km")])),
-      nonmembers_within_50km_n = length(unique(.data[[trck_col]][dist < units::set_units(50, "km")]))
+  if(nrow(nearpoints_dist) > 0){
+    out <- nearpoints_dist |>
+      st_drop_geometry() |>
+      summarise(
+        nonmembers_dist_min = min(dist, na.rm = TRUE) |> units::set_units("m"),
+        nonmembers_within_25km_n = length(unique(.data[[trck_col]][dist < units::set_units(25, "km")])),
+        nonmembers_within_50km_n = length(unique(.data[[trck_col]][dist < units::set_units(50, "km")]))
+      )
+  }else{
+    out <- dplyr::tibble(
+      nonmembers_dist_min = units::as_units(NA, "m"), 
+      nonmembers_within_25km_n = 0L, 
+      nonmembers_within_50km_n = 0L
     )
+  }
+  
+
+  
   
   return(out)
 }
