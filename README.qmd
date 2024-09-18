@@ -82,7 +82,7 @@ None
 **Cluster-based Output Content** (`cluster_tbl_type`): If **Output Type** is set to 'Cluster-based', choose the content of the output dataset:
 
   1. Metrics at both [track-per-cluster](#track-per-cluster-level) and [whole-cluster](#whole-cluster-level) levels (`"track-and-whole"`, default)
-  2. Solely  [whole-cluster](#whole-cluster-level) level metrics (`"whole-only"`)
+  2. Solely [whole-cluster](#whole-cluster-level) level metrics (`"whole-only"`)
 
 
 

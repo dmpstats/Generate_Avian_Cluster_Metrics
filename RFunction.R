@@ -41,9 +41,9 @@ rFunction = function(data,
   
   
   if(all(is.na(data[[cluster_id_col]]))){
-    logger.fatal(cli::cli_text("Column {.code {cluster_id_col}} contains universally NA values"))
+    logger.fatal(cli::cli_text("Column {.code {cluster_id_col}} contains universally NAs"))
     cli::cli_abort(c(
-      "Column {.code {cluster_id_col}} contains only NA values. Unable to proceed with cluster metrics calculations.",
+      "Column {.code {cluster_id_col}} contains only NAs. Unable to proceed with cluster metrics calculations.",
       "i" = paste0(
         "Input data must include annotations for at least one cluster - Metrics cannot be derived for non-existent clusters!"
       )
@@ -255,8 +255,6 @@ rFunction = function(data,
     as_tibble()
   
   track_cluster_tbl <- track_cluster_tbl %>% left_join(wholeclusts, by = cluster_id_col)
-  
-  
   
   ### 3.2 Time spent at each behaviour category, per track within cluster -----
   if(not_null(behav_col)){
@@ -1201,7 +1199,7 @@ distvals_ <- function(trks, spawn_tm, end_tm, clst_ctrd,
       dist = st_distance(geometry, clst_ctrd) |> units::set_units("m")
       )
   
-  #' For "active" tracks that not part of a given cluster, relative to
+  #' For "active" tracks that are not part of a given cluster, relative to
   #' the cluster's centroid, find out:
   #' (i) the the closest location point, across all non-member active tracks
   #'(ii) how many tracks are within 25km and 50km
