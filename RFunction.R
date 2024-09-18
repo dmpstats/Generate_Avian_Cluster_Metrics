@@ -267,7 +267,7 @@ rFunction = function(data,
       as_tibble() |> 
       filter(!is.na(.data[[cluster_id_col]])) |> 
       group_by(.data[[trk_id_col]], .data[[cluster_id_col]], behav) |> 
-      summarise(time_spent = sum(timediff_hrs), .groups = "drop") |>
+      summarise(time_spent = sum(timediff_hrs, na.rm = TRUE), .groups = "drop") |>
       tidyr::pivot_wider(
         names_from = behav, 
         values_from = time_spent, 
