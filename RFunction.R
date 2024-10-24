@@ -165,12 +165,22 @@ rFunction = function(data,
   data <- data |> arrange(.data[[trk_id_col]], .data[[tm_id_col]])
   
   # Ensuring key variables are calculated
-  data <- data %>%
+  data$timediff_hrs <- mt_time_lags(data, units = "hours")
+  
+  data <- data |> 
+    # the repetition of `with_tz()` in the next chunk looks horrible, but it's
+    # necessary to guarantee derived local time elements respect the local TZ.
     mutate(
-      hour_local = lubridate::hour(timestamp_local),
-      date_local = lubridate::date(timestamp_local),
-      timediff_hrs = mt_time_lags(., units = "hours")
-    )
+      date_local = date(with_tz(.data[[tm_id_col]], first(local_tz))),
+      # the hour element of local time
+      hour_local = hour(with_tz(.data[[tm_id_col]], first(local_tz))),
+      # decimal hours of the local calendar day
+      dec_hrs_local = hour_local + 
+        minute(with_tz(.data[[tm_id_col]], first(local_tz)))/60 +
+        second(with_tz(.data[[tm_id_col]], first(local_tz)))/3600,
+      .by = local_tz
+    ) 
+  
   
   # if absent, generate nightpoint based solely on sunset and sunrise times
   if("nightpoint" %!in% names(data)){
