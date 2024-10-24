@@ -6,3 +6,4 @@
 data/output/**
 !data/output/.keep
 tests/testthat/plot.png
+dev/issues/mismatch in  attendance_cmpd - Lindesay email 17Oct2024/combine_split_birds_for_kendall_and_wcs__Avian_Cluster_Detection__2024-09-26_10-59-50.rds
