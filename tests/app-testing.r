@@ -80,26 +80,28 @@ attributes(out_dt)
 
 
 #' ----------------------------------------------------
-#' Check impact on metrics based on local timezones vs UTC timezones
+#' Check impact on metrics respecting the local timezone 
 
 out_dt <- rFunction(
   data = test_dt$ken_tnz
 )
 
-out_dt_utc <- rFunction(
-  data = test_dt$ken_tnz |> mutate(timestamp_local = timestamp)
-)
+# force the same TZ
+out_dt_lusaka <- test_dt$ken_tnz |> 
+  mutate(local_tz = "Africa/Lusaka") |> 
+  rFunction()
 
-summary(out_dt$med_feed_hour_local - out_dt_utc$med_feed_hour_local)
-summary(out_dt$med_daytime_hour_local - out_dt_utc$med_daytime_hour_local)
-summary(out_dt$meanvisit_duration - out_dt_utc$meanvisit_duration )
-summary(out_dt$meanvisit_daytime_duration - out_dt_utc$meanvisit_daytime_duration)
-summary(out_dt$mean_night_dist - out_dt_utc$mean_night_dist)
-summary(out_dt$n_pts_night - out_dt_utc$n_pts_night)
-summary(out_dt$SFeeding - out_dt_utc$SFeeding)
-summary(out_dt$SRoosting - out_dt_utc$SRoosting)
-summary(out_dt$mean_n_daytime_visits - out_dt_utc$mean_n_daytime_visits)
-summary(out_dt$mean_arrival_dist - out_dt_utc$mean_arrival_dist)
+
+summary(out_dt$timespan_ndays  - out_dt_lusaka$timespan_ndays)
+summary(out_dt$days_present_n - out_dt_lusaka$days_present_n)
+summary(out_dt$hour_local_med - out_dt_lusaka$hour_local_med)
+summary(out_dt$visits_day_mean - out_dt_lusaka$visits_day_mean)
+summary(out_dt$attendance - out_dt_lusaka$attendance)
+summary(out_dt$attendance_dmean - out_dt_lusaka$attendance_dmean)
+summary(out_dt$SFeeding_drtn  - out_dt_lusaka$SFeeding_drtn)
+
+
+
 
 
 
