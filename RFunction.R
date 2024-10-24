@@ -192,10 +192,11 @@ rFunction = function(data,
     data <- data |> 
       mutate(
         nightpoint = ifelse(
-          between(lubridate::with_tz(timestamp, lubridate::tz(sunrise_timestamp)), # with_tz() ensures TZs consistency
-          sunrise_timestamp, 
-          sunset_timestamp),
-        0, 1))
+          between(
+            lubridate::with_tz(.data[[tm_id_col]], lubridate::tz(sunrise_timestamp)), # with_tz() ensures TZs consistency
+            sunrise_timestamp, 
+            sunset_timestamp),
+          0, 1))
   }
   
   
