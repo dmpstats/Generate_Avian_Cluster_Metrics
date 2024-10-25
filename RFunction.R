@@ -88,15 +88,15 @@ rFunction = function(data,
   
   #' Input data columns ----------
   
-  # 'timestamp_local', i.e. dependency on 'Add local time' app
-  if("timestamp_local" %!in% colnames(data)){
-    logger.fatal("Input data must contain column 'timestamp_local'.")
+  # 'local_tz', i.e. dependency on 'Add local time' app
+  if("local_tz" %!in% colnames(data)){
+    logger.fatal("Input data must contain column 'local_tz'.")
     
     cli::cli_abort(c(
-      "Input data must contain column {.code timestamp_local}.",
+      "Input data must contain column {.code local_tz}.",
       "i" = paste0(
         "Deploy the App {.href [Add Local and Solar Time](https://www.moveapps.org/apps/browser/43272925-cd24-466f-bcb9-844a09f1806b)} ",
-        "ealier in the Workflow to add local time to the input data."
+        "ealier in the Workflow to add local timezone to the input data."
       )
     ),
     class = "missing-input-col"
@@ -176,8 +176,6 @@ rFunction = function(data,
       hour_local = hour(with_tz(.data[[tm_id_col]], first(local_tz))),
       # decimal time since local start of day (i.e midnight)
       dec_time_local = decimal_time(with_tz(.data[[tm_id_col]], first(local_tz))),
-      # derive local midnight date-time in the same TZ as the time column
-      local_midnight = with_tz(as_datetime(date_local, first(local_tz)), tz(.data[[tm_id_col]])),
       .by = local_tz
     ) 
   
@@ -234,12 +232,10 @@ rFunction = function(data,
       pts_night_n = sum(nightpoint == 1),
       pts_day_n = sum(nightpoint == 0),
       # Time-related
-      first_dttm = min(.data[[tm_id_col]]),
-      last_dttm = max(.data[[tm_id_col]]),
-      first_dttm_local = min(timestamp_local),
-      last_dttm_local = max(timestamp_local),
-      timespan = as.numeric(last_dttm_local - first_dttm_local, units = "hours") |> units::set_units("h"),
-      timespan_ndays = (ceiling_date(last_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(first_dttm_local, unit = "days")) %>% as.integer(),
+      first_dttm = with_tz(min(.data[[tm_id_col]]), "UTC"),
+      last_dttm = with_tz(max(.data[[tm_id_col]]), "UTC"),
+      timespan = as.numeric(last_dttm - first_dttm, units = "hours") |> units::set_units("h"),
+      timespan_ndays = length(seq(min(date_local), max(date_local), 1)),
       days_present_n = length(unique(date_local)),
       days_absent_n = as.numeric(timespan_ndays - days_present_n),
       hour_local_med = median(hour_local, na.rm = TRUE),
@@ -247,6 +243,7 @@ rFunction = function(data,
     ) %>%
     # Calculate track-level geometric medians in each cluster
     mutate(median_point = calcGMedianSF(.), .after = all_points) 
+  
   
   
   #' Add second geometry column for cluster-level centroids. These are
@@ -395,18 +392,16 @@ rFunction = function(data,
       clust_points = st_combine(geometry),
     
       # Time-related
-      spawn_dttm = min(.data[[tm_id_col]]),
-      cease_dttm = max(.data[[tm_id_col]]),
-      spawn_dttm_local = min(timestamp_local),
-      cease_dttm_local = max(timestamp_local),
-      
+      spawn_dttm = lubridate::with_tz(min(.data[[tm_id_col]]), "UTC"),
+      cease_dttm = lubridate::with_tz(max(.data[[tm_id_col]]), "UTC"),
+    
       # track membership
       members_n = length(unique(.data[[trk_id_col]])),
       members_ids = list(unique(.data[[trk_id_col]])),
       
       # lifespan metrics
-      timespan = as.numeric(cease_dttm_local - spawn_dttm_local, units = "hours") |> units::set_units("h"),
-      timespan_ndays = (ceiling_date(cease_dttm_local, unit = "days", change_on_boundary = TRUE) - floor_date(spawn_dttm_local, unit = "days")) %>% as.integer(),
+      timespan = as.numeric(cease_dttm - spawn_dttm, units = "hours") |> units::set_units("h"),
+      timespan_ndays = length(seq(min(date_local), max(date_local), 1)),
       days_active_n = length(unique(date_local)),
       days_inactive_n = timespan_ndays - days_active_n,
       
@@ -427,7 +422,7 @@ rFunction = function(data,
     ) %>%
     st_set_geometry("clust_points") %>%
     # Calculate cluster centroids based on geometric medians
-    mutate(centroid = calcGMedianSF(.), .after = cease_dttm_local) %>%
+    mutate(centroid = calcGMedianSF(.), .after = cease_dttm) %>%
     st_set_geometry("centroid") %>%
     dplyr::select(-clust_points)
     
@@ -485,8 +480,8 @@ rFunction = function(data,
   
   
   # sort both tables by starting cluster time (ascending)
-  cluster_tbl <- cluster_tbl |> arrange(spawn_dttm_local)
-  track_cluster_tbl <- track_cluster_tbl |> arrange(.data[[cluster_id_col]], first_dttm_local)
+  cluster_tbl <- cluster_tbl |> arrange(spawn_dttm)
+  track_cluster_tbl <- track_cluster_tbl |> arrange(.data[[cluster_id_col]], first_dttm)
   
   
   if(output_type == "cluster-based"){

@@ -141,8 +141,8 @@ test_that("input validation is doing it's job correctly", {
 
   # input data missing required timestamp_local
   expect_error(
-    rFunction(data = test_sets$wcs |> select(-timestamp_local)),
-    "Input data must contain column `timestamp_local`"
+    rFunction(data = test_sets$wcs |> select(-local_tz)),
+    "Input data must contain column `local_tz`"
   )
 
   # input data missing required sun times when nightpoint is not available in input data

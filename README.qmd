@@ -167,21 +167,21 @@ track_clust_details <- list(
     Description = "The number of night-time and day-time track location points in the cluster",
     Calculation = "Count track points in cluster grouped by column `nightpoint`[^1]"
   ),
-  "`first_dttm` and `first_dttm_local`" = tibble(
-    Description = "Timestamp of the first track point in the cluster, in UTC and local timezone, respectively",
+  "`first_dttm`" = tibble(
+    Description = "Timestamp of the first track point in the cluster (units: UTC)",
     Calculation = "Find the track's earliest recorded locations in the cluster"
   ),
-  "`last_dttm` and `last_dttm_local`" = tibble(
-    Description = "Timestamp of the last track point in the cluster, in UTC and local timezone, respectively",
+  "`last_dttm`" = tibble(
+    Description = "Timestamp of the last track point in the cluster (units: UTC)",
     Calculation = "Find the track's latest recorded locations in the cluster"
   ),
   "`timespan`" = tibble(
     Description = "Total duration, in hours, over which the track visits the cluster, including periods where the track is absent from the cluster.",
-    Calculation = "The time difference between `first_dttm_local` and `last_dttm_local`"
+    Calculation = "The time difference between `first_dttm` and `last_dttm`"
   ),
   "`timespan_ndays`" = tibble(
     Description = "Total number of integer days over which the track visits the cluster, including lags during which the track is absent from the cluster",
-    Calculation = "The integer difference between the date components of `first_dttm_local` and `last_dttm_local`"
+    Calculation = "The length of the sequence between the date components of `first_dttm` and `last_dttm`"
   ),
   "`days_present_n`" = tibble(
     Description = "The cumulative number of days on which the track was present in the cluster",
@@ -302,12 +302,12 @@ Attributes specified table below are column names of the whole-cluster metrics d
 #| echo: false
 
 clust_details <- list(
-  "`spawn_dttm` and `spawn_dttm_local`" = tibble(
-    Description = "The 'spawning' date-time of the cluster event, in UTC and local timezone, respectively",
+  "`spawn_dttm`" = tibble(
+    Description = "The 'spawning' date-time of the cluster event (units: UTC)",
     Calculation = "The earliest timestamp of all point locations associated with the cluster."
   ),
-  "`cease_dttm` and `cease_dttm_local`" = tibble(
-    Description = "The 'ending' date-time of the cluster event, in UTC and local timezone, respectively",
+  "`cease_dttm`" = tibble(
+    Description = "The 'ending' date-time of the cluster event (units: UTC)",
     Calculation = "The latest timestamp of all point locations associated with the cluster."
   ),
   "`centroid`" = tibble(
@@ -324,11 +324,11 @@ clust_details <- list(
   ),
   "`timespan`" = tibble(
     Description = "Total duration of the cluster event (unit: decimal days)",
-    Calculation = "The difference between `cease_dttm_lcl` and `spawn_dttm_local`"
+    Calculation = "The difference between `cease_dttm` and `spawn_dttm`"
   ),
     "`timespan_ndays`" = tibble(
     Description = "Total number of integer days covered by the cluster event, including days without visiting tracks",
-    Calculation = "The integer difference between the date components of `cease_dttm_lcl` and `spawn_dttm_local`"
+    Calculation = "The length of the sequence between the date components of `cease_dttm` and `spawn_dttm`"
   ),
   "`days_active_n`" = tibble(
     Description = "Number of days the cluster was active, i.e. visited by at least one track during the day",
@@ -396,11 +396,11 @@ clust_details <- list(
   ),
   "`nonmembers_dist_min`" = tibble(
     Description = "The minimum distance between a **non-member** location point and the cluster centroid, during the 2 weeks leading up to and throughout the cluster event (unit: meters)",
-    Calculation = "Find the closest distance from non-member location points to the cluster centroid occurring between `spawn_dttm_local - lubridate::days(14)` and `cease_dttm_lcl`"
+    Calculation = "Find the closest distance from non-member location points to the cluster centroid occurring between `spawn_dttm - lubridate::days(14)` and `cease_dttm`"
   ),
   "`nonmembers_within_25km_n` and `nonmembers_within_50km_n`" = tibble(
     Description = "Number of non-member tracks with location points within, respectively, 25km and 50km from the cluster centroid, during the 2 weeks leading up to and throughout the cluster event",
-    Calculation = "Count the non-member track IDs that have any locations within 25km and 50km of the cluster centroid between 14 days before `spawn_dttm_local` and `cease_dttm_lcl`"
+    Calculation = "Count the non-member track IDs that have any locations within 25km and 50km of the cluster centroid between 14 days before `spawn_dttm` and `cease_dttm`"
   )
 )
 
