@@ -316,7 +316,7 @@ rFunction = function(data,
     dt = data,
     clust_col = cluster_id_col, 
     trck_col = trk_id_col, 
-    tm_col = "timestamp_local")
+    tm_col = "timestamp")
   
   
   ### 3.5 Night-Distance Calculations ------------------------------------------
@@ -736,8 +736,9 @@ attendanceTab_ <- function(dt, clust_col, trck_col, behav_col) {
   # include all available data
   
   dt <- dt |> 
-    # drop locally unnecessary geometry, for efficiency
+    # drop locally unnecessary sf and move2 attributes, for efficiency and cleanness
     st_drop_geometry() |> 
+    as_tibble() |> 
     mutate(
       date_last_loc = date_local != lead(date_local),
       date_first_loc = date_local != lag(date_local)
@@ -846,7 +847,8 @@ revisitTab_ <- function(trk_clust_dt, dt, clust_col, trck_col, tm_col) {
   
   # drop geometry, for efficiency
   dt <- dt |> 
-    st_drop_geometry()
+    st_drop_geometry() |> 
+    as_tibble()
   
   #' compute avg daily visits for each track in a given cluster (i.e. by row of
   #' clustertable) - here performed using `pmap()` and low-level helper `revisit_calc_`
@@ -856,7 +858,7 @@ revisitTab_ <- function(trk_clust_dt, dt, clust_col, trck_col, tm_col) {
       mn_visits = purrr::pmap(
         .l = list(
           clust = .data[[clust_col]], trck = .data[[trck_col]], 
-          start = first_dttm_local, end = last_dttm_local
+          start = first_dttm, end = last_dttm
         ),
         .f = \(clust, trck, start, end){
           revisit_calc_(
