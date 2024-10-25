@@ -176,6 +176,8 @@ rFunction = function(data,
       hour_local = hour(with_tz(.data[[tm_id_col]], first(local_tz))),
       # decimal time since local start of day (i.e midnight)
       dec_time_local = decimal_time(with_tz(.data[[tm_id_col]], first(local_tz))),
+      # derive local midnight date-time in the same TZ as the time column
+      local_midnight = with_tz(as_datetime(date_local, first(local_tz)), tz(.data[[tm_id_col]])),
       .by = local_tz
     ) 
   
@@ -377,7 +379,7 @@ rFunction = function(data,
     trk_clust_dt = track_cluster_tbl,
     clust_col = cluster_id_col,
     trck_col = trk_id_col,
-    tm_col = "timestamp_local")
+    tm_col = tm_id_col)
   
   
   ### 4.2 Aggregate over tracks ---------------------------------------
@@ -1173,8 +1175,8 @@ nearBirdsTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
     summarise(
       #tracks = paste(unique(.data[[trck_col]]), collapse = ", "),
       tracks = list(unique(.data[[trck_col]])),
-      spawn_tm_loc = min(first_dttm_local, na.rm = TRUE),
-      end_tm_loc = max(last_dttm_local, na.rm = TRUE),
+      spawn_tm = min(first_dttm, na.rm = TRUE),
+      end_tm = max(last_dttm, na.rm = TRUE),
       n_tracks = length(unique(.data[[trck_col]])),
       .groups = "drop" 
     )
@@ -1190,8 +1192,8 @@ nearBirdsTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
       nearpts_prox = purrr::pmap(
         .l = list(
           trks = tracks, 
-          spawn_tm = spawn_tm_loc, 
-          end_tm = end_tm_loc, 
+          spawn_tm = spawn_tm, 
+          end_tm = end_tm, 
           clst_ctrd = clust_centroid
         ),
         .f = \(trks, spawn_tm, end_tm, clst_ctrd, ...){
