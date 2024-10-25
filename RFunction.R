@@ -174,10 +174,8 @@ rFunction = function(data,
       date_local = date(with_tz(.data[[tm_id_col]], first(local_tz))),
       # the hour element of local time
       hour_local = hour(with_tz(.data[[tm_id_col]], first(local_tz))),
-      # decimal hours of the local calendar day
-      dec_hrs_local = hour_local + 
-        minute(with_tz(.data[[tm_id_col]], first(local_tz)))/60 +
-        second(with_tz(.data[[tm_id_col]], first(local_tz)))/3600,
+      # decimal time since local start of day (i.e midnight)
+      dec_time_local = decimal_time(with_tz(.data[[tm_id_col]], first(local_tz))),
       .by = local_tz
     ) 
   
@@ -1234,6 +1232,26 @@ distvals_ <- function(trks, spawn_tm, end_tm, clst_ctrd,
   
   
   return(out)
+}
+
+
+
+#' //////////////////////////////////////////////////////////////////////////////#
+#' Derive decimal time since start of the day (i.e. since midnight) from a timestamp
+#' 
+decimal_time <- function(x, unit = "hr"){
+  
+  #browser()
+  
+  if(!is.POSIXct(x)) cli::cli_abort("{.arg x} must be a {.cls POSIXct} object")
+  
+  # compute decimal hours
+  dec_hr <- hour(x) + minute(x)/60 + second(x)/3600
+  units(dec_hr) <- "h"
+  
+  # convert to required units
+  units::set_units(dec_hr, value = unit, mode = "standard")
+
 }
 
 
