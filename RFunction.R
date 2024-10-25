@@ -316,7 +316,7 @@ rFunction = function(data,
     dt = data,
     clust_col = cluster_id_col, 
     trck_col = trk_id_col, 
-    tm_col = "timestamp")
+    tm_col = tm_id_col)
   
   
   ### 3.5 Night-Distance Calculations ------------------------------------------
@@ -341,7 +341,7 @@ rFunction = function(data,
     trk_clust_dt = track_cluster_tbl,
     clust_col = cluster_id_col,
     trck_col = trk_id_col,
-    tm_col = "timestamp_local")
+    tm_col = tm_id_col)
   
   
   ### 3.7 Stack outputs into final clustertable ---------------------------------
@@ -1062,12 +1062,11 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
     cli::cli_abort("{.arg dt} and {.arg trk_clust_dt} must have the same CRS projection.")
   }
   
-  # timezone required for accurate slicing of locations data below
+  # reference timezone required for accurate slicing of locations data below
   tmzn <- tz(dt[[tm_col]])
   
   # convert to tibble for cleaner processing, as move2 functionality not required here
   dt <- as_tibble(dt)
-  
   
   # Inputting missing night-points (only in the context of the current function)
   # Handle cases when, for the date of first arrival of a given track to the
@@ -1090,14 +1089,14 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
         nightpoint, 
         missing = nightpoint
       )
-    )
-  
+    ) |> 
+    ungroup()
   
   # Compute date of arrival (i.e. day of first visit) of tracks to clusters
   clustarrivals <- dt %>%
     st_drop_geometry() %>%
     group_by(.data[[clust_col]], .data[[trck_col]]) %>%
-    summarise(day_of_arrival = as_datetime(min(date_local), tz = tmzn), .groups = "drop") %>%
+    summarise(arrival_date_local = min(date_local), local_tz = first(local_tz), .groups = "drop") |> 
     # merge cluster centroids
     left_join(
       distinct(trk_clust_dt, .data[[clust_col]], clust_centroid),
@@ -1108,42 +1107,42 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
   
   
   # Core calculations
-  outdat <- clustarrivals |> 
+  outdat <- clustarrivals |>
     mutate(
       #' subset track's night-time locations within +/- 12hrs from its arrival
       #' date to a given cluster
       locs_slice = pmap(
-        list(trck = .data[[trck_col]], arr_dt = day_of_arrival, tz = tmzn),
-        .f = \(trck, arr_dt, tz, ann_dt = dt){
+        list(trck = .data[[trck_col]], arr_dt = arrival_date_local, tz = local_tz),
+        .f = \(trck, arr_dt, ann_dt = dt, tz){
           #browser()
           ann_dt %>%
             filter(
               .data[[trck_col]] == trck,
               nightpoint == 1,
               between(
-                .data[[tm_col]], 
-                arr_dt - hours(12),
-                arr_dt + hours(12)
+                .data[[tm_col]],
+                # ensuring TZ accuracy and consistency
+                with_tz(as_datetime(arr_dt, tz) - hours(12), tmzn),
+                with_tz(as_datetime(arr_dt, tz) + hours(12), tmzn)
               )
-            ) |> 
-            # drop move2 attributes
-            as_tibble() |> 
+            ) |>
             select(event_id, geometry)
-        }, 
+        },
         .progress = TRUE)
     ) |> 
     # bring night-point locations slice to the forefront, akin to a merge
-    tidyr::unnest(locs_slice) |> 
+    tidyr::unnest(locs_slice) |>
     # calculate distances between night-point locations and cluster centroids
-    mutate(dist = st_distance(clust_centroid, geometry, by_element = TRUE)) |> 
-    st_drop_geometry() |> 
+    mutate(dist = st_distance(clust_centroid, geometry, by_element = TRUE)) |>
+    st_drop_geometry() |>
     # get the average distance from cluster centroids
-    group_by(.data[[clust_col]], .data[[trck_col]], day_of_arrival) |> 
+    group_by(.data[[clust_col]], .data[[trck_col]], arrival_date_local) |>
     summarise(
-      arrival_dist_mean = mean(dist, na.rm = TRUE), 
+      arrival_dist_mean = mean(dist, na.rm = TRUE),
       .groups = "drop"
-    ) |> 
-    dplyr::select(-day_of_arrival)
+    ) |>
+    dplyr::select(-arrival_date_local)
+  
   
   return(outdat)
 }
