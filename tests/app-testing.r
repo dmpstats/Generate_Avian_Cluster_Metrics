@@ -30,6 +30,8 @@ set_interactive_app_testing()
 testthat::test_file("tests/testthat/test_RFunction.R")
 
 
+
+
 # ---------------------------------------- #
 # ----   Interactive RFunction testing  ----
 # ---------------------------------------- #
@@ -47,6 +49,8 @@ summary(mt_track_data(out_dt_nam) |> select(-member_tracks_ids))
 mt_track_data(out_dt_nam) |> 
   filter(member_tracks_n > 1)
   
+
+out_dt_nam <- rFunction(data = test_dt$nam |> mutate(clust_id = NA))
 
 
 #' ----------------------------------------------------
@@ -67,6 +71,13 @@ attributes(out_dt)
 rFunction(data = test_dt$gaia)
 
 
+out_dt |> 
+  rowwise() |> 
+  mutate(
+    members_ids = paste0(unlist(members_ids), collapse = ", ")
+  ) |> 
+  print(n = 100)
+
 #' ----------------------------------------------------
 #' Different column IDs
 
@@ -76,6 +87,8 @@ out_dt
 out_dt <- rFunction(data = test_dt$wcs, behav_id_col = "RULE")
 out_dt
 attributes(out_dt)
+
+
 
 
 
@@ -96,8 +109,8 @@ summary(out_dt$timespan_ndays  - out_dt_lusaka$timespan_ndays)
 summary(out_dt$days_present_n - out_dt_lusaka$days_present_n)
 summary(out_dt$hour_local_med - out_dt_lusaka$hour_local_med)
 summary(out_dt$visits_day_mean - out_dt_lusaka$visits_day_mean)
-summary(out_dt$attendance - out_dt_lusaka$attendance)
-summary(out_dt$attendance_dmean - out_dt_lusaka$attendance_dmean)
+summary(out_dt$attnd - out_dt_lusaka$attnd)
+summary(out_dt$attnd_dmean - out_dt_lusaka$attnd_dmean)
 summary(out_dt$SFeeding_drtn  - out_dt_lusaka$SFeeding_drtn)
 
 

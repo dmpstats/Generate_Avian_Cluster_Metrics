@@ -22,12 +22,18 @@ test_sets <- test_path("data/vult_unit_test_data.rds") |>
 
 # Test data pre-processing
 test_sets <- map(test_sets, \(dt){
-  dt <- dt %>%
+  
+  dt <- dt |> 
     mutate(
-      hour_local = lubridate::hour(timestamp_local),
-      date_local = lubridate::date(timestamp_local),
-      timediff_hrs = mt_time_lags(., units = "hours")
-    )
+      date_local = date(with_tz(timestamp, first(local_tz))),
+      hour_local = hour(with_tz(timestamp, first(local_tz))),
+      dec_time_local = decimal_time(with_tz(timestamp, first(local_tz))),
+      .by = local_tz
+    ) 
+  
+  dt$timediff_hrs <- mt_time_lags(dt, units = "hours")
+
+  dt  
 })
   
 
@@ -187,20 +193,20 @@ testthat::test_that("Option `output_type` is working as expected", {
 
 test_that("Optional specification of behavioural column works as expected", {
 
-  behav_cols_event <- c("SFeeding_drtn", "SResting_drtn", "SRoosting_drtn")
-  behav_cols_track <- c("SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd")
+  behav_cols_event <- c("attnd_SFeeding", "attnd_SResting", "attnd_SRoosting")
+  behav_cols_track <- c("attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd")
 
   actual <- rFunction(data = test_sets$wcs |> slice(1:100), behav_col = "behav")
   expect_contains(colnames(actual), behav_cols_event)
   expect_contains(colnames(mt_track_data(actual)), behav_cols_track)
-  expect_false("STravelling" %in% colnames(actual))
+  expect_false("attnd_STravelling" %in% colnames(actual))
 
+  # exclude behaviour column
   actual <- rFunction(data = test_sets$wcs |> slice(1:100), behav_col = NULL)
   expect_false(any(behav_cols_event %in% colnames(actual)))
   expect_false(any(behav_cols_track %in% colnames(mt_track_data(actual))))
 
 })
-
 
 
 
@@ -234,6 +240,59 @@ test_that("Expected main app outcome has not changed", {
  
 # Helper functions -----------------------------------------
 
+
+test_that("calculations under `attendanceTab_()` pass sanity check", {
+  
+  # --- time at behaviour sum up to total attendance
+  actual <- attendanceTab_(
+    dt = test_sets$wcs,
+    clust_col = "clust_id",
+    trck_col = mt_track_id_column(test_sets$wcs), 
+    behav_col = "behav"
+  ) |> 
+    ungroup()
+  
+  expect_equal(
+    set_units(actual$attnd, NULL), 
+    rowSums(select(actual, attnd_SFeeding, attnd_SResting, attnd_SRoosting))
+  )
+  
+  actual <- attendanceTab_(
+    dt = test_sets$ken_tnz,
+    clust_col = "clust_id",
+    trck_col = mt_track_id_column(test_sets$ken_tnz),
+    behav_col = "behav"
+  ) |> 
+    ungroup()
+  
+  expect_equal(
+    set_units(actual$attnd, NULL), 
+    rowSums(select(actual, attnd_SFeeding, attnd_SResting, attnd_SRoosting))
+  )
+  
+  
+  
+  # --- For a (theoretic) omnipresent cluster, the total attendance equals the
+  # sum of time lags- i.e. the midnight split performed for daily metrics is
+  # working as expected
+  dt_mega <- test_sets$wcs |> 
+    filter(individual_name_deployment_id == "B175706..deploy_id.2023814800.") |> 
+    mutate(clust_id = "mega") 
+  
+  actual <- attendanceTab_(
+    dt_mega,
+    clust_col = "clust_id",
+    trck_col = "individual_name_deployment_id", 
+    behav_col = "behav"
+  )
+  
+  expect_equal(actual$attnd, sum(dt_mighty$timediff_hrs, na.rm = TRUE))
+  
+
+})
+
+
+
 test_that("Expected outcome of `attendanceTab_()` has not changed", {
 
   testthat::local_edition(3)
@@ -243,7 +302,8 @@ test_that("Expected outcome of `attendanceTab_()` has not changed", {
     attendanceTab_(
       dt = test_sets$wcs,
       clust_col = "clust_id",
-      trck_col = mt_track_id_column(test_sets$wcs)) |>
+      trck_col = mt_track_id_column(test_sets$wcs), 
+      behav_col = "behav") |>
       units::drop_units(),
     style = "json2"
   )
@@ -253,12 +313,14 @@ test_that("Expected outcome of `attendanceTab_()` has not changed", {
     attendanceTab_(
       dt = test_sets$ken_tnz,
       clust_col = "clust_id",
-      trck_col = mt_track_id_column(test_sets$ken_tnz)),
+      trck_col = mt_track_id_column(test_sets$ken_tnz),
+      behav_col = "behav"),
     style = "json2"
   )
 
 })
  
+
  
 # Documentation   ---------------------------------------
 
@@ -281,7 +343,7 @@ test_that("output colnames match those in output documentation", {
   # Track-per-cluster metrics
   track_clust_details_names <- names(track_clust_details) |>
     stringr::str_remove_all("`") |>
-    stringr::str_remove("<behaviour-category>_drtn \\[e.g. ") |>
+    stringr::str_remove("attnd_<behaviour-category> \\[e.g. ") |>
     stringr::str_remove("\\]") |>
     stringr::str_split(" and |, ") |>
     as_vector() |>
@@ -300,7 +362,7 @@ test_that("output colnames match those in output documentation", {
   # whole-cluster metrics
   clust_details_names <- names(clust_details) |>
     stringr::str_remove_all("`") |>
-    stringr::str_remove("<behaviour-category>_drtn_cmpd \\[e.g. ") |>
+    stringr::str_remove("attnd_<behaviour-category>_cmpd \\[e.g. ") |>
     stringr::str_remove("\\]") |>
     stringr::str_split(" and |, ") |>
     as_vector()

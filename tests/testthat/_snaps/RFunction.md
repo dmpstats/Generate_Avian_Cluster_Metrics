@@ -16,7 +16,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
+          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
         },
         "sf_column": {
           "type": "character",
@@ -29,7 +29,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
+              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
             },
             "levels": {
               "type": "character",
@@ -70,7 +70,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -93,7 +93,7 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
@@ -1507,6 +1507,125 @@
             },
             {
               "type": "double",
+              "attributes": {},
+              "value": [8, 9, 13, 10, 13, 9.5, 19, 15, 9, 8, 13, 9.5, 16.5, 8.5, 12.5, 18.5, 15.5, 8, 14.5, 16, 11.5, 16, 10, 15, 15, 9.5, 9, 14, 12.5, 12, 15, 13, 9.5, 12.5, 13, 9, 15.5, 13, 13, 10.5, 10, 10.5, 11.5, 10, 9, 9, 12, 9, 8.5, 9]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [3, 12, 19, 18, 11, 36, 12, 3, 16, 14, 23, 17, 4, 15, 23, 13, 19, 11, 21, 82, 17, 3, 18, 20, 20, 17, 16, 43, 23, 3, 20, 17, 17, 23, 19, 16, 19, 17, 177, 11, 18, 19, 19.94611111, 34, 16, 16, 108, 16, 15, 16]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [3, 12, 9.5, 9, 5.5, 7.2, 6, 3, 8, 7, 11.5, 8.5, 4, 7.5, 11.5, 6.5, 9.5, 5.5, 10.5, 11.71428571, 8.5, 3, 9, 10, 10, 8.5, 8, 14.33333333, 11.5, 3, 10, 8.5, 8.5, 11.5, 9.5, 8, 9.5, 8.5, 22.125, 5.5, 9, 9.5, 9.97305556, 8.5, 8, 8, 21.6, 8, 7.5, 8]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [3, 12, 4, 3.5, 5.5, 2.8, 0.5, 3, 2.5, 1.5, 6, 3, 4, 2, 6, 1, 4, 2, 5, 3.14285714, 3, 3, 3.5, 4.5, 4.5, 3, 2.5, 7, 6, 3, 4.5, 3, 3, 6, 4, 2.5, 4, 3, 11.625, 0, 3.5, 4, 4.5, 3, 2.5, 2.5, 10.4, 2.5, 2, 2.5]
+            },
+            {
+              "type": "double",
               "attributes": {
                 "units": {
                   "type": "list",
@@ -1579,7 +1698,7 @@
                   "value": ["units"]
                 }
               },
-              "value": [2, 5, 8, 7, 0, 2, 0, 0, 0, 2, 11, 0, 2, 4, 11, 0, 8, 3, 9, 15, 4, 2, 5, 9, 0, 6, 5, 15, 0, 3, 0, 0, 4, 0, 7, 5, 7, 6, 0, 0, 7, 8, 6, 5, 3, 0, 0, 0, 4, 5]
+              "value": [2, 12, 8, 7, 0, 2, 0, 0, 0, 2, 11, 0, 2, 4, 11, 0, 8, 3, 9, 15, 4, 2, 5, 9, 0, 6, 5, 15, 0, 3, 0, 0, 4, 0, 7, 5, 7, 6, 0, 0, 7, 8, 6, 5, 3, 0, 0, 0, 4, 5]
             },
             {
               "type": "double",
@@ -1617,126 +1736,7 @@
                   "value": ["units"]
                 }
               },
-              "value": [0, 0, 11, 11, 11, 34, 12, 3, 16, 11, 11, 17, 0, 11, 11, 13, 11, 6, 11, 43, 11, 0, 11, 11, 20, 11, 11, 22, 23, 0, 20, 17, 11, 23, 11, 11, 11, 11, 184, 11, 11, 11, 5, 27, 11, 16, 101, 16, 11, 11]
-            },
-            {
-              "type": "double",
-              "attributes": {},
-              "value": [8, 9, 13, 10, 13, 9.5, 19, 15, 9, 8, 13, 9.5, 16.5, 8.5, 12.5, 18.5, 15.5, 8, 14.5, 16, 11.5, 16, 10, 15, 15, 9.5, 9, 14, 12.5, 12, 15, 13, 9.5, 12.5, 13, 9, 15.5, 13, 13, 10.5, 10, 10.5, 11.5, 10, 9, 9, 12, 9, 8.5, 9]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [3, 12, 19, 18, 11, 36, 12, 3, 16, 14, 23, 17, 4, 15, 23, 13, 19, 11, 21, 82, 17, 3, 18, 20, 20, 17, 16, 43, 23, 3, 20, 17, 17, 23, 19, 16, 19, 17, 177, 11, 18, 19, 13, 34, 16, 16, 108, 16, 15, 16]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [3, 12, 9.5, 9, 5.5, 7.2, 6, 3, 8, 7, 11.5, 8.5, 4, 7.5, 11.5, 6.5, 9.5, 5.5, 10.5, 11.71428571, 8.5, 3, 9, 10, 10, 8.5, 8, 14.33333333, 11.5, 3, 10, 8.5, 8.5, 11.5, 9.5, 8, 9.5, 8.5, 22.125, 5.5, 9, 9.5, 6.5, 8.5, 8, 8, 21.6, 8, 7.5, 8]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [3, 12, 4, 3.5, 5.5, 2.8, 0.5, 3, 2.5, 1.5, 6, 3, 4, 2, 6, 1, 4, 2, 5, 3.14285714, 3, 3, 3.5, 4.5, 4.5, 3, 2.5, 7, 6, 3, 4.5, 3, 3, 6, 4, 2.5, 4, 3, 11.625, 0, 3.5, 4, 4.5, 3, 2.5, 2.5, 10.4, 2.5, 2, 2.5]
+              "value": [0, 0, 11, 11, 11, 34, 12, 3, 16, 11, 11, 17, 0, 11, 11, 13, 11, 7, 11, 65, 11, 0, 11, 11, 20, 11, 11, 22, 23, 0, 20, 17, 11, 23, 11, 11, 11, 11, 177, 11, 11, 11, 10.94611111, 27, 11, 16, 108, 16, 11, 11]
             },
             {
               "type": "double",
@@ -3951,7 +3951,7 @@
               "value": ["units"]
             }
           },
-          "value": [1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 2, 1, 0, 0, 6, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 3, 2, 2, 0, 0, 0, 0, 1, 0, 0, 1, 2, 2]
+          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 19.94611111, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
         },
         {
           "type": "double",
@@ -3989,121 +3989,7 @@
               "value": ["units"]
             }
           },
-          "value": [2, 9, 5, 7, 0, 0, 0, 0, 0, 2, 4, 8, 11, 8, 9, 4, 2, 0, 5, 15, 6, 0, 2, 3, 0, 0, 4, 0, 7, 5, 7, 0, 6, 2, 0, 7, 8, 6, 5, 3, 0, 0, 4, 5, 11, 0, 0, 3, 15, 5]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [0, 11, 0, 11, 11, 12, 3, 16, 17, 0, 11, 11, 11, 11, 11, 11, 0, 20, 11, 22, 11, 23, 34, 0, 17, 20, 11, 23, 11, 11, 11, 11, 11, 11, 184, 11, 11, 5, 27, 11, 16, 16, 11, 11, 11, 101, 13, 6, 43, 11]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 13, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [3, 10, 12, 9, 5.5, 6, 3, 8, 8.5, 4, 7.5, 9.5, 11.5, 9.5, 10.5, 8.5, 3, 10, 8, 14.33333333, 8.5, 11.5, 7.2, 3, 8.5, 10, 8.5, 11.5, 9.5, 8, 9.5, 5.5, 8.5, 7, 22.125, 9, 9.5, 6.5, 8.5, 8, 8, 8, 7.5, 8, 11.5, 21.6, 6.5, 5.5, 11.71428571, 9]
+          "value": [3, 10, 12, 9, 5.5, 6, 3, 8, 8.5, 4, 7.5, 9.5, 11.5, 9.5, 10.5, 8.5, 3, 10, 8, 14.33333333, 8.5, 11.5, 7.2, 3, 8.5, 10, 8.5, 11.5, 9.5, 8, 9.5, 5.5, 8.5, 7, 22.125, 9, 9.5, 9.97305556, 8.5, 8, 8, 8, 7.5, 8, 11.5, 21.6, 6.5, 5.5, 11.71428571, 9]
         },
         {
           "type": "double",
@@ -4142,6 +4028,120 @@
             }
           },
           "value": [3, 4.5, 12, 3.5, 5.5, 0.5, 3, 2.5, 3, 4, 2, 4, 6, 4, 5, 3, 3, 4.5, 2.5, 7, 3, 6, 2.8, 3, 3, 4.5, 3, 6, 4, 2.5, 4, 0, 3, 1.5, 11.625, 3.5, 4, 4.5, 3, 2.5, 2.5, 2.5, 2, 2.5, 6, 10.4, 1, 2, 3.14285714, 3.5]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 2, 1, 0, 0, 6, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 3, 2, 2, 0, 0, 0, 0, 1, 0, 0, 1, 2, 2]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [2, 9, 12, 7, 0, 0, 0, 0, 0, 2, 4, 8, 11, 8, 9, 4, 2, 0, 5, 15, 6, 0, 2, 3, 0, 0, 4, 0, 7, 5, 7, 0, 6, 2, 0, 7, 8, 6, 5, 3, 0, 0, 4, 5, 11, 0, 0, 3, 15, 5]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [0, 11, 0, 11, 11, 12, 3, 16, 17, 0, 11, 11, 11, 11, 11, 11, 0, 20, 11, 22, 11, 23, 34, 0, 17, 20, 11, 23, 11, 11, 11, 11, 11, 11, 177, 11, 11, 10.94611111, 27, 11, 16, 16, 11, 11, 11, 108, 13, 7, 65, 11]
         },
         {
           "type": "double",
@@ -4293,7 +4293,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", "var_acc_z_sd"]
+          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", "var_acc_z_sd"]
         },
         "sf_column": {
           "type": "character",
@@ -4306,7 +4306,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", "var_acc_z_sd"]
+              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", "var_acc_z_sd"]
             },
             "levels": {
               "type": "character",
@@ -4347,7 +4347,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -4370,7 +4370,7 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
@@ -7611,6 +7611,11 @@
             },
             {
               "type": "double",
+              "attributes": {},
+              "value": [8, 7, 9, 8, 9, 14, 16, 17, 16, 8, 7, 7, 9, 9, 11, 12, 12, 13, 15.5, 16, 9, 8, 9, 11, 10, 11, 11, 15, 13, 13, 14, 14, 12, 14, 15, 15, 16, 8, 9, 9, 9, 9, 11, 12, 14, 14, 13, 16, 7, 10.5, 11, 12, 14, 12, 9, 17, 7, 10, 10, 15, 16, 8, 16, 9, 8, 19, 10, 10, 11, 13, 12, 13, 14, 16, 17, 9, 8, 9, 11, 12, 18, 13, 15, 9, 9, 9, 10, 10, 11, 13, 13, 14, 9, 8, 9, 12, 12, 16, 12, 13, 16, 15, 10, 17, 8, 10, 10, 11, 12, 12, 14, 15, 16, 11, 16.5, 9, 12, 11, 11, 15, 15, 9, 13, 14, 14, 15, 18, 8, 9, 12, 11, 12, 7, 13, 15, 17, 19]
+            },
+            {
+              "type": "double",
               "attributes": {
                 "units": {
                   "type": "list",
@@ -7645,7 +7650,121 @@
                   "value": ["units"]
                 }
               },
-              "value": [2.30055556, 0.40027778, 23.18611028, 1.145, 2.73444444, 6.64944444, 1.89611111, 0.95027778, 5.30027778, 1.10277778, 0.15, 0.85194444, 0.67166667, 2.75027778, 0.44888889, 3.14694444, 0.94583333, 2.70333333, 2.24666667, 0.29833333, 1.40333333, 0.50305556, 0.55027778, 0.30027778, 0.84611111, 0.65083333, 0.30027778, 2.14777778, 0.26444444, 0.30083333, 0.29944444, 0.71, 2.15333333, 0.39972222, 1.30194444, 1.90218806, 7.19027778, 3.08972222, 1.04944472, 1.24611111, 0.20305556, 0.47694444, 1.45055556, 0.81722222, 2.65111111, 0.20305556, 3.68722222, 0.23388889, 0, 1.19805583, 0.2, 1.29694444, 3.0325, 0.90944444, 2.11222222, 0.4, 0.10083333, 1.25222222, 0.34944444, 1.06194444, 2.24972222, 1.40027778, 0.14861111, 1.74861111, 0.35, 0, 0.18333333, 0.15, 0.19972222, 2.08361111, 0.34916667, 0.34805556, 0.59944444, 1.84833333, 0.24861111, 0.04972222, 0.60083361, 0.59222222, 0.09972222, 0.34972222, 0.1, 0.49861056, 1.17194444, 2.60361111, 2.03805556, 2.6525, 0.18527778, 0.38222222, 0.85, 0.49833333, 0.22305556, 1.16611083, 1.83416667, 0.59972222, 1.12027778, 0.45083333, 1.30138889, 0.99027778, 0.1, 0.40055556, 16.85194444, 0.24805556, 2.33277778, 0.19944444, 1.90111111, 1.15027778, 0.2, 0.49916667, 0.64805556, 0.04888889, 0.70055556, 5.70111111, 0.40083333, 2.66305556, 0, 0.15, 2.44916667, 0.51305556, 0, 4.37861111, 0.90277778, 1.21555556, 14.61304389, 2.95388889, 0.05083333, 0, 0.75277778, 1.39138889, 2.7, 0.35388889, 0.05055556, 0.30027778, 0.05027778, 1.00055556, 2.52888889, 0.25111111, 0.35305556]
+              "value": [5.54583333, 8.75555556, 237.06638861, 10.545, 6.10166667, 7.15027778, 11.39527778, 3.35111111, 59.84166667, 14.15055556, 12.05055556, 9.60111111, 3.35, 17.29916667, 1.14972222, 4.04944444, 2.29777778, 2.85222222, 17.89833333, 1.34777778, 14.99833333, 14.07916667, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 2.81555556, 0.84972222, 19.34944444, 16.86968806, 76.8, 29.94277778, 14.6, 16.09083333, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 21.23555556, 0.4, 11.80472222, 2.85055583, 0.4, 3.80027778, 3.58166667, 19.65138889, 15.96583333, 1, 14.04972222, 3.16694444, 0.55, 1.51277778, 16.54916667, 15.5, 0.14861111, 5.14833333, 15.65027778, 11.29944444, 0.35, 0.25, 0.24972222, 3.08861111, 0.70027778, 1.64972222, 0.59944444, 16.15, 0.30138889, 16.85027778, 14.40027806, 1.20027778, 0.15, 2.20027778, 0.34972222, 1.19972222, 17.23944444, 32.45027778, 15.89972222, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 16.30138861, 16.39722222, 14.74833333, 1.66666667, 0.84972222, 1.35138889, 2.8175, 0.2, 0.7, 8.14777778, 0.24805556, 18.1, 0.75, 15.05055556, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.45027778, 1.54861111, 18.99972222, 0.59972222, 19.50222222, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 22.03, 18.93277778, 17.39527778, 53.82554389, 6.19888889, 0.55, 0.4, 1.40166667, 15.35027778, 17.7025, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 12.22]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [5.54583333, 8.75555556, 15.80442591, 10.545, 6.10166667, 7.15027778, 11.39527778, 3.35111111, 9.97361111, 7.07527778, 6.02527778, 9.60111111, 3.35, 8.64958333, 1.14972222, 1.01236111, 2.29777778, 2.85222222, 8.94916667, 1.34777778, 7.49916667, 7.03958333, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 1.40777778, 0.84972222, 6.44981481, 8.43484403, 9.6, 7.48569444, 7.3, 8.04541667, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 10.61777778, 0.4, 5.90236111, 1.42527792, 0.2, 1.90013889, 3.58166667, 3.47541667, 7.98291667, 1, 7.02486111, 1.58347222, 0.55, 1.51277778, 8.27458333, 3.875, 0.14861111, 2.57416667, 7.82513889, 5.64972222, 0.35, 0.25, 0.24972222, 1.54430556, 0.70027778, 1.64972222, 0.59944444, 8.075, 0.30138889, 8.42513889, 7.20013903, 1.20027778, 0.15, 2.20027778, 0.17486111, 1.19972222, 8.61972222, 10.81675926, 7.94986111, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 8.15069431, 5.46574074, 7.37416667, 1.66666667, 0.84972222, 1.35138889, 0.93916667, 0.2, 0.7, 8.14777778, 0.24805556, 9.05, 0.75, 7.52527778, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.22513889, 1.54861111, 9.49986111, 0.59972222, 9.75111111, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 7.34333333, 9.46638889, 8.69763889, 17.94184796, 6.19888889, 0.55, 0.4, 1.40166667, 7.67513889, 8.85125, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 12.22]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [4.65027778, 2.30333333, 4.52242591, 3.6925, 5.75083333, 7.15027778, 6.89861111, 3.30111111, 3.36625, 1.375, 0.44930556, 2.64472222, 3.35, 2.87458333, 1.14972222, 1.01236111, 2.29777778, 2.85222222, 3.17402778, 1.34777778, 1.80027778, 1.31277778, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 1.40777778, 0.84972222, 2.59981481, 2.63484403, 3.25027778, 1.91076389, 1.67527778, 2.34569444, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 4.81763889, 0.4, 0.2, 1.42527792, 0.2, 1.90013889, 3.58166667, 1.54194444, 2.20722222, 1, 1.22486111, 1.58347222, 0.55, 1.51277778, 2.44944444, 0.98777778, 0.14861111, 2.42416667, 2.025, 0.02416667, 0.35, 0.25, 0.24972222, 1.54430556, 0.70027778, 1.64972222, 0.59944444, 2.3, 0.30138889, 2.62513889, 1.40013903, 1.20027778, 0.15, 2.20027778, 0.17486111, 1.19972222, 2.81930556, 3.06675926, 2.20333333, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 2.30083319, 1.60064815, 1.54819444, 1.66666667, 0.84972222, 1.35138889, 0.93916667, 0.2, 0.7, 8.14777778, 0.24805556, 3.22513889, 0.75, 1.75069444, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.22513889, 1.54861111, 3.65, 0.59972222, 3.95333333, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 3.21361111, 3.66541667, 2.84847222, 8.44453315, 6.19888889, 0.55, 0.4, 1.40166667, 1.92555556, 3.07527778, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 0.60194444]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [2.30055556, 0.40027778, 23.18611028, 1.145, 2.73444444, 6.64944444, 1.89611111, 0.95027778, 5.30027778, 1.10277778, 0.15, 0.85194444, 0.67166667, 2.75027778, 0.44888889, 3.14694444, 0.94583333, 2.70333333, 2.24666667, 0.29833333, 1.40333333, 0.50305556, 0.55027778, 0.30027778, 0.84611111, 0.65083333, 0.30027778, 2.14777778, 0.26444444, 0.30083333, 0.29944444, 0.71, 2.15333333, 0.39972222, 1.30194444, 1.90218806, 14.10916667, 3.08972222, 1.04944472, 1.24611111, 0.20305556, 0.47694444, 1.45055556, 0.81722222, 2.65111111, 0.20305556, 3.68722222, 0.23388889, 0, 1.19805583, 0.2, 1.29694444, 3.0325, 0.90944444, 2.11222222, 0.4, 0.10083333, 1.25222222, 0.34944444, 1.06194444, 2.24972222, 1.40027778, 0.14861111, 1.74861111, 0.35, 0, 0.18333333, 0.15, 0.19972222, 2.08361111, 0.34916667, 0.34805556, 0.59944444, 1.84833333, 0.24861111, 0.04972222, 0.60083361, 0.59222222, 0.09972222, 0.34972222, 0.1, 0.49861056, 1.17194444, 2.60361111, 2.03805556, 2.6525, 0.18527778, 0.38222222, 0.85, 0.49833333, 0.22305556, 1.16611083, 1.83416667, 0.59972222, 1.12027778, 0.45083333, 1.30138889, 0.99027778, 0.1, 0.40055556, 6.845, 0.24805556, 2.33277778, 0.19944444, 1.90111111, 1.15027778, 0.2, 0.49916667, 0.64805556, 0.04888889, 0.70055556, 5.70111111, 0.40083333, 2.66305556, 0, 0.15, 2.44916667, 0.51305556, 0, 4.37861111, 0.90277778, 1.21555556, 14.61304389, 2.95388889, 0.05083333, 0, 0.75277778, 1.39138889, 2.7, 0.35388889, 0.05055556, 0.30027778, 0.05027778, 1.00055556, 2.52888889, 0.25111111, 0.35305556]
             },
             {
               "type": "double",
@@ -7721,126 +7840,7 @@
                   "value": ["units"]
                 }
               },
-              "value": [0.89555556, 0.44083333, 170.25472222, 0.83277778, 0.35083333, 0, 10.51972222, 0.05, 40.34555556, 11.40055556, 11.15194444, 0.93333333, 0, 11.55, 0, 0, 0, 0, 11.55027778, 0, 11.39777778, 11.55361111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15.04972222, 14.20027778, 57.71666667, 22.29972222, 12.19944444, 11.39944444, 0, 0, 0, 0, 0, 0, 13.25, 0, 11.40472222, 0, 0, 0, 0, 16.65027778, 11.75111111, 0, 13.75, 0, 0, 0, 13.34888889, 11.54888889, 0, 0.3, 14.60027778, 11.25111111, 0, 0, 0, 0, 0, 0, 0, 11.55, 0, 16.80055556, 11.6, 0, 0, 0, 0, 0, 15.30111111, 26.64944444, 11.49305556, 0, 0, 0, 0, 0, 0, 13.89888889, 11.59527778, 12.95027778, 0, 0, 0, 0, 0, 0, 0, 0, 11.64972222, 0, 11.54916667, 0, 0, 0, 0, 0, 0, 11.94972222, 0, 11.59555556, 0, 0, 0, 0, 0, 11.46444444, 15.85222222, 11.69833333, 28.39694444, 0, 0, 0, 0, 11.49916667, 11.55194444, 0, 0, 0, 0, 0, 0, 0, 0.65027778]
-            },
-            {
-              "type": "double",
-              "attributes": {},
-              "value": [8, 7, 9, 8, 9, 14, 16, 17, 16, 8, 7, 7, 9, 9, 11, 12, 12, 13, 15.5, 16, 9, 8, 9, 11, 10, 11, 11, 15, 13, 13, 14, 14, 12, 14, 15, 15, 16, 8, 9, 9, 9, 9, 11, 12, 14, 14, 13, 16, 7, 10.5, 11, 12, 14, 12, 9, 17, 7, 10, 10, 15, 16, 8, 16, 9, 8, 19, 10, 10, 11, 13, 12, 13, 14, 16, 17, 9, 8, 9, 11, 12, 18, 13, 15, 9, 9, 9, 10, 10, 11, 13, 13, 14, 9, 8, 9, 12, 12, 16, 12, 13, 16, 15, 10, 17, 8, 10, 10, 11, 12, 12, 14, 15, 16, 11, 16.5, 9, 12, 11, 11, 15, 15, 9, 13, 14, 14, 15, 18, 8, 9, 12, 11, 12, 7, 13, 15, 17, 19]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [5.54583333, 8.75555556, 230.49444417, 10.545, 6.10166667, 7.15027778, 11.39527778, 3.35111111, 59.84166667, 14.15055556, 12.05055556, 9.60111111, 3.35, 17.29916667, 1.14972222, 4.04944444, 2.29777778, 2.85222222, 17.89833333, 1.34777778, 14.99833333, 14.07916667, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 2.81555556, 0.84972222, 19.34944444, 16.86968806, 76.8, 29.94277778, 14.6, 16.09083333, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 21.23555556, 0.4, 11.80472222, 2.85055583, 0.4, 3.80027778, 3.58166667, 19.65138889, 15.96583333, 1, 14.04972222, 3.16694444, 0.55, 1.51277778, 16.54916667, 15.5, 0.14861111, 5.14833333, 15.65027778, 11.29944444, 0.35, 0.25, 0.24972222, 3.08861111, 0.70027778, 1.64972222, 0.59944444, 16.15, 0.30138889, 16.85027778, 14.40027806, 1.20027778, 0.15, 2.20027778, 0.34972222, 1.19972222, 17.23944444, 32.45027778, 15.89972222, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 16.30138861, 16.39722222, 14.74833333, 1.66666667, 0.84972222, 1.35138889, 2.8175, 0.2, 0.7, 8.14777778, 0.24805556, 18.1, 0.75, 15.05055556, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.45027778, 1.54861111, 18.99972222, 0.59972222, 19.50222222, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 15.09055556, 18.93277778, 17.39527778, 53.82554389, 6.19888889, 0.55, 0.4, 1.40166667, 15.35027778, 17.7025, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 5.24805556]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [5.54583333, 8.75555556, 15.36629628, 10.545, 6.10166667, 7.15027778, 11.39527778, 3.35111111, 9.97361111, 7.07527778, 6.02527778, 9.60111111, 3.35, 8.64958333, 1.14972222, 1.01236111, 2.29777778, 2.85222222, 8.94916667, 1.34777778, 7.49916667, 7.03958333, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 1.40777778, 0.84972222, 6.44981481, 8.43484403, 9.6, 7.48569444, 7.3, 8.04541667, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 10.61777778, 0.4, 5.90236111, 1.42527792, 0.2, 1.90013889, 3.58166667, 3.47541667, 7.98291667, 1, 7.02486111, 1.58347222, 0.55, 1.51277778, 8.27458333, 3.875, 0.14861111, 2.57416667, 7.82513889, 5.64972222, 0.35, 0.25, 0.24972222, 1.54430556, 0.70027778, 1.64972222, 0.59944444, 8.075, 0.30138889, 8.42513889, 7.20013903, 1.20027778, 0.15, 2.20027778, 0.17486111, 1.19972222, 8.61972222, 10.81675926, 7.94986111, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 8.15069431, 5.46574074, 7.37416667, 1.66666667, 0.84972222, 1.35138889, 0.93916667, 0.2, 0.7, 8.14777778, 0.24805556, 9.05, 0.75, 7.52527778, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.22513889, 1.54861111, 9.49986111, 0.59972222, 9.75111111, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 5.03018519, 9.46638889, 8.69763889, 17.94184796, 6.19888889, 0.55, 0.4, 1.40166667, 7.67513889, 8.85125, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 5.24805556]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [4.65027778, 2.30333333, 4.52242591, 3.6925, 5.75083333, 7.15027778, 6.89861111, 3.30111111, 3.36625, 1.375, 0.44930556, 2.64472222, 3.35, 2.87458333, 1.14972222, 1.01236111, 2.29777778, 2.85222222, 3.17402778, 1.34777778, 1.80027778, 1.31277778, 0.75027778, 1.02, 0.84611111, 0.65083333, 0.5, 5.6475, 1.21583333, 0.30083333, 1.24972222, 0.71, 1.40777778, 0.84972222, 2.59981481, 2.63484403, 3.25027778, 1.91076389, 1.67527778, 2.34569444, 0.64916667, 0.47694444, 1.50222222, 1.15333333, 3.04972222, 0.60083333, 4.81763889, 0.4, 0.2, 1.42527792, 0.2, 1.90013889, 3.58166667, 1.54194444, 2.20722222, 1, 1.22486111, 1.58347222, 0.55, 1.51277778, 2.44944444, 0.98777778, 0.14861111, 2.42416667, 2.025, 0.02416667, 0.35, 0.25, 0.24972222, 1.54430556, 0.70027778, 1.64972222, 0.59944444, 2.3, 0.30138889, 2.62513889, 1.40013903, 1.20027778, 0.15, 2.20027778, 0.17486111, 1.19972222, 2.81930556, 3.06675926, 2.20333333, 3.34944444, 0.59972222, 0.63277778, 1.54722222, 2.50083333, 0.54944444, 2.30083319, 1.60064815, 1.54819444, 1.66666667, 0.84972222, 1.35138889, 0.93916667, 0.2, 0.7, 8.14777778, 0.24805556, 3.22513889, 0.75, 1.75069444, 1.15027778, 0.2, 0.69916667, 1.64972222, 0.22513889, 1.54861111, 3.65, 0.59972222, 3.95333333, 0.31694444, 0.15, 2.65, 1.56027778, 0.34972222, 3.21361111, 3.66541667, 2.84847222, 8.44453315, 6.19888889, 0.55, 0.4, 1.40166667, 1.92555556, 3.07527778, 2.95027778, 0.2, 0.95027778, 0.3, 1.40055556, 2.52888889, 1.15027778, 0.60194444]
+              "value": [0.89555556, 6.45222222, 176.82666667, 6.8525, 0.35083333, 0, 4.49666667, 0.05, 44.34388889, 11.40055556, 11.15194444, 6.95638889, 0, 11.55, 0, 0, 0, 0, 11.55027778, 0, 11.39777778, 11.55361111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15.04972222, 14.20027778, 50.79777778, 22.29972222, 12.19944444, 11.39944444, 0, 0, 0, 0, 0, 0, 13.25, 0, 11.40472222, 0, 0, 0, 0, 16.65027778, 11.75111111, 0, 13.75, 0, 0, 0, 13.34888889, 11.54888889, 0, 0.3, 14.60027778, 11.25111111, 0, 0, 0, 0, 0, 0, 0, 11.55, 0, 16.80055556, 11.6, 0, 0, 0, 0, 0, 15.30111111, 26.64944444, 11.49305556, 0, 0, 0, 0, 0, 0, 13.89888889, 11.59527778, 12.95027778, 0, 0, 0, 0, 0, 0, 0, 0, 11.64972222, 0, 11.54916667, 0, 0, 0, 0, 0, 0, 11.94972222, 0, 11.59555556, 0, 0, 0, 0, 0, 12.38916667, 15.85222222, 11.69833333, 32.39472222, 0, 0, 0, 0, 11.49916667, 11.55194444, 0, 0, 0, 0, 0, 0, 0, 11.61805556]
             },
             {
               "type": "double",
@@ -12935,7 +12935,121 @@
               "value": ["units"]
             }
           },
-          "value": [2.30055556, 1.40027778, 1.30138889, 0.24805556, 0.19944444, 1.90111111, 0.45083333, 0.1, 0.40055556, 2.33277778, 0.64805556, 0.70055556, 0.35, 2.66305556, 1.15027778, 5.70111111, 0.1, 0.2, 0.49916667, 0.04888889, 0, 0, 1.21555556, 1.145, 0.99027778, 4.37861111, 0.15, 2.44916667, 0.90277778, 0.51305556, 0.05083333, 0, 1.39138889, 2.95388889, 1.89611111, 0.75277778, 2.7, 14.61304389, 0.35388889, 0.05055556, 0.30027778, 0.25111111, 0.35305556, 0.05027778, 2.52888889, 0.29833333, 0.40083333, 1.00055556, 1.40333333, 2.14777778, 1.24611111, 0.20305556, 0, 5.30027778, 0.9972225, 0.20083333, 2.11222222, 1.74861111, 0, 0.34916667, 1.84833333, 2.73444444, 0.95027778, 0.15, 0.67166667, 0.44888889, 0.94583333, 0.50305556, 0.30027778, 0.29944444, 3.08972222, 7.19027778, 0.34944444, 0.34805556, 0.24861111, 2.24666667, 0.40027778, 6.64944444, 1.10277778, 2.75027778, 2.70333333, 0.84611111, 0.65083333, 0.30083333, 0.71, 1.90218806, 0.55027778, 0.47694444, 1.45055556, 3.68722222, 3.0325, 0.4, 0.10083333, 2.24972222, 0.15, 0.19972222, 0.59944444, 1.30194444, 0.60083361, 23.18611028, 3.14694444, 0.30027778, 0.26444444, 2.15333333, 0.39972222, 0.81722222, 2.65111111, 0.23388889, 1.04944472, 0.2, 1.25222222, 1.06194444, 0.14861111, 0.18333333, 2.08361111, 0.04972222, 0.09972222, 0.34972222, 2.60361111, 0.74861111, 0.54833333, 0.85194444, 2.03805556, 0.20305556, 0.59222222, 1.17194444, 0.49861056, 0.49833333, 0.22305556, 1.83416667, 0.75083333, 0.15861111, 0.59972222, 0.38222222, 2.6525, 1.16611083, 0.18527778, 0.85, 1.12027778, 16.85194444]
+          "value": [5.54583333, 15.5, 1.35138889, 0.24805556, 0.75, 15.05055556, 0.84972222, 0.2, 0.7, 18.1, 1.64972222, 1.54861111, 15.65027778, 19.50222222, 1.15027778, 18.99972222, 0.34972222, 0.2, 0.69916667, 0.45027778, 0.31694444, 0.34972222, 17.39527778, 10.545, 2.8175, 22.03, 0.15, 2.65, 18.93277778, 1.56027778, 0.55, 0.4, 15.35027778, 6.19888889, 11.39527778, 1.40166667, 17.7025, 53.82554389, 2.95027778, 0.2, 0.95027778, 1.15027778, 12.22, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 14.99833333, 5.6475, 16.09083333, 0.60083333, 11.80472222, 59.84166667, 2.20083361, 0.64972222, 15.96583333, 5.14833333, 11.29944444, 0.70027778, 16.15, 6.10166667, 3.35111111, 12.05055556, 3.35, 1.14972222, 2.29777778, 14.07916667, 1.02, 1.24972222, 29.94277778, 76.8, 0.55, 1.64972222, 0.30138889, 17.89833333, 8.75555556, 7.15027778, 14.15055556, 17.29916667, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 16.86968806, 0.75027778, 0.47694444, 1.50222222, 21.23555556, 3.58166667, 1, 14.04972222, 16.54916667, 0.25, 0.24972222, 0.59944444, 19.34944444, 14.40027806, 237.06638861, 4.04944444, 0.5, 1.21583333, 2.81555556, 0.84972222, 1.15333333, 3.04972222, 0.4, 14.6, 0.4, 3.16694444, 1.51277778, 0.14861111, 0.35, 3.08861111, 16.85027778, 0.15, 2.20027778, 32.45027778, 2.05, 1.75027778, 9.60111111, 15.89972222, 0.64916667, 1.20027778, 17.23944444, 1.19972222, 2.50083333, 0.54944444, 16.39722222, 19.05083333, 0.60055556, 14.74833333, 0.63277778, 3.34944444, 16.30138861, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [5.54583333, 3.875, 1.35138889, 0.24805556, 0.75, 7.52527778, 0.84972222, 0.2, 0.7, 9.05, 1.64972222, 1.54861111, 7.82513889, 9.75111111, 1.15027778, 9.49986111, 0.17486111, 0.2, 0.69916667, 0.22513889, 0.31694444, 0.34972222, 8.69763889, 10.545, 0.93916667, 7.34333333, 0.15, 2.65, 9.46638889, 1.56027778, 0.55, 0.4, 7.67513889, 6.19888889, 11.39527778, 1.40166667, 8.85125, 17.94184796, 2.95027778, 0.2, 0.95027778, 1.15027778, 12.22, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 7.49916667, 5.6475, 8.04541667, 0.60083333, 5.90236111, 9.97361111, 2.20083361, 0.64972222, 7.98291667, 2.57416667, 5.64972222, 0.70027778, 8.075, 6.10166667, 3.35111111, 6.02527778, 3.35, 1.14972222, 2.29777778, 7.03958333, 1.02, 1.24972222, 7.48569444, 9.6, 0.55, 1.64972222, 0.30138889, 8.94916667, 8.75555556, 7.15027778, 7.07527778, 8.64958333, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 8.43484403, 0.75027778, 0.47694444, 1.50222222, 10.61777778, 3.58166667, 1, 7.02486111, 8.27458333, 0.25, 0.24972222, 0.59944444, 6.44981481, 7.20013903, 15.80442591, 1.01236111, 0.5, 1.21583333, 1.40777778, 0.84972222, 1.15333333, 3.04972222, 0.4, 7.3, 0.2, 1.58347222, 1.51277778, 0.14861111, 0.35, 1.54430556, 8.42513889, 0.15, 2.20027778, 10.81675926, 2.05, 1.75027778, 9.60111111, 7.94986111, 0.64916667, 1.20027778, 8.61972222, 1.19972222, 2.50083333, 0.54944444, 5.46574074, 6.35027778, 0.60055556, 7.37416667, 0.63277778, 3.34944444, 8.15069431, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [4.65027778, 0.98777778, 1.35138889, 0.24805556, 0.75, 1.75069444, 0.84972222, 0.2, 0.7, 3.22513889, 1.64972222, 1.54861111, 2.025, 3.95333333, 1.15027778, 3.65, 0.17486111, 0.2, 0.69916667, 0.22513889, 0.31694444, 0.34972222, 2.84847222, 3.6925, 0.93916667, 3.21361111, 0.15, 2.65, 3.66541667, 1.56027778, 0.55, 0.4, 1.92555556, 6.19888889, 6.89861111, 1.40166667, 3.07527778, 8.44453315, 2.95027778, 0.2, 0.95027778, 1.15027778, 0.60194444, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 1.80027778, 5.6475, 2.34569444, 0.60083333, 0.2, 3.36625, 2.20083361, 0.64972222, 2.20722222, 2.42416667, 0.02416667, 0.70027778, 2.3, 5.75083333, 3.30111111, 0.44930556, 3.35, 1.14972222, 2.29777778, 1.31277778, 1.02, 1.24972222, 1.91076389, 3.25027778, 0.55, 1.64972222, 0.30138889, 3.17402778, 2.30333333, 7.15027778, 1.375, 2.87458333, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 2.63484403, 0.75027778, 0.47694444, 1.50222222, 4.81763889, 3.58166667, 1, 1.22486111, 2.44944444, 0.25, 0.24972222, 0.59944444, 2.59981481, 1.40013903, 4.52242591, 1.01236111, 0.5, 1.21583333, 1.40777778, 0.84972222, 1.15333333, 3.04972222, 0.4, 1.67527778, 0.2, 1.58347222, 1.51277778, 0.14861111, 0.35, 1.54430556, 2.62513889, 0.15, 2.20027778, 3.06675926, 2.05, 1.75027778, 2.64472222, 2.20333333, 0.64916667, 1.20027778, 2.81930556, 1.19972222, 2.50083333, 0.54944444, 1.60064815, 2.48333333, 0.60055556, 1.54819444, 0.63277778, 3.34944444, 2.30083319, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [2.30055556, 1.40027778, 1.30138889, 0.24805556, 0.19944444, 1.90111111, 0.45083333, 0.1, 0.40055556, 2.33277778, 0.64805556, 0.70055556, 0.35, 2.66305556, 1.15027778, 5.70111111, 0.1, 0.2, 0.49916667, 0.04888889, 0, 0, 1.21555556, 1.145, 0.99027778, 4.37861111, 0.15, 2.44916667, 0.90277778, 0.51305556, 0.05083333, 0, 1.39138889, 2.95388889, 1.89611111, 0.75277778, 2.7, 14.61304389, 0.35388889, 0.05055556, 0.30027778, 0.25111111, 0.35305556, 0.05027778, 2.52888889, 0.29833333, 0.40083333, 1.00055556, 1.40333333, 2.14777778, 1.24611111, 0.20305556, 0, 5.30027778, 0.9972225, 0.20083333, 2.11222222, 1.74861111, 0, 0.34916667, 1.84833333, 2.73444444, 0.95027778, 0.15, 0.67166667, 0.44888889, 0.94583333, 0.50305556, 0.30027778, 0.29944444, 3.08972222, 14.10916667, 0.34944444, 0.34805556, 0.24861111, 2.24666667, 0.40027778, 6.64944444, 1.10277778, 2.75027778, 2.70333333, 0.84611111, 0.65083333, 0.30083333, 0.71, 1.90218806, 0.55027778, 0.47694444, 1.45055556, 3.68722222, 3.0325, 0.4, 0.10083333, 2.24972222, 0.15, 0.19972222, 0.59944444, 1.30194444, 0.60083361, 23.18611028, 3.14694444, 0.30027778, 0.26444444, 2.15333333, 0.39972222, 0.81722222, 2.65111111, 0.23388889, 1.04944472, 0.2, 1.25222222, 1.06194444, 0.14861111, 0.18333333, 2.08361111, 0.04972222, 0.09972222, 0.34972222, 2.60361111, 0.74861111, 0.54833333, 0.85194444, 2.03805556, 0.20305556, 0.59222222, 1.17194444, 0.49861056, 0.49833333, 0.22305556, 1.83416667, 0.75083333, 0.15861111, 0.59972222, 0.38222222, 2.6525, 1.16611083, 0.18527778, 0.85, 1.12027778, 6.845]
         },
         {
           "type": "double",
@@ -13011,121 +13125,7 @@
               "value": ["units"]
             }
           },
-          "value": [0.89555556, 11.54888889, 0, 0, 0, 11.54916667, 0, 0, 0, 11.64972222, 0, 0, 14.60027778, 11.59555556, 0, 11.94972222, 0, 0, 0, 0, 0, 0, 11.69833333, 0.83277778, 0, 11.46444444, 0, 0, 15.85222222, 0, 0, 0, 11.49916667, 0, 10.51972222, 0, 11.55194444, 28.39694444, 0, 0, 0, 0, 0.65027778, 0, 0, 0, 0, 0, 11.39777778, 0, 11.39944444, 0, 11.40472222, 40.34555556, 0, 0, 11.75111111, 0.3, 11.25111111, 0, 11.55, 0.35083333, 0.05, 11.15194444, 0, 0, 0, 11.55361111, 0, 0, 22.29972222, 57.71666667, 0, 0, 0, 11.55027778, 0.44083333, 0, 11.40055556, 11.55, 0, 0, 0, 0, 0, 14.20027778, 0, 0, 0, 13.25, 0, 0, 13.75, 13.34888889, 0, 0, 0, 15.04972222, 11.6, 170.25472222, 0, 0, 0, 0, 0, 0, 0, 0, 12.19944444, 0, 0, 0, 0, 0, 0, 16.80055556, 0, 0, 26.64944444, 0, 0, 0.93333333, 11.49305556, 0, 0, 15.30111111, 0, 0, 0, 11.59527778, 16.65027778, 0, 12.95027778, 0, 0, 13.89888889, 0, 0, 0, 0]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [5.54583333, 15.5, 1.35138889, 0.24805556, 0.75, 15.05055556, 0.84972222, 0.2, 0.7, 18.1, 1.64972222, 1.54861111, 15.65027778, 19.50222222, 1.15027778, 18.99972222, 0.34972222, 0.2, 0.69916667, 0.45027778, 0.31694444, 0.34972222, 17.39527778, 10.545, 2.8175, 15.09055556, 0.15, 2.65, 18.93277778, 1.56027778, 0.55, 0.4, 15.35027778, 6.19888889, 11.39527778, 1.40166667, 17.7025, 53.82554389, 2.95027778, 0.2, 0.95027778, 1.15027778, 5.24805556, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 14.99833333, 5.6475, 16.09083333, 0.60083333, 11.80472222, 59.84166667, 2.20083361, 0.64972222, 15.96583333, 5.14833333, 11.29944444, 0.70027778, 16.15, 6.10166667, 3.35111111, 12.05055556, 3.35, 1.14972222, 2.29777778, 14.07916667, 1.02, 1.24972222, 29.94277778, 76.8, 0.55, 1.64972222, 0.30138889, 17.89833333, 8.75555556, 7.15027778, 14.15055556, 17.29916667, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 16.86968806, 0.75027778, 0.47694444, 1.50222222, 21.23555556, 3.58166667, 1, 14.04972222, 16.54916667, 0.25, 0.24972222, 0.59944444, 19.34944444, 14.40027806, 230.49444417, 4.04944444, 0.5, 1.21583333, 2.81555556, 0.84972222, 1.15333333, 3.04972222, 0.4, 14.6, 0.4, 3.16694444, 1.51277778, 0.14861111, 0.35, 3.08861111, 16.85027778, 0.15, 2.20027778, 32.45027778, 2.05, 1.75027778, 9.60111111, 15.89972222, 0.64916667, 1.20027778, 17.23944444, 1.19972222, 2.50083333, 0.54944444, 16.39722222, 19.05083333, 0.60055556, 14.74833333, 0.63277778, 3.34944444, 16.30138861, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [5.54583333, 3.875, 1.35138889, 0.24805556, 0.75, 7.52527778, 0.84972222, 0.2, 0.7, 9.05, 1.64972222, 1.54861111, 7.82513889, 9.75111111, 1.15027778, 9.49986111, 0.17486111, 0.2, 0.69916667, 0.22513889, 0.31694444, 0.34972222, 8.69763889, 10.545, 0.93916667, 5.03018519, 0.15, 2.65, 9.46638889, 1.56027778, 0.55, 0.4, 7.67513889, 6.19888889, 11.39527778, 1.40166667, 8.85125, 17.94184796, 2.95027778, 0.2, 0.95027778, 1.15027778, 5.24805556, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 7.49916667, 5.6475, 8.04541667, 0.60083333, 5.90236111, 9.97361111, 2.20083361, 0.64972222, 7.98291667, 2.57416667, 5.64972222, 0.70027778, 8.075, 6.10166667, 3.35111111, 6.02527778, 3.35, 1.14972222, 2.29777778, 7.03958333, 1.02, 1.24972222, 7.48569444, 9.6, 0.55, 1.64972222, 0.30138889, 8.94916667, 8.75555556, 7.15027778, 7.07527778, 8.64958333, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 8.43484403, 0.75027778, 0.47694444, 1.50222222, 10.61777778, 3.58166667, 1, 7.02486111, 8.27458333, 0.25, 0.24972222, 0.59944444, 6.44981481, 7.20013903, 15.36629628, 1.01236111, 0.5, 1.21583333, 1.40777778, 0.84972222, 1.15333333, 3.04972222, 0.4, 7.3, 0.2, 1.58347222, 1.51277778, 0.14861111, 0.35, 1.54430556, 8.42513889, 0.15, 2.20027778, 10.81675926, 2.05, 1.75027778, 9.60111111, 7.94986111, 0.64916667, 1.20027778, 8.61972222, 1.19972222, 2.50083333, 0.54944444, 5.46574074, 6.35027778, 0.60055556, 7.37416667, 0.63277778, 3.34944444, 8.15069431, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
-        },
-        {
-          "type": "double",
-          "attributes": {
-            "units": {
-              "type": "list",
-              "attributes": {
-                "names": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["numerator", "denominator"]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["symbolic_units"]
-                }
-              },
-              "value": [
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["h"]
-                },
-                {
-                  "type": "character",
-                  "attributes": {},
-                  "value": []
-                }
-              ]
-            },
-            "class": {
-              "type": "character",
-              "attributes": {},
-              "value": ["units"]
-            }
-          },
-          "value": [4.65027778, 0.98777778, 1.35138889, 0.24805556, 0.75, 1.75069444, 0.84972222, 0.2, 0.7, 3.22513889, 1.64972222, 1.54861111, 2.025, 3.95333333, 1.15027778, 3.65, 0.17486111, 0.2, 0.69916667, 0.22513889, 0.31694444, 0.34972222, 2.84847222, 3.6925, 0.93916667, 3.21361111, 0.15, 2.65, 3.66541667, 1.56027778, 0.55, 0.4, 1.92555556, 6.19888889, 6.89861111, 1.40166667, 3.07527778, 8.44453315, 2.95027778, 0.2, 0.95027778, 1.15027778, 0.60194444, 0.3, 2.52888889, 1.34777778, 0.59972222, 1.40055556, 1.80027778, 5.6475, 2.34569444, 0.60083333, 0.2, 3.36625, 2.20083361, 0.64972222, 2.20722222, 2.42416667, 0.02416667, 0.70027778, 2.3, 5.75083333, 3.30111111, 0.44930556, 3.35, 1.14972222, 2.29777778, 1.31277778, 1.02, 1.24972222, 1.91076389, 3.25027778, 0.55, 1.64972222, 0.30138889, 3.17402778, 2.30333333, 7.15027778, 1.375, 2.87458333, 2.85222222, 0.84611111, 0.65083333, 0.30083333, 0.71, 2.63484403, 0.75027778, 0.47694444, 1.50222222, 4.81763889, 3.58166667, 1, 1.22486111, 2.44944444, 0.25, 0.24972222, 0.59944444, 2.59981481, 1.40013903, 4.52242591, 1.01236111, 0.5, 1.21583333, 1.40777778, 0.84972222, 1.15333333, 3.04972222, 0.4, 1.67527778, 0.2, 1.58347222, 1.51277778, 0.14861111, 0.35, 1.54430556, 2.62513889, 0.15, 2.20027778, 3.06675926, 2.05, 1.75027778, 2.64472222, 2.20333333, 0.64916667, 1.20027778, 2.81930556, 1.19972222, 2.50083333, 0.54944444, 1.60064815, 2.48333333, 0.60055556, 1.54819444, 0.63277778, 3.34944444, 2.30083319, 0.59972222, 1.54722222, 1.66666667, 8.14777778]
+          "value": [0.89555556, 11.54888889, 0, 0, 0, 11.54916667, 0, 0, 0, 11.64972222, 0, 0, 14.60027778, 11.59555556, 0, 11.94972222, 0, 0, 0, 0, 0, 0, 11.69833333, 6.8525, 0, 12.38916667, 0, 0, 15.85222222, 0, 0, 0, 11.49916667, 0, 4.49666667, 0, 11.55194444, 32.39472222, 0, 0, 0, 0, 11.61805556, 0, 0, 0, 0, 0, 11.39777778, 0, 11.39944444, 0, 11.40472222, 44.34388889, 0, 0, 11.75111111, 0.3, 11.25111111, 0, 11.55, 0.35083333, 0.05, 11.15194444, 0, 0, 0, 11.55361111, 0, 0, 22.29972222, 50.79777778, 0, 0, 0, 11.55027778, 6.45222222, 0, 11.40055556, 11.55, 0, 0, 0, 0, 0, 14.20027778, 0, 0, 0, 13.25, 0, 0, 13.75, 13.34888889, 0, 0, 0, 15.04972222, 11.6, 176.82666667, 0, 0, 0, 0, 0, 0, 0, 0, 12.19944444, 0, 0, 0, 0, 0, 0, 16.80055556, 0, 0, 26.64944444, 0, 0, 6.95638889, 11.49305556, 0, 0, 15.30111111, 0, 0, 0, 11.59527778, 16.65027778, 0, 12.95027778, 0, 0, 13.89888889, 0, 0, 0, 0]
         },
         {
           "type": "double",
@@ -13307,7 +13307,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
+          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
         },
         "sf_column": {
           "type": "character",
@@ -13320,7 +13320,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "SFeeding_drtn", "SResting_drtn", "SRoosting_drtn", "attendance", "attendance_dmean", "attendance_daytime_dmean", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
+              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
             },
             "levels": {
               "type": "character",
@@ -13361,7 +13361,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+              "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "centroid", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -13384,7 +13384,7 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "SFeeding_drtn_cmpd", "SResting_drtn_cmpd", "SRoosting_drtn_cmpd", "hour_local_avg", "attendance_cmpd", "attendance_davg", "attendance_daytime_davg", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
@@ -16835,120 +16835,6 @@
             },
             {
               "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [2.91444444, 4.48972222, 0.58277778, 0, 1.16722222, 0, 1.75194444, 2.33638889, 0, 0, 0.58388889, 0.58694444, 0.50222222, 1.75277778, 0.58416667, 1.00555556, 0, 0, 1.16111111, 7.5925, 1.16833333, 0.58138889, 1.75305556, 0, 0, 0.58388889, 0.58444444, 11.08166667, 4.08888889, 0.50361111, 0.58611111, 1.16722222, 0.50277778, 1.17611111, 0, 0.57944444, 1.16638889, 0.58277778, 0, 1.16638889, 0, 0, 0, 2.33666667, 0.50083333, 0, 0, 2.36972222, 0.58388889, 0, 0, 0, 0.58194444, 0.58777778, 0, 0.58, 0, 1.16638889, 1.16638889, 0, 0.58722222, 0, 1.17194444, 2.90138889, 1.75305556, 1.49583333, 0.58194444, 1.75833333, 0.49777778, 0.58527778, 0.57555556, 0, 0, 0, 0.58277778, 0, 0, 1, 0, 0, 2.91944444, 0.99694444, 1.16222222, 1.99361111, 0, 0.58333333, 0, 0.58666667, 0.58388889, 0, 1.00694444, 1.16888889, 0, 0, 0.58277778, 0.50027778, 0, 0.99388889, 0, 0, 0.50083333, 0.50055556, 1.19944444, 1.00361111, 0, 1.13777778, 0.50361111, 1.17111111, 1.5, 1.16833333, 0, 0.58361111, 0.58083333, 6.00611111, 2.33305556, 0.58222222, 0.58083333, 0.49972222, 0, 0, 0, 0.99277778, 0, 0.59111111, 1.16388889, 0, 0.58305556, 0, 0, 0.58305556, 0.99638889, 0, 0, 0, 0, 1.16805556, 0, 0, 0, 0.58333333, 1.49861111, 0, 1.14666667, 0, 0, 0, 0]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [12.26194444, 10.51277778, 2.32611111, 0, 1.73944444, 4.66194444, 1.17027778, 67.06444444, 2.91305556, 5.82416667, 7.57166667, 5.24277778, 4.49694444, 4.0775, 4.06611111, 3.99, 4.65333333, 0, 0.58333333, 16.90222222, 8.75361111, 2.91916667, 7.57194444, 2.33361111, 0, 5.24944444, 2.91444444, 60.64388889, 50.73361111, 5.50611111, 4.08583333, 4.08, 4.99055556, 3.49666667, 0, 3.50361111, 10.49222222, 6.99277778, 5.49361111, 2.33777778, 4.08222222, 0, 2.33666667, 5.25027778, 7.49694444, 5.25027778, 4.66611111, 5.20722222, 4.07916667, 4.99611111, 4.085, 0, 0.58833333, 4.07388889, 0.58666667, 3.50527778, 2.91611111, 2.33472222, 3.50083333, 0, 3.49694444, 4.66305556, 0, 8.16833333, 0.58083333, 3.00277778, 4.66027778, 1.15555556, 1.50055556, 2.91416667, 1.75777778, 4.00138889, 4.66722222, 0, 3.50055556, 0, 0, 2.99472222, 0, 2.50027778, 10.50416667, 0.50305556, 7.58805556, 12.00222222, 0.58277778, 2.32638889, 6.41722222, 1.16333333, 1.74916667, 4.66222222, 2.49722222, 1.74222222, 2.91555556, 1.50027778, 1.16722222, 6.23861111, 0, 6.49833333, 5.2425, 0.99972222, 2.4975, 1.5, 2.90638889, 1.99333333, 0, 0, 0.49222222, 5.83222222, 4.48805556, 4.07611111, 0.5875, 3.82944444, 4.66638889, 16.99805556, 5.83361111, 4.07305556, 3.50444444, 6.50194444, 4.08361111, 3.48833333, 2.3375, 9.50861111, 1.15861111, 2.90472222, 5.25, 1.74222222, 6.41416667, 5.24916667, 6.99166667, 1.75, 3.50138889, 0, 1.74916667, 0, 0, 2.91333333, 0, 0.58305556, 3.5, 2.91666667, 0, 3.49555556, 5.27083333, 0, 3.49666667, 4.66805556, 0]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [1.72527778, 11.00277778, 0, 709.41444444, 0, 0, 0, 182.57666667, 0, 11.16777778, 11.17, 11.17027778, 11.00222222, 13.49694444, 11.18111111, 11.00472222, 11.17305556, 14.06444444, 22.34138889, 3.50194444, 11.16444444, 0, 11.17138889, 11.16805556, 16.99833333, 11.1675, 0, 226.5225, 116.27388889, 11.49361111, 11.16277778, 11.16972222, 11.49833333, 11.16805556, 16.99944444, 0, 0, 11.17388889, 11.505, 11.16305556, 11.16805556, 11.17444444, 0, 11.16361111, 11.50194444, 11.16694444, 11.16888889, 22.92388889, 0, 11.50722222, 11.16527778, 15.25, 11.16611111, 11.16805556, 11.17111111, 11.17277778, 0, 0.58305556, 0, 16.50027778, 11.1625, 11.17055556, 11.15916667, 22.91638889, 1.16611111, 11.00027778, 11.175, 11.16138889, 0, 0, 0, 11.49833333, 11.16638889, 16.49972222, 11.17027778, 12.90888889, 2.33416667, 11.50222222, 15.25, 0, 11.16388889, 0, 0, 23.50166667, 11.17055556, 11.75861111, 0, 0, 0, 11.16805556, 11.49916667, 11.17083333, 11.16472222, 0, 0, 11.50777778, 15.25416667, 11.50472222, 11.17444444, 11.5025, 0, 0, 0, 0, 15.24611111, 11.16361111, 11.50583333, 11.16361111, 12.00472222, 11.17083333, 11.16361111, 0, 11.16861111, 35.50083333, 11.16944444, 11.17472222, 10.57916667, 11.99861111, 11.16138889, 11.17166667, 0, 11.99861111, 0.58333333, 10.58666667, 0, 0, 11.75305556, 0, 11.16722222, 11.1675, 13.00916667, 15.24694444, 0, 19.49694444, 18.16777778, 0, 15.25111111, 11.7525, 0, 0, 0, 11.17138889, 0.58194444, 16.99722222, 11.75, 1.16305556, 1.16666667]
-            },
-            {
-              "type": "double",
               "attributes": {},
               "value": [9, 10.5, 8, 14, 8, 8.5, 11, 15, 15, 12.25, 13.5, 9.5, 9.5, 17, 13, 9.5, 9, 8, 13, 9.625, 11, 12.5, 15, 18.5, 10, 9.5, 8, 14, 16, 9, 13.5, 9, 9, 9, 9.5, 15, 13.5, 16, 12.5, 13, 9, 19.5, 15, 16, 10, 17, 9, 18, 12.5, 10, 9, 9, 19, 17.5, 19, 9, 8, 9.75, 9, 10, 18, 9, 19, 12, 12.5, 18, 17, 8, 7.5, 14, 15, 9, 9, 10, 18, 19, 8, 18, 9, 10, 13, 14, 14, 11, 19, 8.5, 13, 18, 13.5, 13.5, 13.5, 8, 8, 10, 11, 13.5, 9, 12, 9, 19, 8, 16, 18, 9, 9, 19, 19, 16, 10.5, 17, 19, 11.5, 9, 11, 11, 13.5, 8, 16, 9, 8.5, 10.5, 13, 19, 8, 10, 12, 16, 9, 16, 18.5, 18.5, 9, 11, 16, 13, 9, 9, 19, 13.5, 16.5, 17, 8.5, 12.5, 16.5, 9, 17, 19]
             },
@@ -16988,7 +16874,7 @@
                   "value": ["units"]
                 }
               },
-              "value": [34.48861111, 26.00527778, 9.91888889, 720, 9.91666667, 11.67222222, 2.92222222, 251.9775, 2.91305556, 16.99194444, 19.32555556, 17, 16.00138889, 19.32722222, 15.83138889, 16.00027778, 15.82638889, 14.06444444, 24.07833333, 35.00666667, 21.08638889, 3.50055556, 20.49638889, 6.49805556, 16.99833333, 17.00083333, 10.5025, 298.24805556, 164.09305556, 17.50333333, 15.83472222, 16.41694444, 16.99166667, 15.84083333, 16.99944444, 4.08305556, 11.65861111, 18.74944444, 16.99861111, 14.66722222, 15.25027778, 4.16444444, 2.33666667, 18.75055556, 19.49972222, 16.41722222, 15.835, 30.50083333, 4.66305556, 16.50333333, 15.25027778, 15.25, 12.33638889, 15.82972222, 4.74777778, 15.25805556, 9.91888889, 4.08416667, 4.66722222, 16.50027778, 15.24666667, 15.83361111, 12.33111111, 40.99638889, 3.5, 8.49416667, 16.41722222, 14.07527778, 9.00305556, 3.49944444, 2.33333333, 15.49972222, 15.83361111, 16.49972222, 15.25361111, 12.90888889, 2.33416667, 15.49694444, 15.25, 2.50027778, 24.5875, 1.5, 15.75972222, 37.4975, 4.74388889, 14.66833333, 6.41722222, 1.75, 2.33305556, 15.83027778, 15.00333333, 14.08194444, 14.08027778, 1.50027778, 1.75, 18.24666667, 15.25416667, 18.99694444, 16.41694444, 5.49777778, 10.00277778, 2.00055556, 4.10583333, 2.99694444, 15.24611111, 12.30138889, 12.50166667, 18.16694444, 17.99277778, 16.41527778, 4.7475, 4.41305556, 16.41583333, 58.505, 19.33611111, 15.83, 14.66444444, 19.00027778, 15.245, 14.66, 2.3375, 22.5, 1.74194444, 14.0825, 6.41388889, 1.74222222, 18.75027778, 12.25527778, 18.15888889, 6.49444444, 20.99694444, 15.24694444, 1.74916667, 19.49694444, 18.16777778, 4.08138889, 15.25111111, 12.33555556, 3.5, 3.5, 1.49861111, 14.66694444, 14.00305556, 16.99722222, 15.24666667, 9.41111111, 1.16666667]
+              "value": [34.48861111, 26.00527778, 9.91888889, 720, 9.91666667, 11.67222222, 2.92222222, 251.9775, 2.91305556, 16.99194444, 19.32555556, 17, 16.00138889, 19.32722222, 15.83138889, 16.00027778, 15.82638889, 14.06444444, 24.07833333, 35.00666667, 21.08638889, 3.50055556, 20.49638889, 6.49805556, 16.99833333, 17.00083333, 10.5025, 298.24805556, 164.09305556, 17.50333333, 15.83472222, 16.41694444, 16.99166667, 15.84083333, 16.99944444, 4.08305556, 11.65861111, 18.74944444, 16.99861111, 14.66722222, 15.25027778, 11.06194444, 2.33666667, 18.75055556, 19.49972222, 16.41722222, 15.835, 30.50083333, 4.66305556, 16.50333333, 15.25027778, 15.25, 12.33638889, 15.82972222, 4.74777778, 15.25805556, 9.91888889, 4.08416667, 4.66722222, 16.50027778, 15.24666667, 15.83361111, 12.33111111, 40.99638889, 3.5, 8.49416667, 16.41722222, 14.07527778, 9.00305556, 3.49944444, 2.33333333, 15.49972222, 15.83361111, 16.49972222, 15.25361111, 12.90888889, 2.33416667, 15.49694444, 15.25, 2.50027778, 24.5875, 1.5, 15.75972222, 37.4975, 4.74388889, 14.66833333, 6.41722222, 1.75, 2.33305556, 15.83027778, 15.00333333, 14.08194444, 14.08027778, 1.50027778, 1.75, 18.24666667, 15.25416667, 18.99694444, 16.41694444, 5.49777778, 10.00277778, 2.00055556, 4.10583333, 2.99694444, 15.24611111, 12.30138889, 12.50166667, 18.16694444, 17.99277778, 16.41527778, 11.74583333, 4.41305556, 16.41583333, 58.505, 19.33611111, 15.83, 14.66444444, 19.00027778, 15.245, 14.66, 2.3375, 22.5, 1.74194444, 14.0825, 6.41388889, 1.74222222, 18.75027778, 12.25527778, 18.15888889, 6.49444444, 20.99694444, 15.24694444, 1.74916667, 19.49694444, 18.16777778, 4.08138889, 15.25111111, 12.33555556, 3.5, 3.5, 1.49861111, 14.66694444, 14.00305556, 16.99722222, 15.24666667, 9.41111111, 1.16666667]
             },
             {
               "type": "double",
@@ -17026,7 +16912,7 @@
                   "value": ["units"]
                 }
               },
-              "value": [4.92694444, 8.66842593, 9.91888889, 24, 9.91666667, 11.67222222, 2.92222222, 11.45352273, 2.91305556, 4.53951389, 9.66277778, 8.5, 8.00069444, 3.50756944, 7.91569444, 8.00013889, 7.91319444, 7.03222222, 6.54138889, 2.15846065, 10.54319444, 3.50055556, 10.24819444, 6.49805556, 8.49916667, 8.50041667, 10.5025, 11.92992222, 9.11628086, 8.75166667, 7.91736111, 8.20847222, 8.49583333, 7.92041667, 8.49972222, 4.08305556, 5.82930556, 9.37472222, 8.49930556, 7.33361111, 7.62513889, 4.16444444, 2.33666667, 9.37527778, 9.74986111, 8.20861111, 7.9175, 5.08347222, 2.33152778, 8.25166667, 7.62513889, 7.625, 6.16819444, 7.91486111, 4.74777778, 7.62902778, 9.91888889, 0.65642361, 2.33361111, 8.25013889, 7.62333333, 7.91680556, 6.16555556, 6.14576389, 0.875, 4.24708333, 8.20861111, 7.03763889, 9.00305556, 3.49944444, 2.33333333, 7.74986111, 7.91680556, 8.24986111, 7.62680556, 6.45444444, 2.33416667, 7.74847222, 7.625, 2.50027778, 12.29375, 0.75, 7.87986111, 4.6871875, 4.74388889, 7.33416667, 1.28344444, 1.75, 1.16652778, 7.91513889, 7.50166667, 7.04097222, 7.04013889, 1.50027778, 1.75, 4.99888889, 7.62708333, 3.79938889, 8.20847222, 5.49777778, 10.00277778, 2.00055556, 2.05291667, 1.49847222, 7.62305556, 3.21395833, 6.25083333, 9.08347222, 4.49819444, 8.20763889, 4.7475, 2.20652778, 8.20791667, 11.701, 9.66805556, 7.915, 7.33222222, 9.50013889, 7.6225, 7.33, 2.3375, 11.25, 1.74194444, 7.04125, 6.41388889, 1.74222222, 9.37513889, 6.12763889, 9.07944444, 6.49444444, 6.99898148, 7.62347222, 1.74916667, 9.74847222, 9.08388889, 2.04069444, 7.62555556, 6.16777778, 3.5, 3.5, 0.74930556, 7.33347222, 7.00152778, 8.49861111, 7.62333333, 9.41111111, 1.16666667]
+              "value": [4.92694444, 8.66842593, 9.91888889, 24, 9.91666667, 11.67222222, 2.92222222, 11.45352273, 2.91305556, 4.53951389, 9.66277778, 8.5, 8.00069444, 3.50756944, 7.91569444, 8.00013889, 7.91319444, 7.03222222, 6.54138889, 2.15846065, 10.54319444, 3.50055556, 10.24819444, 6.49805556, 8.49916667, 8.50041667, 10.5025, 11.92992222, 9.11628086, 8.75166667, 7.91736111, 8.20847222, 8.49583333, 7.92041667, 8.49972222, 4.08305556, 5.82930556, 9.37472222, 8.49930556, 7.33361111, 7.62513889, 11.06194444, 2.33666667, 9.37527778, 9.74986111, 8.20861111, 7.9175, 5.08347222, 2.33152778, 8.25166667, 7.62513889, 7.625, 6.16819444, 7.91486111, 4.74777778, 7.62902778, 9.91888889, 0.65642361, 2.33361111, 8.25013889, 7.62333333, 7.91680556, 6.16555556, 6.14576389, 0.875, 4.24708333, 8.20861111, 7.03763889, 9.00305556, 3.49944444, 2.33333333, 7.74986111, 7.91680556, 8.24986111, 7.62680556, 6.45444444, 2.33416667, 7.74847222, 7.625, 2.50027778, 12.29375, 0.75, 7.87986111, 4.6871875, 4.74388889, 7.33416667, 1.28344444, 1.75, 1.16652778, 7.91513889, 7.50166667, 7.04097222, 7.04013889, 1.50027778, 1.75, 4.99888889, 7.62708333, 3.79938889, 8.20847222, 5.49777778, 10.00277778, 2.00055556, 2.05291667, 1.49847222, 7.62305556, 3.21395833, 6.25083333, 9.08347222, 4.49819444, 8.20763889, 11.74583333, 2.20652778, 8.20791667, 11.701, 9.66805556, 7.915, 7.33222222, 9.50013889, 7.6225, 7.33, 2.3375, 11.25, 1.74194444, 7.04125, 6.41388889, 1.74222222, 9.37513889, 6.12763889, 9.07944444, 6.49444444, 6.99898148, 7.62347222, 1.74916667, 9.74847222, 9.08388889, 2.04069444, 7.62555556, 6.16777778, 3.5, 3.5, 0.74930556, 7.33347222, 7.00152778, 8.49861111, 7.62333333, 9.41111111, 1.16666667]
             },
             {
               "type": "double",
@@ -17064,7 +16950,121 @@
                   "value": ["units"]
                 }
               },
-              "value": [3.16837302, 7.33685185, 9.91888889, 19.78309259, 9.91666667, 11.67222222, 2.92222222, 8.43465909, 2.91305556, 3.49847222, 7.58069444, 6.41986111, 6.00180556, 2.98704861, 5.83430556, 6.00125, 5.83166667, 4.95944444, 5.15453704, 2.12918287, 8.46263889, 3.50055556, 8.1675, 2.33361111, 6.25416667, 6.41833333, 10.5025, 9.19684444, 5.34901235, 6.51, 5.83736111, 6.12638889, 6.24847222, 5.84138889, 6.41722222, 4.08305556, 5.82930556, 7.29277778, 6.25194444, 5.25319444, 5.54291667, 0, 2.33666667, 7.29472222, 7.50097222, 6.12652778, 5.83569444, 2.43041667, 2.33152778, 6.00305556, 5.54444444, 5.5425, 4.08861111, 5.83430556, 0.58666667, 5.54694444, 9.91888889, 0.65642361, 2.33361111, 6.25513889, 5.54513889, 5.83486111, 4.08736111, 5.10569444, 0.875, 2.24930556, 6.12625, 4.95944444, 9.00305556, 3.49944444, 2.33333333, 5.50263889, 5.83625, 6.00152778, 5.54444444, 4.37375, 2.33416667, 5.50111111, 5.54666667, 2.50027778, 10.21305556, 0.75, 7.87986111, 2.625625, 0.58277778, 1.45486111, 1.28344444, 1.75, 1.16652778, 5.83388889, 5.25416667, 4.96055556, 4.95944444, 1.50027778, 1.75, 3.87451389, 5.54875, 2.90016667, 6.12625, 0.99972222, 10.00277778, 2.00055556, 2.05291667, 1.49847222, 5.54486111, 2.17361111, 4.00277778, 7.005, 1.49701389, 6.12722222, 0.5875, 2.20652778, 6.12638889, 6.0025, 7.58569444, 5.83263889, 5.54555556, 3.50083333, 5.54305556, 5.24736111, 2.3375, 5.25069444, 1.15861111, 5.25069444, 6.41388889, 1.74222222, 7.00125, 6.12763889, 6.99708333, 2.33305556, 1.49925926, 5.54527778, 1.74916667, 3.74791667, 6.71305556, 2.04069444, 5.54319444, 0.29152778, 3.5, 3.5, 0.74930556, 5.25138889, 3.20875, 6.42041667, 1.74833333, 4.66805556, 0]
+              "value": [3.16837302, 7.33685185, 9.91888889, 19.78309259, 9.91666667, 11.67222222, 2.92222222, 8.43465909, 2.91305556, 3.49847222, 7.58069444, 6.41986111, 6.00180556, 2.98704861, 5.83430556, 6.00125, 5.83166667, 4.95944444, 5.15453704, 2.12918287, 8.46263889, 3.50055556, 8.1675, 2.33361111, 6.25416667, 6.41833333, 10.5025, 9.19684444, 5.34901235, 6.01, 5.83736111, 6.12638889, 5.74847222, 5.84138889, 6.41722222, 4.08305556, 5.82930556, 7.29277778, 5.75194444, 5.25319444, 5.54291667, 0, 2.33666667, 7.29472222, 7.00097222, 6.12652778, 5.83569444, 2.43041667, 2.33152778, 6.00305556, 5.54444444, 5.5425, 4.08861111, 5.83430556, 0.58666667, 5.54694444, 9.91888889, 0.65642361, 2.33361111, 6.25513889, 5.54513889, 5.83486111, 4.08736111, 5.10569444, 0.875, 2.24930556, 6.12625, 4.95944444, 9.00305556, 3.49944444, 2.33333333, 5.50263889, 5.83625, 6.00152778, 5.54444444, 4.37375, 2.33416667, 5.50111111, 5.54666667, 2.50027778, 10.21305556, 0.75, 7.87986111, 2.625625, 0.58277778, 1.45486111, 1.28344444, 1.75, 1.16652778, 5.83388889, 5.25416667, 4.96055556, 4.95944444, 1.50027778, 1.75, 3.87451389, 5.54875, 2.90016667, 6.12625, 0.99972222, 10.00277778, 2.00055556, 2.05291667, 1.49847222, 5.54486111, 2.17361111, 4.00277778, 7.005, 1.49701389, 6.12722222, 0.5875, 2.20652778, 6.12638889, 6.0025, 7.58569444, 5.83263889, 5.54555556, 3.50083333, 5.54305556, 5.24736111, 2.3375, 5.25069444, 1.15861111, 5.25069444, 6.41388889, 1.74222222, 7.00125, 6.12763889, 6.99708333, 2.33305556, 1.49925926, 5.54527778, 1.74916667, 3.74791667, 6.71305556, 2.04069444, 5.54319444, 0.29152778, 3.5, 3.5, 0.74930556, 5.25138889, 3.20875, 6.42041667, 1.74833333, 4.66805556, 0]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [2.91444444, 4.48972222, 0.58277778, 0, 1.16722222, 0, 1.75194444, 2.33638889, 0, 0, 0.58388889, 0.58694444, 0.50222222, 1.75277778, 0.58416667, 1.00555556, 0, 0, 15.17388889, 7.5925, 1.16833333, 0.58138889, 1.75305556, 0, 0, 0.58388889, 7.58805556, 25.09083333, 4.08888889, 0.50361111, 0.58611111, 1.16722222, 0.50277778, 1.17611111, 0, 0.57944444, 1.16638889, 0.58277778, 0, 1.16638889, 0, 0, 0, 2.33666667, 0.50083333, 0, 0, 2.36972222, 0.58388889, 0, 0, 0, 7.58888889, 0.58777778, 0, 7.58861111, 0, 1.16638889, 1.16638889, 0, 0.58722222, 0, 8.17472222, 16.92166667, 1.75305556, 1.49583333, 0.58194444, 1.75833333, 0.49777778, 0.58527778, 0.57555556, 0, 0, 0, 0.58277778, 0, 0, 1, 0, 0, 2.91944444, 0.99694444, 8.17166667, 1.99361111, 0, 0.58333333, 0, 0.58666667, 0.58388889, 0, 1.00694444, 1.16888889, 0, 0, 0.58277778, 0.50027778, 0, 8.0025, 0, 0, 7.50527778, 0.50055556, 1.19944444, 1.00361111, 0, 8.14, 0.50361111, 1.17111111, 1.5, 1.16833333, 0, 0.58361111, 0.58083333, 6.00611111, 2.33305556, 0.58222222, 0.58083333, 0.49972222, 0, 0, 0, 0.99277778, 0, 0.59111111, 1.16388889, 0, 0.58305556, 0, 0, 0.58305556, 0.99638889, 0, 0, 0, 0, 1.16805556, 0, 0, 0, 0.58333333, 1.49861111, 0, 1.14666667, 0, 0, 0, 0]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [19.26416667, 17.52083333, 9.33611111, 0, 8.74944444, 11.67222222, 1.17027778, 137.12083333, 2.91305556, 12.82777778, 14.5775, 12.25277778, 11.50138889, 4.0775, 11.08444444, 10.99694444, 11.66333333, 0, 0.58333333, 23.91222222, 15.75694444, 2.91916667, 14.58194444, 2.33361111, 0, 12.25277778, 2.91444444, 116.70333333, 71.75805556, 11.51638889, 11.08861111, 11.08555556, 10.99416667, 10.50666667, 0, 3.50361111, 10.49222222, 14.00277778, 11.50388889, 9.34, 11.08583333, 0, 2.33666667, 12.25277778, 13.50111111, 12.25305556, 11.67138889, 12.21277778, 4.07916667, 12.00611111, 11.08888889, 0, 0.58833333, 11.08083333, 0.58666667, 3.50527778, 9.91888889, 2.33472222, 3.50083333, 0, 10.50305556, 11.66972222, 0, 15.17055556, 0.58083333, 3.00277778, 11.67055556, 8.16055556, 8.50527778, 2.91416667, 1.75777778, 11.00527778, 11.6725, 0, 10.50611111, 0, 0, 10.00222222, 0, 2.50027778, 17.50666667, 0.50305556, 7.58805556, 19.01138889, 0.58277778, 2.32638889, 6.41722222, 1.16333333, 1.74916667, 11.66777778, 9.50138889, 8.75222222, 9.91888889, 1.50027778, 1.16722222, 13.24888889, 0, 6.49833333, 12.2525, 0.99972222, 2.4975, 1.5, 2.90638889, 1.99333333, 0, 0, 7.50194444, 12.83888889, 4.48805556, 11.08611111, 0.5875, 3.82944444, 11.67194444, 24.00638889, 12.83833333, 11.08305556, 10.51027778, 6.50194444, 11.08611111, 10.49472222, 2.3375, 9.50861111, 1.15861111, 9.91027778, 5.25, 1.74222222, 13.41944444, 12.25527778, 13.99416667, 1.75, 3.50138889, 0, 1.74916667, 0, 0, 2.91333333, 0, 0.58305556, 3.5, 2.91666667, 0, 10.50277778, 5.27083333, 0, 3.49666667, 4.66805556, 0]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [12.31, 3.99472222, 0, 720, 0, 0, 0, 112.52027778, 0, 4.16416667, 4.16416667, 4.16027778, 3.99777778, 13.49694444, 4.16277778, 3.99777778, 4.16305556, 14.06444444, 8.32111111, 3.50194444, 4.16111111, 0, 4.16138889, 4.16444444, 16.99833333, 4.16416667, 0, 156.45388889, 88.24611111, 5.48333333, 4.16, 4.16416667, 5.49472222, 4.15805556, 16.99944444, 0, 0, 4.16388889, 5.49472222, 4.16083333, 4.16444444, 11.06194444, 0, 4.16111111, 5.49777778, 4.16416667, 4.16361111, 15.91833333, 0, 4.49722222, 4.16138889, 15.25, 4.15916667, 4.16111111, 4.16111111, 4.16416667, 0, 0.58305556, 0, 16.50027778, 4.15638889, 4.16388889, 4.15638889, 8.90416667, 1.16611111, 3.99555556, 4.16472222, 4.15638889, 0, 0, 0, 4.49444444, 4.16111111, 16.49972222, 4.16472222, 12.90888889, 2.33416667, 4.49472222, 15.25, 0, 4.16138889, 0, 0, 16.4925, 4.16111111, 11.75861111, 0, 0, 0, 4.1625, 4.495, 4.16083333, 4.16138889, 0, 0, 4.4975, 15.25416667, 4.49611111, 4.16444444, 4.49805556, 0, 0, 0, 0, 15.24611111, 4.16138889, 4.49611111, 4.15694444, 12.00472222, 4.16083333, 11.15833333, 0, 4.16305556, 28.4925, 4.16472222, 4.16472222, 3.57333333, 11.99861111, 4.15888889, 4.16527778, 0, 11.99861111, 0.58333333, 3.58111111, 0, 0, 4.74777778, 0, 4.16472222, 4.16138889, 16.49916667, 15.24694444, 0, 19.49694444, 18.16777778, 0, 15.25111111, 11.7525, 0, 0, 0, 4.16416667, 7.58555556, 16.99722222, 11.75, 4.74305556, 1.16666667]
             },
             {
               "type": "double",
@@ -22895,7 +22895,7 @@
               "value": ["units"]
             }
           },
-          "value": [4.48972222, 0, 0.58388889, 0.61305556, 0.58638889, 0.55444444, 0.58333333, 1.75305556, 0.58277778, 0, 0, 0, 0.99694444, 0.58277778, 1.00361111, 6.00611111, 1.17111111, 0.58083333, 0, 2.33305556, 0, 0.58361111, 0, 1.16833333, 2.33638889, 0.58083333, 0.58222222, 1.5, 0.49972222, 0.99277778, 0, 0, 0, 0, 0.58416667, 0.58305556, 1.16388889, 0, 0, 0.59111111, 0, 0.58305556, 0.99638889, 0, 0, 1.75305556, 0, 0, 1.16805556, 0, 0, 0, 0.58333333, 0, 1.49861111, 0, 1.16638889, 0, 1.14666667, 0, 0, 0, 0.58388889, 0.58194444, 2.92166667, 2.92138889, 0.58361111, 1.16583333, 0.50222222, 0, 0.58361111, 1.16916667, 0, 0.58388889, 0, 0.58138889, 0.58388889, 11.08166667, 1.16722222, 1.17611111, 1.00555556, 0.58277778, 2.33666667, 0.58, 1.16638889, 1.17194444, 2.91444444, 0, 0, 0.58694444, 0.58611111, 0.575, 0, 0, 1.16638889, 0, 0, 0, 0, 0.58722222, 0, 1.16722222, 1.75194444, 0, 0.50361111, 0, 1.16833333, 0.58611111, 0, 0.57944444, 0, 0, 0, 0.58777778, 0, 0.50277778, 1.49583333, 0.49777778, 0, 0, 0.57555556, 0.58527778, 0.58444444, 4.08888889, 0.58194444, 0.58277778, 0, 1.75833333, 0, 1, 0, 1.99361111, 1.00694444, 0.58416667, 0.58222222, 0, 0, 0, 0.57583333, 1.74194444, 0.58361111, 0, 0.50083333, 2.91944444, 1.16888889, 2.36972222, 1.16222222, 0, 0, 0, 0, 0.58333333, 0, 0.58666667, 0, 0, 0, 0.50027778, 0.99388889, 0, 0.50083333, 0.50055556, 0.50361111]
+          "value": [26.00527778, 16.50027778, 2.33305556, 1.77555556, 2.33027778, 0.55444444, 11.74694444, 3.5, 1.75, 15.25416667, 16.41694444, 15.24611111, 1.5, 9.91888889, 2.99694444, 58.505, 18.16694444, 14.66444444, 6.41722222, 19.33611111, 11.74583333, 2.91305556, 1.5, 16.41527778, 251.9775, 16.41583333, 15.83, 17.99277778, 19.00027778, 22.5, 14.66, 18.15888889, 2.3375, 1.74222222, 15.83138889, 18.75027778, 6.41388889, 15.245, 1.74194444, 14.0825, 12.25527778, 6.49444444, 20.99694444, 19.49694444, 1.74916667, 20.49638889, 18.16777778, 3.5, 4.08138889, 12.33555556, 15.24694444, 15.25111111, 3.5, 14.66694444, 1.49861111, 16.99722222, 11.65861111, 9.41111111, 14.00305556, 15.24666667, 1.16666667, 11.06194444, 4.66305556, 12.33638889, 21.00472222, 11.08611111, 1.75, 1.16583333, 16.00138889, 4.74777778, 2.91111111, 16.41611111, 11.67222222, 19.32555556, 15.82638889, 3.50055556, 17.00083333, 298.24805556, 16.41694444, 15.84083333, 16.00027778, 18.74944444, 18.75055556, 15.25805556, 4.66722222, 12.33111111, 34.48861111, 1.16611111, 15.82583333, 17, 16.49333333, 7.585, 6.49805556, 16.99833333, 14.66722222, 2.33666667, 16.41722222, 15.25, 9.91888889, 15.24666667, 720, 9.91666667, 2.92222222, 2.91305556, 17.50333333, 14.06444444, 21.08638889, 15.83472222, 16.99944444, 4.08305556, 15.25027778, 15.835, 15.25027778, 15.82972222, 15.83361111, 16.99166667, 8.49416667, 9.00305556, 15.49972222, 16.49972222, 2.33333333, 3.49944444, 10.5025, 164.09305556, 16.41722222, 15.25361111, 16.99861111, 14.07527778, 15.83361111, 15.49694444, 2.50027778, 37.4975, 15.00333333, 1.75027778, 1.16666667, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 16.41722222, 16.40944444, 15.25, 19.49972222, 24.5875, 14.08194444, 30.50083333, 15.75972222, 4.74388889, 15.83027778, 12.90888889, 2.33416667, 14.66833333, 16.50333333, 1.75, 14.08027778, 1.50027778, 1.74888889, 16.49777778, 18.99694444, 5.49777778, 10.00277778, 2.00055556, 12.50166667]
         },
         {
           "type": "double",
@@ -22933,7 +22933,7 @@
               "value": ["units"]
             }
           },
-          "value": [10.51277778, 0, 1.74916667, 1.1625, 1.74388889, 0, 0, 0.58083333, 1.16722222, 0, 5.2425, 0, 0.50305556, 2.32611111, 1.99333333, 16.99805556, 5.83222222, 3.50444444, 6.41722222, 5.83361111, 0.5875, 2.32944444, 1.5, 4.07611111, 67.06444444, 4.66638889, 4.07305556, 4.48805556, 6.50194444, 9.50861111, 3.48833333, 6.99166667, 2.3375, 1.74222222, 4.06611111, 6.41416667, 5.25, 4.08361111, 1.15861111, 2.90472222, 5.24916667, 1.75, 3.50138889, 0, 1.74916667, 7.57194444, 0, 3.5, 2.91333333, 0.58305556, 0, 0, 2.91666667, 3.49555556, 0, 0, 10.49222222, 4.66805556, 5.27083333, 3.49666667, 0, 0, 4.07916667, 0.58833333, 11.07305556, 4.66277778, 1.16638889, 0, 4.49694444, 0.58666667, 2.3275, 1.75, 4.66194444, 7.57166667, 4.65333333, 2.91916667, 5.24944444, 60.64388889, 4.08, 3.49666667, 3.99, 6.99277778, 5.25027778, 3.50527778, 3.50083333, 0, 12.26194444, 1.16611111, 4.65805556, 5.24277778, 0.58333333, 0, 2.33361111, 0, 2.33777778, 2.33666667, 5.25027778, 0, 2.91611111, 3.49694444, 0, 1.73944444, 1.17027778, 2.91305556, 5.50611111, 0, 8.75361111, 4.08583333, 0, 3.50361111, 4.08222222, 4.66611111, 4.085, 4.07388889, 4.66305556, 4.99055556, 3.00277778, 1.50055556, 4.00138889, 0, 1.75777778, 2.91416667, 2.91444444, 50.73361111, 4.66027778, 3.50055556, 5.49361111, 1.15555556, 4.66722222, 2.99472222, 2.50027778, 12.00222222, 2.49722222, 0.58305556, 0.58444444, 0.58388889, 0.58333333, 0, 0, 3.50611111, 4.66222222, 0, 7.49694444, 10.50416667, 1.74222222, 5.20722222, 7.58805556, 0.58277778, 4.66222222, 0, 0, 2.32638889, 4.99611111, 1.16333333, 2.91555556, 1.50027778, 1.74888889, 4.48972222, 6.49833333, 0.99972222, 2.4975, 1.5, 0.49222222]
+          "value": [8.66842593, 8.25013889, 1.16652778, 1.77555556, 2.33027778, 0.55444444, 5.87347222, 0.875, 1.75, 7.62708333, 8.20847222, 7.62305556, 0.75, 9.91888889, 1.49847222, 11.701, 9.08347222, 7.33222222, 1.28344444, 9.66805556, 11.74583333, 2.91305556, 1.5, 8.20763889, 11.45352273, 8.20791667, 7.915, 4.49819444, 9.50013889, 11.25, 7.33, 9.07944444, 2.3375, 1.74222222, 7.91569444, 9.37513889, 6.41388889, 7.6225, 1.74194444, 7.04125, 6.12763889, 6.49444444, 6.99898148, 9.74847222, 1.74916667, 10.24819444, 9.08388889, 3.5, 2.04069444, 6.16777778, 7.62347222, 7.62555556, 3.5, 7.33347222, 0.74930556, 8.49861111, 5.82930556, 9.41111111, 7.00152778, 7.62333333, 1.16666667, 11.06194444, 2.33152778, 6.16819444, 3.50078704, 2.21722222, 1.75, 1.16583333, 8.00069444, 4.74777778, 2.91111111, 4.10402778, 11.67222222, 9.66277778, 7.91319444, 3.50055556, 8.50041667, 11.92992222, 8.20847222, 7.92041667, 8.00013889, 9.37472222, 9.37527778, 7.62902778, 2.33361111, 6.16555556, 4.92694444, 1.16611111, 7.91291667, 8.5, 5.49777778, 7.585, 6.49805556, 8.49916667, 7.33361111, 2.33666667, 8.20861111, 7.625, 9.91888889, 7.62333333, 24, 9.91666667, 2.92222222, 2.91305556, 8.75166667, 7.03222222, 10.54319444, 7.91736111, 8.49972222, 4.08305556, 7.62513889, 7.9175, 7.62513889, 7.91486111, 7.91680556, 8.49583333, 4.24708333, 9.00305556, 7.74986111, 8.24986111, 2.33333333, 3.49944444, 10.5025, 9.11628086, 8.20861111, 7.62680556, 8.49930556, 7.03763889, 7.91680556, 7.74847222, 2.50027778, 4.6871875, 7.50166667, 0.87513889, 0.58333333, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 8.20861111, 8.20472222, 7.625, 9.74986111, 12.29375, 7.04097222, 5.08347222, 7.87986111, 4.74388889, 7.91513889, 6.45444444, 2.33416667, 7.33416667, 8.25166667, 1.75, 7.04013889, 1.50027778, 1.74888889, 8.24888889, 3.79938889, 5.49777778, 10.00277778, 2.00055556, 6.25083333]
         },
         {
           "type": "double",
@@ -22971,7 +22971,7 @@
               "value": ["units"]
             }
           },
-          "value": [11.00277778, 16.50027778, 0, 0, 0, 0, 11.16361111, 1.16611111, 0, 15.25416667, 11.17444444, 15.24611111, 0, 0, 0, 35.50083333, 11.16361111, 10.57916667, 0, 11.16944444, 11.16361111, 0, 0, 11.17083333, 182.57666667, 11.16861111, 11.17472222, 12.00472222, 11.99861111, 11.99861111, 11.17166667, 11.16722222, 0, 0, 11.18111111, 11.75305556, 0, 11.16138889, 0.58333333, 10.58666667, 0, 11.1675, 13.00916667, 19.49694444, 0, 11.17138889, 18.16777778, 0, 0, 11.7525, 15.24694444, 15.25111111, 0, 11.17138889, 0, 16.99722222, 0, 1.16305556, 0.58194444, 11.75, 1.16666667, 11.17444444, 0, 11.16611111, 0, 3.50194444, 0, 0, 11.00222222, 11.17111111, 0, 13.49694444, 0, 11.17, 11.17305556, 0, 11.1675, 226.5225, 11.16972222, 11.16805556, 11.00472222, 11.17388889, 11.16361111, 11.17277778, 0, 11.15916667, 1.72527778, 0, 11.16777778, 11.17027778, 22.34138889, 0, 11.16805556, 16.99833333, 11.16305556, 0, 11.16694444, 15.25, 0, 11.1625, 709.41444444, 0, 0, 0, 11.49361111, 14.06444444, 11.16444444, 11.16277778, 16.99944444, 0, 11.16805556, 11.16888889, 11.16527778, 11.16805556, 11.17055556, 11.49833333, 11.00027778, 0, 11.49833333, 16.49972222, 0, 0, 0, 116.27388889, 11.175, 11.17027778, 11.505, 11.16138889, 11.16638889, 11.50222222, 0, 23.50166667, 11.49916667, 0.58305556, 0, 0, 0, 0.58361111, 0, 11.16916667, 11.16361111, 15.25, 11.50194444, 11.16388889, 11.17083333, 22.92388889, 0, 11.17055556, 11.16805556, 12.90888889, 2.33416667, 11.75861111, 11.50722222, 0, 11.16472222, 0, 0, 11.50777778, 11.50472222, 11.5025, 0, 0, 11.50583333]
+          "value": [7.33685185, 6.25513889, 1.16652778, 1.77555556, 2.33027778, 0.55444444, 3.79277778, 0.875, 1.75, 5.54875, 6.12625, 5.54486111, 0.75, 9.91888889, 1.49847222, 6.0025, 7.005, 5.54555556, 1.28344444, 7.58569444, 0.5875, 2.91305556, 1.5, 6.12722222, 8.43465909, 6.12638889, 5.83263889, 1.49701389, 3.50083333, 5.25069444, 5.24736111, 6.99708333, 2.3375, 1.74222222, 5.83430556, 7.00125, 6.41388889, 5.54305556, 1.15861111, 5.25069444, 6.12763889, 2.33305556, 1.49925926, 3.74791667, 1.74916667, 8.1675, 6.71305556, 3.5, 2.04069444, 0.29152778, 5.54527778, 5.54319444, 3.5, 5.25138889, 0.74930556, 6.42041667, 5.82930556, 4.66805556, 3.20875, 1.74833333, 0, 0, 2.33152778, 4.08861111, 3.50078704, 2.10011111, 1.75, 1.16583333, 6.00180556, 0.58666667, 2.91111111, 3.06298611, 11.67222222, 7.58069444, 5.83166667, 3.50055556, 6.41833333, 9.19684444, 6.12638889, 5.84138889, 6.00125, 7.29277778, 7.29472222, 5.54694444, 2.33361111, 4.08736111, 3.16837302, 1.16611111, 5.83083333, 6.41986111, 2.72407407, 7.585, 2.33361111, 6.25416667, 5.25319444, 2.33666667, 6.12652778, 5.5425, 9.91888889, 5.54513889, 19.78309259, 9.91666667, 2.92222222, 2.91305556, 6.01, 4.95944444, 8.46263889, 5.83736111, 6.41722222, 4.08305556, 5.54291667, 5.83569444, 5.54444444, 5.83430556, 5.83486111, 5.74847222, 2.24930556, 9.00305556, 5.50263889, 6.00152778, 2.33333333, 3.49944444, 10.5025, 5.34901235, 6.12625, 5.54444444, 5.75194444, 4.95944444, 5.83625, 5.50111111, 2.50027778, 2.625625, 5.25416667, 0.87513889, 0.58333333, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 6.12902778, 6.12402778, 5.54666667, 7.00097222, 10.21305556, 4.96055556, 2.43041667, 7.87986111, 0.58277778, 5.83388889, 4.37375, 2.33416667, 1.45486111, 6.00305556, 1.75, 4.95944444, 1.50027778, 1.74888889, 6.00013889, 2.90016667, 0.99972222, 10.00277778, 2.00055556, 4.00277778]
         },
         {
           "type": "double",
@@ -23009,7 +23009,7 @@
               "value": ["units"]
             }
           },
-          "value": [26.00527778, 16.50027778, 2.33305556, 1.77555556, 2.33027778, 0.55444444, 11.74694444, 3.5, 1.75, 15.25416667, 16.41694444, 15.24611111, 1.5, 9.91888889, 2.99694444, 58.505, 18.16694444, 14.66444444, 6.41722222, 19.33611111, 4.7475, 2.91305556, 1.5, 16.41527778, 251.9775, 16.41583333, 15.83, 17.99277778, 19.00027778, 22.5, 14.66, 18.15888889, 2.3375, 1.74222222, 15.83138889, 18.75027778, 6.41388889, 15.245, 1.74194444, 14.0825, 12.25527778, 6.49444444, 20.99694444, 19.49694444, 1.74916667, 20.49638889, 18.16777778, 3.5, 4.08138889, 12.33555556, 15.24694444, 15.25111111, 3.5, 14.66694444, 1.49861111, 16.99722222, 11.65861111, 9.41111111, 14.00305556, 15.24666667, 1.16666667, 4.16444444, 4.66305556, 12.33638889, 21.00472222, 11.08611111, 1.75, 1.16583333, 16.00138889, 4.74777778, 2.91111111, 16.41611111, 11.67222222, 19.32555556, 15.82638889, 3.50055556, 17.00083333, 298.24805556, 16.41694444, 15.84083333, 16.00027778, 18.74944444, 18.75055556, 15.25805556, 4.66722222, 12.33111111, 34.48861111, 1.16611111, 15.82583333, 17, 16.49333333, 7.585, 6.49805556, 16.99833333, 14.66722222, 2.33666667, 16.41722222, 15.25, 9.91888889, 15.24666667, 720, 9.91666667, 2.92222222, 2.91305556, 17.50333333, 14.06444444, 21.08638889, 15.83472222, 16.99944444, 4.08305556, 15.25027778, 15.835, 15.25027778, 15.82972222, 15.83361111, 16.99166667, 8.49416667, 9.00305556, 15.49972222, 16.49972222, 2.33333333, 3.49944444, 10.5025, 164.09305556, 16.41722222, 15.25361111, 16.99861111, 14.07527778, 15.83361111, 15.49694444, 2.50027778, 37.4975, 15.00333333, 1.75027778, 1.16666667, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 16.41722222, 16.40944444, 15.25, 19.49972222, 24.5875, 14.08194444, 30.50083333, 15.75972222, 4.74388889, 15.83027778, 12.90888889, 2.33416667, 14.66833333, 16.50333333, 1.75, 14.08027778, 1.50027778, 1.74888889, 16.49777778, 18.99694444, 5.49777778, 10.00277778, 2.00055556, 12.50166667]
+          "value": [4.48972222, 0, 0.58388889, 0.61305556, 0.58638889, 0.55444444, 7.58555556, 1.75305556, 0.58277778, 0, 0, 0, 0.99694444, 0.58277778, 1.00361111, 6.00611111, 1.17111111, 0.58083333, 0, 2.33305556, 0, 0.58361111, 0, 1.16833333, 2.33638889, 0.58083333, 0.58222222, 1.5, 0.49972222, 0.99277778, 0, 0, 0, 0, 0.58416667, 0.58305556, 1.16388889, 0, 0, 0.59111111, 0, 0.58305556, 0.99638889, 0, 0, 1.75305556, 0, 0, 1.16805556, 0, 0, 0, 0.58333333, 0, 1.49861111, 0, 1.16638889, 0, 1.14666667, 0, 0, 0, 0.58388889, 7.58888889, 2.92166667, 2.92138889, 0.58361111, 1.16583333, 0.50222222, 0, 0.58361111, 1.16916667, 0, 0.58388889, 0, 0.58138889, 0.58388889, 25.09083333, 1.16722222, 1.17611111, 1.00555556, 0.58277778, 2.33666667, 7.58861111, 1.16638889, 8.17472222, 2.91444444, 0, 0, 0.58694444, 7.58888889, 7.585, 0, 0, 1.16638889, 0, 0, 0, 0, 0.58722222, 0, 1.16722222, 1.75194444, 0, 0.50361111, 0, 1.16833333, 0.58611111, 0, 0.57944444, 0, 0, 0, 0.58777778, 0, 0.50277778, 1.49583333, 0.49777778, 0, 0, 0.57555556, 0.58527778, 7.58805556, 4.08888889, 0.58194444, 0.58277778, 0, 1.75833333, 0, 1, 0, 1.99361111, 1.00694444, 0.58416667, 0.58222222, 0, 0, 0, 7.58611111, 8.75194444, 0.58361111, 0, 0.50083333, 2.91944444, 1.16888889, 2.36972222, 8.17166667, 0, 0, 0, 0, 0.58333333, 0, 0.58666667, 0, 0, 0, 0.50027778, 8.0025, 0, 7.50527778, 0.50055556, 0.50361111]
         },
         {
           "type": "double",
@@ -23047,7 +23047,7 @@
               "value": ["units"]
             }
           },
-          "value": [8.66842593, 8.25013889, 1.16652778, 1.77555556, 2.33027778, 0.55444444, 5.87347222, 0.875, 1.75, 7.62708333, 8.20847222, 7.62305556, 0.75, 9.91888889, 1.49847222, 11.701, 9.08347222, 7.33222222, 1.28344444, 9.66805556, 4.7475, 2.91305556, 1.5, 8.20763889, 11.45352273, 8.20791667, 7.915, 4.49819444, 9.50013889, 11.25, 7.33, 9.07944444, 2.3375, 1.74222222, 7.91569444, 9.37513889, 6.41388889, 7.6225, 1.74194444, 7.04125, 6.12763889, 6.49444444, 6.99898148, 9.74847222, 1.74916667, 10.24819444, 9.08388889, 3.5, 2.04069444, 6.16777778, 7.62347222, 7.62555556, 3.5, 7.33347222, 0.74930556, 8.49861111, 5.82930556, 9.41111111, 7.00152778, 7.62333333, 1.16666667, 4.16444444, 2.33152778, 6.16819444, 3.50078704, 2.21722222, 1.75, 1.16583333, 8.00069444, 4.74777778, 2.91111111, 4.10402778, 11.67222222, 9.66277778, 7.91319444, 3.50055556, 8.50041667, 11.92992222, 8.20847222, 7.92041667, 8.00013889, 9.37472222, 9.37527778, 7.62902778, 2.33361111, 6.16555556, 4.92694444, 1.16611111, 7.91291667, 8.5, 5.49777778, 7.585, 6.49805556, 8.49916667, 7.33361111, 2.33666667, 8.20861111, 7.625, 9.91888889, 7.62333333, 24, 9.91666667, 2.92222222, 2.91305556, 8.75166667, 7.03222222, 10.54319444, 7.91736111, 8.49972222, 4.08305556, 7.62513889, 7.9175, 7.62513889, 7.91486111, 7.91680556, 8.49583333, 4.24708333, 9.00305556, 7.74986111, 8.24986111, 2.33333333, 3.49944444, 10.5025, 9.11628086, 8.20861111, 7.62680556, 8.49930556, 7.03763889, 7.91680556, 7.74847222, 2.50027778, 4.6871875, 7.50166667, 0.87513889, 0.58333333, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 8.20861111, 8.20472222, 7.625, 9.74986111, 12.29375, 7.04097222, 5.08347222, 7.87986111, 4.74388889, 7.91513889, 6.45444444, 2.33416667, 7.33416667, 8.25166667, 1.75, 7.04013889, 1.50027778, 1.74888889, 8.24888889, 3.79938889, 5.49777778, 10.00277778, 2.00055556, 6.25083333]
+          "value": [17.52083333, 0, 1.74916667, 1.1625, 1.74388889, 0, 0, 0.58083333, 1.16722222, 0, 12.2525, 0, 0.50305556, 9.33611111, 1.99333333, 24.00638889, 12.83888889, 10.51027778, 6.41722222, 12.83833333, 0.5875, 2.32944444, 1.5, 11.08611111, 137.12083333, 11.67194444, 11.08305556, 4.48805556, 6.50194444, 9.50861111, 10.49472222, 13.99416667, 2.3375, 1.74222222, 11.08444444, 13.41944444, 5.25, 11.08611111, 1.15861111, 9.91027778, 12.25527778, 1.75, 3.50138889, 0, 1.74916667, 14.58194444, 0, 3.5, 2.91333333, 0.58305556, 0, 0, 2.91666667, 10.50277778, 0, 0, 10.49222222, 4.66805556, 5.27083333, 3.49666667, 0, 0, 4.07916667, 0.58833333, 18.08305556, 4.66277778, 1.16638889, 0, 11.50138889, 0.58666667, 2.3275, 1.75, 11.67222222, 14.5775, 11.66333333, 2.91916667, 12.25277778, 116.70333333, 11.08555556, 10.50666667, 10.99694444, 14.00277778, 12.25277778, 3.50527778, 3.50083333, 0, 19.26416667, 1.16611111, 11.66166667, 12.25277778, 0.58333333, 0, 2.33361111, 0, 9.34, 2.33666667, 12.25305556, 0, 9.91888889, 10.50305556, 0, 8.74944444, 1.17027778, 2.91305556, 11.51638889, 0, 15.75694444, 11.08861111, 0, 3.50361111, 11.08583333, 11.67138889, 11.08888889, 11.08083333, 11.66972222, 10.99416667, 3.00277778, 8.50527778, 11.00527778, 0, 1.75777778, 2.91416667, 2.91444444, 71.75805556, 11.67055556, 10.50611111, 11.50388889, 8.16055556, 11.6725, 10.00222222, 2.50027778, 19.01138889, 9.50138889, 0.58305556, 0.58444444, 0.58388889, 0.58333333, 0, 0, 3.50611111, 11.66444444, 0, 13.50111111, 17.50666667, 8.75222222, 12.21277778, 7.58805556, 0.58277778, 11.66777778, 0, 0, 2.32638889, 12.00611111, 1.16333333, 9.91888889, 1.50027778, 1.74888889, 11.5, 6.49833333, 0.99972222, 2.4975, 1.5, 7.50194444]
         },
         {
           "type": "double",
@@ -23085,7 +23085,7 @@
               "value": ["units"]
             }
           },
-          "value": [7.33685185, 6.25513889, 1.16652778, 1.77555556, 2.33027778, 0.55444444, 3.79277778, 0.875, 1.75, 5.54875, 6.12625, 5.54486111, 0.75, 9.91888889, 1.49847222, 6.0025, 7.005, 5.54555556, 1.28344444, 7.58569444, 0.5875, 2.91305556, 1.5, 6.12722222, 8.43465909, 6.12638889, 5.83263889, 1.49701389, 3.50083333, 5.25069444, 5.24736111, 6.99708333, 2.3375, 1.74222222, 5.83430556, 7.00125, 6.41388889, 5.54305556, 1.15861111, 5.25069444, 6.12763889, 2.33305556, 1.49925926, 3.74791667, 1.74916667, 8.1675, 6.71305556, 3.5, 2.04069444, 0.29152778, 5.54527778, 5.54319444, 3.5, 5.25138889, 0.74930556, 6.42041667, 5.82930556, 4.66805556, 3.20875, 1.74833333, 0, 0, 2.33152778, 4.08861111, 3.50078704, 2.10011111, 1.75, 1.16583333, 6.00180556, 0.58666667, 2.91111111, 3.06298611, 11.67222222, 7.58069444, 5.83166667, 3.50055556, 6.41833333, 9.19684444, 6.12638889, 5.84138889, 6.00125, 7.29277778, 7.29472222, 5.54694444, 2.33361111, 4.08736111, 3.16837302, 1.16611111, 5.83083333, 6.41986111, 2.72407407, 7.585, 2.33361111, 6.25416667, 5.25319444, 2.33666667, 6.12652778, 5.5425, 9.91888889, 5.54513889, 19.78309259, 9.91666667, 2.92222222, 2.91305556, 6.51, 4.95944444, 8.46263889, 5.83736111, 6.41722222, 4.08305556, 5.54291667, 5.83569444, 5.54444444, 5.83430556, 5.83486111, 6.24847222, 2.24930556, 9.00305556, 5.50263889, 6.00152778, 2.33333333, 3.49944444, 10.5025, 5.34901235, 6.12625, 5.54444444, 6.25194444, 4.95944444, 5.83625, 5.50111111, 2.50027778, 2.625625, 5.25416667, 0.87513889, 0.58333333, 0.58388889, 0.58333333, 0.58361111, 7.58611111, 6.12902778, 6.12402778, 5.54666667, 7.50097222, 10.21305556, 4.96055556, 2.43041667, 7.87986111, 0.58277778, 5.83388889, 4.37375, 2.33416667, 1.45486111, 6.00305556, 1.75, 4.95944444, 1.50027778, 1.74888889, 6.00013889, 2.90016667, 0.99972222, 10.00277778, 2.00055556, 4.00277778]
+          "value": [3.99472222, 16.50027778, 0, 0, 0, 0, 4.16138889, 1.16611111, 0, 15.25416667, 4.16444444, 15.24611111, 0, 0, 0, 28.4925, 4.15694444, 3.57333333, 0, 4.16472222, 11.15833333, 0, 0, 4.16083333, 112.52027778, 4.16305556, 4.16472222, 12.00472222, 11.99861111, 11.99861111, 4.16527778, 4.16472222, 0, 0, 4.16277778, 4.74777778, 0, 4.15888889, 0.58333333, 3.58111111, 0, 4.16138889, 16.49916667, 19.49694444, 0, 4.16138889, 18.16777778, 0, 0, 11.7525, 15.24694444, 15.25111111, 0, 4.16416667, 0, 16.99722222, 0, 4.74305556, 7.58555556, 11.75, 1.16666667, 11.06194444, 0, 4.15916667, 0, 3.50194444, 0, 0, 3.99777778, 4.16111111, 0, 13.49694444, 0, 4.16416667, 4.16305556, 0, 4.16416667, 156.45388889, 4.16416667, 4.15805556, 3.99777778, 4.16388889, 4.16111111, 4.16416667, 0, 4.15638889, 12.31, 0, 4.16416667, 4.16027778, 8.32111111, 0, 4.16444444, 16.99833333, 4.16083333, 0, 4.16416667, 15.25, 0, 4.15638889, 720, 0, 0, 0, 5.48333333, 14.06444444, 4.16111111, 4.16, 16.99944444, 0, 4.16444444, 4.16361111, 4.16138889, 4.16111111, 4.16388889, 5.49472222, 3.99555556, 0, 4.49444444, 16.49972222, 0, 0, 0, 88.24611111, 4.16472222, 4.16472222, 5.49472222, 4.15638889, 4.16111111, 4.49472222, 0, 16.4925, 4.495, 0.58305556, 0, 0, 0, 0.58361111, 0, 4.15916667, 4.16138889, 15.25, 5.49777778, 4.16138889, 4.16083333, 15.91833333, 0, 4.16111111, 4.1625, 12.90888889, 2.33416667, 11.75861111, 4.49722222, 0, 4.16138889, 0, 0, 4.4975, 4.49611111, 4.49805556, 0, 0, 4.49611111]
         },
         {
           "type": "double",
@@ -23237,7 +23237,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "attendance", "attendance_dmean", "attendance_daytime_dmean"]
+          "value": ["clust_id", "individual_name_deployment_id", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting"]
         },
         "groups": {
           "type": "list",
@@ -23558,17 +23558,32 @@
         {
           "type": "double",
           "attributes": {},
-          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 13, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
+          "value": [3, 20, 12, 18, 11, 12, 3, 16, 17, 4, 15, 19, 23, 19, 21, 17, 3, 20, 16, 43, 17, 23, 36, 3, 17, 20, 17, 23, 19, 16, 19, 11, 17, 14, 177, 18, 19, 19.94611111, 34, 16, 16, 16, 15, 16, 23, 108, 13, 11, 82, 18]
         },
         {
           "type": "double",
           "attributes": {},
-          "value": [3, 10, 12, 9, 5.5, 6, 3, 8, 8.5, 4, 7.5, 9.5, 11.5, 9.5, 10.5, 8.5, 3, 10, 8, 14.33333333, 8.5, 11.5, 7.2, 3, 8.5, 10, 8.5, 11.5, 9.5, 8, 9.5, 5.5, 8.5, 7, 22.125, 9, 9.5, 6.5, 8.5, 8, 8, 8, 7.5, 8, 11.5, 21.6, 6.5, 5.5, 11.71428571, 9]
+          "value": [3, 10, 12, 9, 5.5, 6, 3, 8, 8.5, 4, 7.5, 9.5, 11.5, 9.5, 10.5, 8.5, 3, 10, 8, 14.33333333, 8.5, 11.5, 7.2, 3, 8.5, 10, 8.5, 11.5, 9.5, 8, 9.5, 5.5, 8.5, 7, 22.125, 9, 9.5, 9.97305556, 8.5, 8, 8, 8, 7.5, 8, 11.5, 21.6, 6.5, 5.5, 11.71428571, 9]
         },
         {
           "type": "double",
           "attributes": {},
           "value": [3, 4.5, 12, 3.5, 5.5, 0.5, 3, 2.5, 3, 4, 2, 4, 6, 4, 5, 3, 3, 4.5, 2.5, 7, 3, 6, 2.8, 3, 3, 4.5, 3, 6, 4, 2.5, 4, 0, 3, 1.5, 11.625, 3.5, 4, 4.5, 3, 2.5, 2.5, 2.5, 2, 2.5, 6, 10.4, 1, 2, 3.14285714, 3.5]
+        },
+        {
+          "type": "double",
+          "attributes": {},
+          "value": [1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 2, 1, 0, 0, 6, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 3, 2, 2, 0, 0, 0, 0, 1, 0, 0, 1, 2, 2]
+        },
+        {
+          "type": "double",
+          "attributes": {},
+          "value": [2, 9, 12, 7, 0, 0, 0, 0, 0, 2, 4, 8, 11, 8, 9, 4, 2, 0, 5, 15, 6, 0, 2, 3, 0, 0, 4, 0, 7, 5, 7, 0, 6, 2, 0, 7, 8, 6, 5, 3, 0, 0, 4, 5, 11, 0, 0, 3, 15, 5]
+        },
+        {
+          "type": "double",
+          "attributes": {},
+          "value": [0, 11, 0, 11, 11, 12, 3, 16, 17, 0, 11, 11, 11, 11, 11, 11, 0, 20, 11, 22, 11, 23, 34, 0, 17, 20, 11, 23, 11, 11, 11, 11, 11, 11, 177, 11, 11, 10.94611111, 27, 11, 16, 16, 11, 11, 11, 108, 13, 7, 65, 11]
         }
       ]
     }
@@ -23591,7 +23606,7 @@
         "names": {
           "type": "character",
           "attributes": {},
-          "value": ["clust_id", "individual_name_deployment_id", "attendance", "attendance_dmean", "attendance_daytime_dmean"]
+          "value": ["clust_id", "individual_name_deployment_id", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting"]
         },
         "groups": {
           "type": "list",
@@ -26695,7 +26710,7 @@
               "value": ["units"]
             }
           },
-          "value": [3, 15, 16.99972222, 16, 13.49888889, 15.49722222, 8.49305556, 1.99805556, 6.49166667, 13.49222222, 17, 17.99222222, 16.00722222, 2, 1, 164.46472222, 4.99888889, 1.5, 13, 5.99166667, 14.51055556, 15.5075, 10.50833333, 66.9525, 13.99916667, 13, 9.50861111, 12.50722222, 16.50444444, 16.9925, 30.49083333, 17.49027778, 150.96694444, 22.48444444, 8.50055556, 1.49972222, 3.48333333, 10, 25, 23.99888889, 20.49416667, 1.50027778, 15, 1.99972222, 2.99972222, 14.00583333, 13.99972222, 15.50027778, 2.00777778, 13, 25, 12, 27, 94, 16.9925, 1.5, 2, 12.50777778, 14.99972222, 17.50027778, 6.99166667, 13.49944444, 14.99583333, 3.51638889, 5, 14.50166667, 14.00722222, 1.49833333, 2.50027778, 13.99972222, 18, 15.00444444, 17.00666667, 12.50583333, 5.49944444, 134, 16.50083333, 10.00083333, 6, 9.99833333, 17, 5.49916667, 14.49916667, 46.49027778, 13.50694444, 9.99277778, 32.99777778, 15.01, 14.99666667, 13.00777778, 6.9925, 16.49861111, 13.50777778, 1.99222222, 12.49388889, 86, 57.98361111, 24.49972222, 36.00305556, 12.50638889, 18.5, 10.00583333, 0.99972222, 14.5, 16.49527778, 14, 32, 17.5, 10.00083333, 232.49944444, 15.00166667, 7.49416667, 9.50083333, 12.99777778, 18.50138889, 14.49861111, 30.00944444, 16, 18, 18, 17, 2.985, 10, 2, 7.00694444, 20, 297, 90, 15, 18, 8, 14, 2, 1, 5, 7, 34, 7, 46, 17, 17, 21, 6, 13, 37, 3, 16, 15, 17, 5, 0.99222222, 16, 57, 9, 11, 17, 16, 15, 203, 17, 20.00666667, 1.49222222, 15.49944444, 15.5075, 2.00027778, 14.00694444, 1.99222222, 14.49944444, 87.4775, 0.5, 15, 8.99944444, 1.49972222, 15.50388889, 17.49277778, 6.5, 2.50805556, 1.5, 11.49944444, 1.50777778, 2, 1, 1.5, 3.49888889, 15, 15, 17.495, 21.01333333, 13.00055556, 17.0075, 17.99888889, 15.99972222, 15.00027778, 6.49944444, 2.49694444, 28, 20, 11, 14, 3, 19, 2, 20, 14, 43, 13, 3, 296, 12, 9, 21, 22, 13, 18, 12, 18, 13, 3, 15, 18, 14, 14, 14, 9.99416667, 12.99888889, 19.50027778, 3.00027778, 2.5, 13.5075, 1.49222222, 7.48388889, 18, 20.0075, 1.99222222, 11.99972222, 2.00027778, 1.50055556, 0.5, 14.49222222, 5.98916667, 8.98916667, 2.50083333, 11.48888889, 25.51472222, 12, 15, 1.5, 1.5, 1.5, 13, 1.5, 14.5, 1.49944444, 14.49972222, 1.99222222, 1.50055556, 50, 3.49305556, 12.50722222, 1.5, 19.99861111, 3, 16.005, 38.00333333, 14.5075, 1.49944444, 4, 1.4975, 13.50027778, 13.5075, 31.515, 20.49916667, 20.00111111, 13, 13, 15, 17, 15, 5, 14, 15, 60, 16, 6, 16, 12, 14, 4, 11, 13, 20, 3, 12, 8, 17, 42, 14, 43, 14.5, 11, 3.98527778, 2.5, 16.50777778, 27.01472222, 4.49944444, 1.49222222, 15.5, 60.49666667, 5, 12.50777778, 5.49861111, 13.5, 16.49888889, 15, 27.48944444, 14.49361111, 5.99166667, 16.49222222, 18.99388889, 15.47916667, 1.49972222, 8.50388889, 6.48416667, 1.49972222, 15, 13.51305556, 3.99222222, 15.49944444, 13.99972222, 13.99861111, 15, 15, 24, 23, 54, 14, 17, 14, 35, 16, 20, 14, 17, 13, 3, 11, 19, 17, 17, 16, 15, 16, 39, 125.45861111, 19, 16, 1.99972222, 6.50777778, 22.99194444, 0.49972222, 5.48361111, 0.49972222, 1.00777778, 22.49944444, 24.50222222, 10.48361111, 4.00111111, 13.99888889, 18.50694444, 16, 0.99916667, 9.50138889, 60.97027778, 13.50777778, 2.49388889, 7.48888889, 14.50777778, 23, 8.48861111, 13.49222222, 66.47638889, 14.98305556, 17, 16.01944444, 6.48333333, 15.00777778, 2, 15.5, 16.49944444, 71.50555556, 31.48944444, 2.49972222, 18, 1.50027778, 12.00555556, 17.00777778, 17.50083333, 13, 17, 7, 10, 15, 15, 20, 8, 10, 3, 17, 3, 16, 13, 19, 15, 18, 24, 19, 26, 15, 15, 14, 4, 18, 3, 23, 5, 13, 19, 19, 17, 0.51638889, 6.99861111, 14.50222222, 7.48555556, 6.48388889, 17, 3.49611111, 13.99805556, 2.50083333, 14.50916667, 18.50027778, 19.98888889, 15, 16.49222222, 15.99666667, 1.50027778, 15, 16.00166667, 14.50055556, 1.49972222, 18.00027778, 17.99194444, 19.00027778, 19.49972222, 13.99277778, 15, 19, 2, 16, 16, 17, 17, 13, 3, 13, 14, 19, 10, 15, 18, 15, 18, 19, 19, 17, 5, 18, 17, 28, 11, 13, 15, 15, 20, 15.49638889, 16.49666667, 24, 14.50083333, 7.99916667, 8.00083333, 15, 14.5075, 1.49222222, 24.99222222, 14.99916667, 1.50805556, 9, 14.99222222, 16, 15.50361111, 1.99222222, 16.00055556, 28.49194444, 1.97722222, 1.49222222, 15.99305556, 18.49777778, 18.49638889, 1.00611111, 8, 12.99166667, 2.49305556, 14.50222222, 23, 30, 19, 42, 16, 29, 3, 19, 3, 29, 19, 3, 28, 35, 15, 28, 14, 16, 28, 0.99222222, 0.99972222, 16.99222222, 14.9975, 1.50722222, 29.49166667, 2.49222222, 30.49861111, 13.99888889, 5, 3.0075, 28.49916667, 6.99111111, 29.99944444, 3.00027778, 16.99888889, 29.49166667, 30.49944444, 18, 5, 16, 6, 16, 16, 13, 16, 15, 17, 10, 43, 14, 21, 14, 7, 15, 13, 19, 22, 22, 5, 5, 14, 81, 11, 20, 13, 14, 19, 54, 22, 17, 17, 19, 14, 24, 15, 10, 3, 16, 37, 62, 22, 15, 10.00083333, 1.50055556, 14.99944444, 1.00027778, 0.49222222, 16.00777778]
+          "value": [3, 15, 16.99972222, 16, 20.3875, 15.49722222, 15.38166667, 1.99805556, 13.36194444, 20.38027778, 17, 23.85777778, 16.00722222, 2, 1, 172.365, 11.86666667, 1.5, 13, 12.84222222, 14.51055556, 15.5075, 9.50833333, 67.9525, 13.99916667, 13, 8.50861111, 12.50722222, 16.50444444, 23.88833333, 30.49083333, 17.49027778, 150.96694444, 22.48444444, 8.50055556, 1.49972222, 3.48333333, 9, 24, 32.13527778, 20.49416667, 1.50027778, 15, 1.99972222, 2.99972222, 14.00583333, 13.99972222, 15.50027778, 2.00777778, 13, 24, 14, 28, 94, 16.9925, 1.5, 2, 12.50777778, 14.99972222, 17.50027778, 14.26861111, 20.75472222, 14.99583333, 3.51638889, 5, 14.50166667, 20.9075, 1.49833333, 2.50027778, 13.99972222, 18, 15.00444444, 17.00666667, 19.42361111, 12.42805556, 134, 16.50083333, 9.00083333, 6, 9.99833333, 17, 12.35638889, 14.49916667, 60.28194444, 13.50694444, 9.99277778, 32.99777778, 15.01, 14.99666667, 13.00777778, 6.9925, 16.49861111, 13.50777778, 1.99222222, 13.49388889, 85, 64.28055556, 23.49972222, 36.00305556, 12.50638889, 18.5, 10.00583333, 0.99972222, 14.5, 16.49527778, 14, 30, 17.5, 9.00083333, 237.78638889, 15.00166667, 8.49416667, 8.50083333, 13.99777778, 18.50138889, 14.49861111, 30.00944444, 16, 18, 18, 17, 2.985, 9, 2, 7.00694444, 20, 297, 90, 15, 18, 9, 14, 2, 1, 5, 8, 32, 6, 46, 17, 17, 21, 6, 13, 44.26777778, 3, 16, 15, 17, 12.13666667, 0.99222222, 16, 57, 11, 9, 17, 16, 15, 211.31972222, 17, 20.00666667, 1.49222222, 22.39666667, 15.5075, 2.00027778, 20.92277778, 1.99222222, 14.49944444, 107.20444444, 0.5, 15, 8.99944444, 1.49972222, 15.50388889, 17.49277778, 6.5, 2.50805556, 1.5, 12.49944444, 1.50777778, 2, 1, 1.5, 3.49888889, 15, 15, 17.495, 21.01333333, 13.00055556, 17.0075, 17.99888889, 15.99972222, 15.00027778, 13.79222222, 2.49694444, 28, 20, 10, 14, 3, 19, 2, 20, 14, 43, 13, 3, 307.34361111, 12, 16.28583333, 21, 22, 13, 25.14333333, 12, 18, 13, 3, 15, 18, 14, 14, 14, 16.89388889, 12.99888889, 19.50027778, 3.00027778, 2.5, 13.5075, 1.49222222, 14.38638889, 18, 20.0075, 1.99222222, 18.90472222, 2.00027778, 1.50055556, 0.5, 14.49222222, 12.89833333, 8.98916667, 2.50083333, 11.48888889, 25.51472222, 11, 15, 1.5, 1.5, 1.5, 13, 1.5, 14.5, 1.49944444, 14.49972222, 1.99222222, 1.50055556, 48, 3.49305556, 12.50722222, 1.5, 19.99861111, 3, 16.005, 38.00333333, 14.5075, 1.49944444, 4, 1.4975, 13.50027778, 13.5075, 31.515, 20.49916667, 20.00111111, 13, 13, 15, 17, 15, 5, 14, 15, 60, 16, 6, 16, 12, 14, 4, 11, 13, 20, 3, 12, 8, 17, 42, 14, 43, 14.5, 11, 3.98527778, 2.5, 16.50777778, 27.01472222, 11.42388889, 1.49222222, 15.5, 67.42083333, 5, 12.50777778, 5.49861111, 13.5, 16.49888889, 15, 27.48944444, 14.49361111, 6.99166667, 16.49222222, 18.99388889, 29.41555556, 1.49972222, 15.41138889, 7.48416667, 1.49972222, 15, 13.51305556, 3.99222222, 15.49944444, 13.99972222, 13.99861111, 15, 15, 24, 30.23472222, 55, 14, 17, 14, 35, 16, 20, 14, 17, 12, 3, 10, 19, 17, 17, 16, 15, 16, 39, 147.26444444, 19, 16, 1.99972222, 6.50777778, 29.91416667, 0.49972222, 5.48361111, 0.49972222, 1.00777778, 22.49944444, 23.50222222, 17.38111111, 4.00111111, 13.99888889, 18.50694444, 16, 0.99916667, 9.50138889, 61.97027778, 13.50777778, 2.49388889, 14.00416667, 14.50777778, 23, 15.84, 13.49222222, 66.47638889, 14.98305556, 17, 16.01944444, 13.39666667, 15.00777778, 2, 15.5, 16.49944444, 72.50555556, 33.48944444, 2.49972222, 18, 1.50027778, 13.00555556, 17.00777778, 17.50083333, 13, 17, 8, 9, 15, 15, 20, 9, 9, 3, 17, 3, 16, 13, 19, 15, 18, 24, 19, 26, 15, 15, 14, 4, 18, 3, 23, 5, 13, 19, 19, 17, 0.51638889, 13.93833333, 14.50222222, 14.42083333, 13.40194444, 17, 3.49611111, 13.99805556, 2.50083333, 14.50916667, 18.50027778, 19.98888889, 15, 16.49222222, 15.99666667, 1.50027778, 15, 16.00166667, 14.50055556, 1.49972222, 18.00027778, 17.99194444, 19.00027778, 19.49972222, 13.99277778, 15, 19, 2, 16, 16, 17, 17, 13, 3, 13, 14, 19, 9, 15, 18, 15, 18, 19, 19, 17, 5, 18, 17, 28, 10, 14, 15, 15, 20, 15.49638889, 16.49666667, 24, 14.50083333, 7.99916667, 8.00083333, 15, 14.5075, 1.49222222, 24.99222222, 14.99916667, 1.50805556, 8, 14.99222222, 16, 23.42388889, 1.99222222, 16.00055556, 28.49194444, 1.97722222, 1.49222222, 15.99305556, 19.49777778, 18.49638889, 1.00611111, 9, 13.99166667, 2.49305556, 14.50222222, 23, 38.32527778, 19, 44, 16, 31, 3, 19, 3, 31, 19, 3, 28, 35, 15, 7, 14, 16, 30, 0.99222222, 0.99972222, 16.99222222, 14.9975, 1.50722222, 36.00305556, 2.49222222, 37.88333333, 13.99888889, 5, 3.0075, 29.49916667, 13.92638889, 36.93138889, 3.00027778, 16.99888889, 30.49166667, 31.49944444, 18, 5, 16, 7, 16, 16, 13, 16, 15, 17, 17.12527778, 43, 14, 21, 14, 7, 15, 13, 19, 22, 22, 5, 5, 14, 81, 9, 20, 13, 14, 19, 54, 22, 17, 17, 19, 14, 24, 15, 9, 3, 16, 37, 62, 22, 15, 9.00083333, 1.50055556, 14.99944444, 1.00027778, 0.49222222, 16.00777778]
         },
         {
           "type": "double",
@@ -26733,7 +26748,7 @@
               "value": ["units"]
             }
           },
-          "value": [3, 7.5, 8.49986111, 8, 6.74944444, 7.74861111, 4.24652778, 1.99805556, 3.24583333, 4.49740741, 8.5, 5.99740741, 8.00361111, 2, 1, 9.13692901, 2.49944444, 1.5, 6.5, 5.99166667, 7.25527778, 7.75375, 10.50833333, 4.78232143, 6.99958333, 6.5, 9.50861111, 6.25361111, 8.25222222, 8.49625, 15.24541667, 8.74513889, 8.38705247, 7.49481481, 8.50055556, 1.49972222, 3.48333333, 10, 8.33333333, 7.99962963, 10.24708333, 1.50027778, 7.5, 1.99972222, 2.99972222, 7.00291667, 6.99986111, 7.75013889, 2.00777778, 6.5, 12.5, 6, 6.75, 8.54545455, 8.49625, 1.5, 2, 6.25388889, 7.49986111, 8.75013889, 3.49583333, 6.74972222, 7.49791667, 1.75819444, 5, 7.25083333, 7.00361111, 1.49833333, 1.25013889, 6.99986111, 9, 7.50222222, 8.50333333, 6.25291667, 5.49944444, 7.05263158, 8.25041667, 5.00041667, 6, 4.99916667, 8.5, 5.49916667, 7.24958333, 6.64146825, 6.75347222, 4.99638889, 8.24944444, 7.505, 7.49833333, 6.50388889, 3.49625, 8.24930556, 6.75388889, 1.99222222, 6.24694444, 8.6, 7.24795139, 12.24986111, 9.00076389, 6.25319444, 9.25, 5.00291667, 0.99972222, 7.25, 8.24763889, 7, 8, 8.75, 10.00083333, 9.68747685, 7.50083333, 7.49416667, 9.50083333, 6.49888889, 9.25069444, 7.24930556, 10.00314815, 5.33333333, 9, 9, 8.5, 1.4925, 10, 2, 3.50347222, 5, 12.91304348, 8.18181818, 7.5, 9, 8, 7, 1, 1, 2.5, 3.5, 8.5, 7, 7.66666667, 5.66666667, 8.5, 7, 3, 6.5, 6.16666667, 3, 8, 7.5, 8.5, 2.5, 0.99222222, 8, 14.25, 9, 11, 8.5, 8, 7.5, 9.66666667, 8.5, 6.66888889, 1.49222222, 7.74972222, 7.75375, 2.00027778, 7.00347222, 1.99222222, 7.24972222, 9.71972222, 0.5, 7.5, 4.49972222, 1.49972222, 7.75194444, 8.74638889, 3.25, 2.50805556, 1.5, 5.74972222, 1.50777778, 2, 1, 1.5, 1.74944444, 7.5, 7.5, 8.7475, 10.50666667, 6.50027778, 5.66916667, 8.99944444, 7.99986111, 7.50013889, 6.49944444, 2.49694444, 7, 10, 5.5, 7, 3, 4.75, 2, 10, 7, 14.33333333, 6.5, 3, 11.38461538, 6, 4.5, 10.5, 11, 6.5, 9, 6, 9, 6.5, 3, 7.5, 9, 7, 7, 7, 4.99708333, 6.49944444, 9.75013889, 3.00027778, 2.5, 6.75375, 1.49222222, 3.74194444, 9, 10.00375, 1.99222222, 5.99986111, 0.66675926, 1.50055556, 0.5, 7.24611111, 5.98916667, 4.49458333, 2.50083333, 5.74444444, 12.75736111, 6, 7.5, 1.5, 1.5, 1.5, 6.5, 1.5, 7.25, 1.49944444, 7.24986111, 1.99222222, 1.50055556, 8.33333333, 1.74652778, 6.25361111, 1.5, 9.99930556, 3, 8.0025, 12.66777778, 7.25375, 1.49944444, 1, 0.74875, 6.75013889, 6.75375, 10.505, 10.24958333, 10.00055556, 6.5, 6.5, 7.5, 8.5, 7.5, 2.5, 7, 7.5, 15, 8, 2, 5.33333333, 6, 7, 4, 5.5, 6.5, 10, 1.5, 6, 8, 8.5, 14, 7, 14.33333333, 7.25, 5.5, 1.99263889, 1.25, 8.25388889, 9.00490741, 4.49944444, 1.49222222, 7.75, 6.72185185, 2.5, 6.25388889, 2.74930556, 6.75, 8.24944444, 7.5, 9.16314815, 7.24680556, 2.99583333, 8.24611111, 9.49694444, 5.15972222, 1.49972222, 4.25194444, 3.24208333, 1.49972222, 7.5, 6.75652778, 1.33074074, 7.74972222, 6.99986111, 6.99930556, 7.5, 7.5, 12, 7.66666667, 6, 7, 8.5, 4.66666667, 8.75, 8, 10, 7, 8.5, 13, 3, 5.5, 9.5, 8.5, 8.5, 8, 7.5, 8, 13, 13.93984568, 9.5, 8, 1.99972222, 3.25388889, 5.74798611, 0.49972222, 1.37090278, 0.49972222, 1.00777778, 7.49981481, 6.12555556, 5.24180556, 2.00055556, 6.99944444, 9.25347222, 8, 0.99916667, 4.75069444, 6.77447531, 6.75388889, 2.49388889, 3.74444444, 7.25388889, 7.66666667, 4.24430556, 6.74611111, 9.49662698, 7.49152778, 8.5, 8.00972222, 3.24166667, 7.50388889, 2, 7.75, 8.24972222, 10.21507937, 7.87236111, 2.49972222, 9, 1.50027778, 6.00277778, 8.50388889, 8.75041667, 6.5, 8.5, 7, 10, 7.5, 7.5, 10, 8, 10, 3, 8.5, 3, 8, 6.5, 9.5, 7.5, 9, 12, 9.5, 13, 7.5, 7.5, 7, 4, 9, 3, 11.5, 2.5, 6.5, 9.5, 9.5, 8.5, 0.51638889, 6.99861111, 7.25111111, 3.74277778, 3.24194444, 8.5, 3.49611111, 6.99902778, 2.50083333, 7.25458333, 9.25013889, 9.99444444, 7.5, 8.24611111, 7.99833333, 1.50027778, 7.5, 5.33388889, 7.25027778, 1.49972222, 9.00013889, 8.99597222, 9.50013889, 9.74986111, 6.99638889, 7.5, 9.5, 2, 8, 8, 8.5, 8.5, 6.5, 3, 6.5, 7, 9.5, 5, 7.5, 9, 7.5, 9, 9.5, 9.5, 8.5, 2.5, 9, 8.5, 14, 11, 6.5, 7.5, 7.5, 10, 7.74819444, 8.24833333, 12, 7.25041667, 3.99958333, 8.00083333, 7.5, 7.25375, 1.49222222, 8.33074074, 7.49958333, 1.50805556, 4.5, 7.49611111, 8, 5.16787037, 1.99222222, 5.33351852, 7.12298611, 1.97722222, 1.49222222, 7.99652778, 9.24888889, 9.24819444, 1.00611111, 4, 6.49583333, 1.24652778, 7.25111111, 11.5, 15, 9.5, 14, 8, 14.5, 3, 9.5, 1.5, 14.5, 9.5, 3, 14, 8.75, 7.5, 14, 7, 8, 14, 0.99222222, 0.99972222, 8.49611111, 7.49875, 1.50722222, 14.74583333, 2.49222222, 15.24930556, 6.99944444, 5, 3.0075, 14.24958333, 3.49555556, 14.99972222, 3.00027778, 8.49944444, 14.74583333, 15.24972222, 9, 5, 8, 3, 8, 8, 6.5, 8, 7.5, 8.5, 5, 14.33333333, 4.66666667, 7, 7, 3.5, 7.5, 6.5, 9.5, 11, 11, 5, 2.5, 7, 11.57142857, 11, 6.66666667, 6.5, 7, 9.5, 9, 11, 8.5, 8.5, 9.5, 7, 12, 7.5, 10, 3, 8, 12.33333333, 8.85714286, 11, 7.5, 10.00083333, 1.50055556, 7.49972222, 1.00027778, 0.49222222, 8.00388889]
+          "value": [3, 7.5, 8.49986111, 8, 10.19375, 7.74861111, 7.69083333, 1.99805556, 6.68097222, 6.79342593, 8.5, 7.95259259, 8.00361111, 2, 1, 9.57583333, 5.93333333, 1.5, 6.5, 12.84222222, 7.25527778, 7.75375, 9.50833333, 4.85375, 6.99958333, 6.5, 8.50861111, 6.25361111, 8.25222222, 11.94416667, 15.24541667, 8.74513889, 8.38705247, 7.49481481, 8.50055556, 1.49972222, 3.48333333, 9, 8, 10.71175926, 10.24708333, 1.50027778, 7.5, 1.99972222, 2.99972222, 7.00291667, 6.99986111, 7.75013889, 2.00777778, 6.5, 12, 7, 7, 8.54545455, 8.49625, 1.5, 2, 6.25388889, 7.49986111, 8.75013889, 7.13430556, 10.37736111, 7.49791667, 1.75819444, 5, 7.25083333, 10.45375, 1.49833333, 1.25013889, 6.99986111, 9, 7.50222222, 8.50333333, 9.71180556, 12.42805556, 7.05263158, 8.25041667, 4.50041667, 6, 4.99916667, 8.5, 12.35638889, 7.24958333, 8.61170635, 6.75347222, 4.99638889, 8.24944444, 7.505, 7.49833333, 6.50388889, 3.49625, 8.24930556, 6.75388889, 1.99222222, 6.74694444, 8.5, 8.03506944, 11.74986111, 9.00076389, 6.25319444, 9.25, 5.00291667, 0.99972222, 7.25, 8.24763889, 7, 7.5, 8.75, 9.00083333, 9.9077662, 7.50083333, 8.49416667, 8.50083333, 6.99888889, 9.25069444, 7.24930556, 10.00314815, 5.33333333, 9, 9, 8.5, 1.4925, 9, 2, 3.50347222, 5, 12.91304348, 8.18181818, 7.5, 9, 9, 7, 1, 1, 2.5, 4, 8, 6, 7.66666667, 5.66666667, 8.5, 7, 3, 6.5, 7.37796296, 3, 8, 7.5, 8.5, 6.06833333, 0.99222222, 8, 14.25, 11, 9, 8.5, 8, 7.5, 10.06284392, 8.5, 6.66888889, 1.49222222, 11.19833333, 7.75375, 2.00027778, 10.46138889, 1.99222222, 7.24972222, 11.91160494, 0.5, 7.5, 4.49972222, 1.49972222, 7.75194444, 8.74638889, 3.25, 2.50805556, 1.5, 6.24972222, 1.50777778, 2, 1, 1.5, 1.74944444, 7.5, 7.5, 8.7475, 10.50666667, 6.50027778, 5.66916667, 8.99944444, 7.99986111, 7.50013889, 13.79222222, 2.49694444, 7, 10, 5, 7, 3, 4.75, 2, 10, 7, 14.33333333, 6.5, 3, 11.82090812, 6, 8.14291667, 10.5, 11, 6.5, 12.57166667, 6, 9, 6.5, 3, 7.5, 9, 7, 7, 7, 8.44694444, 6.49944444, 9.75013889, 3.00027778, 2.5, 6.75375, 1.49222222, 7.19319444, 9, 10.00375, 1.99222222, 9.45236111, 0.66675926, 1.50055556, 0.5, 7.24611111, 12.89833333, 4.49458333, 2.50083333, 5.74444444, 12.75736111, 5.5, 7.5, 1.5, 1.5, 1.5, 6.5, 1.5, 7.25, 1.49944444, 7.24986111, 1.99222222, 1.50055556, 8, 1.74652778, 6.25361111, 1.5, 9.99930556, 3, 8.0025, 12.66777778, 7.25375, 1.49944444, 1, 0.74875, 6.75013889, 6.75375, 10.505, 10.24958333, 10.00055556, 6.5, 6.5, 7.5, 8.5, 7.5, 2.5, 7, 7.5, 15, 8, 2, 5.33333333, 6, 7, 4, 5.5, 6.5, 10, 1.5, 6, 8, 8.5, 14, 7, 14.33333333, 7.25, 5.5, 1.99263889, 1.25, 8.25388889, 9.00490741, 11.42388889, 1.49222222, 7.75, 7.4912037, 2.5, 6.25388889, 2.74930556, 6.75, 8.24944444, 7.5, 9.16314815, 7.24680556, 3.49583333, 8.24611111, 9.49694444, 9.80518519, 1.49972222, 7.70569444, 3.74208333, 1.49972222, 7.5, 6.75652778, 1.33074074, 7.74972222, 6.99986111, 6.99930556, 7.5, 7.5, 12, 10.07824074, 6.11111111, 7, 8.5, 4.66666667, 8.75, 8, 10, 7, 8.5, 12, 3, 5, 9.5, 8.5, 8.5, 8, 7.5, 8, 13, 16.36271605, 9.5, 8, 1.99972222, 3.25388889, 7.47854167, 0.49972222, 1.37090278, 0.49972222, 1.00777778, 7.49981481, 5.87555556, 8.69055556, 2.00055556, 6.99944444, 9.25347222, 8, 0.99916667, 4.75069444, 6.88558642, 6.75388889, 2.49388889, 7.00208333, 7.25388889, 7.66666667, 7.92, 6.74611111, 9.49662698, 7.49152778, 8.5, 8.00972222, 6.69833333, 7.50388889, 2, 7.75, 8.24972222, 10.35793651, 8.37236111, 2.49972222, 9, 1.50027778, 6.50277778, 8.50388889, 8.75041667, 6.5, 8.5, 8, 9, 7.5, 7.5, 10, 9, 9, 3, 8.5, 3, 8, 6.5, 9.5, 7.5, 9, 12, 9.5, 13, 7.5, 7.5, 7, 4, 9, 3, 11.5, 2.5, 6.5, 9.5, 9.5, 8.5, 0.51638889, 13.93833333, 7.25111111, 7.21041667, 6.70097222, 8.5, 3.49611111, 6.99902778, 2.50083333, 7.25458333, 9.25013889, 9.99444444, 7.5, 8.24611111, 7.99833333, 1.50027778, 7.5, 5.33388889, 7.25027778, 1.49972222, 9.00013889, 8.99597222, 9.50013889, 9.74986111, 6.99638889, 7.5, 9.5, 2, 8, 8, 8.5, 8.5, 6.5, 3, 6.5, 7, 9.5, 4.5, 7.5, 9, 7.5, 9, 9.5, 9.5, 8.5, 2.5, 9, 8.5, 14, 10, 7, 7.5, 7.5, 10, 7.74819444, 8.24833333, 12, 7.25041667, 3.99958333, 8.00083333, 7.5, 7.25375, 1.49222222, 8.33074074, 7.49958333, 1.50805556, 4, 7.49611111, 8, 7.80796296, 1.99222222, 5.33351852, 7.12298611, 1.97722222, 1.49222222, 7.99652778, 9.74888889, 9.24819444, 1.00611111, 4.5, 6.99583333, 1.24652778, 7.25111111, 11.5, 19.16263889, 9.5, 14.66666667, 8, 15.5, 3, 9.5, 1.5, 15.5, 9.5, 3, 14, 8.75, 7.5, 7, 7, 8, 15, 0.99222222, 0.99972222, 8.49611111, 7.49875, 1.50722222, 18.00152778, 2.49222222, 18.94166667, 6.99944444, 5, 3.0075, 14.74958333, 6.96319444, 18.46569444, 3.00027778, 8.49944444, 15.24583333, 15.74972222, 9, 5, 8, 3.5, 8, 8, 6.5, 8, 7.5, 8.5, 8.56263889, 14.33333333, 4.66666667, 7, 7, 3.5, 7.5, 6.5, 9.5, 11, 11, 5, 2.5, 7, 11.57142857, 9, 6.66666667, 6.5, 7, 9.5, 9, 11, 8.5, 8.5, 9.5, 7, 12, 7.5, 9, 3, 8, 12.33333333, 8.85714286, 11, 7.5, 9.00083333, 1.50055556, 7.49972222, 1.00027778, 0.49222222, 8.00388889]
         },
         {
           "type": "double",
@@ -26771,7 +26786,121 @@
               "value": ["units"]
             }
           },
-          "value": [3, 3.5, 2.24611111, 1.74611111, 1.24583333, 1.49513889, 1.99736111, 1.99805556, 0.99611111, 0.82833333, 2.24611111, 4.49759259, 1.74986111, 2, 0, 1.74498457, 0.25, 1.5, 0.24625, 1.49222222, 1.00152778, 1.49986111, 10.50833333, 2.24579365, 0.74611111, 2.5, 1.50027778, 0, 1.99861111, 2.99013889, 11.99152778, 5.24097222, 5.68958333, 5.1587037, 1.49222222, 1.49972222, 3.48333333, 2, 3, 3.66398148, 6.74277778, 1.50027778, 3.99583333, 1.99972222, 2.99972222, 3.49875, 2.99569444, 3.74597222, 2.00777778, 2.49583333, 4.5, 6, 2.5, 3.09090909, 4.49222222, 1.5, 2, 2.24972222, 3.49569444, 4.74597222, 3.49583333, 3.49583333, 1.24375, 1.75819444, 5, 0.99694444, 1.5, 1.49833333, 1.25013889, 0.74611111, 2.74625, 1.24833333, 2.24944444, 0.74930556, 1, 4.52631579, 1.99652778, 5.00041667, 6, 1.99527778, 2.24611111, 1.00027778, 0.99597222, 2.71210317, 0.49972222, 1.99638889, 4.24319444, 3.49958333, 3.49416667, 2.49972222, 2.74583333, 4.24513889, 2.74972222, 1.99222222, 2.99611111, 3.8, 3.43152778, 8.24555556, 4.873125, 2.24902778, 5.24555556, 4.25097222, 0.99972222, 3.24583333, 4.24347222, 2.99583333, 2, 4.74583333, 10.00083333, 5.34962963, 3.49416667, 7.49416667, 1.4925, 3.24611111, 5.24611111, 3.24513889, 4.66425926, 2.66666667, 5, 5, 4.5, 1.4925, 2, 2, 3.50347222, 2, 4.56521739, 4.54545455, 3.5, 5, 8, 3, 1, 1, 2.5, 3.5, 2.5, 0, 1.66666667, 3, 4.5, 3, 2.5, 1, 1.33333333, 3, 2, 1.5, 2.5, 0.5, 0.99222222, 2, 8.25, 6, 3, 2.5, 2, 1.5, 5.14285714, 2.5, 2.49962963, 1.49222222, 2.24625, 1.49986111, 2.00027778, 1.5, 1.99222222, 0.99611111, 1.71509259, 0.5, 3.5, 1.5, 1.49972222, 4.24763889, 5.24111111, 2.49972222, 2.50805556, 1.5, 2.49583333, 1.50777778, 2, 1, 1.5, 1.74944444, 3.5, 3.49583333, 2.495, 4.25291667, 0.25027778, 1.49990741, 2.74555556, 3.99569444, 3.49597222, 6.49944444, 2.49694444, 3, 6, 1.5, 1, 3, 2.75, 2, 6, 3, 9, 0.5, 3, 6.80769231, 0.5, 2, 4.5, 5, 0.5, 7, 0, 5, 2.5, 3, 1.5, 3, 1, 1, 1, 2.74736111, 3.24555556, 3.49694444, 3.00027778, 2.5, 0.49986111, 1.49222222, 1.49222222, 5, 3.74986111, 1.99222222, 3.75013889, 0.66675926, 1.50055556, 0.5, 0.99222222, 1.4975, 1.49972222, 2.50083333, 5.74444444, 5.99972222, 2, 3.5, 1.5, 1.5, 1.5, 2.49583333, 1.5, 3.24583333, 1.49944444, 3.24569444, 1.99222222, 1.50055556, 1.83333333, 1.74652778, 0, 1.5, 3.74541667, 3, 1.74888889, 4.32944444, 3.24958333, 1.49944444, 1, 0.74875, 2.74597222, 2.74958333, 5.16611111, 6.24430556, 5.99638889, 0.5, 0.5, 3.5, 4.5, 3.5, 2, 1, 1.5, 6, 2, 1.66666667, 1.66666667, 0.5, 1, 3, 0, 1, 4.5, 1.5, 0, 8, 2.5, 6, 1, 6.33333333, 0.99611111, 0, 1.99263889, 1.25, 2, 0.66666667, 0, 1.49222222, 1.49611111, 1.32935185, 2.5, 0, 2.74930556, 3.24583333, 4.74527778, 1.5, 8.9962037, 3.24152778, 2.99583333, 4.24194444, 5.49277778, 2.16009259, 1.49972222, 2.00263889, 3.24208333, 1.49972222, 1.5, 2.74930556, 1.33074074, 3.74555556, 2.99569444, 2.99513889, 3.5, 3.5, 8, 2.33333333, 3.33333333, 3, 4.5, 0.66666667, 2.75, 2, 4, 1, 2.5, 13, 3, 1.5, 3.5, 2.5, 2.5, 2, 1.5, 2, 5, 3.65864198, 5.5, 2.5, 1.99972222, 0.25388889, 2.99618056, 0.49972222, 1.37090278, 0.49972222, 1.00777778, 1.33074074, 0.99645833, 2.99208333, 2.00055556, 0.74611111, 2.99958333, 2.5, 0.99916667, 1.74986111, 1.55151235, 0.5, 2.49388889, 3.74444444, 3.24972222, 5, 4.24430556, 2.74194444, 3.27900794, 1.23791667, 3, 1.75583333, 0.99194444, 1.24986111, 2, 3.74583333, 4.24555556, 3.35436508, 4.61875, 2.49972222, 3.5, 1.50027778, 2.74930556, 4.49972222, 4.74611111, 1, 4.5, 7, 2, 3.5, 3.5, 4.5, 8, 2, 3, 4.5, 3, 2, 0.5, 3.5, 2, 3, 6, 3.5, 7, 1.5, 1.5, 1, 4, 3, 3, 5.5, 2.5, 0.5, 3.5, 3.5, 2.5, 0.51638889, 2.49916667, 0.99736111, 1.49305556, 0.9925, 3, 3.49611111, 3.49486111, 2.50083333, 3.74930556, 5.24597222, 5.99027778, 3.49583333, 1.99222222, 1.74458333, 1.50027778, 2, 2.6637037, 3.24611111, 1.49972222, 4.99597222, 4.99180556, 5.49597222, 5.74569444, 2.99222222, 3.5, 5.5, 2, 2.5, 4, 4.5, 4.5, 0.5, 3, 0.5, 1, 3.5, 1, 1.5, 3, 1.5, 3, 3.5, 3.5, 2.5, 2.5, 3, 2.5, 8, 3, 4.5, 1.5, 1.5, 4, 1.49180556, 1.995, 8, 0.99708333, 3.99958333, 0.9925, 3.49583333, 3.24958333, 1.49222222, 5.16111111, 1.24583333, 1.50805556, 1, 1.24222222, 1.74638889, 0, 1.99222222, 1.16425926, 3.11875, 1.97722222, 1.49222222, 3.99236111, 5.99583333, 5.24402778, 1.00611111, 3.5, 3.24208333, 1.24652778, 3.24694444, 7.5, 3.5, 5.5, 1, 2, 1, 3, 3.5, 1.5, 1, 3.5, 3, 0.5, 2.75, 1.5, 0.5, 1, 4, 0.5, 0.99222222, 0.99972222, 4.99194444, 4.24486111, 1.50722222, 2.74583333, 2.49222222, 3.24930556, 0.74555556, 5, 3.0075, 0, 1.24611111, 0.75, 3.00027778, 4.49527778, 2.74583333, 3.24972222, 3, 5, 2, 1, 2, 4, 1, 2, 2, 2.5, 2.5, 3.66666667, 4.66666667, 3, 1, 3.5, 3.5, 0.5, 3.5, 5, 5, 5, 2, 1.5, 4.71428571, 11, 3, 2.5, 1.5, 5.5, 5, 7, 3, 3, 5.5, 3, 8, 2, 2, 3, 4, 7, 2.57142857, 5, 1.5, 10.00083333, 1.50055556, 1.24611111, 1.00027778, 0.49222222, 1.75]
+          "value": [3, 4, 2.24611111, 1.74611111, 1.24583333, 1.49513889, 1.99736111, 1.99805556, 0.99611111, 0.82833333, 2.24611111, 4.16425926, 1.74986111, 2, 0, 1.74498457, 0.25, 1.5, 0.24625, 1.49222222, 1.00152778, 1.49986111, 9.50833333, 2.24579365, 0.74611111, 3, 1.50027778, 0, 1.99861111, 2.99013889, 11.99152778, 5.24097222, 5.68958333, 5.1587037, 1.49222222, 1.49972222, 3.48333333, 2, 3.33333333, 6.37611111, 6.74277778, 1.50027778, 3.99583333, 1.99972222, 2.99972222, 3.49875, 3.49569444, 4.24597222, 2.00777778, 2.99583333, 5, 7, 2.5, 3.09090909, 4.99222222, 1.5, 2, 2.74972222, 3.99569444, 5.24597222, 7.13430556, 7.12347222, 1.24375, 1.75819444, 5, 0.99694444, 1.5, 1.49833333, 1.25013889, 0.74611111, 2.74625, 1.24833333, 2.24944444, 0.74930556, 1, 4.84210526, 1.99652778, 4.50041667, 6, 1.99527778, 2.24611111, 1.00027778, 0.99597222, 2.71210317, 0.49972222, 1.99638889, 4.74319444, 3.99958333, 3.99416667, 2.99972222, 3.24583333, 4.74513889, 3.24972222, 1.99222222, 3.49611111, 4.3, 4.59364583, 8.24555556, 5.373125, 2.74902778, 5.74555556, 4.75097222, 0.99972222, 3.74583333, 4.74347222, 3.49583333, 2.25, 5.24583333, 9.00083333, 6.11158565, 3.99416667, 8.49416667, 1.4925, 3.74611111, 5.74611111, 3.74513889, 5.33092593, 3, 5.5, 5.5, 5, 1.4925, 2, 2, 3.50347222, 2, 4.56521739, 5, 4, 5.5, 9, 3.5, 1, 1, 2.5, 4, 2.75, 0, 1.66666667, 3.33333333, 5, 3, 2.5, 1, 1.33333333, 3, 2, 1.5, 2.5, 0.5, 0.99222222, 2, 8.25, 6, 3, 2.5, 2, 1.5, 5.61904762, 2.5, 2.49962963, 1.49222222, 2.24625, 1.49986111, 2.00027778, 1.5, 1.99222222, 0.99611111, 1.71509259, 0.5, 4, 1.5, 1.49972222, 4.24763889, 5.24111111, 2.99972222, 2.50805556, 1.5, 2.99583333, 1.50777778, 2, 1, 1.5, 1.74944444, 4, 3.99583333, 2.495, 4.25291667, 0.25027778, 1.49990741, 2.74555556, 4.49569444, 3.99597222, 13.79222222, 2.49694444, 3.5, 6.5, 1.5, 1, 3, 3, 2, 6.5, 3.5, 9.66666667, 0.5, 3, 7.42307692, 0.5, 2, 4.5, 5, 0.5, 7, 0, 5, 3, 3, 1.5, 3, 1, 1, 1, 2.74736111, 3.24555556, 3.49694444, 3.00027778, 2.5, 0.49986111, 1.49222222, 1.49222222, 5.5, 3.74986111, 1.99222222, 3.75013889, 0.66675926, 1.50055556, 0.5, 0.99222222, 1.4975, 1.49972222, 2.50083333, 5.74444444, 5.99972222, 2, 4, 1.5, 1.5, 1.5, 2.99583333, 1.5, 3.74583333, 1.49944444, 3.74569444, 1.99222222, 1.50055556, 1.83333333, 1.74652778, 0, 1.5, 3.74541667, 3, 1.74888889, 4.32944444, 3.74958333, 1.49944444, 1, 0.74875, 3.24597222, 3.24958333, 5.83277778, 6.74430556, 6.49638889, 0.5, 0.5, 4, 5, 4, 2, 1, 1.5, 6, 2, 1.66666667, 1.66666667, 0.5, 1, 3, 0, 1, 4.5, 1.5, 0, 8, 2.5, 6, 1, 6.33333333, 0.99611111, 0, 1.99263889, 1.25, 2, 0.66666667, 0, 1.49222222, 1.49611111, 1.32935185, 2.5, 0, 2.74930556, 3.24583333, 4.74527778, 1.5, 8.9962037, 3.74152778, 3.49583333, 4.74194444, 5.99277778, 2.16009259, 1.49972222, 2.00263889, 3.74208333, 1.49972222, 1.5, 3.24930556, 1.33074074, 4.24555556, 3.49569444, 3.49513889, 4, 4, 8.5, 2.33333333, 3.77777778, 3.5, 5, 0.66666667, 2.75, 2, 4, 1, 2.5, 12, 3, 1.5, 3.5, 2.5, 2.5, 2, 1.5, 2, 5, 3.65864198, 6, 2.5, 1.99972222, 0.25388889, 2.99618056, 0.49972222, 1.37090278, 0.49972222, 1.00777778, 1.33074074, 0.99645833, 2.99208333, 2.00055556, 0.74611111, 2.99958333, 2.5, 0.99916667, 1.74986111, 1.55151235, 0.5, 2.49388889, 7.00208333, 3.74972222, 5.33333333, 7.92, 3.24194444, 3.27900794, 1.23791667, 3, 1.75583333, 0.99194444, 1.24986111, 2, 4.24583333, 4.74555556, 3.92579365, 5.11875, 2.49972222, 3.5, 1.50027778, 3.24930556, 4.99972222, 5.24611111, 1, 5, 8, 2, 4, 4, 4.5, 9, 2, 3, 5, 3, 2, 0.5, 3.5, 2, 3, 6, 3.5, 7, 1.5, 1.5, 1, 4, 3, 3, 5.5, 2.5, 0.5, 3.5, 3.5, 2.5, 0.51638889, 2.49916667, 0.99736111, 1.49305556, 0.9925, 3, 3.49611111, 3.49486111, 2.50083333, 3.74930556, 5.74597222, 6.49027778, 3.99583333, 1.99222222, 1.74458333, 1.50027778, 2, 2.99703704, 3.74611111, 1.49972222, 5.49597222, 5.49180556, 5.99597222, 6.24569444, 3.49222222, 4, 6, 2, 2.5, 4.5, 5, 5, 0.5, 3, 0.5, 1, 3.5, 1, 1.5, 3, 1.5, 3, 3.5, 3.5, 2.5, 2.5, 3, 2.5, 8, 3, 4.5, 1.5, 1.5, 4, 1.49180556, 1.995, 8.5, 0.99708333, 3.99958333, 0.9925, 3.99583333, 3.74958333, 1.49222222, 5.82777778, 1.24583333, 1.50805556, 1, 1.24222222, 1.74638889, 0, 1.99222222, 1.16425926, 3.61875, 1.97722222, 1.49222222, 4.49236111, 6.49583333, 5.74402778, 1.00611111, 4, 3.74208333, 1.24652778, 3.74694444, 8, 4, 6, 1, 2, 1, 3, 3.5, 1.5, 1, 3.5, 3, 0.5, 2.75, 1.5, 1, 1, 4.5, 0.5, 0.99222222, 0.99972222, 4.99194444, 4.24486111, 1.50722222, 2.74583333, 2.49222222, 3.74930556, 0.74555556, 5, 3.0075, 0, 1.24611111, 0.75, 3.00027778, 4.99527778, 3.24583333, 3.74972222, 3, 5, 2, 1, 2, 4.5, 1, 2, 2, 2.5, 2.5, 3.66666667, 4.66666667, 3, 1, 3.5, 4, 0.5, 3.5, 5, 5, 5, 2, 1.5, 4.71428571, 9, 3, 3, 1.5, 6, 5.5, 7.5, 3, 3, 6, 3.5, 8.5, 2, 2, 3, 4.5, 7.66666667, 2.71428571, 5, 1.5, 9.00083333, 1.50055556, 1.24611111, 1.00027778, 0.49222222, 1.75]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [1, 0, 0.4925, 0, 0, 0.99805556, 0, 0, 0, 0.49277778, 0, 0, 0, 0, 0, 6.47555556, 0.5, 0, 0, 0.5, 0.50055556, 0.49222222, 0, 5.46972222, 0, 0, 0.5, 0, 0, 0.49222222, 1.49972222, 0.49944444, 17.99638889, 0, 0, 0.5, 0.5, 1, 2, 0.49222222, 0.50138889, 1, 6.99972222, 0.5, 2.99972222, 0.49916667, 0.01444444, 0.50055556, 0.50777778, 5.49944444, 1, 0, 1, 2, 0.50777778, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.49222222, 0, 0.50027778, 1.00027778, 1.50222222, 0.50194444, 0.5075, 0.5, 0, 10, 0, 0, 1.00055556, 0.49972222, 0, 0, 0.49222222, 2.00027778, 0, 0, 0, 0, 0, 0, 0.49222222, 0, 0, 0, 0, 1, 2.00027778, 0, 12.99305556, 0, 0, 0.50055556, 0, 0, 1, 0, 1, 6.99944444, 0, 8.00694444, 0, 5.99805556, 0, 0, 0.50111111, 0, 1.00611111, 0, 0, 1, 0, 1.00027778, 1, 1, 0.49222222, 0, 7, 3, 0, 0, 0, 0, 2, 1, 3, 0, 0, 0, 0, 2, 0, 0, 1, 2, 1, 0, 0, 0, 4, 0, 0.5, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0.99194444, 0.5, 0.49222222, 0.5, 0, 0, 0.5, 4.48388889, 0.5, 0, 0.49944444, 1.49972222, 0.50277778, 0.99972222, 0, 1.00777778, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3.5, 0, 0.5, 1.00583333, 0.50027778, 0, 0, 0.50027778, 0, 7, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 11, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0.50611111, 1, 1.00055556, 0.50027778, 0, 0.99972222, 0.5, 0, 0, 0, 0, 0, 1, 0.5, 0, 0.99972222, 0, 0, 0, 1.00527778, 0.50027778, 1, 0, 0.49972222, 0.49972222, 0.49222222, 5.99166667, 1.5, 1, 0, 0.5075, 0, 0.49277778, 4, 0.49972222, 0, 0, 0, 0.49805556, 1.00222222, 0.49944444, 5.49944444, 1.49944444, 0, 0.50277778, 0, 0, 0.5, 0, 6.99166667, 0, 0, 0, 0, 0, 2, 0, 2, 0, 1, 1, 1, 1, 0, 2, 0, 1, 0, 1, 0, 1, 0, 0, 0, 5, 0, 0, 1, 1.5, 1.5, 0, 0, 1, 0, 3.47444444, 0, 0, 1.99916667, 0, 0.49222222, 0, 5.99805556, 0.49222222, 0, 0, 0, 1.49222222, 1.49972222, 0, 0.99222222, 0, 0, 0, 0.99277778, 0, 0.5, 0.50027778, 0, 6, 0, 1, 7, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 1, 1, 4, 0, 0, 1, 1, 1.99972222, 6, 0, 0, 0, 4.00722222, 0, 0, 0.49972222, 0, 0, 0.49277778, 1, 1.50111111, 0, 0.49222222, 0, 0, 1.00027778, 0.98444444, 0, 0.50027778, 0, 5.49944444, 2, 0, 0, 2.50333333, 1.48305556, 0, 0.99194444, 0, 1.00777778, 0, 0, 6.99166667, 0.5, 0.49222222, 0.50722222, 1, 0, 0.99888889, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 3, 1, 2, 0, 0, 2, 0, 0, 2, 1, 0, 1, 1, 0, 0, 0, 1.50166667, 0.50027778, 0, 0.49638889, 0, 0.50083333, 0, 0.5, 5.49944444, 0, 0.49194444, 0, 0, 0, 0, 5.99972222, 0.49222222, 0, 0, 5.99972222, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 1, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 1, 0, 1, 0, 0.5, 10, 0.50194444, 1.00027778, 0.50027778, 0.50027778, 0, 0, 0, 0, 1.50805556, 0, 0.5, 1.00777778, 0, 1, 0, 0.98527778, 0.47694444, 0, 1.49361111, 0, 0, 0, 0, 0, 0.49972222, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0.5, 0.49972222, 0, 0.50027778, 0.50555556, 0, 0.50027778, 0, 0, 0, 0.5, 0, 0, 0, 0, 5.99166667, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0, 0, 6, 0, 0, 6, 0, 0, 0, 0, 1, 0, 6, 1, 0, 0, 0, 0, 0.99305556, 0, 0.49222222, 1.49972222]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [2, 0, 3.99972222, 0, 1.49222222, 1.99222222, 3.99472222, 1.99805556, 1.99222222, 1.99222222, 4.49222222, 12.49277778, 3.49972222, 2, 0, 16.4625, 0, 1.5, 0.4925, 0.99222222, 1.5025, 2.5075, 9.50833333, 22.98694444, 1.49222222, 6, 1.00027778, 0, 2.50444444, 2.99166667, 22.48333333, 9.9825, 29.94055556, 5.99166667, 1.49222222, 0.99972222, 2.98333333, 1, 8, 7.00027778, 5.99277778, 0.50027778, 0.99194444, 1.49972222, 0, 6.49833333, 6.97694444, 7.99138889, 1.5, 0.49222222, 1, 14, 9, 14, 1.48444444, 1.5, 0, 0, 7.99138889, 0, 1.49222222, 1.99222222, 0, 3.01638889, 5, 0, 2.50777778, 1.49833333, 2, 0.49194444, 3.99027778, 0.50027778, 1.00166667, 0.99861111, 0, 63, 0, 8.50055556, 4.99944444, 3.49083333, 0, 1.00027778, 1.49972222, 15.985, 0.99944444, 3.99277778, 9.98166667, 1.00694444, 7.98833333, 0, 5.99944444, 2.49861111, 0, 0, 6.99222222, 19, 21.9525, 16.49111111, 8.49944444, 5.49805556, 1.00027778, 9.00138889, 0.99972222, 1.49222222, 8.48694444, 6.99166667, 0, 3.49222222, 9.00083333, 56.93611111, 0, 2.49611111, 1.4925, 7.49222222, 10.99111111, 0, 14.98666667, 1, 11, 10, 0, 1.98472222, 1, 1, 3.01472222, 8, 64, 52, 8, 0, 9, 0, 0, 0, 2, 8, 11, 0, 6, 8, 0, 1, 4, 0, 7, 3, 0, 3, 1, 1, 0.49222222, 0, 0, 5, 3, 0, 4, 3, 4, 0, 6.49888889, 0.50027778, 3.49222222, 1.0075, 1.50027778, 0, 1.99222222, 1.49222222, 8.47916667, 0, 0, 1.00055556, 0, 7.9925, 9.4825, 5.99944444, 1.50027778, 1.5, 5.99166667, 1.50777778, 2, 1, 1.5, 3.49888889, 8, 7.99166667, 3.99, 5.00583333, 0.50055556, 2.99972222, 4.48527778, 8.49111111, 7.99194444, 0, 1.99666667, 8, 6, 3, 0, 3, 1, 0, 13, 0, 22, 1, 3, 155, 1, 0, 0, 0, 0, 12, 0, 9, 6, 0, 0, 0, 0, 2, 2, 4.98861111, 5.49111111, 5.99333333, 2.5, 2.5, 0, 0.99222222, 2.98444444, 11, 2, 0, 7.50027778, 1.00027778, 1.00055556, 0.5, 0.98472222, 1.4975, 2.99944444, 2.50083333, 10.48361111, 11.49916667, 3, 8, 1.00027778, 1.00027778, 1.00777778, 0, 0, 6.49166667, 1.49944444, 6.98388889, 0, 1.00777778, 7, 2.99333333, 0, 1.5, 0, 2.50194444, 2.49555556, 4.50944444, 1.99972222, 0, 4, 0.99472222, 6.49194444, 0, 10.99888889, 0, 6.00111111, 1, 1, 0, 10, 8, 2, 2, 1, 0, 3, 4, 4, 0, 0, 1, 0, 1, 9, 0, 0, 7, 5, 0, 2, 14, 1.99222222, 0, 2.98527778, 1, 2.5, 2, 0, 0.49222222, 0, 3.99888889, 4.0075, 0, 3.49944444, 6.49166667, 8.99833333, 3, 20.99055556, 6.99083333, 6.99166667, 2, 1.50027778, 4.98805556, 0, 4.00527778, 6.49194444, 1.49972222, 3, 6.49861111, 1.50722222, 8.49111111, 6.49138889, 6.49, 0, 2, 0, 6, 10, 7, 10, 2, 9, 4, 8, 0, 5, 12, 3, 1, 6, 4, 1, 0, 0, 3, 9, 23.93861111, 6, 0, 1.99972222, 0.50777778, 4.47777778, 0.49972222, 2.49194444, 0, 1.00777778, 0, 1.49222222, 4.98416667, 2.5, 1.49222222, 5.50694444, 5, 0.99916667, 2.49944444, 11.48694444, 0, 1.49388889, 1.49055556, 2, 14, 1.49222222, 0, 13.96555556, 0.99277778, 0, 2.51972222, 1.98388889, 1.49194444, 2, 0, 2.49944444, 13.9825, 19.98277778, 1.9925, 6, 1.50027778, 5.49972222, 0, 10.49222222, 2, 0, 8, 2, 7, 8, 7, 9, 2, 3, 0, 2, 1, 1, 0, 4, 6, 10, 6, 11, 2, 1, 0, 4, 4, 3, 0, 3, 0, 0, 6, 4, 0.51638889, 0, 1.99472222, 1.48444444, 1.48472222, 0, 2.99972222, 6.98972222, 2, 7.49861111, 10.99194444, 7.48111111, 7.99166667, 3.4925, 3.48916667, 1.50027778, 0, 2.99972222, 1.4925, 1.0075, 0, 10.98361111, 5.99222222, 2.5, 0, 8, 12, 2, 0, 9, 0, 0, 1, 1, 1, 1, 7, 1, 3, 4, 3, 0, 0, 7, 4, 0, 0, 0, 15, 2, 6, 2, 3, 7, 1.5, 3.49, 7, 1.49222222, 6.99888889, 0.49222222, 7.49138889, 7.49916667, 1.49222222, 17.48333333, 2.49166667, 0, 2, 1.98444444, 2.485, 0, 0.99222222, 1.00027778, 13.48972222, 1.50027778, 1.49222222, 7.49111111, 12.99166667, 11.48805556, 1.00611111, 8, 7.48416667, 1.00055556, 0, 15, 0, 0, 3, 3, 2, 2, 7, 2, 1, 6, 0, 0, 5, 0, 1, 2, 9, 0, 0.49222222, 0.5, 0.5, 7.98944444, 1.00166667, 5.49166667, 1.99194444, 7.49861111, 1.49111111, 5, 2.5075, 0, 2.49222222, 0, 3.00027778, 3.99888889, 6.49166667, 0, 6, 5, 4, 1, 0, 9, 0, 3, 2, 5, 4, 0, 0, 9, 0, 0, 7, 0, 0, 9, 0, 0, 0, 0, 19, 8, 4, 6, 0, 12, 25, 9, 0, 6, 6, 0, 0, 0, 2, 2, 9, 7, 18, 0, 3, 9.00083333, 1.50055556, 1.49916667, 1.00027778, 0, 2.00027778]
+        },
+        {
+          "type": "double",
+          "attributes": {
+            "units": {
+              "type": "list",
+              "attributes": {
+                "names": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["numerator", "denominator"]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["symbolic_units"]
+                }
+              },
+              "value": [
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["h"]
+                },
+                {
+                  "type": "character",
+                  "attributes": {},
+                  "value": []
+                }
+              ]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["units"]
+            }
+          },
+          "value": [0, 15, 12.5075, 16, 18.89527778, 12.50694444, 11.38694444, 0, 11.36972222, 17.89527778, 12.50777778, 11.365, 12.5075, 0, 1, 149.42694444, 11.36666667, 0, 12.5075, 11.35, 12.5075, 12.50777778, 0, 39.49583333, 12.50694444, 7, 7.00833333, 12.50722222, 14, 20.40444444, 6.50777778, 7.00833333, 103.03, 16.49277778, 7.00833333, 0, 0, 7, 14, 24.64277778, 14, 0, 7.00833333, 0, 0, 7.00833333, 7.00833333, 7.00833333, 0, 7.00833333, 22, 0, 18, 78, 15.00027778, 0, 2, 12.50777778, 7.00833333, 17.50027778, 12.77638889, 18.2625, 14.99583333, 0.5, 0, 14.50166667, 17.9075, 0, 0, 12.5075, 12.5075, 14.00222222, 15.4975, 17.925, 12.42805556, 61, 16.50083333, 0.50027778, 0, 6.00777778, 17, 11.35611111, 12.50722222, 42.29666667, 12.5075, 6, 23.01611111, 14.00305556, 7.00833333, 13.00777778, 0.50083333, 14, 13.50777778, 1.99222222, 6.50166667, 65, 40.32777778, 7.00861111, 14.51055556, 7.00833333, 17.49972222, 0.50388889, 0, 13.00777778, 7.00833333, 7.00833333, 29, 7.00833333, 0, 172.84333333, 15.00166667, 0, 7.00833333, 6.50555556, 7.00916667, 14.49861111, 14.01666667, 15, 7, 7, 17, 0, 7, 0, 3.5, 12, 226, 35, 7, 18, 0, 14, 0, 0, 0, 0, 21, 6, 40, 7, 17, 20, 1, 11, 36.26777778, 0, 16, 12, 12, 11.13666667, 0, 16, 57, 5, 6, 17, 12, 12, 207.31972222, 17, 12.50777778, 0, 18.40444444, 14.00777778, 0, 20.92277778, 0, 12.50722222, 94.24138889, 0, 15, 7.49944444, 0, 7.00861111, 7.01055556, 0.50055556, 0, 0, 6.50777778, 0, 0, 0, 0, 0, 7, 7.00833333, 12.505, 12.5075, 12.5, 13.50777778, 12.50777778, 7.00833333, 7.00833333, 13.79222222, 0, 20, 7, 7, 14, 0, 18, 2, 7, 14, 14, 12, 0, 141.34361111, 11, 16.28583333, 21, 22, 12, 11.14333333, 12, 8, 7, 3, 15, 18, 14, 12, 12, 11.39916667, 6.50777778, 12.50638889, 0, 0, 12.50777778, 0, 11.40194444, 7, 18.0075, 1.99222222, 11.40444444, 0, 0, 0, 12.50777778, 11.40083333, 5.98972222, 0, 0, 13.51527778, 7, 7, 0, 0, 0, 7.00833333, 0, 7.00833333, 0, 7.00833333, 1.99222222, 0, 37, 0, 12.50722222, 0, 19.99861111, 0, 12.50722222, 32.99444444, 7.00833333, 0, 0, 0, 7.00833333, 13.5075, 20.01611111, 20.49916667, 7.00833333, 12, 12, 15, 7, 7, 1, 12, 12, 60, 12, 1, 11, 11, 14, 1, 11, 11, 11, 2, 12, 0, 12, 42, 12, 24, 12.50777778, 11, 0, 0, 12.50777778, 25.01472222, 11.42388889, 0, 15.5, 59.9475, 0.9925, 12.50777778, 0, 7.00833333, 7.00833333, 12, 0.50083333, 7.01055556, 0, 14.49222222, 17.49361111, 22.93527778, 0, 11.40611111, 0, 0, 12, 7.01444444, 1.49222222, 7.00833333, 7.00833333, 7.00833333, 15, 7, 24, 23.23472222, 38, 7, 7, 12, 24, 12, 12, 14, 12, 0, 0, 7, 12, 12, 12, 16, 15, 12, 29, 121.32611111, 7, 16, 0, 6, 21.42916667, 0, 2.99166667, 0, 0, 22.49944444, 21.51722222, 11.39694444, 0, 12.50666667, 12.50777778, 11, 0, 6.00166667, 49.49888889, 13.50777778, 0.49972222, 12.51361111, 7.00833333, 7, 14.34777778, 13.49222222, 50.0075, 12.50722222, 17, 12.50777778, 11.41277778, 12.50805556, 0, 15.5, 7.00833333, 58.02305556, 13.01444444, 0, 11, 0, 6.50694444, 17.00777778, 7.00861111, 11, 17, 0, 7, 7, 7, 11, 0, 7, 0, 17, 1, 15, 12, 19, 11, 12, 12, 12, 12, 12, 12, 14, 0, 12, 0, 23, 0, 12, 19, 12, 12, 0, 13.93833333, 12.5075, 11.43472222, 11.41694444, 17, 0, 7.00833333, 0, 7.01055556, 7.00833333, 7.00833333, 7.00833333, 12.50777778, 12.5075, 0, 15, 13.00194444, 7.00833333, 0, 18.00027778, 7.00833333, 7.00833333, 16.99972222, 13.99277778, 7, 7, 0, 16, 7, 17, 17, 12, 0, 12, 12, 12, 7, 12, 12, 12, 18, 19, 12, 12, 5, 18, 17, 12, 7, 5, 12, 12, 12, 13.99638889, 12.50666667, 7, 12.50666667, 0, 7.00833333, 7.00833333, 7.00833333, 0, 7.50888889, 12.5075, 0, 6, 12.50777778, 12.50722222, 23.42388889, 0, 15.00027778, 14.01694444, 0, 0, 7.00833333, 6.50611111, 7.00833333, 0, 1, 6.5075, 0.99277778, 14.50222222, 7, 38.32527778, 19, 41, 12, 29, 0, 12, 0, 29, 12, 3, 28, 29, 15, 6, 12, 7, 30, 0, 0, 16.49222222, 6.50777778, 0, 30.51138889, 0, 30.38472222, 12.50777778, 0, 0, 29.49916667, 11.43416667, 36.93138889, 0, 7.00833333, 24, 31.49944444, 12, 0, 12, 5, 16, 7, 13, 12, 11, 12, 12.12527778, 43, 14, 12, 14, 7, 7, 13, 19, 12, 22, 5, 5, 14, 61, 0, 14, 7, 14, 7, 29, 7, 17, 11, 7, 14, 24, 15, 7, 0, 7, 24, 43, 22, 12, 0, 0, 12.50722222, 0, 0, 12.50777778]
         }
       ]
     }

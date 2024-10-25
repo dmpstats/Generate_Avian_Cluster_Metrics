@@ -265,34 +265,12 @@ rFunction = function(data,
   
   track_cluster_tbl <- track_cluster_tbl %>% left_join(wholeclusts, by = cluster_id_col)
   
-  ### 3.2 Time spent at each behaviour category, per track within cluster -----
-  if(not_null(behav_col)){
-    
-    logger.info("   [a] Deriving Time-at-Behaviour metrics")
-    
-    time_at_behav <- data |> 
-      as_tibble() |> 
-      filter(!is.na(.data[[cluster_id_col]])) |> 
-      group_by(.data[[trk_id_col]], .data[[cluster_id_col]], behav) |> 
-      summarise(time_spent = sum(timediff_hrs, na.rm = TRUE), .groups = "drop") |>
-      tidyr::pivot_wider(
-        names_from = behav, 
-        values_from = time_spent, 
-        names_glue = "{behav}_drtn", 
-        values_fill = units::set_units(0, "h")
-      )  
-    
-  }else{
-    logger.info("   [a] Skipping Time-at-Behaviour calculations")
-    time_at_behav <- NULL
-  }
-  
-  
-  ### 3.3 Sub-table with Accelerometer summaries, if ACC is available -----
+
+  ### 3.2 Sub-table with Accelerometer summaries, if ACC is available -----
   
   if ("var_acc_x" %in% colnames(data)) {
   
-    logger.info("   [b] Accelerometer columns identified. Calculating ACC summaries")
+    logger.info("   [a] Accelerometer columns identified. Calculating ACC summaries")
     
     track_cluster_tbl_acc <- data |> 
       # drop geometry for efficiency, by avoiding default parsing to multipoints by `summarise.sf()`
@@ -309,25 +287,27 @@ rFunction = function(data,
       )
     
   } else {
-    logger.info("   [b] No accelerometer data identified. Skipping ACC summaries")
+    logger.info("   [a] No accelerometer data identified. Skipping ACC summaries")
     track_cluster_tbl_acc <- NULL
   }
   
   
   
-  ### 3.4 Attendance Calculations     -------------------------------------
-  logger.info("   [c] Deriving Attendance metrics")
+  ### 3.3 Attendance Calculations     -------------------------------------
+  logger.info("   [b] Deriving Attendance metrics")
   
   #' generate columns `attendance`, `attendance_dmean` & `attendance_daytime_dmean`
   #' 
   attendance_time <- attendanceTab_(
     dt = data, 
     clust_col = cluster_id_col, 
-    trck_col = trk_id_col)
+    trck_col = trk_id_col, 
+    behav_col = behav_col
+  )
   
   
-  ### 3.5 Revisitation Calculations  -------------------------------------------
-  logger.info("   [d] Cyphering Revisitation metrics")
+  ### 3.4 Revisitation Calculations  -------------------------------------------
+  logger.info("   [c] Cyphering Revisitation metrics")
   
   #' generate columns  `visits_day_mean` & `visit_drtn_mean`
   #' 
@@ -339,8 +319,8 @@ rFunction = function(data,
     tm_col = "timestamp_local")
   
   
-  ### 3.6 Night-Distance Calculations ------------------------------------------
-  logger.info("   [e] Cooking Night-distance metrics")
+  ### 3.5 Night-Distance Calculations ------------------------------------------
+  logger.info("   [d] Cooking Night-distance metrics")
   
   #' generate columns  `nightpts_dist_dmean`; `nightpts_250m_prop` & `nightpts_1km_prop`
   #'
@@ -351,8 +331,8 @@ rFunction = function(data,
     trck_col = trk_id_col)
   
   
-  ### 3.7. Arrival-Distance Calculations ---------------------------------------
-  logger.info("   [f] Hammering Arrival-Distance metrics")
+  ### 3.6. Arrival-Distance Calculations ---------------------------------------
+  logger.info("   [e] Hammering Arrival-Distance metrics")
   
   #' generate column `arrival_dist_mean` 
   #' 
@@ -364,13 +344,8 @@ rFunction = function(data,
     tm_col = "timestamp_local")
   
   
-  ### 3.8 Stack outputs into final clustertable ---------------------------------
-  logger.info("   [g] Merging [a-f] metrics into primary track-level cluster table")
-  
-  if (not_null(time_at_behav)) {
-    track_cluster_tbl <- track_cluster_tbl |>  
-      left_join(time_at_behav, by = c(cluster_id_col, trk_id_col))
-  }
+  ### 3.7 Stack outputs into final clustertable ---------------------------------
+  logger.info("   [f] Merging [a-e] metrics into primary track-level cluster table")
   
   track_cluster_tbl <- track_cluster_tbl |> 
     left_join(attendance_time, by = c(cluster_id_col, trk_id_col)) |> 
@@ -461,16 +436,16 @@ rFunction = function(data,
     group_by(.data[[cluster_id_col]]) %>%
     summarise(
       
-      # total time spent on each behaviour
-      if(not_null(behav_ctgs)) across(matches(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "{.col}_cmpd"),
-      
       #avg_daytime_hour_local = mean(med_daytime_hour_local, na.rm = TRUE),
       hour_local_avg = mean(hour_local_med, na.rm = TRUE),
 
       # attendance metrics
-      attendance_cmpd = sum(attendance, na.rm = TRUE),
-      attendance_davg = mean(attendance_dmean, na.rm = TRUE),
-      attendance_daytime_davg = mean(attendance_daytime_dmean, na.rm = TRUE),
+      attnd_cmpd = sum(attnd, na.rm = TRUE),
+      attnd_davg = mean(attnd_dmean, na.rm = TRUE),
+      attnd_daytime_davg = mean(attnd_daytime_dmean, na.rm = TRUE),
+      # total time spent on each behaviour
+      if(not_null(behav_ctgs)) across(matches(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "{.col}_cmpd"),
+      
       
       # visits metrics
       visits_day_avg = mean(visits_day_mean, na.rm = TRUE),
@@ -744,7 +719,7 @@ calcGMedianSF <- function(data) {
 #' Function to calculate daily average attendance time by a track/animal in a given
 #' cluster, which is assumed as a proxy of time at carcass
 #' 
-attendanceTab_ <- function(dt, clust_col, trck_col) {
+attendanceTab_ <- function(dt, clust_col, trck_col, behav_col) {
   
   if(!all(dt$nightpoint %in% c(0,1))){
     cli::cli_abort(
@@ -752,44 +727,104 @@ attendanceTab_ <- function(dt, clust_col, trck_col) {
       call = NULL)
   } 
   
-  dt |> 
+  # -- Identify first and last locations of each day-date (local)
+  # NOTE 1: purposefully *not* grouping by track, so that last/first points of
+  # the day are still tagged when the next/previous locations belong to a
+  # different track, allowing the calculations below for `date_attn_lags` to
+  # return values in those cases.
+  # NOTE 2: want to do this before filtering out non-clustered locations, to
+  # include all available data
+  
+  dt <- dt |> 
     # drop locally unnecessary geometry, for efficiency
     st_drop_geometry() |> 
-    # flag last and first locations of each day.
-    # NOTE 1: purposefully *not* grouping by track, so that last/first points of
-    # the day are still tagged when the next/previous locations belong to a
-    # different track, allowing the calculations below for `date_attn_lags` to
-    # return values in those cases.
-    # NOTE 2: want to do this before filtering out non-clustered locations, to
-    # include all available data
     mutate(
       date_last_loc = date_local != lead(date_local),
       date_first_loc = date_local != lag(date_local)
-    ) |> 
+    )
+  
+  # -- Roosting Correction
+  # Calculate correction factor to add to cluster attendance in cases where, for a
+  # given clustered location point, the subsequent location is on the next day and
+  # is not clustered. This correction strictly applies to locations classified as
+  # Roosting, and expresses decimal hours between (local) midnight and sunrise,
+  # i.e. it assumes the bird remained roosting in the same cluster till sunrise. It
+  # uses the sunrise time of that last location as a reference, as the sunrise on
+  # the subsequent (unclustered) location might be nonsensical
+  if(not_null(behav_col) && any(grepl("[R|r]oost", dt[[behav_col]]))){
+    dt <- dt |> 
+      # local sunrise decimal time 
+      # must be grouped by TZ label, so that time since local midnight calculation is correct
+      mutate(
+        sunrise_dec_local = decimal_time(with_tz(sunrise_timestamp, first(local_tz)), "h"),
+        .by = local_tz
+      ) |> 
+      # correction factor (equals 0 if not conditions not met)
+      mutate(
+        attn_roost_correction = if_else(
+          date_last_loc & 
+            is.na(lead(.data[[clust_col]])) & 
+            grepl("[R|r]oost", dt[[behav_col]]),
+          true = sunrise_dec_local, 
+          false = set_units(0, "h"))
+      )
+  } else{
+    dt$attn_roost_correction <- set_units(0, "h") 
+  }
+  
+  
+  # -- Compute visited day-based attendance time lags. i.e accounting for gaps 
+  # between last/first points and the midnight boundary, and non-visited days
+  # are excluded from calculation
+  dt <- dt |> 
     filter(!is.na(.data[[clust_col]])) |> 
     group_by(.data[[clust_col]], .data[[trck_col]], date_local) |> 
-    # compute attendance time lags, accounting for gaps between last/first
-    # points and the midnight boundary
     mutate(
       date_attn_lags = case_when(
-        date_last_loc ~ as.numeric(ceiling_date(timestamp_local, "day") - timestamp_local, "hours") |> set_units("h"),
-        date_first_loc ~ timediff_hrs + as.numeric(timestamp_local - floor_date(timestamp_local, "day"), "hours") |> set_units("h"),
+        date_last_loc ~ units::as_units(24, "h") - dec_time_local + attn_roost_correction,
+        date_first_loc ~ timediff_hrs + dec_time_local,
         .default = timediff_hrs
       )
-    ) |>
+    )
+  
+  
+  # -- Derive daily attendance summaries and total attendance
+  attnd <- dt  |> 
     # track's full-day and daytime attendance to the cluster, per visited day 
     summarise(
       daily_attendance = sum(date_attn_lags, na.rm = TRUE),
       daily_attendance_daytime = sum(date_attn_lags[nightpoint == 0], na.rm = TRUE),
       .groups = "drop_last"
-    ) %>%
-    # track's mean daily and mean daily-daytime attendance time to the cluster
+    )  |> 
+    # track's mean daily and mean daytime-daily attendance to the cluster
     summarise(
-      attendance = sum(daily_attendance),
-      attendance_dmean = mean(daily_attendance),
-      attendance_daytime_dmean = mean(daily_attendance_daytime),
+      attnd = sum(daily_attendance),
+      attnd_dmean = mean(daily_attendance),
+      attnd_daytime_dmean = mean(daily_attendance_daytime),
       .groups = "keep"
-    ) 
+    )
+  
+  
+  # -- Total time spent at each behaviour while in the cluster
+  if(not_null(behav_col)){
+    
+    logger.info("        |- Deriving time spent at each behaviour")
+    
+    attnd_at_behav <- dt |> 
+      group_by(.data[[clust_col]], .data[[trck_col]], .data[[behav_col]]) |> 
+      summarise(time_spent = sum(date_attn_lags, na.rm = TRUE), .groups = "drop") |>
+      tidyr::pivot_wider(
+        names_from = behav, 
+        values_from = time_spent, 
+        names_glue = "attnd_{behav}", 
+        values_fill = units::set_units(0, "h")
+      )  
+    
+    attnd <- left_join(attnd, attnd_at_behav, by = c(clust_col, trck_col))
+    
+  }
+  
+  attnd
 }
 
 
