@@ -167,12 +167,12 @@ track_clust_details <- list(
     Description = "The number of night-time and day-time track location points in the cluster",
     Calculation = "Count track points in cluster grouped by column `nightpoint`[^1]"
   ),
-  "`first_dttm`" = tibble(
-    Description = "Timestamp of the first track point in the cluster (units: UTC)",
+  "`first_dttm` and `first_dttm_local`" = tibble(
+    Description = "Timestamp of the first track point in the cluster, in UTC and local timezone, respectively",
     Calculation = "Find the track's earliest recorded locations in the cluster"
   ),
-  "`last_dttm`" = tibble(
-    Description = "Timestamp of the last track point in the cluster (units: UTC)",
+  "`last_dttm` and `last_dttm_local`" = tibble(
+    Description = "Timestamp of the last track point in the cluster, in UTC and local timezone, respectively",
     Calculation = "Find the track's latest recorded locations in the cluster"
   ),
   "`timespan`" = tibble(
@@ -181,7 +181,7 @@ track_clust_details <- list(
   ),
   "`timespan_ndays`" = tibble(
     Description = "Total number of integer days over which the track visits the cluster, including lags during which the track is absent from the cluster",
-    Calculation = "The length of the sequence between the date components of `first_dttm` and `last_dttm`"
+    Calculation = "The length of the sequence between the date components of `first_dttm_local` and `last_dttm_local`"
   ),
   "`days_present_n`" = tibble(
     Description = "The cumulative number of days on which the track was present in the cluster",
@@ -302,12 +302,12 @@ Attributes specified table below are column names of the whole-cluster metrics d
 #| echo: false
 
 clust_details <- list(
-  "`spawn_dttm`" = tibble(
-    Description = "The 'spawning' date-time of the cluster event (units: UTC)",
+  "`spawn_dttm` and `spawn_dttm_local`" = tibble(
+    Description = "The 'spawning' date-time of the cluster event, in UTC and local timezone, respectively",
     Calculation = "The earliest timestamp of all point locations associated with the cluster."
   ),
-  "`cease_dttm`" = tibble(
-    Description = "The 'ending' date-time of the cluster event (units: UTC)",
+  "`cease_dttm` and `cease_dttm_local`" = tibble(
+    Description = "The 'ending' date-time of the cluster event, in UTC and local timezone, respectively",
     Calculation = "The latest timestamp of all point locations associated with the cluster."
   ),
   "`centroid`" = tibble(
@@ -328,7 +328,7 @@ clust_details <- list(
   ),
     "`timespan_ndays`" = tibble(
     Description = "Total number of integer days covered by the cluster event, including days without visiting tracks",
-    Calculation = "The length of the sequence between the date components of `cease_dttm` and `spawn_dttm`"
+    Calculation = "The length of the sequence between the date components of `cease_dttm_local` and `spawn_dttm_local`"
   ),
   "`days_active_n`" = tibble(
     Description = "Number of days the cluster was active, i.e. visited by at least one track during the day",

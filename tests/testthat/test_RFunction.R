@@ -286,8 +286,7 @@ test_that("calculations under `attendanceTab_()` pass sanity check", {
     behav_col = "behav"
   )
   
-  expect_equal(actual$attnd, sum(dt_mighty$timediff_hrs, na.rm = TRUE))
-  
+  expect_equal(actual$attnd, sum(dt_mega$timediff_hrs, na.rm = TRUE))
 
 })
 

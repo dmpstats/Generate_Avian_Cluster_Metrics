@@ -234,6 +234,8 @@ rFunction = function(data,
       # Time-related
       first_dttm = with_tz(min(.data[[tm_id_col]]), "UTC"),
       last_dttm = with_tz(max(.data[[tm_id_col]]), "UTC"),
+      # Time zone: ignore if cluster spans over multiple TZs (unlikely unless it sits right across a border)
+      local_tz = first(local_tz),
       timespan = as.numeric(last_dttm - first_dttm, units = "hours") |> units::set_units("h"),
       timespan_ndays = length(seq(min(date_local), max(date_local), 1)),
       days_present_n = length(unique(date_local)),
@@ -243,6 +245,17 @@ rFunction = function(data,
     ) %>%
     # Calculate track-level geometric medians in each cluster
     mutate(median_point = calcGMedianSF(.), .after = all_points) 
+  
+  
+  # Add first and final local date-time, as a character string
+  track_cluster_tbl <- track_cluster_tbl |> 
+    mutate(
+      first_dttm_local = as.character(with_tz(first_dttm, first(local_tz))),
+      last_dttm_local = as.character(with_tz(last_dttm, first(local_tz))),
+      .by = local_tz, 
+      .after = last_dttm
+    ) |> 
+    select(-local_tz)
   
   
   
@@ -394,6 +407,8 @@ rFunction = function(data,
       # Time-related
       spawn_dttm = lubridate::with_tz(min(.data[[tm_id_col]]), "UTC"),
       cease_dttm = lubridate::with_tz(max(.data[[tm_id_col]]), "UTC"),
+      # Time zone: ignore if cluster spans over multiple TZs (unlikely unless it sits right across a border)
+      local_tz = first(local_tz),
     
       # track membership
       members_n = length(unique(.data[[trk_id_col]])),
@@ -426,6 +441,18 @@ rFunction = function(data,
     st_set_geometry("centroid") %>%
     dplyr::select(-clust_points)
     
+  
+  # Add spawning and ceasing local date-time, as character string
+  cluster_tbl <- cluster_tbl |> 
+    mutate(
+      spawn_dttm_local = as.character(with_tz(spawn_dttm, first(local_tz))),
+      cease_dttm_local = as.character(with_tz(cease_dttm, first(local_tz))),
+      .by = local_tz, 
+      .after = cease_dttm
+    ) |> 
+    select(-local_tz)
+  
+  
   
   
   # Attributes calculated from track-level cluster metrics 
