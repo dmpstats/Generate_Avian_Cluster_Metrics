@@ -454,7 +454,6 @@ rFunction = function(data,
   
   
   
-  
   # Attributes calculated from track-level cluster metrics 
   cluster_track_based <- track_cluster_tbl %>%
     group_by(.data[[cluster_id_col]]) %>%
@@ -601,7 +600,7 @@ rFunction = function(data,
   }
   
   
-  logger.info(paste0("Size of the generated cluster table: ", object.size(output) %>% format(units = "Mb")))
+  logger.info(paste0("Size of the generated output dataset: ", object.size(output) %>% format(units = "Mb")))
   
   logger.info("Right, that's the cluster metrics calculation done!")
   
@@ -1129,7 +1128,6 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
     distinct() |> 
     st_set_geometry("clust_centroid")
   
-  
   # Core calculations
   outdat <- clustarrivals |>
     mutate(
@@ -1150,7 +1148,8 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
                 with_tz(as_datetime(arr_dt, tz) + hours(12), tmzn)
               )
             ) |>
-            select(event_id, geometry)
+            # return only point locations
+            select(geometry)
         },
         .progress = TRUE)
     ) |> 
