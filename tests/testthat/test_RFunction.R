@@ -181,11 +181,13 @@ testthat::test_that("Option `output_type` is working as expected", {
   expect_equal(table(actual$clust_id), table(dt$clust_id))
   # chosen option correctly stored in output as a
   expect_equal(attributes(actual)$clust_dt_type, "whole-binned-to-locs")
+  expect_equal(attributes(actual)$cluster_id_col, "clust_id")
   
   # if "cluster-based"
   actual <- rFunction(data = dt, output_type = "cluster-based")
   # chosen option correctly stored in output as a
   expect_equal(attributes(actual)$clust_dt_type, "track-and-whole")
+  expect_equal(attributes(actual)$cluster_id_col, "clust_id")
   expect_equal(sort(actual$clust_id), sort(unique(na.omit(dt$clust_id))))
 })
 

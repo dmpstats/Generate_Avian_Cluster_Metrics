@@ -557,9 +557,12 @@ rFunction = function(data,
         track_id_column = cluster_id_col
       )
       
-      # store type of output, for reference in downstream apps
+      # store type of output , for reference in downstream apps
       attr(output, "clust_dt_type") <- "whole-only"
     }
+    
+    # also store column with cluster ID as attribute, for reference in downstream apps
+    attr(output, "cluster_id_col") <- cluster_id_col
     
   } else {
     
