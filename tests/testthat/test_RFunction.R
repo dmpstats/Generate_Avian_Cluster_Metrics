@@ -182,6 +182,9 @@ testthat::test_that("Option `output_type` is working as expected", {
   # chosen option correctly stored in output as a
   expect_equal(attributes(actual)$clust_dt_type, "whole-binned-to-locs")
   expect_equal(attributes(actual)$cluster_id_col, "clust_id")
+  # column `members_points` is not present
+  expect_true(!"cl_members_points" %in% names(actual))
+  
   
   # if "cluster-based"
   actual <- rFunction(data = dt, output_type = "cluster-based")
@@ -189,6 +192,8 @@ testthat::test_that("Option `output_type` is working as expected", {
   expect_equal(attributes(actual)$clust_dt_type, "track-and-whole")
   expect_equal(attributes(actual)$cluster_id_col, "clust_id")
   expect_equal(sort(actual$clust_id), sort(unique(na.omit(dt$clust_id))))
+  # column `members_points` *is* present, in the track table in the "track-and-whole" case 
+  expect_true("members_points" %in% names(mt_track_data(actual)))
 })
 
 
