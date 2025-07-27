@@ -198,6 +198,26 @@ rFunction = function(data,
   }
   
   
+  ## "lat"/"lon" - required for nesting cluster member points
+  longlat_present <- any(grepl("^lat", names(data)))
+  
+  if(!longlat_present){
+      lon_lat <- if(sf::st_is_longlat(data)){
+        sf::st_coordinates(data)
+      } else {
+        data |>
+          sf::st_transform(4326) |>
+          sf::st_coordinates()
+      }
+      data$lon <- lon_lat[, 'X']
+      data$lat <- lon_lat[, 'Y']
+    } else{
+      # ugly way to rename lat/lon cols, as move2 objects loose track attributes
+      # when passed to dplyr::rename functions
+      names(data)[grep("^lat", names(data))] <- "lat"
+      names(data)[grep("^lon", names(data))] <- "lon"
+    }
+  
 
   # get names behaviour categories that are present in clusters
   if(not_null(behav_col)){
@@ -398,21 +418,26 @@ rFunction = function(data,
   
   # basic whole-cluster metrics
   cluster_tbl <- data |>  
-    filter(!is.na(.data[[cluster_id_col]])) %>%
+    filter(!is.na(.data[[cluster_id_col]])) |> 
     group_by(.data[[cluster_id_col]]) |> 
-    summarise(
-      # combine cluster points into multipoint
-      clust_points = st_combine(geometry),
-    
+    dplyr::summarise(
+      
       # Time-related
       spawn_dttm = lubridate::with_tz(min(.data[[tm_id_col]]), "UTC"),
       cease_dttm = lubridate::with_tz(max(.data[[tm_id_col]]), "UTC"),
       # Time zone: ignore if cluster spans over multiple TZs (unlikely unless it sits right across a border)
       local_tz = first(local_tz),
-    
+      
       # track membership
       members_n = length(unique(.data[[trk_id_col]])),
       members_ids = list(unique(.data[[trk_id_col]])),
+      
+      # list-column of cluster-member points and their timestamps, as a data.frame
+      members_points = list(
+        data.frame(
+          timestamp = lubridate::format_ISO8601(.data[[tm_id_col]], usetz = TRUE), 
+          lon, lat)
+      ),
       
       # lifespan metrics
       timespan = as.numeric(cease_dttm - spawn_dttm, units = "hours") |> units::set_units("h"),
@@ -424,22 +449,27 @@ rFunction = function(data,
       
       # mean, median and sd of pairwise distance between points in cluster
       pairwise_dist_stats(geometry, name_prefix = "pts_pairdist"),
-
+      
+      # Do not unionize points, i.e. use st_combine instead to ensure matching
+      # locations are not 
+      do_union = FALSE,
+      
       .groups = "drop"
     ) |>
     mutate(
-      pts_spread_area = st_convex_hull(clust_points) |>
+      pts_spread_area = st_convex_hull(geometry) |>
         # add 50cm buffer to deal with linearly positioned points, to which
         # `st_convex_hull` doesn't produce a polygon
         st_buffer(units::set_units(0.5, "m")) |>
         st_area() |>
         units::set_units("m2")
-    ) %>%
-    st_set_geometry("clust_points") %>%
+    )  |> 
     # Calculate cluster centroids based on geometric medians
-    mutate(centroid = calcGMedianSF(.), .after = cease_dttm) %>%
-    st_set_geometry("centroid") %>%
-    dplyr::select(-clust_points)
+    mutate(
+      centroid = calcGMedianSF(geometry), .after = dplyr::any_of(cluster_id_col)
+    ) |> 
+    st_set_geometry("centroid") |> 
+    select(-geometry)
     
   
   # Add spawning and ceasing local date-time, as character string
@@ -582,14 +612,17 @@ rFunction = function(data,
     # individual-level tracking data
     output <- data |> 
       # drop non-clustered location points
-      filter(!is.na(.data[[cluster_id_col]])) |> 
+      dplyr::filter(!is.na(.data[[cluster_id_col]])) |> 
       # strip down dataset to key columns
-      select(any_of(c(trk_id_col, tm_id_col, "event_id", behav_col, cluster_id_col))) |> 
+      dplyr::select(
+        any_of(c(trk_id_col, tm_id_col, "event_id", behav_col, cluster_id_col))) |> 
       # merge cluster metrics
       left_join( 
-        cluster_tbl |> rename_with(~paste0("cl_", .x), .cols = !all_of(cluster_id_col)), 
+        cluster_tbl |> 
+          dplyr::select(- members_points) |> 
+          rename_with(~paste0("cl_", .x), .cols = !all_of(cluster_id_col)), 
         by = cluster_id_col
-      ) 
+      )
     
     # Append track-level and whole level metrics table as attributes of move2
     # output object
