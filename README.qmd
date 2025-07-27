@@ -323,7 +323,7 @@ clust_details <- list(
     Calculation = ""
   ),
     "`members_points`" = tibble(
-    Description = "Nested data frame with longitude-latitude coordinates and timestamps of the location points forming the cluster",
+    Description = "Nested data frame with longitude-latitude coordinates and timestamps of the points forming the cluster",
     Calculation = ""
   ),
   "`timespan`" = tibble(

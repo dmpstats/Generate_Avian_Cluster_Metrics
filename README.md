@@ -199,7 +199,7 @@ output is defined by settings `output_type` and `cluster_tbl_type`:
 | `centroid` | A `POINT` geometry providing the coordinates of the spatial median of the cluster | Apply the Weiszfeld algorithm ([`Gmedian::Weiszfeld`](https://rdrr.io/cran/Gmedian/man/Gmedian.html)) to all location points associated with the cluster |
 | `members_n` | Number of tracks containing location points affiliated with the cluster event at any point of its lifespan | Length of unique track IDs in the cluster |
 | `members_ids` | List of track IDs associated with the cluster event during its lifespan |  |
-| `members_points` | Nested data frame with longitude-latitude coordinates and timestamps of the location points forming the cluster |  |
+| `members_points` | Nested data frame with longitude-latitude coordinates and timestamps of the points forming the cluster |  |
 | `timespan` | Total duration of the cluster event (unit: decimal days) | The difference between `cease_dttm` and `spawn_dttm` |
 | `timespan_ndays` | Total number of integer days covered by the cluster event, including days without visiting tracks | The length of the sequence between the date components of `cease_dttm_local` and `spawn_dttm_local` |
 | `days_active_n` | Number of days the cluster was active, i.e. visited by at least one track during the day | Length of unique dates of point locations affiliated to the cluster event |
