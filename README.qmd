@@ -144,7 +144,7 @@ clust_tbl_names <- mt_track_data(out) |>
 
 #### Track-per-Cluster Level
 
-The attributes listed below denote column names of a dataset where each row represents a subset of track location points spatially grouped into a cluster event. Track ID is extracted using the function `move2::mt_track_id_column()`, while cluster ID is specified by the App parameter `clust_id_col`. This dataset constitutes the events table of the `move2_loc` output object when the App settings `output_type` is set to `"cluster-based"` and `cluster_tbl_type` is defined to `"track-and-whole"`.
+The attributes listed below denote column names of a dataset where each row represents a subset of track location points spatially grouped into a cluster event. Track ID is extracted using the function `move2::mt_track_id_column()`, while cluster ID is specified by the App parameter `cluster_id_col`. This dataset constitutes the events table of the `move2_loc` output object when the App settings `output_type` is set to `"cluster-based"` and `cluster_tbl_type` is defined to `"track-and-whole"`.
 
 ```{r}
 #| include: false
@@ -283,7 +283,7 @@ symdiff(track_clust_tbl_names, track_clust_details_names)
 
 #### Whole-Cluster Level
 
-Attributes specified table below are column names of the whole-cluster metrics dataset generated during the App's calculations. Each row represents the properties of a cluster event, which can comprise one or multiple tracks at any given time during the cluster's existence. Cluster IDs are provided in the input data column specified by App parameter `clust_id_col`. The rendering of these metrics in the App's output is defined by settings `output_type` and `cluster_tbl_type`:
+Attributes specified table below are column names of the whole-cluster metrics dataset generated during the App's calculations. Each row represents the properties of a cluster event, which can comprise one or multiple tracks at any given time during the cluster's existence. Cluster IDs are provided in the input data column specified by App parameter `cluster_id_col`. The rendering of these metrics in the App's output is defined by settings `output_type` and `cluster_tbl_type`:
 
   - if `output_type` is set to `"cluster-based"`, whole-cluster metrics are provided as a dedicated table, with its placement in the `move2_loc` output object determined by the `cluster_tbl_type` setting:
     
@@ -320,6 +320,10 @@ clust_details <- list(
   ),
   "`members_ids`" = tibble(
     Description = "List of track IDs associated with the cluster event during its lifespan",
+    Calculation = ""
+  ),
+    "`members_points`" = tibble(
+    Description = "Nested data frame with longitude-latitude coordinates and timestamps of the points forming the cluster",
     Calculation = ""
   ),
   "`timespan`" = tibble(

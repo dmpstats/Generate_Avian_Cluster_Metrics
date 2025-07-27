@@ -53,6 +53,14 @@ mt_track_data(out_dt_nam) |>
 out_dt_nam <- rFunction(data = test_dt$nam |> mutate(clust_id = NA))
 
 
+
+out_dt_nam <- rFunction(
+  data = test_dt$nam |> slice(1:1000) |> rename(longitude = lon, latitude = lat),
+  #output_type =  "merge-to-locs"
+  cluster_tbl_type = "track-and-whole" #"whole-only"
+)
+
+
 #' ----------------------------------------------------
 #' Check output options
 
