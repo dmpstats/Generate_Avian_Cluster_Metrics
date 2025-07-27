@@ -198,6 +198,7 @@ rFunction = function(data,
   }
   
   
+  ## For cluster-based outputs, bind lat/lon columns if absent OR rename as
   ## "lat"/"lon" - required for nesting cluster member points
   longlat_present <- any(grepl("^lat", names(data)))
   
