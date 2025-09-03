@@ -433,13 +433,6 @@ rFunction = function(data,
       members_n = length(unique(.data[[trk_id_col]])),
       members_ids = list(unique(.data[[trk_id_col]])),
       
-      # list-column of cluster-member points and their timestamps, as a data.frame
-      members_points = list(
-        data.frame(
-          timestamp = lubridate::format_ISO8601(.data[[tm_id_col]], usetz = TRUE), 
-          lon, lat)
-      ),
-      
       # lifespan metrics
       timespan = as.numeric(cease_dttm - spawn_dttm, units = "hours") |> units::set_units("h"),
       timespan_ndays = length(seq(min(date_local), max(date_local), 1)),
@@ -448,7 +441,14 @@ rFunction = function(data,
       
       pts_n = n(),
       
-      # mean, median and sd of pairwise distance between points in cluster
+      # list-column of point locations in cluster and their timestamps, as a data.frame
+      pts_locs = list(
+        data.frame(
+          timestamp = lubridate::format_ISO8601(.data[[tm_id_col]], usetz = TRUE), 
+          lon, lat)
+      ),
+      
+       # mean, median and sd of pairwise distance between points in cluster
       pairwise_dist_stats(geometry, name_prefix = "pts_pairdist"),
       
       # Do not unionize points, i.e. use st_combine instead to ensure matching
@@ -620,7 +620,9 @@ rFunction = function(data,
       # merge cluster metrics
       left_join( 
         cluster_tbl |> 
-          dplyr::select(- members_points) |> 
+          # drop list-column with cluster-forming point locations to stop redundancy
+          dplyr::select(- pts_locs) |> 
+          # rename metrics with prefix
           rename_with(~paste0("cl_", .x), .cols = !all_of(cluster_id_col)), 
         by = cluster_id_col
       )

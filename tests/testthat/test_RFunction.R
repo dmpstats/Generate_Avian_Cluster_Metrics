@@ -193,7 +193,7 @@ testthat::test_that("Option `output_type` is working as expected", {
   expect_equal(attributes(actual)$cluster_id_col, "clust_id")
   expect_equal(sort(actual$clust_id), sort(unique(na.omit(dt$clust_id))))
   # column `members_points` *is* present, in the track table in the "track-and-whole" case 
-  expect_true("members_points" %in% names(mt_track_data(actual)))
+  expect_true("pts_locs" %in% names(mt_track_data(actual)))
 })
 
 
@@ -246,7 +246,6 @@ test_that("Expected main app outcome has not changed", {
 
  
 # Helper functions -----------------------------------------
-
 
 test_that("calculations under `attendanceTab_()` pass sanity check", {
   

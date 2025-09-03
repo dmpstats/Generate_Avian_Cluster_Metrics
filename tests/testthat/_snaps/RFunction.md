@@ -70,7 +70,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "members_points", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -93,7 +93,7 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "members_points", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
@@ -1272,6 +1272,64 @@
                   "value": ["AW196499..deploy_id.2023814814."]
                 }
               ]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [2, 4, 18, 17, 24, 87, 6, 2, 15, 13, 22, 16, 3, 14, 22, 7, 18, 14, 20, 535, 19, 2, 17, 19, 19, 16, 15, 46, 22, 2, 19, 16, 16, 22, 18, 15, 18, 16, 166, 5, 17, 18, 20, 63, 15, 15, 101, 15, 14, 15]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [1, 1, 2, 2, 2, 5, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 24, 2, 1, 2, 2, 2, 2, 2, 3, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 4, 2, 2, 5, 2, 2, 2]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [1, 1, 2, 2, 2, 5, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 7, 2, 1, 2, 2, 2, 2, 2, 3, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 4, 2, 2, 5, 2, 2, 2]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [3, 5, 10, 9, 11, 18, 3, 3, 7, 5, 14, 8, 4, 6, 14, 4, 10, 5, 12, 30, 8, 3, 9, 11, 11, 8, 7, 25, 14, 3, 11, 8, 8, 14, 10, 7, 10, 8, 100, 2, 9, 10, 10, 16, 7, 7, 63, 7, 6, 7]
             },
             {
               "type": "list",
@@ -3128,64 +3186,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [2, 4, 18, 17, 24, 87, 6, 2, 15, 13, 22, 16, 3, 14, 22, 7, 18, 14, 20, 535, 19, 2, 17, 19, 19, 16, 15, 46, 22, 2, 19, 16, 16, 22, 18, 15, 18, 16, 166, 5, 17, 18, 20, 63, 15, 15, 101, 15, 14, 15]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [1, 1, 2, 2, 2, 5, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 24, 2, 1, 2, 2, 2, 2, 2, 3, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 4, 2, 2, 5, 2, 2, 2]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [1, 1, 2, 2, 2, 5, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 7, 2, 1, 2, 2, 2, 2, 2, 3, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 4, 2, 2, 5, 2, 2, 2]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [3, 5, 10, 9, 11, 18, 3, 3, 7, 5, 14, 8, 4, 6, 14, 4, 10, 5, 12, 30, 8, 3, 9, 11, 11, 8, 7, 25, 14, 3, 11, 8, 8, 14, 10, 7, 10, 8, 100, 2, 9, 10, 10, 16, 7, 7, 63, 7, 6, 7]
             },
             {
               "type": "double",
@@ -6164,7 +6164,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "members_points", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -6187,7 +6187,7 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "members_points", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
@@ -9193,6 +9193,64 @@
                   "value": ["GA_6581..deploy_id.1080727527."]
                 }
               ]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [5.69527778, 2.69138889, 349.98944444, 4.73333333, 6.49944444, 7.14972222, 7.94861111, 3.6, 340.14972222, 14.45, 12.3, 3.57944444, 3.44972222, 23.8, 1.10055556, 197.70166667, 2.45055556, 3.10027778, 18.04944444, 1.3475, 15.69972222, 14.74861111, 0.735, 1.17027778, 0.84611111, 0.60027778, 0.45, 5.79916667, 1.19777778, 0.25, 1.3, 0.71305556, 48.18388889, 0.85, 42.49972222, 17.85055556, 164.84944444, 63.80083333, 15.95027778, 16.45083333, 0.59944444, 0.19972222, 1.69972222, 1.13361111, 3, 0.6, 21.89944444, 0.35027778, 12, 198.44944472, 122.30055556, 75.25055556, 3.95027778, 42.70027778, 16.60027778, 1, 14.05, 98.40027778, 0.49972222, 1.65, 16.84972222, 137.35, 0.09833333, 16.55083333, 15.65, 11.24833333, 0.29944444, 0.19944444, 0.2, 170.7, 0.65027778, 1.6, 0.55, 17, 0.30027778, 24.45, 14.40055556, 1.30027778, 0.10444444, 2.15, 79.1, 1.13361056, 18.08361111, 39.4, 16.09972222, 2.79972222, 0.54972222, 0.68361111, 1.6, 2.45, 0.49944444, 17.7002775, 136.85027778, 14.89916667, 1.61638889, 0.85, 1.44972222, 70.4, 0.15, 0.64944444, 3.80027778, 0.19805556, 18.75, 0.7, 15.24972222, 1.1, 0.15027778, 0.74888889, 1.59972222, 70.39972222, 1.49861111, 19.10027778, 0.60027778, 19.80194444, 0.25027778, 0.1, 2.6, 1.64722222, 0.29972222, 52.84944444, 19.20027778, 17.95, 57.1, 6.34972222, 0.50055556, 0.39972222, 1.45, 15.69972222, 18.05027778, 2.95, 0.15027778, 0.90055556, 0.25027778, 1.35083333, 2.4625, 1.10055556, 1.50138889]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [1, 1, 15, 1, 1, 1, 1, 1, 15, 2, 2, 1, 1, 2, 1, 9, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3, 2, 8, 4, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 2, 9, 6, 4, 1, 3, 2, 1, 2, 5, 1, 1, 2, 7, 1, 2, 2, 2, 1, 1, 1, 8, 1, 1, 1, 2, 1, 2, 2, 1, 1, 1, 4, 1, 2, 3, 2, 1, 1, 1, 1, 1, 1, 2, 7, 2, 1, 1, 1, 4, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 4, 1, 2, 1, 2, 1, 1, 1, 1, 1, 3, 2, 2, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [1, 1, 15, 1, 1, 1, 1, 1, 6, 2, 2, 1, 1, 2, 1, 4, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 3, 2, 8, 4, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 1, 3, 2, 1, 2, 2, 1, 1, 2, 4, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2, 1, 1, 1, 2, 1, 2, 3, 2, 1, 1, 1, 1, 1, 1, 2, 3, 2, 1, 1, 1, 3, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 3, 2, 2, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 4, 2, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [111, 55, 1810, 87, 116, 143, 149, 67, 515, 84, 42, 72, 58, 143, 23, 79, 46, 55, 156, 27, 101, 80, 9, 21, 17, 13, 10, 113, 24, 6, 25, 11, 49, 17, 188, 135, 518, 201, 89, 117, 13, 5, 30, 21, 48, 12, 215, 8, 37, 57, 8, 76, 67, 189, 119, 20, 82, 63, 11, 28, 132, 111, 3, 101, 114, 27, 7, 5, 5, 54, 14, 33, 12, 122, 6, 135, 88, 23, 3, 44, 7, 20, 142, 248, 115, 44, 12, 13, 31, 50, 11, 125, 125, 96, 21, 17, 27, 57, 4, 14, 56, 5, 159, 15, 102, 19, 4, 14, 33, 9, 31, 181, 12, 187, 6, 3, 52, 30, 7, 223, 174, 146, 575, 124, 11, 8, 28, 108, 151, 59, 4, 19, 6, 24, 46, 23, 26]
             },
             {
               "type": "list",
@@ -14268,64 +14326,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [5.69527778, 2.69138889, 349.98944444, 4.73333333, 6.49944444, 7.14972222, 7.94861111, 3.6, 340.14972222, 14.45, 12.3, 3.57944444, 3.44972222, 23.8, 1.10055556, 197.70166667, 2.45055556, 3.10027778, 18.04944444, 1.3475, 15.69972222, 14.74861111, 0.735, 1.17027778, 0.84611111, 0.60027778, 0.45, 5.79916667, 1.19777778, 0.25, 1.3, 0.71305556, 48.18388889, 0.85, 42.49972222, 17.85055556, 164.84944444, 63.80083333, 15.95027778, 16.45083333, 0.59944444, 0.19972222, 1.69972222, 1.13361111, 3, 0.6, 21.89944444, 0.35027778, 12, 198.44944472, 122.30055556, 75.25055556, 3.95027778, 42.70027778, 16.60027778, 1, 14.05, 98.40027778, 0.49972222, 1.65, 16.84972222, 137.35, 0.09833333, 16.55083333, 15.65, 11.24833333, 0.29944444, 0.19944444, 0.2, 170.7, 0.65027778, 1.6, 0.55, 17, 0.30027778, 24.45, 14.40055556, 1.30027778, 0.10444444, 2.15, 79.1, 1.13361056, 18.08361111, 39.4, 16.09972222, 2.79972222, 0.54972222, 0.68361111, 1.6, 2.45, 0.49944444, 17.7002775, 136.85027778, 14.89916667, 1.61638889, 0.85, 1.44972222, 70.4, 0.15, 0.64944444, 3.80027778, 0.19805556, 18.75, 0.7, 15.24972222, 1.1, 0.15027778, 0.74888889, 1.59972222, 70.39972222, 1.49861111, 19.10027778, 0.60027778, 19.80194444, 0.25027778, 0.1, 2.6, 1.64722222, 0.29972222, 52.84944444, 19.20027778, 17.95, 57.1, 6.34972222, 0.50055556, 0.39972222, 1.45, 15.69972222, 18.05027778, 2.95, 0.15027778, 0.90055556, 0.25027778, 1.35083333, 2.4625, 1.10055556, 1.50138889]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [1, 1, 15, 1, 1, 1, 1, 1, 15, 2, 2, 1, 1, 2, 1, 9, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3, 2, 8, 4, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 2, 9, 6, 4, 1, 3, 2, 1, 2, 5, 1, 1, 2, 7, 1, 2, 2, 2, 1, 1, 1, 8, 1, 1, 1, 2, 1, 2, 2, 1, 1, 1, 4, 1, 2, 3, 2, 1, 1, 1, 1, 1, 1, 2, 7, 2, 1, 1, 1, 4, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 4, 1, 2, 1, 2, 1, 1, 1, 1, 1, 3, 2, 2, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [1, 1, 15, 1, 1, 1, 1, 1, 6, 2, 2, 1, 1, 2, 1, 4, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 3, 2, 8, 4, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 1, 3, 2, 1, 2, 2, 1, 1, 2, 4, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 2, 1, 1, 1, 2, 1, 2, 3, 2, 1, 1, 1, 1, 1, 1, 2, 3, 2, 1, 1, 1, 3, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 3, 2, 2, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 4, 2, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [111, 55, 1810, 87, 116, 143, 149, 67, 515, 84, 42, 72, 58, 143, 23, 79, 46, 55, 156, 27, 101, 80, 9, 21, 17, 13, 10, 113, 24, 6, 25, 11, 49, 17, 188, 135, 518, 201, 89, 117, 13, 5, 30, 21, 48, 12, 215, 8, 37, 57, 8, 76, 67, 189, 119, 20, 82, 63, 11, 28, 132, 111, 3, 101, 114, 27, 7, 5, 5, 54, 14, 33, 12, 122, 6, 135, 88, 23, 3, 44, 7, 20, 142, 248, 115, 44, 12, 13, 31, 50, 11, 125, 125, 96, 21, 17, 27, 57, 4, 14, 56, 5, 159, 15, 102, 19, 4, 14, 33, 9, 31, 181, 12, 187, 6, 3, 52, 30, 7, 223, 174, 146, 575, 124, 11, 8, 28, 108, 151, 59, 4, 19, 6, 24, 46, 23, 26]
             },
             {
               "type": "double",
@@ -20214,7 +20214,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "members_points", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -20237,7 +20237,7 @@
                 "names": {
                   "type": "character",
                   "attributes": {},
-                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "members_points", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
+                  "value": ["clust_id", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
@@ -23453,6 +23453,64 @@
                   "value": ["SAV.4386.A..deploy_id.2790877801."]
                 }
               ]
+            },
+            {
+              "type": "double",
+              "attributes": {
+                "units": {
+                  "type": "list",
+                  "attributes": {
+                    "names": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["numerator", "denominator"]
+                    },
+                    "class": {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["symbolic_units"]
+                    }
+                  },
+                  "value": [
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": ["h"]
+                    },
+                    {
+                      "type": "character",
+                      "attributes": {},
+                      "value": []
+                    }
+                  ]
+                },
+                "class": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["units"]
+                }
+              },
+              "value": [709.41638889, 219.49694444, 2.32638889, 709.41444444, 2.90916667, 4.07555556, 3.49888889, 667.33361111, 2.33305556, 18.16722222, 18.74166667, 16.41583333, 15.50055556, 424.41111111, 15.8325, 15.5, 15.24305556, 13.48111111, 229.41694444, 659.66444444, 24.58444444, 2.92083333, 19.91333333, 2.91833333, 16.50638889, 16.41694444, 2.91527778, 619.91666667, 590.66361111, 16.99972222, 15.25388889, 15.83333333, 16.49194444, 15.25111111, 16.40861111, 3.50361111, 23.40888889, 18.16888889, 16.495, 14.08416667, 14.66666667, 0.58694444, 1.75305556, 18.16611111, 19.00361111, 15.835, 15.25166667, 399.83888889, 16.41722222, 16.00166667, 14.66888889, 14.67083333, 11.75444444, 15.25111111, 1.17, 14.66666667, 2.33277778, 122.33416667, 18.74888889, 15.99694444, 14.66111111, 15.24916667, 11.74527778, 96, 197.83666667, 19.49722222, 15.83361111, 13.49138889, 1.50055556, 4.08138889, 1.75777778, 15.00472222, 15.25361111, 15.99972222, 14.6675, 12.33416667, 1.75111111, 14.99694444, 14.66583333, 2.00305556, 24.00138889, 96.50027778, 19.92027778, 308.00305556, 1.17083333, 14.085, 336.0025, 1.16333333, 15.83166667, 15.24694444, 14.50444444, 13.49888889, 13.49722222, 0.99972222, 1.16722222, 20.08472222, 14.66833333, 117.99805556, 15.83361111, 2.00055556, 2.50111111, 1.5, 1.74611111, 15.50027778, 14.66277778, 11.72055556, 11.99805556, 17.58611111, 137.49944444, 15.82833333, 1.17194444, 104.41611111, 15.835, 208.49833333, 18.75333333, 15.24777778, 14.08222222, 18.5, 14.66166667, 14.08138889, 1.7525, 21.99888889, 1.15861111, 13.50805556, 5.83416667, 1.16, 18.16722222, 18.16638889, 17.57638889, 2.9175, 98.00722222, 14.66472222, 1.16583333, 18.99694444, 17.58361111, 15.83361111, 14.66722222, 11.75277778, 2.91666667, 2.91666667, 25.00138889, 14.08305556, 17.58361111, 16.41361111, 14.66333333, 5.83111111, 1.16666667]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [30, 10, 1, 30, 1, 1, 1, 29, 1, 2, 2, 2, 2, 19, 2, 2, 2, 2, 10, 28, 2, 1, 2, 1, 2, 2, 1, 27, 26, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 18, 2, 2, 2, 2, 2, 2, 1, 2, 1, 6, 2, 2, 2, 2, 2, 5, 9, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 5, 2, 14, 1, 2, 15, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 6, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 7, 2, 1, 5, 2, 10, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 2, 2, 1, 5, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 1, 1]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [7, 3, 1, 30, 1, 1, 1, 22, 1, 2, 2, 2, 2, 5, 2, 2, 2, 2, 4, 12, 2, 1, 2, 1, 2, 2, 1, 25, 18, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 1, 2, 1, 5, 2, 2, 2, 2, 2, 4, 4, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 8, 1, 2, 5, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 5, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 4, 2, 1, 2, 2, 5, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 2, 2, 1, 3, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 1, 1]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [23, 7, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 6, 16, 0, 0, 0, 0, 0, 0, 0, 2, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 6, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "type": "integer",
+              "attributes": {},
+              "value": [30, 32, 5, 719, 5, 8, 5, 192, 5, 12, 16, 12, 12, 16, 10, 12, 10, 7, 7, 48, 19, 6, 18, 6, 14, 12, 6, 237, 139, 15, 10, 11, 14, 10, 12, 7, 20, 15, 14, 8, 9, 2, 4, 15, 19, 11, 10, 18, 8, 13, 9, 9, 4, 10, 3, 9, 5, 7, 8, 13, 9, 10, 4, 24, 6, 11, 11, 7, 4, 6, 4, 11, 10, 13, 9, 5, 4, 11, 9, 5, 25, 3, 15, 35, 3, 8, 11, 3, 4, 10, 10, 7, 7, 3, 3, 15, 9, 18, 11, 5, 6, 4, 7, 6, 9, 4, 5, 14, 16, 11, 3, 8, 11, 57, 16, 10, 7, 18, 9, 8, 4, 25, 3, 7, 11, 3, 15, 9, 14, 6, 16, 9, 3, 19, 14, 7, 9, 4, 6, 6, 3, 8, 12, 12, 9, 11, 3]
             },
             {
               "type": "list",
@@ -28898,64 +28956,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "double",
-              "attributes": {
-                "units": {
-                  "type": "list",
-                  "attributes": {
-                    "names": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["numerator", "denominator"]
-                    },
-                    "class": {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["symbolic_units"]
-                    }
-                  },
-                  "value": [
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": ["h"]
-                    },
-                    {
-                      "type": "character",
-                      "attributes": {},
-                      "value": []
-                    }
-                  ]
-                },
-                "class": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["units"]
-                }
-              },
-              "value": [709.41638889, 219.49694444, 2.32638889, 709.41444444, 2.90916667, 4.07555556, 3.49888889, 667.33361111, 2.33305556, 18.16722222, 18.74166667, 16.41583333, 15.50055556, 424.41111111, 15.8325, 15.5, 15.24305556, 13.48111111, 229.41694444, 659.66444444, 24.58444444, 2.92083333, 19.91333333, 2.91833333, 16.50638889, 16.41694444, 2.91527778, 619.91666667, 590.66361111, 16.99972222, 15.25388889, 15.83333333, 16.49194444, 15.25111111, 16.40861111, 3.50361111, 23.40888889, 18.16888889, 16.495, 14.08416667, 14.66666667, 0.58694444, 1.75305556, 18.16611111, 19.00361111, 15.835, 15.25166667, 399.83888889, 16.41722222, 16.00166667, 14.66888889, 14.67083333, 11.75444444, 15.25111111, 1.17, 14.66666667, 2.33277778, 122.33416667, 18.74888889, 15.99694444, 14.66111111, 15.24916667, 11.74527778, 96, 197.83666667, 19.49722222, 15.83361111, 13.49138889, 1.50055556, 4.08138889, 1.75777778, 15.00472222, 15.25361111, 15.99972222, 14.6675, 12.33416667, 1.75111111, 14.99694444, 14.66583333, 2.00305556, 24.00138889, 96.50027778, 19.92027778, 308.00305556, 1.17083333, 14.085, 336.0025, 1.16333333, 15.83166667, 15.24694444, 14.50444444, 13.49888889, 13.49722222, 0.99972222, 1.16722222, 20.08472222, 14.66833333, 117.99805556, 15.83361111, 2.00055556, 2.50111111, 1.5, 1.74611111, 15.50027778, 14.66277778, 11.72055556, 11.99805556, 17.58611111, 137.49944444, 15.82833333, 1.17194444, 104.41611111, 15.835, 208.49833333, 18.75333333, 15.24777778, 14.08222222, 18.5, 14.66166667, 14.08138889, 1.7525, 21.99888889, 1.15861111, 13.50805556, 5.83416667, 1.16, 18.16722222, 18.16638889, 17.57638889, 2.9175, 98.00722222, 14.66472222, 1.16583333, 18.99694444, 17.58361111, 15.83361111, 14.66722222, 11.75277778, 2.91666667, 2.91666667, 25.00138889, 14.08305556, 17.58361111, 16.41361111, 14.66333333, 5.83111111, 1.16666667]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [30, 10, 1, 30, 1, 1, 1, 29, 1, 2, 2, 2, 2, 19, 2, 2, 2, 2, 10, 28, 2, 1, 2, 1, 2, 2, 1, 27, 26, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 18, 2, 2, 2, 2, 2, 2, 1, 2, 1, 6, 2, 2, 2, 2, 2, 5, 9, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 5, 2, 14, 1, 2, 15, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 6, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 7, 2, 1, 5, 2, 10, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 2, 2, 1, 5, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 1, 1]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [7, 3, 1, 30, 1, 1, 1, 22, 1, 2, 2, 2, 2, 5, 2, 2, 2, 2, 4, 12, 2, 1, 2, 1, 2, 2, 1, 25, 18, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 1, 2, 1, 5, 2, 2, 2, 2, 2, 4, 4, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 8, 1, 2, 5, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 5, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 4, 2, 1, 2, 2, 5, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 2, 2, 1, 3, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 1, 1]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [23, 7, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 6, 16, 0, 0, 0, 0, 0, 0, 0, 2, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 6, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            },
-            {
-              "type": "integer",
-              "attributes": {},
-              "value": [30, 32, 5, 719, 5, 8, 5, 192, 5, 12, 16, 12, 12, 16, 10, 12, 10, 7, 7, 48, 19, 6, 18, 6, 14, 12, 6, 237, 139, 15, 10, 11, 14, 10, 12, 7, 20, 15, 14, 8, 9, 2, 4, 15, 19, 11, 10, 18, 8, 13, 9, 9, 4, 10, 3, 9, 5, 7, 8, 13, 9, 10, 4, 24, 6, 11, 11, 7, 4, 6, 4, 11, 10, 13, 9, 5, 4, 11, 9, 5, 25, 3, 15, 35, 3, 8, 11, 3, 4, 10, 10, 7, 7, 3, 3, 15, 9, 18, 11, 5, 6, 4, 7, 6, 9, 4, 5, 14, 16, 11, 3, 8, 11, 57, 16, 10, 7, 18, 9, 8, 4, 25, 3, 7, 11, 3, 15, 9, 14, 6, 16, 9, 3, 19, 14, 7, 9, 4, 6, 6, 3, 8, 12, 12, 9, 11, 3]
             },
             {
               "type": "double",

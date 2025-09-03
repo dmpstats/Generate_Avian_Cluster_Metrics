@@ -322,10 +322,6 @@ clust_details <- list(
     Description = "List of track IDs associated with the cluster event during its lifespan",
     Calculation = ""
   ),
-    "`members_points`" = tibble(
-    Description = "Nested data frame with longitude-latitude coordinates and timestamps of the points forming the cluster",
-    Calculation = ""
-  ),
   "`timespan`" = tibble(
     Description = "Total duration of the cluster event (unit: decimal days)",
     Calculation = "The difference between `cease_dttm` and `spawn_dttm`"
@@ -345,6 +341,10 @@ clust_details <- list(
     "`pts_n`" = tibble(
     Description = "The total number of location points comprised by the cluster",
     Calculation = "Count number of points in cluster across associated tracks"
+  ),
+    "`pts_locs`" = tibble(
+    Description = "Nested data frame with longitude-latitude coordinates and timestamps of the points forming the cluster",
+    Calculation = ""
   ),
   "`pts_pairdist_mean`, `pts_pairdist_med` and `pts_pairdist_sd`" = tibble(
     Description = "Respectively, the mean, median and standard deviation of pairwise distances between location points comprised by the cluster (unit: meters)",
