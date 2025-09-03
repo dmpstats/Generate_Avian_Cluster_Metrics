@@ -581,12 +581,22 @@ rFunction = function(data,
       ))
       
       #' Output is a move2_loc object with whole-cluster metrics as the event
-      #' table. The track table is a placeholder with no further data
-      output <- mt_as_move2(
-        cluster_tbl, 
-        time_column = "spawn_dttm",
-        track_id_column = cluster_id_col
-      )
+      #' table. 
+      
+      # The track table has no further data other than track_id: here
+      # concatenating IDs from track members in clusters
+      output <- cluster_tbl |>
+        mutate(track_id = purrr::map_chr(members_ids, ~paste(.x, collapse = "/"))) |>
+        mt_as_move2(
+          time_column = "spawn_dttm",
+          track_id_column = "track_id"
+        )
+      
+      # output <- mt_as_move2(
+      #   cluster_tbl,
+      #   time_column = "spawn_dttm",
+      #   track_id_column = cluster_id_col
+      # )
       
       # store type of output , for reference in downstream apps
       attr(output, "clust_dt_type") <- "whole-only"
