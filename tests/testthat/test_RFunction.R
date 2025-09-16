@@ -151,6 +151,12 @@ test_that("input validation is doing it's job correctly", {
     "Input data must contain columns `sunset_timestamp` and `sunrise_timestamp`."
   )
 
+  # Missing cluster annotations
+  expect_error(
+    rFunction(data = test_sets$wcs |> mutate(clust_id  = NA)), 
+    class = "no-clusters-in-input"
+  )
+  
 })
 
 
@@ -214,6 +220,47 @@ test_that("Optional specification of behavioural column works as expected", {
   expect_false(any(behav_cols_track %in% colnames(mt_track_data(actual))))
 
 })
+
+
+
+
+
+test_that("Names of behavioural-related metrics respect chosen behavioural column", {
+  
+  # whole behavioural class names
+  behav_classes <- c("tree", "water", "car")
+  
+  dt <- test_sets$wcs |> 
+    slice(1:300) |> 
+    mutate(MOCK_BEHAVIOUR = sample(behav_classes, size = n(), replace = TRUE))
+  
+  out <- rFunction(dt, behav_col = "MOCK_BEHAVIOUR", cluster_tbl_type = "track-and-whole")
+  behav_cls_rgx <- paste(behav_classes, collapse = "|")
+  
+  expect_true(length(grepv(behav_cls_rgx, names(out))) != 0)
+  expect_true(length(grepv(behav_cls_rgx, names(mt_track_data(out)))) != 0)
+  
+  
+  
+  # white-spaced behavioural class names
+  behav_classes <- c("tree climbing", "water waving", "car driving")
+  
+  dt <- test_sets$wcs |> 
+    slice(1:300) |> 
+    mutate(MOCK_BEHAVIOUR = sample(behav_classes, size = n(), replace = TRUE))
+  
+  out <- rFunction(dt, behav_col = "MOCK_BEHAVIOUR", cluster_tbl_type = "track-and-whole")
+  
+  behav_cls_out <- gsub(" ", "_", behav_classes)
+  behav_cls_rgx <- paste(behav_cls_out, collapse = "|")
+  
+  expect_true(length(grepv(behav_cls_rgx, names(out))) != 0)
+  expect_true(length(grepv(behav_cls_rgx, names(mt_track_data(out)))) != 0)
+  
+})
+
+
+
 
 
 

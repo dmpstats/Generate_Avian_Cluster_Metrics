@@ -500,8 +500,7 @@ rFunction = function(data,
       attnd_davg = mean(attnd_dmean, na.rm = TRUE),
       attnd_daytime_davg = mean(attnd_daytime_dmean, na.rm = TRUE),
       # total time spent on each behaviour
-      if(not_null(behav_ctgs)) across(matches(behav_ctgs), ~sum(.x, na.rm = TRUE), .names = "{.col}_cmpd"),
-      
+      if(not_null(behav_ctgs)) across(contains(gsub(' ', '_', behav_ctgs)), ~sum(.x, na.rm = TRUE), .names = "{.col}_cmpd"),
       
       # visits metrics
       visits_day_avg = mean(visits_day_mean, na.rm = TRUE),
@@ -547,7 +546,7 @@ rFunction = function(data,
     
     ### 5.1 Cluster tables --------------------------------------------
     logger.info(paste0(
-      "   |- 'cluster' option selected for `output_type`, so producing ",
+      "   |- 'cluster-based' option selected for `output_type`, so producing ",
       "cluster-based outputs"
       ))
  
@@ -557,7 +556,7 @@ rFunction = function(data,
     if(cluster_tbl_type == "track-and-whole"){
       
       logger.info(paste0(
-        "   |-  'track-and-whole' option chosen for `cluster_tbl_type`, so ",
+        "   |- 'track-and-whole' option chosen for `cluster_tbl_type`, so ",
         "output to contain both track-per-cluster and whole-cluster metrics."
       ))
       
@@ -889,9 +888,10 @@ attendanceTab_ <- function(dt, clust_col, trck_col, behav_col) {
       group_by(.data[[clust_col]], .data[[trck_col]], .data[[behav_col]]) |> 
       summarise(time_spent = sum(date_attn_lags, na.rm = TRUE), .groups = "drop") |>
       tidyr::pivot_wider(
-        names_from = behav, 
+        names_from = dplyr::any_of(behav_col), 
         values_from = time_spent, 
-        names_glue = "attnd_{behav}", 
+        names_glue = "attnd_{gsub(' ', '_', .name)}",
+        #names_prefix = "attnd_",
         values_fill = units::set_units(0, "h")
       )  
     
