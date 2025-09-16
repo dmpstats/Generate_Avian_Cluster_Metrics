@@ -98,11 +98,11 @@ sense_check_map <- function(clust_metrics, loc_dt){
         st_buffer(set_units(15, "m"))
     ) |> 
     select(
-      clust_id, spawn_dttm_lcl, cease_dttm_lcl, centroid,  cluster_poly,  
-      member_tracks_n, n_points:n_resting, avg_n_visits 
+      clust_id, spawn_dttm_local, cease_dttm_local, centroid, cluster_poly,  
+      members_n, pts_n:visits_day_avg 
     ) |> 
     st_set_geometry("cluster_poly") |> 
-    arrange(spawn_dttm_lcl) 
+    arrange(spawn_dttm_local) 
   
   
   track_level_clusters <- clust_metrics |> 
@@ -119,28 +119,30 @@ sense_check_map <- function(clust_metrics, loc_dt){
     summarise(tracks = st_combine(geometry), .by = all_of(trck_id_col)) |> 
     st_cast("LINESTRING")
   
-  
-  cluster_map <- whole_clusters_dt |> 
+  cluster_map <- whole_clusters_dt |>
     tm_shape(name = "Clusters polygons") +
-    tm_polygons(col = "white", alpha = 0.8) +
-    tm_text(text = "spawn_dttm_lcl", just = "left", xmod = 0.005) +
-    #tm_dots(col = "clust_id", size = 0.05, shape = 1, legend.show = FALSE) +
+    tm_polygons(fill = "white", fill_alpha = 0.8) +
+    tm_text(text = "spawn_dttm_local", options = opt_tm_text(just = "left"), xmod = 0.005) +
     
-    tm_shape(track_level_clusters, name = "Track locations in clusters") +
-    tm_dots(size = 0.15, col = trck_id_col, palette = track_id_pal) +
-    
+    tm_shape(track_level_clusters |> st_cast("POINT"), name = "Track locations in clusters") +
+    tm_dots(fill = trck_id_col, fill.scale = tm_scale(values = track_id_pal),  size = 0.7)  +
     tm_shape(track_locs, name = "Track Locations") +
     tm_dots(
-      col = "behav", palette = behav_pal, size = 0.05, 
+      fill = "behav", 
+      fill.scale = tm_scale(values = behav_pal), 
+      size = 0.7, 
       popup.vars = c("behav", "RULE", "nightpoint", "clust_id", "kmph", "dist_m", 
                      "heading", "timestamp_local")
     ) +
-    
-    tm_shape(track_path) +
-    tm_lines(col = trck_id_col, legend.col.show = FALSE, palette = track_id_pal)
+    tm_shape(track_path, name = "Track Path") +
+    tm_lines(
+      col = trck_id_col, 
+      col.legend = tm_legend_hide(), 
+      col.scale = tm_scale(values = track_id_pal)
+    )
   
-  tmap_leaflet(cluster_map) |>  
-     leaflet::addMeasure(primaryLengthUnit = "meters") 
+  tmap_leaflet(cluster_map, show = TRUE) |>  
+     leaflet::addMeasure(primaryLengthUnit = "meters")
   
 }
 
