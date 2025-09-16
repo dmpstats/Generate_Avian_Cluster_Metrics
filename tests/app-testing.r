@@ -92,7 +92,7 @@ out_dt |>
 out_dt <- rFunction(data = test_dt$wcs, cluster_id_col = "yearmonthday")
 out_dt
 
-out_dt <- rFunction(data = test_dt$wcs, behav_id_col = "RULE")
+out_dt <- rFunction(data = test_dt$wcs, behav_col = "RULE")
 out_dt
 attributes(out_dt)
 
