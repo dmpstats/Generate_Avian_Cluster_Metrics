@@ -1199,7 +1199,7 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
     st_set_geometry("clust_centroid")
   
   # Core calculations
-  outdat <- clustarrivals |>
+  night_locs <- clustarrivals |>
     mutate(
       #' subset track's night-time locations within +/- 12hrs from its arrival
       #' date to a given cluster
@@ -1224,18 +1224,34 @@ arrivalTab_ <- function(dt, trk_clust_dt, clust_col, trck_col, tm_col) {
         .progress = TRUE)
     ) |> 
     # bring night-point locations slice to the forefront, akin to a merge
-    tidyr::unnest(locs_slice) |>
-    # calculate distances between night-point locations and cluster centroids
-    mutate(dist = st_distance(clust_centroid, geometry, by_element = TRUE)) |>
-    st_drop_geometry() |>
-    # get the average distance from cluster centroids
-    group_by(.data[[clust_col]], .data[[trck_col]], arrival_date_local) |>
-    summarise(
-      arrival_dist_mean = mean(dist, na.rm = TRUE),
-      .groups = "drop"
-    ) |>
-    dplyr::select(-arrival_date_local)
+    tidyr::unnest(locs_slice) 
   
+  if(nrow(night_locs) > 0){
+    
+    outdat <- night_locs |> 
+      # calculate distances between night-point locations and cluster centroids
+      mutate(dist = st_distance(clust_centroid, geometry, by_element = TRUE)) |>
+      st_drop_geometry() |>
+      # get the average distance from cluster centroids
+      group_by(.data[[clust_col]], .data[[trck_col]], arrival_date_local) |>
+      summarise(
+        arrival_dist_mean = mean(dist, na.rm = TRUE),
+        .groups = "drop"
+      ) |>
+      dplyr::select(-arrival_date_local)
+    
+  } else {
+    
+    logger.warn(paste0(
+      "     |- Unable to derive arrival distances due to absence of date-matching nightpoints."
+    ))
+    
+    outdat <- dplyr::tibble(
+      {{clust_col}} := trk_clust_dt[[clust_col]],
+      {{trck_col}} := trk_clust_dt[[trck_col]],
+      arrival_dist_mean = units::set_units(NA, "m")
+    )
+  }
   
   return(outdat)
 }

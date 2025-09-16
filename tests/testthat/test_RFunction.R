@@ -407,6 +407,36 @@ test_that("`nightTab_()`: returns NAs upon absence of night-points matching clus
 
 
 
+
+
+test_that("`arrivalTab_()`: returns NAs upon absence of night-points matching cluster dates", {
+  
+  dt <- test_sets$nam |> filter(clust_id == "A.1", nightpoint == 0)
+  
+  trk_clst <- dt |> 
+    filter(!is.na(clust_id)) |> 
+    group_by(clust_id) |> 
+    summarise(
+      pts_n = n(),
+      all_points = st_combine(geometry),
+    ) |> 
+    mutate(clust_centroid = calcGMedianSF(all_points))
+  
+  # run
+  out <- arrivalTab_(
+    dt = dt,
+    trk_clust_dt = trk_clst, 
+    clust_col = "clust_id",
+    trck_col = mt_track_id_column(dt), 
+    tm_col = mt_time_column(dt)
+  )
+  
+  # returns NA for arrival distance metric
+  expect_true(is.na(out$arrival_dist_mean))
+  
+})
+
+
  
 # Documentation   ---------------------------------------
 
