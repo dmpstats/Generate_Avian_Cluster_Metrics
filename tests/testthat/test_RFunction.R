@@ -373,6 +373,40 @@ test_that("Expected outcome of `attendanceTab_()` has not changed", {
 })
  
 
+
+
+test_that("`nightTab_()`: returns NAs upon absence of night-points matching cluster dates", {
+  
+  # Prepare data
+  dt <- test_sets$nam |> filter(clust_id == "A.1", nightpoint == 0)
+  
+  trk_clst <- dt |> 
+    filter(!is.na(clust_id)) |> 
+    group_by(clust_id) |> 
+    summarise(
+      pts_n = n(),
+      all_points = st_combine(geometry),
+    ) |> 
+    mutate(clust_centroid = calcGMedianSF(all_points))
+  
+  # run
+  out <- nightTab_(
+    dt = dt,
+    trk_clust_dt = trk_clst, 
+    clust_col = "clust_id",
+    trck_col = mt_track_id_column(dt)
+  )
+  
+  
+  # returns NAs for night-distance metrics
+  expect_true(is.na(out$nightpts_dist_dmean))
+  expect_true(is.na(out$nightpts_250m_prop))
+  expect_true(is.na(out$nightpts_1km_prop))
+  
+})
+
+
+
  
 # Documentation   ---------------------------------------
 

@@ -1072,41 +1072,60 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
     by = c(trck_col, "nightime_ymd" = "date_local"), relationship = "many-to-many") %>%
     filter(!is.na(.data[[clust_col]])) 
   
-  #' distance between each night point and the centroid of a cluster visited in that day
-  night_table <- night_table %>%
-    mutate(night_dist = st_distance(geometry, clust_centroid, by_element = TRUE))
   
-  # Testing a new variable: proportion of nearby night points 
-  # This is the proportion of night points on the same day as this cluster 
-  # within 250m and 1km
-  nearnights <- night_table %>%
-    group_by(.data[[clust_col]], .data[[trck_col]]) %>%
-    summarise(
-      nightpts_250m_prop = sum(night_dist < units::set_units(250, "m")) / n(), 
-      nightpts_1km_prop = sum(night_dist < units::set_units(1000, "m")) / n(),
-      .groups = "drop"
-    )
-  
-  
-  #' Calculate the per-day median distance of each track's night points to the
-  #' centroid of a visited cluster
-  nightdists_by_day <- night_table %>%
-    group_by(.data[[clust_col]], .data[[trck_col]], nightime_ymd) %>%
-    summarise(
-      med_night_dist = median(night_dist, na.rm = TRUE), 
-      .groups = "drop"
-    )
-  
-  
-  # Finally, take mean distance per track across days
-  nightdists_track_clust <- nightdists_by_day %>%
-    group_by(.data[[clust_col]], .data[[trck_col]]) %>%
-    summarise(
-      nightpts_dist_dmean = mean(med_night_dist, na.rm = TRUE), 
-      .groups = "drop"
+  if(nrow(night_table) > 0){
+    
+    #' distance between each night point and the centroid of a cluster visited in that day
+    night_table <- night_table %>%
+      mutate(night_dist = st_distance(geometry, clust_centroid, by_element = TRUE))
+    
+    # Testing a new variable: proportion of nearby night points 
+    # This is the proportion of night points on the same day as this cluster 
+    # within 250m and 1km
+    nearnights <- night_table %>%
+      group_by(.data[[clust_col]], .data[[trck_col]]) %>%
+      summarise(
+        nightpts_250m_prop = sum(night_dist < units::set_units(250, "m")) / n(), 
+        nightpts_1km_prop = sum(night_dist < units::set_units(1000, "m")) / n(),
+        .groups = "drop"
+      )
+    
+    
+    #' Calculate the per-day median distance of each track's night points to the
+    #' centroid of a visited cluster
+    nightdists_by_day <- night_table %>%
+      group_by(.data[[clust_col]], .data[[trck_col]], nightime_ymd) %>%
+      summarise(
+        med_night_dist = median(night_dist, na.rm = TRUE), 
+        .groups = "drop"
+      )
+    
+    
+    # Finally, take mean distance per track across days
+    nightdists_track_clust <- nightdists_by_day %>%
+      group_by(.data[[clust_col]], .data[[trck_col]]) %>%
+      summarise(
+        nightpts_dist_dmean = mean(med_night_dist, na.rm = TRUE), 
+        .groups = "drop"
       ) %>%
-    left_join(nearnights, by = c(clust_col, trck_col))
-  
+      left_join(nearnights, by = c(clust_col, trck_col))
+    
+  }else{
+    # fall-back to return NAs if metrics are not calculable due to absence of
+    # any match between days when clusters are visited and available night-points
+    
+    logger.warn(paste0(
+      "     |- Unable to derive night-distance metrics due to absence of date-matching nightpoints."
+    ) )
+    
+    nightdists_track_clust <- dplyr::tibble(
+      {{clust_col}} := trk_clust_dt[[clust_col]],
+      {{trck_col}} := trk_clust_dt[[trck_col]],
+      nightpts_dist_dmean = units::set_units(NA, "m"),
+      nightpts_250m_prop = NA_real_,
+      nightpts_1km_prop = NA
+    )
+  }
   
   return(nightdists_track_clust)
 }
