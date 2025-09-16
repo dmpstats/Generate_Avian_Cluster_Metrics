@@ -140,10 +140,12 @@ rFunction = function(data,
   tm_id_col <- mt_time_column(data)
   trk_id_col <- mt_track_id_column(data)
   
-  
   # force calculations to skip one-location clusters (not clusters by definition)
   one_pnt_clusters <- count(data, .data[[cluster_id_col]]) |>
-    filter(n == 1) |>
+    filter(
+      !is.na(.data[[cluster_id_col]]),
+      n == 1
+    ) |>
     pull(.data[[cluster_id_col]])
 
   if(length(one_pnt_clusters) > 0){
