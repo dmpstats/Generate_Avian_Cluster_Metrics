@@ -182,13 +182,30 @@ rFunction = function(data,
     ) 
   
   
-  # if absent, generate nightpoint based solely on sunset and sunrise times
-  if("nightpoint" %!in% names(data)){
+  # if absent anr contans NAs, calculate nightpoint using sunset and sunrise times
+  if( "nightpoint" %!in% names(data) ){
     logger.warn(paste0(
       "`nighpoint` column is not contained in the input data. Deriving nightpoints ",
-      "based on sunset and sunrise timestamps (no leeway)."
+      "using sunset and sunrise timestamps, with no leeway."
     ))
     
+    nightpnt_req <- TRUE
+    
+  } else if( any(is.na(data[["nightpoint"]])) ){
+    logger.warn(paste0(
+      "`nighpoint` column in input data contains NAs and requires re-calculation. ",
+      "Deriving nightpoints unsing sunset and sunrise timestamps, with no leeway."
+    ))
+    
+    nightpnt_req <- TRUE
+    
+  } else {
+    nightpnt_req <- FALSE
+  }
+  
+  
+  if(nightpnt_req){
+
     data <- data |> 
       mutate(
         nightpoint = ifelse(

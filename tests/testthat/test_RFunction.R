@@ -262,6 +262,29 @@ test_that("Names of behavioural-related metrics respect chosen behavioural colum
 
 
 
+test_that("`nightpoint` column requirements in input data handled appropriately", {
+  
+  # absence of `nightpoint` column
+  expect_no_error(
+    test_sets$nam |> 
+      slice(1:10) |> 
+      select(-nightpoint) |>
+      rFunction()
+  )
+  
+  # existence of NAs in `nightpoint` column 
+  expect_no_error(
+    test_sets$nam |> 
+      slice(1:10) |> 
+      mutate(nightpoint = if_else(row_number() %in% c(1, 5), NA, nightpoint)) |> 
+      rFunction()
+  )
+  
+})
+
+
+
+
 
 
 test_that("Expected main app outcome has not changed", {
