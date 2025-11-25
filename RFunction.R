@@ -41,12 +41,10 @@ rFunction = function(data,
   
   
   if(all(is.na(data[[cluster_id_col]]))){
-    logger.fatal(cli::cli_text("Column {.code {cluster_id_col}} contains universally NAs"))
+    logger.fatal(cli::cli_text("Column {.code {cluster_id_col}} contains universal NAs."))
     cli::cli_abort(c(
-      "Column {.code {cluster_id_col}} contains only NAs. Unable to proceed with cluster metrics calculations.",
-      "i" = paste0(
-        "Input data must include annotations for at least one cluster - Metrics cannot be derived for non-existent clusters!"
-      )
+      "Column {.code {cluster_id_col}} contains only NAs. Cluster metrics cannot be calculated",
+      "i" = "The input data must include cluster ID annotations for at least one cluster."
     ),
     class = "no-clusters-in-input"
     )
@@ -1027,6 +1025,7 @@ nightTab_ <- function(dt, trk_clust_dt, clust_col, trck_col) {
   if(st_crs(dt) != st_crs(trk_clust_dt)){
     cli::cli_abort("{.arg dt} and {.arg trk_clust_dt} must have the same CRS projection")
   }
+  
   
   # convert to tibble for cleaner processing, as move2 functionality not required here
   dt <- as_tibble(dt)
