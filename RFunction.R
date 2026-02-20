@@ -18,7 +18,7 @@ rFunction = function(data,
                      cluster_id_col = "clust_id", 
                      behav_col = "behav",
                      output_type = c("cluster-based", "merge-to-locs"),
-                     cluster_tbl_type = c("track-and-whole", "whole-only")) {
+                     cluster_tbl_type = c("whole-only", "track-and-whole")) {
   
 
   #' -----------------------------------------------------------------
@@ -32,16 +32,16 @@ rFunction = function(data,
     suggest_msg = paste0(
       "Use clustering Apps such as {.href [Avian Cluster Detection](https://www.moveapps.org/apps/browser/81f41b8f-0403-4e9f-bc48-5a064e1060a2)} ",
       "earlier in the workflow to generate the required column."),
-    proceed_msg = paste0(
+    proceed_msg = cli::format_inline(
       "Cluster metrics will be calculated on location events grouped by column ",
-      "`", cluster_id_col, "`"
+      "{.val {cluster_id_col}}"
     )
   )
   
   
   
   if(all(is.na(data[[cluster_id_col]]))){
-    logger.fatal(cli::cli_text("Column {.code {cluster_id_col}} contains universal NAs."))
+    logger.fatal(cli::format_inline("Column {.code {cluster_id_col}} contains universal NAs."))
     cli::cli_abort(c(
       "Column {.code {cluster_id_col}} contains only NAs. Cluster metrics cannot be calculated",
       "i" = "The input data must include cluster ID annotations for at least one cluster."
@@ -62,9 +62,9 @@ rFunction = function(data,
         "Use behavioural classification Apps such as {.href [Behavioural Classification ",
         "for Vultures](https://www.moveapps.org/apps/browser/44bb2ffa-7d40-4fad-bff5-1269995ba1a2)} ",
         "earlier in the workflow to generate the required column."),
-      proceed_msg = paste0(
-        "Behaviour-related cluster metrics will be calculated based on column `",
-        behav_col, "`"
+      proceed_msg = format_inline(
+        "Behaviour-related cluster metrics will be calculated based on column ",
+        "{.val {behav_col}}"
       )
     )
     

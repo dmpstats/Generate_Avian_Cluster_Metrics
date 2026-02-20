@@ -35,16 +35,16 @@
       "id": "cluster_tbl_type",
       "name": "Cluster-based Contents",
       "description": "If 'Output Type' is set to 'Cluster-based', choose the content of the ouput dataset.",
-      "defaultValue": "track-and-whole",
+      "defaultValue": "whole-only",
       "type": "RADIOBUTTONS",
       "options": [
         {
-          "value": "track-and-whole",
-          "displayText": "Both track-per-cluster and whole-cluster metrics"
-        },
-        {
           "value": "whole-only",
           "displayText": "Whole-cluster metrics only"
+        },
+        {
+          "value": "track-and-whole",
+          "displayText": "Both track-per-cluster and whole-cluster metrics"
         }
         ]
     }

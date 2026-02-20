@@ -119,13 +119,6 @@ test_that("input validation is doing it's job correctly", {
     class = "invalid-behav-col-class"
   )
 
-
-  # invalid specification of cluster table type in output
-  expect_error(
-    rFunction(data = test_sets$wcs, cluster_tbl_type = "WRONG_TYPE_SPEC"),
-    "`cluster_tbl_type` must be one of \"track-and-whole\" or \"whole-only\", not \"WRONG_TYPE_SPEC\"."
-  )
-
   # invalid specification of cluster table type in output
   expect_error(
     rFunction(data = test_sets$wcs, output_type = "WRONG_OUTPUT_TYPE"),
@@ -135,7 +128,7 @@ test_that("input validation is doing it's job correctly", {
   # invalid specification for type of output
   expect_error(
     rFunction(data = test_sets$wcs, cluster_tbl_type = "WRONG_TYPE_SPEC"),
-    "`cluster_tbl_type` must be one of \"track-and-whole\" or \"whole-only\", not \"WRONG_TYPE_SPEC\"."
+    "`cluster_tbl_type` must be one of \"whole-only\" or \"track-and-whole\", not \"WRONG_TYPE_SPEC\"."
   )
   
 
@@ -177,7 +170,7 @@ test_that("Option for type of ouputted cluster table works as expected", {
 
 
 
-testthat::test_that("Option `output_type` is working as expected", {
+test_that("Option `output_type` is working as expected", {
   
   dt <- test_sets$wcs |> slice(1:300)
   
@@ -195,11 +188,11 @@ testthat::test_that("Option `output_type` is working as expected", {
   # if "cluster-based"
   actual <- rFunction(data = dt, output_type = "cluster-based")
   # chosen option correctly stored in output as a
-  expect_equal(attributes(actual)$clust_dt_type, "track-and-whole")
+  expect_equal(attributes(actual)$clust_dt_type, "whole-only")
   expect_equal(attributes(actual)$cluster_id_col, "clust_id")
   expect_equal(sort(actual$clust_id), sort(unique(na.omit(dt$clust_id))))
-  # column `members_points` *is* present, in the track table in the "track-and-whole" case 
-  expect_true("pts_locs" %in% names(mt_track_data(actual)))
+  # column `pts_locs` *is* present, in the main table in the "whole-only" case 
+  expect_true("pts_locs" %in% names(actual))
 })
 
 
@@ -209,13 +202,21 @@ test_that("Optional specification of behavioural column works as expected", {
   behav_cols_event <- c("attnd_SFeeding", "attnd_SResting", "attnd_SRoosting")
   behav_cols_track <- c("attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd")
 
-  actual <- rFunction(data = test_sets$wcs |> slice(1:100), behav_col = "behav")
+  actual <- rFunction(
+    data = test_sets$wcs |> slice(1:100), 
+    behav_col = "behav", 
+    cluster_tbl_type = "track-and-whole"
+  )
   expect_contains(colnames(actual), behav_cols_event)
   expect_contains(colnames(mt_track_data(actual)), behav_cols_track)
   expect_false("attnd_STravelling" %in% colnames(actual))
 
   # exclude behaviour column
-  actual <- rFunction(data = test_sets$wcs |> slice(1:100), behav_col = NULL)
+  actual <- rFunction(
+    data = test_sets$wcs |> slice(1:100), 
+    behav_col = NULL, 
+    cluster_tbl_type = "track-and-whole"
+  )
   expect_false(any(behav_cols_event %in% colnames(actual)))
   expect_false(any(behav_cols_track %in% colnames(mt_track_data(actual))))
 
@@ -293,21 +294,21 @@ test_that("Expected main app outcome has not changed", {
 
   # WCS
   expect_snapshot_value(
-    rFunction(test_sets$wcs) |>
+    rFunction(test_sets$wcs, cluster_tbl_type = "track-and-whole") |>
       as_tibble(),
     style = "json2"
   )
 
   # Namibia
   expect_snapshot_value(
-    rFunction(test_sets$nam) |>
+    rFunction(test_sets$nam, cluster_tbl_type = "track-and-whole") |>
       as_tibble(),
     style = "json2"
   )
 
   # savanah
   expect_snapshot_value(
-    rFunction(test_sets$savahn) |>
+    rFunction(test_sets$savahn, cluster_tbl_type = "track-and-whole") |>
       as_tibble(),
     style = "json2"
   )
@@ -485,7 +486,10 @@ test_that("`arrivalTab_()`: returns NAs upon absence of night-points matching cl
 
 test_that("output colnames match those in output documentation", {
 
-  out <- rFunction(data = test_sets$nam |> slice(1:500))
+  out <- rFunction(
+    data = test_sets$nam |> slice(1:500), 
+    cluster_tbl_type = "track-and-whole"
+  )
 
   track_clust_tbl_names <- out |>
     as_tibble() |>

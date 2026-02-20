@@ -81,8 +81,8 @@ None
 
 **Cluster-based Output Content** (`cluster_tbl_type`): If **Output Type** is set to `"cluster-based"`, choose the content of the output dataset:
 
-  1. Metrics at both [track-per-cluster](#track-per-cluster-level) and [whole-cluster](#whole-cluster-level) levels (`"track-and-whole"`, default)
-  2. Solely [whole-cluster](#whole-cluster-level) level metrics (`"whole-only"`)
+  1. Solely [whole-cluster](#whole-cluster-level) level metrics (`"whole-only"`, default)
+  2. Metrics at both [track-per-cluster](#track-per-cluster-level) and [whole-cluster](#whole-cluster-level) levels (`"track-and-whole"`)
 
 
 
@@ -130,7 +130,10 @@ wcs <- httr2::secret_read_rds("data/raw/vult_test_data.rds", key = I(app_key)) |
 
 set_interactive_app_testing()
 
-out <- rFunction(data = wcs |> slice(1:100))
+out <- rFunction(
+  data = wcs |> slice(1:100), 
+  cluster_tbl_type = "track-and-whole"
+)
 
 track_clust_tbl_names <- out |> 
   as_tibble() |> 

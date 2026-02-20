@@ -99,11 +99,10 @@ derived cluster metrics. Two options available:
 Type** is set to `"cluster-based"`, choose the content of the output
 dataset:
 
-1.  Metrics at both [track-per-cluster](#track-per-cluster-level) and
-    [whole-cluster](#whole-cluster-level) levels (`"track-and-whole"`,
-    default)
-2.  Solely [whole-cluster](#whole-cluster-level) level metrics
-    (`"whole-only"`)
+1.  Solely [whole-cluster](#whole-cluster-level) level metrics
+    (`"whole-only"`, default)
+2.  Metrics at both [track-per-cluster](#track-per-cluster-level) and
+    [whole-cluster](#whole-cluster-level) levels (`"track-and-whole"`)
 
 ### Most common errors
 
