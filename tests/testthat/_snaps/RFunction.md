@@ -35478,6 +35478,36 @@
       ]
     }
 
+# Records with missing timestamps are removed with a warning
+
+    Code
+      out <- rFunction(mutate(slice(test_sets$wcs, 1:200), timestamp = if_else(row_number(timestamp) %in% sample(1:100, 5), NA_POSIXct_, timestamp)))
+    Output
+      [INFO] Cluster metrics will be calculated on location events grouped by column "clust_id"
+      [INFO] Behaviour-related cluster metrics will be calculated based on column "behav"
+      [INFO] Inputs checked - all good to proceed
+      [INFO] Summary of data for cluster metrics calculation:
+               |- 200 location points
+               |- 1 tracks
+               |- 13 clusters
+      [WARN] Removing 5 observations from calculations due to missing values in `time_column` "timestamp".
+      [INFO] Generating track-level summaries within each cluster
+      [INFO]    [a] No accelerometer data identified. Skipping ACC summaries
+      [INFO]    [b] Deriving Attendance metrics
+      [INFO]         |- Deriving time spent at each behaviour
+      [INFO]    [c] Cyphering Revisitation metrics
+      [INFO]    [d] Cooking Night-distance metrics
+      [INFO]    [e] Hammering Arrival-Distance metrics
+      [INFO]    [f] Merging [a-e] metrics into primary track-level cluster table
+      [INFO] Generating whole-cluster summaries
+      [INFO]    [i] Summoning Nearest-Tracks metrics - this may run slowly!
+      [INFO]    [ii] Summarizing and aggregating over track-level cluster metrics
+      [INFO] Processing results according to output options
+      [INFO]    |- 'cluster-based' option selected for `output_type`, so producing cluster-based outputs
+      [INFO]    |- 'whole-only' option selected for `cluster_tbl_type`, so output to contain only whole-cluster metrics
+      [INFO] Size of the generated output dataset: 0.1 Mb
+      [INFO] Right, that's the cluster metrics calculation done!
+
 # Expected outcome of `attendanceTab_()` has not changed
 
     {

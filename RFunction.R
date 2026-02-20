@@ -159,7 +159,23 @@ rFunction = function(data,
     data <- data |> 
       mutate("{cluster_id_col}" := ifelse(.data[[cluster_id_col]] %in% one_pnt_clusters, NA, .data[[cluster_id_col]]))
   }
-
+  
+  
+  # ensure no observations with missing timestamps
+  tm_nas_idx <- which(is.na(data[[tm_id_col]]))
+  tm_nas_n <- length(tm_nas_idx)
+  if(tm_nas_n > 0){
+    
+    logger.warn(
+      cli::format_inline(
+        "Removing {tm_nas_n} observation{?s} from calculations due to missing",
+        " value{?s} in {.code time_column} {.val {tm_id_col}}."
+      ))
+    
+    # drop records with missing timestamps
+    data <- data[-tm_nas_idx, ]
+  }
+  
   
   # ensuring data is ordered by time within track ID
   data <- data |> arrange(.data[[trk_id_col]], .data[[tm_id_col]])

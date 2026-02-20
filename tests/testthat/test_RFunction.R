@@ -314,6 +314,26 @@ test_that("Expected main app outcome has not changed", {
 
 })
 
+
+
+
+
+test_that("Records with missing timestamps are removed with a warning", {
+  
+  testthat::local_edition(3)
+  
+  expect_snapshot(
+    out <- test_sets$wcs |>
+      slice(1:200) |> 
+      mutate(
+        timestamp = if_else(row_number(timestamp) %in% sample(1:100, 5), NA_POSIXct_, timestamp)
+      ) |>
+      rFunction()
+  )
+  
+})
+
+
  
 # Helper functions -----------------------------------------
 
