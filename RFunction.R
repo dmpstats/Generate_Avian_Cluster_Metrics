@@ -448,6 +448,8 @@ rFunction = function(data,
   # basic whole-cluster metrics
   cluster_tbl <- data |>  
     filter(!is.na(.data[[cluster_id_col]])) |> 
+    # bring-in subject Identifier to bind to cluster location points
+    move2::mt_as_event_attribute(individual_local_identifier) |> 
     group_by(.data[[cluster_id_col]]) |> 
     dplyr::summarise(
       
@@ -472,8 +474,11 @@ rFunction = function(data,
       # list-column of point locations in cluster and their timestamps, as a data.frame
       pts_locs = list(
         data.frame(
+          subj_name = individual_local_identifier,
           timestamp = lubridate::format_ISO8601(.data[[tm_id_col]], usetz = TRUE), 
-          lon, lat)
+          lon, 
+          lat
+          )
       ),
       
        # mean, median and sd of pairwise distance between points in cluster

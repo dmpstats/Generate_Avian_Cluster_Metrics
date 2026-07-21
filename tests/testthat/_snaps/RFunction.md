@@ -3,21 +3,6 @@
     {
       "type": "list",
       "attributes": {
-        "class": {
-          "type": "character",
-          "attributes": {},
-          "value": ["tbl_df", "tbl", "data.frame"]
-        },
-        "row.names": {
-          "type": "integer",
-          "attributes": {},
-          "value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
-        },
-        "names": {
-          "type": "character",
-          "attributes": {},
-          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
-        },
         "sf_column": {
           "type": "character",
           "attributes": {},
@@ -29,7 +14,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
+              "value": ["individual_name_deployment_id", "clust_id", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", null]
             },
             "levels": {
               "type": "character",
@@ -42,7 +27,7 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
@@ -57,20 +42,15 @@
         "track_data": {
           "type": "list",
           "attributes": {
-            "class": {
+            "names": {
               "type": "character",
               "attributes": {},
-              "value": ["tbl_df", "tbl", "data.frame"]
+              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "row.names": {
               "type": "integer",
               "attributes": {},
               "value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
-            },
-            "names": {
-              "type": "character",
-              "attributes": {},
-              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -97,6 +77,11 @@
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["tbl_df", "tbl", "data.frame"]
             }
           },
           "value": [
@@ -973,15 +958,15 @@
             {
               "type": "double",
               "attributes": {
-                "tzone": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["UTC"]
-                },
                 "class": {
                   "type": "character",
                   "attributes": {},
                   "value": ["POSIXct", "POSIXt"]
+                },
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
                 }
               },
               "value": [1707883200, 1707883200, 1707915600, 1707919200, 1707991200, 1708009200, 1708012800, 1708081200, 1708099200, 1708099200, 1708167600, 1708182000, 1708257600, 1708272000, 1708344000, 1708354800, 1708430400, 1708444800, 1708509600, 1708527600, 1708599600, 1708603200, 1708610400, 1708686000, 1708689600, 1708786800, 1708790400, 1708855200, 1708866000, 1708934400, 1708948800, 1709042400, 1709046000, 1709121600, 1709125200, 1709218800, 1709294400, 1709301600, 1709377200, 1709398800, 1709474400, 1709560800, 1709647200, 1709737200, 1709823600, 1710000000, 1710043200, 1710082800, 1710172800, 1710255600]
@@ -989,15 +974,15 @@
             {
               "type": "double",
               "attributes": {
-                "tzone": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["UTC"]
-                },
                 "class": {
                   "type": "character",
                   "attributes": {},
                   "value": ["POSIXct", "POSIXt"]
+                },
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
                 }
               },
               "value": [1707890400, 1707897600, 1707980400, 1707980400, 1708077600, 1708322400, 1708034400, 1708088400, 1708153200, 1708146000, 1708246800, 1708239600, 1708268400, 1708322400, 1708423200, 1708380000, 1708495200, 1708495200, 1708581600, 1710453600, 1708668000, 1708610400, 1708671600, 1708754400, 1708758000, 1708844400, 1708844400, 1709020800, 1708945200, 1708941600, 1709017200, 1709100000, 1709103600, 1709200800, 1709190000, 1709272800, 1709359200, 1709359200, 1709974800, 1709416800, 1709535600, 1709625600, 1709719200, 1709964000, 1709877600, 1710054000, 1710406800, 1710136800, 1710223200, 1710309600]
@@ -1341,7 +1326,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1355,6 +1340,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1378,7 +1379,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1392,6 +1393,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1415,7 +1432,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1429,6 +1446,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1452,7 +1485,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1466,6 +1499,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1489,7 +1538,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1503,6 +1552,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1526,7 +1591,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1540,6 +1605,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1563,7 +1644,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1577,6 +1658,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1600,7 +1697,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1614,6 +1711,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1637,7 +1750,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1651,6 +1764,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1674,7 +1803,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1688,6 +1817,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1711,7 +1856,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1725,6 +1870,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1748,7 +1909,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1762,6 +1923,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1785,7 +1962,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1799,6 +1976,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1822,7 +2015,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1836,6 +2029,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1859,7 +2068,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1873,6 +2082,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1896,7 +2121,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1910,6 +2135,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1933,7 +2174,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1947,6 +2188,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -1970,7 +2227,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -1984,6 +2241,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2007,7 +2280,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2021,6 +2294,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2044,7 +2333,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2058,6 +2347,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2081,7 +2386,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2095,6 +2400,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2118,7 +2439,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2132,6 +2453,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2155,7 +2492,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2169,6 +2506,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2192,7 +2545,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2206,6 +2559,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2229,7 +2598,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2243,6 +2612,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2266,7 +2651,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2280,6 +2665,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2303,7 +2704,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2317,6 +2718,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2340,7 +2757,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2354,6 +2771,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2377,7 +2810,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2391,6 +2824,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2414,7 +2863,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2428,6 +2877,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2451,7 +2916,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2465,6 +2930,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2488,7 +2969,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2502,6 +2983,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2525,7 +3022,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2539,6 +3036,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2562,7 +3075,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2576,6 +3089,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2599,7 +3128,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2613,6 +3142,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2636,7 +3181,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2650,6 +3195,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2673,7 +3234,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2687,6 +3248,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2710,7 +3287,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2724,6 +3301,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2747,7 +3340,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2761,6 +3354,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2784,7 +3393,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2798,6 +3407,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2821,7 +3446,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2835,6 +3460,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2858,7 +3499,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2872,6 +3513,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2895,7 +3552,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2909,6 +3566,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2932,7 +3605,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2946,6 +3619,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -2969,7 +3658,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -2983,6 +3672,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -3006,7 +3711,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -3020,6 +3725,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -3043,7 +3764,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -3057,6 +3778,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -3080,7 +3817,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -3094,6 +3831,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -3117,7 +3870,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -3131,6 +3884,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -3154,7 +3923,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -3168,6 +3937,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["AW196499", "B175706", "1203A", "1210A", "1213A", "1214A", "1216A", "1217A", "1219A", "A178415", "A178416", "A196502", "AW175706", "AW178414", "AW196498", "AW196500", "AW196501", "B178416", "B196498", "C175707", "D175707"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -3874,6 +4659,21 @@
           "type": "character",
           "attributes": {},
           "value": ["clust_id"]
+        },
+        "names": {
+          "type": "character",
+          "attributes": {},
+          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
+        },
+        "row.names": {
+          "type": "integer",
+          "attributes": {},
+          "value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+        },
+        "class": {
+          "type": "character",
+          "attributes": {},
+          "value": ["tbl_df", "tbl", "data.frame"]
         }
       },
       "value": [
@@ -5635,15 +6435,15 @@
         {
           "type": "double",
           "attributes": {
-            "tzone": {
-              "type": "character",
-              "attributes": {},
-              "value": ["UTC"]
-            },
             "class": {
               "type": "character",
               "attributes": {},
               "value": ["POSIXct", "POSIXt"]
+            },
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
             }
           },
           "value": [1707883200, 1708686000, 1707883200, 1707919200, 1707991200, 1708012800, 1708081200, 1708099200, 1708182000, 1708257600, 1708272000, 1707915600, 1708344000, 1708430400, 1708509600, 1708599600, 1708603200, 1708689600, 1708790400, 1708855200, 1708786800, 1708866000, 1708009200, 1708934400, 1709042400, 1708948800, 1709046000, 1709121600, 1709125200, 1709218800, 1709294400, 1709398800, 1709301600, 1708099200, 1709377200, 1709474400, 1709560800, 1709647200, 1709737200, 1709823600, 1710000000, 1710082800, 1710172800, 1710255600, 1708167600, 1710043200, 1708354800, 1708444800, 1708527600, 1708610400]
@@ -5651,15 +6451,15 @@
         {
           "type": "double",
           "attributes": {
-            "tzone": {
-              "type": "character",
-              "attributes": {},
-              "value": ["UTC"]
-            },
             "class": {
               "type": "character",
               "attributes": {},
               "value": ["POSIXct", "POSIXt"]
+            },
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
             }
           },
           "value": [1707890400, 1708754400, 1707897600, 1707980400, 1708077600, 1708034400, 1708088400, 1708153200, 1708239600, 1708268400, 1708322400, 1707980400, 1708423200, 1708495200, 1708581600, 1708668000, 1708610400, 1708758000, 1708844400, 1709020800, 1708844400, 1708945200, 1708322400, 1708941600, 1709100000, 1709017200, 1709103600, 1709200800, 1709190000, 1709272800, 1709359200, 1709416800, 1709359200, 1708146000, 1709974800, 1709535600, 1709625600, 1709719200, 1709964000, 1709877600, 1710054000, 1710136800, 1710223200, 1710309600, 1708246800, 1710406800, 1708380000, 1708495200, 1710453600, 1708671600]
@@ -6097,21 +6897,6 @@
     {
       "type": "list",
       "attributes": {
-        "class": {
-          "type": "character",
-          "attributes": {},
-          "value": ["tbl_df", "tbl", "data.frame"]
-        },
-        "row.names": {
-          "type": "integer",
-          "attributes": {},
-          "value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140]
-        },
-        "names": {
-          "type": "character",
-          "attributes": {},
-          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", "var_acc_z_sd"]
-        },
         "sf_column": {
           "type": "character",
           "attributes": {},
@@ -6123,7 +6908,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", "var_acc_z_sd"]
+              "value": ["individual_name_deployment_id", "clust_id", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", null]
             },
             "levels": {
               "type": "character",
@@ -6136,7 +6921,7 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
@@ -6151,20 +6936,15 @@
         "track_data": {
           "type": "list",
           "attributes": {
-            "class": {
+            "names": {
               "type": "character",
               "attributes": {},
-              "value": ["tbl_df", "tbl", "data.frame"]
+              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "row.names": {
               "type": "integer",
               "attributes": {},
               "value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137]
-            },
-            "names": {
-              "type": "character",
-              "attributes": {},
-              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -6191,6 +6971,11 @@
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["tbl_df", "tbl", "data.frame"]
             }
           },
           "value": [
@@ -8459,15 +9244,15 @@
             {
               "type": "double",
               "attributes": {
-                "tzone": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["UTC"]
-                },
                 "class": {
                   "type": "character",
                   "attributes": {},
                   "value": ["POSIXct", "POSIXt"]
+                },
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
                 }
               },
               "value": [1709179223, 1709179241, 1709179247, 1709179271, 1709179570, 1709198288, 1709200995, 1709214128, 1709214667, 1709224388, 1709227448, 1709265683, 1709272089, 1709278568, 1709282707, 1709283427, 1709285047, 1709288647, 1709299808, 1709300898, 1709309709, 1709311153, 1709365146, 1709367955, 1709368043, 1709371446, 1709371988, 1709376132, 1709376856, 1709378108, 1709378648, 1709379743, 1709381648, 1709381888, 1709383327, 1709386206, 1709390350, 1709391428, 1709396646, 1709397369, 1709448670, 1709452087, 1709454788, 1709458206, 1709464868, 1709468109, 1709468291, 1709476026, 1709485748, 1709530028.99900007, 1709540646, 1709542267, 1709552348, 1709564766, 1709565848, 1709566928, 1709570888, 1709622367, 1709627949, 1709640908, 1709645769, 1709647386, 1709647934, 1709651349, 1709655486, 1709658914, 1709713268, 1709714168, 1709718307, 1709719928, 1709720832, 1709722628, 1709726048, 1709735229, 1709737389, 1709739547, 1709742246, 1709794447, 1709802367, 1709803086, 1709803268, 1709807589, 1709816948, 1709827927, 1709830089, 1709883550, 1709884088, 1709886492, 1709887148, 1709891826, 1709894891, 1709903528.00099993, 1709912528, 1709917031, 1709969048, 1709976968, 1709979667, 1709980574, 1709981468, 1709982368, 1709988494, 1709989035, 1709992988, 1709998568, 1710001628, 1710057607, 1710060308, 1710061211, 1710062653, 1710065888, 1710069853, 1710072187, 1710079207, 1710080468, 1710082267, 1710142388, 1710146887, 1710146898, 1710147068, 1710158230, 1710160567, 1710165606, 1710233648, 1710234370, 1710246427, 1710248767, 1710257588, 1710261727, 1710263348, 1710320046, 1710320946, 1710325807, 1710392948, 1710414186, 1710417623, 1710426789, 1710433810]
@@ -8475,15 +9260,15 @@
             {
               "type": "double",
               "attributes": {
-                "tzone": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["UTC"]
-                },
                 "class": {
                   "type": "character",
                   "attributes": {},
                   "value": ["POSIXct", "POSIXt"]
+                },
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
                 }
               },
               "value": [1709199726, 1709188930, 1710439209, 1709196311, 1709202968, 1709224027, 1709229610, 1709227088, 1710439206, 1709276408, 1709271728, 1709278569, 1709284508, 1709364248, 1709286669, 1709995153, 1709293869, 1709299808, 1709364786, 1709305749, 1709366228, 1709364248, 1709367792, 1709372168, 1709371089, 1709373607, 1709373608, 1709397009, 1709381168, 1709379008, 1709383328, 1709382310, 1709555110, 1709384948, 1709536326, 1709450468, 1709983808, 1709621111, 1709454067, 1709456592, 1709450828, 1709452806, 1709460907, 1709462287, 1709475668, 1709470269, 1709547129, 1709477287, 1709528948, 1710244447, 1709980928, 1709813169, 1709566569, 1709718487, 1709625609, 1709570528, 1709621468, 1709976608, 1709629748, 1709646848, 1709706428, 1710141846, 1709648288, 1709710932, 1709711826, 1709699408, 1709714346, 1709714886, 1709719027, 1710334448, 1709723173, 1709728388, 1709728028, 1709796429, 1709738470, 1709827567, 1709794088, 1709799128, 1709802743, 1709810826, 1710088028, 1709811669.99799991, 1709882049, 1709969767, 1709888048, 1709893629, 1709886067, 1709888953, 1709892908, 1709900646, 1709896689, 1709967249, 1710405189, 1709970668, 1709974867, 1709980028, 1709984886, 1710234014, 1709982008, 1709984706, 1710002175, 1709989748, 1710060488, 1710001088, 1710056527, 1710061567, 1710060849, 1710063907, 1710068412, 1710319327, 1710075248, 1710140948, 1710081368, 1710151755, 1710083168, 1710142748, 1710156247, 1710152828, 1710148147, 1710348488, 1710229688, 1710230226, 1710439208, 1710257229, 1710248229, 1710250206, 1710262808, 1710318246, 1710328329, 1710330666, 1710321487, 1710329049, 1710393849, 1710419049, 1710426488, 1710430751, 1710439215]
@@ -9262,7 +10047,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9276,6 +10061,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9299,7 +10100,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9313,6 +10114,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9336,7 +10153,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9350,6 +10167,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9373,7 +10206,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9387,6 +10220,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9410,7 +10259,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9424,6 +10273,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9447,7 +10312,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9461,6 +10326,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9484,7 +10365,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9498,6 +10379,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9521,7 +10418,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9535,6 +10432,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9558,7 +10471,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9572,6 +10485,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9595,7 +10524,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9609,6 +10538,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9632,7 +10577,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9646,6 +10591,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9669,7 +10630,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9683,6 +10644,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9706,7 +10683,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9720,6 +10697,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9743,7 +10736,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9757,6 +10750,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9780,7 +10789,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9794,6 +10803,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9817,7 +10842,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9831,6 +10856,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9854,7 +10895,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9868,6 +10909,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9891,7 +10948,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9905,6 +10962,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9928,7 +11001,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9942,6 +11015,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -9965,7 +11054,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -9979,6 +11068,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10002,7 +11107,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10016,6 +11121,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10039,7 +11160,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10053,6 +11174,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10076,7 +11213,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10090,6 +11227,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10113,7 +11266,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10127,6 +11280,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10150,7 +11319,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10164,6 +11333,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10187,7 +11372,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10201,6 +11386,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10224,7 +11425,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10238,6 +11439,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10261,7 +11478,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10275,6 +11492,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10298,7 +11531,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10312,6 +11545,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10335,7 +11584,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10349,6 +11598,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10372,7 +11637,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10386,6 +11651,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10409,7 +11690,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10423,6 +11704,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10446,7 +11743,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10460,6 +11757,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10483,7 +11796,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10497,6 +11810,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10520,7 +11849,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10534,6 +11863,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10557,7 +11902,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10571,6 +11916,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10594,7 +11955,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10608,6 +11969,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10631,7 +12008,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10645,6 +12022,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10668,7 +12061,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10682,6 +12075,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10705,7 +12114,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10719,6 +12128,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10742,7 +12167,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10756,6 +12181,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10779,7 +12220,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10793,6 +12234,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10816,7 +12273,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10830,6 +12287,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10853,7 +12326,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10867,6 +12340,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10890,7 +12379,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10904,6 +12393,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10927,7 +12432,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10941,6 +12446,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -10964,7 +12485,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -10978,6 +12499,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11001,7 +12538,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11015,6 +12552,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11038,7 +12591,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11052,6 +12605,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11075,7 +12644,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11089,6 +12658,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11112,7 +12697,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11126,6 +12711,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11149,7 +12750,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11163,6 +12764,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11186,7 +12803,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11200,6 +12817,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11223,7 +12856,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11237,6 +12870,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11260,7 +12909,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11274,6 +12923,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11297,7 +12962,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11311,6 +12976,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11334,7 +13015,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11348,6 +13029,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11371,7 +13068,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11385,6 +13082,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11408,7 +13121,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11422,6 +13135,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11445,7 +13174,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11459,6 +13188,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11482,7 +13227,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11496,6 +13241,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11519,7 +13280,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11533,6 +13294,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11556,7 +13333,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11570,6 +13347,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11593,7 +13386,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11607,6 +13400,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11630,7 +13439,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11644,6 +13453,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11667,7 +13492,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11681,6 +13506,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11704,7 +13545,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11718,6 +13559,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11741,7 +13598,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11755,6 +13612,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11778,7 +13651,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11792,6 +13665,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11815,7 +13704,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11829,6 +13718,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11852,7 +13757,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11866,6 +13771,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11889,7 +13810,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11903,6 +13824,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11926,7 +13863,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11940,6 +13877,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -11963,7 +13916,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -11977,6 +13930,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12000,7 +13969,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12014,6 +13983,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12037,7 +14022,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12051,6 +14036,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12074,7 +14075,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12088,6 +14089,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12111,7 +14128,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12125,6 +14142,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12148,7 +14181,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12162,6 +14195,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12185,7 +14234,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12199,6 +14248,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12222,7 +14287,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12236,6 +14301,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12259,7 +14340,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12273,6 +14354,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12296,7 +14393,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12310,6 +14407,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12333,7 +14446,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12347,6 +14460,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12370,7 +14499,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12384,6 +14513,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12407,7 +14552,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12421,6 +14566,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12444,7 +14605,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12458,6 +14619,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12481,7 +14658,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12495,6 +14672,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12518,7 +14711,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12532,6 +14725,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12555,7 +14764,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12569,6 +14778,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12592,7 +14817,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12606,6 +14831,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12629,7 +14870,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12643,6 +14884,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12666,7 +14923,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12680,6 +14937,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12703,7 +14976,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12717,6 +14990,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12740,7 +15029,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12754,6 +15043,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12777,7 +15082,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12791,6 +15096,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12814,7 +15135,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12828,6 +15149,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12851,7 +15188,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12865,6 +15202,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12888,7 +15241,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12902,6 +15255,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12925,7 +15294,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12939,6 +15308,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12962,7 +15347,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -12976,6 +15361,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -12999,7 +15400,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13013,6 +15414,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13036,7 +15453,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13050,6 +15467,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13073,7 +15506,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13087,6 +15520,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13110,7 +15559,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13124,6 +15573,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13147,7 +15612,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13161,6 +15626,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13184,7 +15665,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13198,6 +15679,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13221,7 +15718,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13235,6 +15732,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13258,7 +15771,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13272,6 +15785,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13295,7 +15824,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13309,6 +15838,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13332,7 +15877,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13346,6 +15891,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13369,7 +15930,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13383,6 +15944,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13406,7 +15983,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13420,6 +15997,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13443,7 +16036,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13457,6 +16050,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13480,7 +16089,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13494,6 +16103,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13517,7 +16142,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13531,6 +16156,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13554,7 +16195,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13568,6 +16209,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13591,7 +16248,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13605,6 +16262,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13628,7 +16301,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13642,6 +16315,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13665,7 +16354,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13679,6 +16368,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13702,7 +16407,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13716,6 +16421,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13739,7 +16460,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13753,6 +16474,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13776,7 +16513,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13790,6 +16527,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13813,7 +16566,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13827,6 +16580,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13850,7 +16619,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13864,6 +16633,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13887,7 +16672,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13901,6 +16686,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13924,7 +16725,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13938,6 +16739,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13961,7 +16778,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -13975,6 +16792,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -13998,7 +16831,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -14012,6 +16845,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -14035,7 +16884,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -14049,6 +16898,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -14072,7 +16937,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -14086,6 +16951,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -14109,7 +16990,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -14123,6 +17004,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -14146,7 +17043,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -14160,6 +17057,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -14183,7 +17096,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -14197,6 +17110,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -14220,7 +17149,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -14234,6 +17163,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -14257,7 +17202,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -14271,6 +17216,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -14294,7 +17255,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -14308,6 +17269,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["TO_6032", "TO_6485", "GA_5404", "GA_6581", "GA_6594", "cats6", "cats7", "GA_5403", "GA_5784", "GA_5785", "GA_5786", "GA_5787", "GA_5788", "GA_5789", "GA_5863", "GA_5864", "GA_6033", "GA_6217", "GA_6218", "GA_6219", "GA_6486", "GA_cats2", "GA_cats3", "GA_cats4", "GA_cats5", "GA_IoL01", "NM_vulture2", "TO_6220", "TO_6484", "TT_cats1", " Vulture 5215", "Vulture 5216", "Vulture 5217", "Vulure 5218"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -15014,6 +17991,21 @@
           "type": "character",
           "attributes": {},
           "value": ["clust_id"]
+        },
+        "names": {
+          "type": "character",
+          "attributes": {},
+          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean", "var_acc_x_med", "var_acc_x_sd", "var_acc_y_med", "var_acc_y_sd", "var_acc_z_med", "var_acc_z_sd"]
+        },
+        "row.names": {
+          "type": "integer",
+          "attributes": {},
+          "value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140]
+        },
+        "class": {
+          "type": "character",
+          "attributes": {},
+          "value": ["tbl_df", "tbl", "data.frame"]
         }
       },
       "value": [
@@ -19655,15 +22647,15 @@
         {
           "type": "double",
           "attributes": {
-            "tzone": {
-              "type": "character",
-              "attributes": {},
-              "value": ["UTC"]
-            },
             "class": {
               "type": "character",
               "attributes": {},
               "value": ["POSIXct", "POSIXt"]
+            },
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
             }
           },
           "value": [1709179223, 1709647386, 1709979667, 1709989035, 1709998568, 1710001628, 1709976968, 1709981468, 1709982368, 1709992988, 1710062653, 1710069853, 1709655486, 1710080468, 1710057607, 1710072187, 1709803268, 1710060308, 1710061211, 1710065888, 1710082267, 1710147068, 1710165606, 1709179271, 1709980574, 1710158230, 1710142388, 1710146887, 1710160567, 1710146898, 1710246427, 1710248767, 1710261727, 1710234370, 1709200995, 1710257588, 1710263348, 1710233648, 1710320046, 1710320946, 1710325807, 1710426789, 1710433810, 1710392948, 1710417623, 1709300898, 1710079207, 1710414186, 1709309709, 1709376132, 1709397369, 1709468109, 1709485748, 1709214667, 1709530028.99900007, 1710241927, 1709565848, 1709651349, 1709658914, 1709720832, 1709735229, 1709179570, 1709214128, 1709227448, 1709272089, 1709282707, 1709285047, 1709311153, 1709367955, 1709378648, 1709391428, 1709390350, 1709627949, 1709722628, 1709737389, 1709299808, 1709179241, 1709198288, 1709224388, 1709278568, 1709288647, 1709368043, 1709371446, 1709378108, 1709379743, 1709386206, 1709365146, 1709452087, 1709454788, 1709468291, 1709552348, 1709566928, 1709570888, 1709645769, 1709714168, 1709718307, 1709726048, 1709383327, 1709742246, 1709179247, 1709283427, 1709371988, 1709376856, 1709381648, 1709381888, 1709458206, 1709464868, 1709476026, 1709396646, 1709540646, 1709622367, 1709640908, 1709647934, 1709713268, 1709719928, 1709739547, 1709802367, 1709803086, 1709827927, 1709542267, 1709807049, 1709265683, 1709830089, 1709448670, 1709794447, 1709816948, 1709807589, 1709891826, 1709894891, 1709912528, 1709564766, 1709639294, 1709917031, 1709886492, 1709883550, 1709903528.00099993, 1709884088, 1709887148, 1709969048, 1709988494]
@@ -19671,15 +22663,15 @@
         {
           "type": "double",
           "attributes": {
-            "tzone": {
-              "type": "character",
-              "attributes": {},
-              "value": ["UTC"]
-            },
             "class": {
               "type": "character",
               "attributes": {},
               "value": ["POSIXct", "POSIXt"]
+            },
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
             }
           },
           "value": [1709199726, 1710141846, 1709984886, 1709989748, 1710001088, 1710056527, 1709980028, 1709982008, 1709984706, 1710060488, 1710068412, 1710075248, 1709711826, 1710151755, 1710061567, 1710140948, 1710088028, 1710060849, 1710063907, 1710319327, 1710083168, 1710148147, 1710230226, 1709196311, 1710234014, 1710348488, 1710142748, 1710156247, 1710229688, 1710152828, 1710248229, 1710250206, 1710318246, 1710257229, 1709229610, 1710262808, 1710328329, 1710439208, 1710330666, 1710321487, 1710329049, 1710430751, 1710439215, 1710393849, 1710426488, 1709305749, 1710081368, 1710419049, 1709366228, 1709397009, 1709456592, 1709470269, 1709528948, 1710439206, 1709537770, 1710244447, 1709625609, 1709710932, 1709699408, 1709723173, 1709796429, 1709202968, 1709227088, 1709271728, 1709284508, 1709286669, 1709293869, 1709364248, 1709372168, 1709383328, 1709621111, 1709983808, 1709629748, 1709728388, 1709738470, 1709364786, 1709188930, 1709224027, 1709276408, 1709364248, 1709299808, 1709371089, 1709373607, 1709379008, 1709382310, 1709450468, 1709367792, 1709452806, 1709460907, 1709547129, 1709566569, 1709570528, 1709621468, 1709706428, 1709714886, 1709719027, 1709728028, 1709536326, 1709794088, 1710439209, 1709995153, 1709373608, 1709381168, 1709555110, 1709384948, 1709462287, 1709475668, 1709477287, 1709454067, 1709980928, 1709976608, 1709646848, 1709648288, 1709714346, 1710334448, 1709827567, 1709802743, 1709810826, 1709969767, 1709549467, 1709813169, 1709278569, 1709888048, 1709450828, 1709799128, 1709882049, 1709811669.99799991, 1709900646, 1709896689, 1710405189, 1709718487, 1709641628, 1709970668, 1709888953, 1709893629, 1709967249, 1709886067, 1709892908, 1709974867, 1710002175]
@@ -20147,21 +23139,6 @@
     {
       "type": "list",
       "attributes": {
-        "class": {
-          "type": "character",
-          "attributes": {},
-          "value": ["tbl_df", "tbl", "data.frame"]
-        },
-        "row.names": {
-          "type": "integer",
-          "attributes": {},
-          "value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163]
-        },
-        "names": {
-          "type": "character",
-          "attributes": {},
-          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
-        },
         "sf_column": {
           "type": "character",
           "attributes": {},
@@ -20173,7 +23150,7 @@
             "names": {
               "type": "character",
               "attributes": {},
-              "value": ["individual_name_deployment_id", "clust_id", "all_points", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
+              "value": ["individual_name_deployment_id", "clust_id", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", null]
             },
             "levels": {
               "type": "character",
@@ -20186,7 +23163,7 @@
               "value": ["factor"]
             }
           },
-          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+          "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
         },
         "time_column": {
           "type": "character",
@@ -20201,20 +23178,15 @@
         "track_data": {
           "type": "list",
           "attributes": {
-            "class": {
+            "names": {
               "type": "character",
               "attributes": {},
-              "value": ["tbl_df", "tbl", "data.frame"]
+              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "row.names": {
               "type": "integer",
               "attributes": {},
               "value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147]
-            },
-            "names": {
-              "type": "character",
-              "attributes": {},
-              "value": ["clust_id", "centroid", "spawn_dttm", "cease_dttm", "spawn_dttm_local", "cease_dttm_local", "members_n", "members_ids", "timespan", "timespan_ndays", "days_active_n", "days_inactive_n", "pts_n", "pts_locs", "pts_pairdist_mean", "pts_pairdist_med", "pts_pairdist_sd", "pts_spread_area", "hour_local_avg", "attnd_cmpd", "attnd_davg", "attnd_daytime_davg", "attnd_SFeeding_cmpd", "attnd_SResting_cmpd", "attnd_SRoosting_cmpd", "visits_day_avg", "visit_drtn_avg", "nightpts_dist_davg", "nightpts_250m_avgprop", "nightpts_1km_avgprop", "arrival_dist_avg", "members_centroid_pairdist_mean", "members_centroid_pairdist_med", "members_centroid_pairdist_sd", "nonmembers_dist_min", "nonmembers_within_25km_n", "nonmembers_within_50km_n"]
             },
             "sf_column": {
               "type": "character",
@@ -20241,6 +23213,11 @@
                 }
               },
               "value": ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+            },
+            "class": {
+              "type": "character",
+              "attributes": {},
+              "value": ["tbl_df", "tbl", "data.frame"]
             }
           },
           "value": [
@@ -22669,15 +25646,15 @@
             {
               "type": "double",
               "attributes": {
-                "tzone": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["UTC"]
-                },
                 "class": {
                   "type": "character",
                   "attributes": {},
                   "value": ["POSIXct", "POSIXt"]
+                },
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
                 }
               },
               "value": [1707886808, 1707886820, 1707886836, 1707886836, 1707886836, 1707886837, 1707893111, 1707912008, 1707912021, 1707918309, 1707920438, 1707926711, 1707928207, 1708008928, 1708011011, 1708014609, 1708015236, 1708019476, 1708059610, 1708061720, 1708072208, 1708076408, 1708084820, 1708097407, 1708101013, 1708103708, 1708146013, 1708171208, 1708179637, 1708185608, 1708185908, 1708188009, 1708272036, 1708274409, 1708274437, 1708341908, 1708341937, 1708350312, 1708356626, 1708360807, 1708362908, 1708365008, 1708432508, 1708434610, 1708439409, 1708443006, 1708447205, 1708521006, 1708527310, 1708531214, 1708533609, 1708535706, 1708535709, 1708613722, 1708622108, 1708622108, 1708664410, 1708666506, 1708693813, 1708704020, 1708704330, 1708706413, 1708708527, 1708752909, 1708765509, 1708774221, 1708788608, 1708797037, 1708837217, 1708854019, 1708864508, 1708878609, 1708881308, 1708963208, 1708963508, 1708965633, 1709012105, 1709047820, 1709052011, 1709103609, 1709115308, 1709123408, 1709123707, 1709136009, 1709140522, 1709142605, 1709203811, 1709220619, 1709222714, 1709222719, 1709224208, 1709226912, 1709226919, 1709280009, 1709281808, 1709292312, 1709313312, 1709380819, 1709395507, 1709397008, 1709442016, 1709472609, 1709479822, 1709483408, 1709486122, 1709486214, 1709487014, 1709562010, 1709566209, 1709566227, 1709572509, 1709616921, 1709654713, 1709658013, 1709741109, 1709741120, 1709743216, 1709818209, 1709831726, 1709831731, 1709884511, 1709904611, 1709916037, 1709922308, 1709962519, 1709979337, 1709989807, 1709989809, 1709989836, 1709998220, 1710088210, 1710090920, 1710145811, 1710163819, 1710168907, 1710171019, 1710175206, 1710177311, 1710238508, 1710251108, 1710255609, 1710263708, 1710339607, 1710339619, 1710348020, 1710419720, 1710436508]
@@ -22685,15 +25662,15 @@
             {
               "type": "double",
               "attributes": {
-                "tzone": {
-                  "type": "character",
-                  "attributes": {},
-                  "value": ["UTC"]
-                },
                 "class": {
                   "type": "character",
                   "attributes": {},
                   "value": ["POSIXct", "POSIXt"]
+                },
+                "tzone": {
+                  "type": "character",
+                  "attributes": {},
+                  "value": ["UTC"]
                 }
               },
               "value": [1710440707, 1708677009, 1707895211, 1710440728, 1707897309, 1707901509, 1707905707, 1710314409, 1707920420, 1707983711, 1707987908, 1707985808, 1707984009, 1709536808, 1708068008, 1708070409, 1708070111, 1708068008, 1708885511, 1710436512, 1708160712, 1708086923, 1708156508, 1708107913, 1708160436, 1708162809, 1708156508, 1710402908, 1710306026, 1708246807, 1708240822, 1708245009, 1708331407, 1708329313, 1708333508, 1708354521, 1708426209, 1708415720, 1708416008, 1708411510, 1708415708, 1708367121, 1708438819, 1708500008, 1708507822, 1708500012, 1708502111, 1709960426, 1708586412, 1708588820, 1708586417, 1708588521, 1708578025, 1708668626, 1708626320, 1708674908, 1708672808, 1709106909, 1708761309, 1708761609, 1708757110, 1708761310, 1708750810, 1709098509, 1709477721, 1708844411, 1708845609, 1708845606, 1708842619, 1708868712, 1708870836, 1708932626, 1708936221, 1709020807, 1709016311, 1709010036, 1709018409, 1709101809, 1709104808, 1709110820, 1709201713, 1709470809, 1709195420, 1710244820, 1709144737, 1709193311, 1710413420, 1709224807, 1709279708, 1709277608, 1709276424, 1709275508, 1709275509, 1709283608, 1709286010, 1709364617, 1709366118, 1709805612, 1709452508, 1709404210, 1709451020, 1709478009, 1709486108, 1709539209, 1709538908, 1709528408, 1709530207, 1709625320, 1710061207, 1709623209, 1709576728, 1709992819, 1709711719, 1710408607, 1709808621, 1709796012, 1709793912, 1709884809, 1709884508, 1709882424, 1709890820, 1709983807, 1709920208, 1709970937, 1709983522, 1709983513, 1710055209, 1710055208, 1710053111, 1710008723, 1710441036, 1710143713, 1710150008, 1710232208, 1710232208, 1710228020, 1710228008, 1710219621, 1710249008, 1710261608, 1710345614, 1710314407, 1710402908, 1710398708, 1710400808, 1710440712, 1710440708]
@@ -23522,7 +26499,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23536,6 +26513,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23559,7 +26552,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23573,6 +26566,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23596,7 +26605,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23610,6 +26619,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23633,7 +26658,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23647,6 +26672,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23670,7 +26711,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23684,6 +26725,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23707,7 +26764,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23721,6 +26778,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23744,7 +26817,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23758,6 +26831,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23781,7 +26870,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23795,6 +26884,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23818,7 +26923,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23832,6 +26937,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23855,7 +26976,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23869,6 +26990,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23892,7 +27029,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23906,6 +27043,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23929,7 +27082,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23943,6 +27096,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -23966,7 +27135,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -23980,6 +27149,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24003,7 +27188,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24017,6 +27202,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24040,7 +27241,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24054,6 +27255,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24077,7 +27294,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24091,6 +27308,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24114,7 +27347,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24128,6 +27361,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24151,7 +27400,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24165,6 +27414,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24188,7 +27453,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24202,6 +27467,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24225,7 +27506,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24239,6 +27520,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24262,7 +27559,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24276,6 +27573,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24299,7 +27612,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24313,6 +27626,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24336,7 +27665,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24350,6 +27679,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24373,7 +27718,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24387,6 +27732,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24410,7 +27771,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24424,6 +27785,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24447,7 +27824,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24461,6 +27838,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24484,7 +27877,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24498,6 +27891,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24521,7 +27930,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24535,6 +27944,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24558,7 +27983,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24572,6 +27997,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24595,7 +28036,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24609,6 +28050,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24632,7 +28089,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24646,6 +28103,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24669,7 +28142,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24683,6 +28156,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24706,7 +28195,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24720,6 +28209,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24743,7 +28248,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24757,6 +28262,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24780,7 +28301,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24794,6 +28315,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24817,7 +28354,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24831,6 +28368,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24854,7 +28407,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24868,6 +28421,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24891,7 +28460,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24905,6 +28474,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24928,7 +28513,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24942,6 +28527,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -24965,7 +28566,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -24979,6 +28580,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25002,7 +28619,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25016,6 +28633,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25039,7 +28672,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25053,6 +28686,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25076,7 +28725,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25090,6 +28739,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25113,7 +28778,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25127,6 +28792,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25150,7 +28831,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25164,6 +28845,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25187,7 +28884,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25201,6 +28898,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25224,7 +28937,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25238,6 +28951,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25261,7 +28990,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25275,6 +29004,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25298,7 +29043,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25312,6 +29057,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25335,7 +29096,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25349,6 +29110,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25372,7 +29149,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25386,6 +29163,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25409,7 +29202,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25423,6 +29216,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25446,7 +29255,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25460,6 +29269,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25483,7 +29308,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25497,6 +29322,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25520,7 +29361,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25534,6 +29375,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25557,7 +29414,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25571,6 +29428,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25594,7 +29467,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25608,6 +29481,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25631,7 +29520,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25645,6 +29534,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 5, 4, 4, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25668,7 +29573,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25682,6 +29587,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25705,7 +29626,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25719,6 +29640,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25742,7 +29679,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25756,6 +29693,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25779,7 +29732,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25793,6 +29746,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25816,7 +29785,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25830,6 +29799,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25853,7 +29838,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25867,6 +29852,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25890,7 +29891,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25904,6 +29905,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25927,7 +29944,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25941,6 +29958,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -25964,7 +29997,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -25978,6 +30011,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26001,7 +30050,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26015,6 +30064,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26038,7 +30103,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26052,6 +30117,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26075,7 +30156,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26089,6 +30170,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26112,7 +30209,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26126,6 +30223,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26149,7 +30262,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26163,6 +30276,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26186,7 +30315,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26200,6 +30329,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26223,7 +30368,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26237,6 +30382,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26260,7 +30421,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26274,6 +30435,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26297,7 +30474,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26311,6 +30488,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26334,7 +30527,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26348,6 +30541,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26371,7 +30580,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26385,6 +30594,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26408,7 +30633,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26422,6 +30647,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26445,7 +30686,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26459,6 +30700,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26482,7 +30739,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26496,6 +30753,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26519,7 +30792,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26533,6 +30806,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26556,7 +30845,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26570,6 +30859,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26593,7 +30898,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26607,6 +30912,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26630,7 +30951,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26644,6 +30965,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26667,7 +31004,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26681,6 +31018,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26704,7 +31057,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26718,6 +31071,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26741,7 +31110,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26755,6 +31124,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26778,7 +31163,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26792,6 +31177,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26815,7 +31216,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26829,6 +31230,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26852,7 +31269,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26866,6 +31283,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26889,7 +31322,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26903,6 +31336,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26926,7 +31375,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26940,6 +31389,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -26963,7 +31428,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -26977,6 +31442,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27000,7 +31481,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27014,6 +31495,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27037,7 +31534,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27051,6 +31548,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27074,7 +31587,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27088,6 +31601,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27111,7 +31640,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27125,6 +31654,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27148,7 +31693,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27162,6 +31707,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27185,7 +31746,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27199,6 +31760,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27222,7 +31799,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27236,6 +31813,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27259,7 +31852,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27273,6 +31866,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27296,7 +31905,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27310,6 +31919,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27333,7 +31958,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27347,6 +31972,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27370,7 +32011,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27384,6 +32025,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27407,7 +32064,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27421,6 +32078,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27444,7 +32117,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27458,6 +32131,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27481,7 +32170,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27495,6 +32184,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27518,7 +32223,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27532,6 +32237,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27555,7 +32276,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27569,6 +32290,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27592,7 +32329,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27606,6 +32343,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27629,7 +32382,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27643,6 +32396,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27666,7 +32435,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27680,6 +32449,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27703,7 +32488,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27717,6 +32502,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27740,7 +32541,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27754,6 +32555,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27777,7 +32594,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27791,6 +32608,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27814,7 +32647,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27828,6 +32661,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27851,7 +32700,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27865,6 +32714,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27888,7 +32753,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27902,6 +32767,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27925,7 +32806,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27939,6 +32820,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27962,7 +32859,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -27976,6 +32873,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -27999,7 +32912,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28013,6 +32926,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28036,7 +32965,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28050,6 +32979,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28073,7 +33018,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28087,6 +33032,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28110,7 +33071,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28124,6 +33085,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28147,7 +33124,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28161,6 +33138,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28184,7 +33177,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28198,6 +33191,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28221,7 +33230,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28235,6 +33244,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28258,7 +33283,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28272,6 +33297,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28295,7 +33336,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28309,6 +33350,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28332,7 +33389,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28346,6 +33403,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28369,7 +33442,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28383,6 +33456,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28406,7 +33495,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28420,6 +33509,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28443,7 +33548,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28457,6 +33562,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28480,7 +33601,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28494,6 +33615,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28517,7 +33654,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28531,6 +33668,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28554,7 +33707,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28568,6 +33721,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28591,7 +33760,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28605,6 +33774,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28628,7 +33813,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28642,6 +33827,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28665,7 +33866,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28679,6 +33880,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28702,7 +33919,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28716,6 +33933,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [6, 6, 6]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28739,7 +33972,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28753,6 +33986,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28776,7 +34025,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28790,6 +34039,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28813,7 +34078,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28827,6 +34092,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28850,7 +34131,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28864,6 +34145,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28887,7 +34184,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28901,6 +34198,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -28924,7 +34237,7 @@
                     "names": {
                       "type": "character",
                       "attributes": {},
-                      "value": ["timestamp", "lon", "lat"]
+                      "value": ["subj_name", "timestamp", "lon", "lat"]
                     },
                     "class": {
                       "type": "character",
@@ -28938,6 +34251,22 @@
                     }
                   },
                   "value": [
+                    {
+                      "type": "integer",
+                      "attributes": {
+                        "levels": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["SAV-4360-A", "SAV-4356-A", "SAV-4386-A", "SAV-4358-A", "SAV-4357-A", "SAV-4355-B", "SAV-4354-A", "SAV-4355-A", "SAV-4356", "SAV-4359-A", "SAV-4384-A", "SAV-4385-A"]
+                        },
+                        "class": {
+                          "type": "character",
+                          "attributes": {},
+                          "value": ["factor"]
+                        }
+                      },
+                      "value": [3, 3, 3]
+                    },
                     {
                       "type": "character",
                       "attributes": {},
@@ -29644,6 +34973,21 @@
           "type": "character",
           "attributes": {},
           "value": ["clust_id"]
+        },
+        "names": {
+          "type": "character",
+          "attributes": {},
+          "value": ["individual_name_deployment_id", "clust_id", "all_points", "median_point", "pts_n", "pts_night_n", "pts_day_n", "first_dttm", "last_dttm", "first_dttm_local", "last_dttm_local", "timespan", "timespan_ndays", "days_present_n", "days_absent_n", "hour_local_med", "attnd", "attnd_dmean", "attnd_daytime_dmean", "attnd_SFeeding", "attnd_SResting", "attnd_SRoosting", "visits_day_mean", "visit_drtn_mean", "nightpts_dist_dmean", "nightpts_250m_prop", "nightpts_1km_prop", "arrival_dist_mean"]
+        },
+        "row.names": {
+          "type": "integer",
+          "attributes": {},
+          "value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163]
+        },
+        "class": {
+          "type": "character",
+          "attributes": {},
+          "value": ["tbl_df", "tbl", "data.frame"]
         }
       },
       "value": [
@@ -35021,15 +40365,15 @@
         {
           "type": "double",
           "attributes": {
-            "tzone": {
-              "type": "character",
-              "attributes": {},
-              "value": ["UTC"]
-            },
             "class": {
               "type": "character",
               "attributes": {},
               "value": ["POSIXct", "POSIXt"]
+            },
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
             }
           },
           "value": [1707886820, 1708704020, 1709222714, 1709479822, 1709479830, 1709486214, 1709488219, 1708765509, 1709281808, 1709313312, 1709395507, 1709486122, 1709123408, 1707886836, 1709483408, 1709658013, 1709562010, 1709743216, 1709203811, 1709741109, 1709572509, 1709616921, 1709989220, 1709566227, 1707912008, 1709654713, 1709741120, 1709566209, 1709818209, 1709904611, 1709831731, 1709989836, 1709884511, 1709979337, 1708011011, 1709989807, 1709962519, 1709831726, 1709916037, 1709922308, 1709989809, 1709998220, 1710088210, 1710163819, 1710145811, 1708084820, 1710168907, 1710238508, 1710171019, 1710177311, 1710090920, 1710175206, 1710251108, 1710263708, 1710255609, 1710339619, 1708341937, 1710419720, 1710339607, 1710348020, 1710436508, 1708365008, 1708527310, 1708535709, 1708061720, 1708609521, 1709100609, 1709100610, 1707928207, 1708622108, 1708008928, 1708704320, 1707886837, 1707920438, 1708015236, 1708076408, 1708103708, 1708171208, 1708188009, 1708274409, 1708014609, 1708350312, 1708434610, 1708622108, 1708693813, 1708708527, 1707886808, 1707918309, 1707928837, 1707926711, 1708059610, 1708664436, 1708097407, 1708101013, 1708360807, 1708432508, 1708443006, 1708535706, 1708664410, 1708704330, 1707886836, 1707886836, 1707893111, 1707912021, 1708185608, 1708019476, 1708072208, 1708185908, 1708274437, 1708341908, 1708362908, 1708447205, 1708533609, 1708613722, 1708706413, 1708272036, 1708774221, 1708837217, 1708878609, 1708963208, 1708864508, 1708854019, 1708146013, 1708179637, 1708788608, 1708963508, 1708356626, 1708797037, 1708881308, 1709047820, 1709103609, 1709136009, 1709224208, 1708666506, 1708875008, 1709104807, 1709106909, 1708752909, 1708923637, 1709041507, 1709041536, 1709052011, 1708439409, 1709115308, 1709226912, 1708521006, 1709123707, 1709140522, 1709222719, 1708965633, 1709012105, 1709142605, 1708531214, 1709220619, 1709226919, 1709280009, 1709292312, 1709307020, 1709380819, 1709397008, 1709442016, 1709472609, 1709487014]
@@ -35037,15 +40381,15 @@
         {
           "type": "double",
           "attributes": {
-            "tzone": {
-              "type": "character",
-              "attributes": {},
-              "value": ["UTC"]
-            },
             "class": {
               "type": "character",
               "attributes": {},
               "value": ["POSIXct", "POSIXt"]
+            },
+            "tzone": {
+              "type": "character",
+              "attributes": {},
+              "value": ["UTC"]
             }
           },
           "value": [1708677009, 1708761609, 1709279708, 1709484007, 1709486108, 1709486214, 1709528408, 1709477721, 1709286010, 1709366118, 1709452508, 1709538908, 1709470809, 1707895211, 1709539209, 1710408607, 1709625320, 1709793912, 1710413420, 1709808621, 1709576728, 1709625307, 1709992819, 1709623209, 1710314409, 1709711719, 1709796012, 1710061207, 1709884809, 1709983807, 1709882424, 1710053111, 1709890820, 1709983513, 1708068008, 1710055209, 1709983522, 1709884508, 1709920208, 1709970937, 1710055208, 1710008723, 1710441036, 1710232208, 1710150008, 1708156508, 1710232208, 1710249008, 1710228020, 1710219621, 1710143713, 1710228008, 1710261608, 1710314407, 1710345614, 1710398708, 1708426209, 1710440712, 1710402908, 1710400808, 1710440708, 1708367121, 1708586412, 1708578025, 1709534709, 1710436512, 1709104808, 1709102709, 1707984009, 1708626320, 1708017307, 1709536808, 1707901509, 1707987908, 1708070111, 1708086923, 1708162809, 1710402908, 1708245009, 1708329313, 1708070409, 1708415720, 1708500008, 1708674908, 1708761309, 1708750810, 1710440707, 1707920424, 1707983711, 1707985808, 1708885511, 1708664436, 1708107913, 1708160436, 1708411510, 1708438819, 1708500012, 1708588521, 1708672808, 1708757110, 1710440728, 1707897309, 1707905707, 1707920420, 1708246807, 1708068008, 1708160712, 1708240822, 1708333508, 1708354521, 1708415708, 1708502111, 1708586417, 1708668626, 1708761310, 1708331407, 1708844411, 1708842619, 1708932626, 1709020807, 1708870836, 1708868712, 1708156508, 1710306026, 1708845609, 1709016311, 1708416008, 1708845606, 1708936221, 1709101809, 1709110820, 1710244820, 1709276424, 1708765509, 1708925710, 1709104807, 1709106909, 1708752909, 1708923637, 1709098509, 1709098509, 1709104808, 1708507822, 1709201713, 1709275508, 1709960426, 1709195420, 1709144737, 1709277608, 1709010036, 1709018409, 1709193311, 1708588820, 1709224807, 1709275509, 1709283608, 1709296512, 1709364617, 1709805612, 1709404210, 1709451020, 1709478009, 1709530207]
